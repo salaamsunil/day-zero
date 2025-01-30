@@ -1,0 +1,77 @@
+:root {
+  --primary: #2A2D7C;
+  --secondary: #F15A29;
+  --accent: #6EC1E4;
+  --dark: #1A1A1A;
+  --light: #F9F9F9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  line-height: 1.7;
+  color: var(--dark);
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 180px;
+}
+
+.hero {
+  background: linear-gradient(rgba(42,45,124,0.85), rgba(42,45,124,0.85)),
+              url('../images/hero-bg.jpg') center/cover;
+  padding: 10rem 2rem 6rem;
+  text-align: center;
+  color: white;
+}
+
+.service-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.client-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.client-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Add more styles as needed */
