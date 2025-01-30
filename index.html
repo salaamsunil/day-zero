@@ -3,166 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day Zero Solutions - Retail Technology & Digital Solutions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-        }
-
-        .header {
-            background: #1a365d;
-            color: white;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(26,54,93,0.9), rgba(26,54,93,0.9)),
-                        url('/images/Day-Zero.png') center/cover;
-            color: white;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-        }
-
-        .services {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .cta-section {
-            background: #f8f9fa;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .button {
-            background: #f97316;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1rem;
-        }
-
-        footer {
-            background: #1a365d;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-    <!-- Font Awesome -->
+    <title>Day Zero Solutions - Complete Tech Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="84b551e5-5e8e-4fbb-9f65-13b5f67a6f20";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </head>
 <body>
     <header class="header">
         <nav class="nav-container">
-            <h1>Day Zero Solutions</h1>
+            <img src="images/logo.png" alt="Day Zero Solutions" class="logo">
             <div class="nav-links">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Transform Your Retail Business with Complete Tech Solutions</h1>
-        <p>Expert POS Systems | Smart Digital Marketing | Reliable Network Solutions</p>
-        <a href="#contact" class="button">Get Free Consultation</a>
+        <h1 class="hero-title">Transform Your Business with End-to-End Solutions</h1>
+        <p class="hero-subtitle">From Concept to Grand Opening - We Handle It All</p>
+        <a href="contact.html" class="cta-button">Start Your Journey</a>
     </section>
 
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <!-- Retail Tech Services -->
-            <div class="service-card">
-                <i class="fas fa-cash-register fa-3x"></i>
-                <h3>POS System Setup</h3>
-                <p>Custom point-of-sale solutions tailored for restaurants and retail stores</p>
+    <!-- Client Showcase Section -->
+    <section class="client-showcase">
+        <h2>Recent Projects</h2>
+        <div class="client-grid">
+            <div class="client-card">
+                <img src="images/restaurant-project1.jpg" alt="Project 1">
+                <div class="client-overlay">
+                    <h3>The Urban Bistro</h3>
+                    <p>Full Tech Setup & Design</p>
+                </div>
             </div>
-            
-            <div class="service-card">
-                <i class="fas fa-tags fa-3x"></i>
-                <h3>ESL Solutions</h3>
-                <p>Electronic shelf label implementation and management</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-wifi fa-3x"></i>
-                <h3>Network Solutions</h3>
-                <p>Secure and reliable network infrastructure for hospitality businesses</p>
-            </div>
-
-            <!-- Digital Marketing Services -->
-            <div class="service-card">
-                <i class="fas fa-search-dollar fa-3x"></i>
-                <h3>SEO & SEM</h3>
-                <p>Search engine optimization and marketing strategies</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-social-media fa-3x"></i>
-                <h3>Social Media Marketing</h3>
-                <p>Targeted campaigns across major platforms</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-email fa-3x"></i>
-                <h3>Email Marketing</h3>
-                <p>Automated campaigns and customer retention strategies</p>
-            </div>
+            <!-- Add more client cards -->
         </div>
     </section>
 
+<<<<<<< HEAD
+    <!-- Free Chat Alternative: Crisp Chat -->
+    <script type="text/javascript">
+        window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_CRISP_ID";
+        (function(){d=document;s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+=======
     <section class="cta-section">
         <h2>Why Choose Us?</h2>
         <p>10+ years experience | 24/7 Support | Industry-certified experts</p>
@@ -187,5 +76,6 @@
         </div>
     </footer>
 <script src="//code.tidio.co/l6g9p6mxubvubhchy6kgc1088yqw5lfp.js" async></script>
+>>>>>>> 9a86bf213d5d431fd834ec975148064cfd5a9cad
 </body>
 </html>
