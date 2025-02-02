@@ -1,36 +1,29 @@
-// Mobile Menu Toggle
-const mobileMenu = () => {
-  const menu = document.createElement('div');
-  menu.classList.add('mobile-menu');
-  // Add mobile menu implementation
-}
-
-// Initialize Swiper
+// Initialize Swiper (if you're using it)
 const swiper = new Swiper('.swiper', {
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  autoplay: {
-    delay: 5000,
-  },
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 5000,
+    },
 });
+
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
+// Toggle mobile menu visibility
 menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active'); // Toggle hamburger animation
+    navLinks.classList.toggle('active'); // Toggle menu visibility
 });
 
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('active');
+        navLinks.classList.remove('active'); // Hide menu
+        menuToggle.classList.remove('active'); // Reset hamburger icon
     });
-});
-menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
 });
