@@ -183,27 +183,33 @@ p {
   text-align: center;
 }
 
-/* ===== Footer ===== */
+/* Footer Styles */
 footer {
-  background: var(--dark);
-  color: white;
-  padding: 2rem;
-  text-align: center;
+    background: var(--dark); /* Dark background */
+    color: white; /* White text for all content in footer */
+    padding: 2rem;
+    text-align: center;
 }
 
-.social-links {
-  margin-top: 1rem;
+footer h3 {
+    color: white; /* Ensure the heading is white */
+    margin-bottom: 1rem;
 }
 
-.social-links a {
-  color: white;
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
-  transition: var(--transition);
+footer p {
+    color: white; /* Ensure paragraphs (contact info) are white */
+    margin: 0.5rem 0;
 }
 
-.social-links a:hover {
-  color: var(--secondary);
+footer .social-links a {
+    color: white; /* Ensure social media icons are white */
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--secondary); /* Change color on hover for interactivity */
 }
 
 /* ===== Responsive Design ===== */
