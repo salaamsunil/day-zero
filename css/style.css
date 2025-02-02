@@ -1,23 +1,45 @@
+/* ===== Global Variables ===== */
 :root {
-  --primary: #2A2D7C;
-  --secondary: #F15A29;
-  --accent: #6EC1E4;
-  --dark: #1A1A1A;
-  --light: #F9F9F9;
+  --primary: #2A2D7C;       /* Main brand color */
+  --secondary: #F15A29;     /* Accent color */
+  --accent: #6EC1E4;        /* Highlight color */
+  --dark: #1A1A1A;          /* Text color */
+  --light: #F9F9F9;         /* Background color */
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== Base Styles ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   color: var(--dark);
+  background-color: var(--light);
+  padding-top: 80px; /* Space for fixed header */
 }
 
+/* ===== Typography ===== */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Header & Navigation ===== */
 .header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   padding: 1rem;
@@ -25,7 +47,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
 }
 
 .nav-container {
@@ -38,40 +60,177 @@ body {
 
 .logo {
   width: 180px;
+  height: auto;
 }
 
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--secondary);
+}
+
+/* ===== Hero Section ===== */
 .hero {
   background: linear-gradient(rgba(42,45,124,0.85), rgba(42,45,124,0.85)),
               url('../images/hero-bg.jpg') center/cover;
-  padding: 10rem 2rem 6rem;
+  padding: 6rem 2rem;
   text-align: center;
   color: white;
-}
-
-.service-slider {
+  min-height: 80vh;
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 2rem;
-  padding: 2rem 0;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: var(--secondary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* ===== Client Showcase ===== */
 .client-showcase {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.client-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 2rem;
 }
 
 .client-card {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 .client-card:hover {
   transform: translateY(-5px);
 }
 
-/* Add more styles as needed */
+.client-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.client-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(42, 45, 124, 0.8);
+  color: white;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: var(--transition);
+}
+
+.client-card:hover .client-overlay {
+  transform: translateY(0);
+}
+
+/* ===== Portfolio Section ===== */
+.portfolio {
+  padding: 4rem 2rem;
+  background: var(--light);
+}
+
+.before-after-slider {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== CTA Section ===== */
+.cta-section {
+  background: var(--primary);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--secondary);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .client-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 140px;
+  }
+
+  .hero {
+    padding: 4rem 1rem;
+  }
+}
