@@ -43,7 +43,19 @@
 .hamburger::after {
     top: 8px;
 }
+.menu-toggle.active .hamburger {
+    background: transparent;
+}
 
+.menu-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
 /* Mobile Navigation Styles */
 @media (max-width: 768px) {
     .menu-toggle {
