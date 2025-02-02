@@ -387,3 +387,58 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(rgba(42,45,124,0.85), rgba(42,45,124,0.85)),
+                url('../images/about-hero.jpg') center/cover;
+    padding: 8rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+}
+
+/* About Content Section */
+.about-content {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.about-container p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-container ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-container li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 6rem 1rem;
+    }
+
+    .about-content {
+        padding: 2rem 1rem;
+    }
+}
