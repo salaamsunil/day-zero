@@ -43,6 +43,8 @@
 .hamburger::after {
     top: 8px;
 }
+
+/* Hamburger Icon Animation */
 .menu-toggle.active .hamburger {
     background: transparent;
 }
@@ -56,6 +58,7 @@
     top: 0;
     transform: rotate(-45deg);
 }
+
 /* Mobile Navigation Styles */
 @media (max-width: 768px) {
     .menu-toggle {
