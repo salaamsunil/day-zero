@@ -1,4 +1,4 @@
-// Initialize Swiper (if you're using it)
+/*// Initialize Swiper (if you're using it)
 const swiper = new Swiper('.swiper', {
     loop: true,
     navigation: {
@@ -8,8 +8,7 @@ const swiper = new Swiper('.swiper', {
     autoplay: {
         delay: 5000,
     },
-});
-
+});*/
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
