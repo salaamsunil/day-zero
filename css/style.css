@@ -139,6 +139,7 @@ p {
   }
 
   .nav-links {
+    z-index: 999; /* Ensure menu appears above content */
     display: none; /* Hide by default on mobile */
     flex-direction: column;
     position: absolute;
