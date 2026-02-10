@@ -30,10 +30,10 @@ Single-page bold & colorful marketing site for Day Zero, an Australian software 
 2. **Hero** — Dark bg, gradient headline, animated glow orb, two CTAs
 3. **Products** — 3 alternating product cards:
    - **NutriCare MVP** — `Live` badge, violet theme
-   - **RestroStock** — `In Development` badge, mint theme
+   - **RestroStock** — `Live` badge, mint theme
    - **QueueZero** — `In Development` badge, orange theme
 4. **Coming Soon** — Dark section, 3 cards: Analytics Dashboard, AI Menu Advisor, POS Integrations
-5. **About** — Brand story, stat counters (1 Live / 2 In Dev / 100% Australian Made)
+5. **About** — Brand story, stat counters (2 Live / 1 In Dev / 100% Australian Made)
 6. **Contact** — Phone/email/location cards + form with product interest dropdown
 7. **Footer** — 4-column: brand, products, company, socials
 
@@ -54,15 +54,21 @@ services.html       ← DELETED
 ## Products
 
 ### NutriCare MVP (LIVE)
-- Automated nutrition labelling & allergen tracking
-- FSANZ-compliant outputs
-- Recipe cost analysis
+- Comprehensive dietary management for senior care / aged care facilities
+- IDDSI texture level compliance, resident dietary profile tracking
+- Multi-period meal ordering (Breakfast, Lunch, Dinner, Snacks)
+- Kitchen production reports, allergen conflict warnings
+- Multi-site support with role-based access control
 - **Status:** Live — CTA is "Request a Demo"
 
-### RestroStock (IN DEVELOPMENT)
-- Smart inventory management for restaurants
-- Real-time stock tracking, reorder suggestions, waste analytics
-- **Status:** In development — CTA is "Join the Waitlist"
+### RestroStock (LIVE)
+- Smart inventory & procurement management for restaurants
+- Real-time stock tracking with low-stock & expiry alerts
+- Purchase order workflow with 3-way matching (PO-GRN-Invoice)
+- Supplier management & messaging
+- Waste tracking & analytics dashboard
+- Multi-location storage, multi-unit inventory
+- **Status:** Live (v1.0.0) — CTA is "Request a Demo"
 
 ### QueueZero (IN DEVELOPMENT)
 - Mobile ordering & queue management for food trucks / pop-ups
