@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(start \"\" \"c:\\\\Users\\\\bonjo\\\\OneDrive\\\\Projects\\\\day-zero.com.au\\\\index.html\")"
+      "Bash(start \"\" \"c:\\\\Users\\\\bonjo\\\\OneDrive\\\\Projects\\\\day-zero.com.au\\\\index.html\")",
+      "Bash(git checkout:*)",
+      "Bash(git push:*)"
     ]
   }
 }
