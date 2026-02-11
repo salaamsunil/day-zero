@@ -488,6 +488,122 @@ a {
     background: var(--orange);
 }
 
+/* ===== TRUST / SOCIAL PROOF ===== */
+.trust {
+    padding: 60px 0;
+    background: var(--white);
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    text-align: center;
+    flex: 0 1 200px;
+}
+
+.trust-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 0 auto 1rem;
+    background: rgba(124, 58, 237, 0.08);
+    color: var(--violet);
+}
+
+.trust-badge strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.25rem;
+}
+
+.trust-badge p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .trust-badges {
+        gap: 1.5rem;
+    }
+
+    .trust-badge {
+        flex: 0 1 140px;
+    }
+}
+
+/* ===== WAITLIST FORM ===== */
+.waitlist-form {
+    margin-top: 0.5rem;
+}
+
+.waitlist-input-group {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 420px;
+}
+
+.waitlist-input-group input {
+    flex: 1;
+    padding: 0.85rem 1.15rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border: 1.5px solid #E2E8F0;
+    border-radius: var(--radius-sm);
+    background: var(--light);
+    color: var(--dark);
+    outline: none;
+    transition: var(--transition);
+}
+
+.waitlist-input-group input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.waitlist-input-group .btn {
+    white-space: nowrap;
+    padding: 0.85rem 1.5rem;
+}
+
+.waitlist-hint {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .waitlist-input-group {
+        margin: 0 auto;
+    }
+
+    .waitlist-hint {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .waitlist-input-group {
+        flex-direction: column;
+    }
+
+    .waitlist-input-group .btn {
+        width: 100%;
+    }
+}
+
 /* ===== COMING SOON ===== */
 .coming-soon {
     padding: 100px 0;

@@ -57,12 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
 
             const data = new FormData(form);
+            const interest = data.get('interest');
+            const interestLabels = {
+                nutricare: 'NutriCare',
+                restrostock: 'RestroStock',
+                queuezero: 'QueueZero',
+                general: 'General'
+            };
+            const interestLabel = interestLabels[interest] || 'General';
+
             const payload = {
                 name: data.get('name'),
                 email: data.get('email'),
-                interest: data.get('interest'),
+                interest: interest,
                 message: data.get('message'),
-                _subject: 'New enquiry from day-zero.com.au',
+                _subject: 'New enquiry about ' + interestLabel + ' from day-zero.com.au',
                 _template: 'table'
             };
 
@@ -87,6 +96,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch {
                 btn.textContent = 'Something went wrong. Try again.';
+                btn.style.background = '#EF4444';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                }, 3000);
+            }
+        });
+    }
+
+    // --- QueueZero Waitlist Form (Formsubmit.co) ---
+    const waitlistForm = document.getElementById('waitlistForm');
+    if (waitlistForm) {
+        waitlistForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = waitlistForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Joining...';
+            btn.disabled = true;
+
+            const email = new FormData(waitlistForm).get('email');
+
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        _subject: 'QueueZero Waitlist Signup',
+                        _template: 'table'
+                    })
+                });
+
+                if (res.ok) {
+                    btn.textContent = "You're on the list!";
+                    btn.style.background = '#10B981';
+                    waitlistForm.reset();
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                        btn.style.background = '';
+                    }, 4000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch {
+                btn.textContent = 'Something went wrong.';
                 btn.style.background = '#EF4444';
                 setTimeout(() => {
                     btn.textContent = originalText;
