@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
-  <!-- Launch Mark - Upward chevron -->
-  <path d="M20 55 L40 25 L60 55" stroke="#7C3AED" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- DAY ZERO text -->
-  <text x="80" y="56" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="800" font-size="40" fill="#0F0F1A" letter-spacing="2">DAY ZERO</text>
+  <!-- Day Zero Solutions - The Launch Mark -->
+  <path d="M16 58 Q17 58 40 22 Q42 19 44 22 Q67 58 68 58" stroke="#7C3AED" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="84" y="56" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="800" font-size="38" fill="#0F0F1A" letter-spacing="1.5">DAY ZERO</text>
 </svg>
