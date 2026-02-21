@@ -20,12 +20,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Header scroll effect ---
+    // --- Header scroll effect + Scroll progress bar ---
     const header = document.querySelector('.header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 20);
-        });
+    const scrollProgress = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+        if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+        if (scrollProgress) {
+            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = pct + '%';
+        }
+    });
+
+    // --- Typewriter effect ---
+    const typewriterEl = document.getElementById('typewriter');
+    if (typewriterEl) {
+        const words = ['hospitality', 'aged care', 'restaurants', 'food trucks'];
+        let wordIdx = 0, charIdx = 0, deleting = false;
+        function typeStep() {
+            const word = words[wordIdx];
+            if (!deleting) {
+                typewriterEl.textContent = word.slice(0, ++charIdx);
+                if (charIdx === word.length) { deleting = true; setTimeout(typeStep, 1800); return; }
+            } else {
+                typewriterEl.textContent = word.slice(0, --charIdx);
+                if (charIdx === 0) { deleting = false; wordIdx = (wordIdx + 1) % words.length; }
+            }
+            setTimeout(typeStep, deleting ? 60 : 90);
+        }
+        setTimeout(typeStep, 1000);
     }
 
     // --- Scroll-reveal animations ---
@@ -45,6 +67,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 });
 
     fadeTargets.forEach(el => revealObserver.observe(el));
+
+    // --- Staggered feature list animation ---
+    document.querySelectorAll('.product-features li').forEach((li, i) => {
+        li.style.transitionDelay = (i % 4 * 100) + 'ms';
+    });
+    const featObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.querySelectorAll('li').forEach(li => li.classList.add('visible'));
+                featObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.product-features').forEach(ul => featObserver.observe(ul));
+
+    // --- Animated stat counters ---
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1200;
+        const start = performance.now();
+        function step(now) {
+            const t = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                animateCounter(e.target);
+                statObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserver.observe(el));
 
     // --- Contact form handler (Formsubmit.co) ---
     const form = document.getElementById('contactForm');
