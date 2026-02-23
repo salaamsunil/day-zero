@@ -467,6 +467,7 @@ a {
     align-items: center;
     justify-content: center;
     min-width: 320px;
+    flex-shrink: 1;
 }
 
 .product-icon-wrap {
@@ -1006,6 +1007,12 @@ a {
     margin-top: 0.6rem;
 }
 
+@media (max-width: 1024px) {
+    .social-proof {
+        text-align: center;
+    }
+}
+
 /* ===== APP MOCKUPS ===== */
 .app-mockup {
     width: 320px;
@@ -1185,14 +1192,35 @@ a {
 .mockup-alert-strip i { color: #f59e0b; margin-right: 4px; }
 
 /* Mockup responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .product-visual {
+        min-width: unset;
+        width: 100%;
+    }
     .app-mockup {
         width: 100%;
-        max-width: 320px;
+        max-width: 360px;
         transform: none;
         animation: none;
+        margin: 0 auto;
     }
     .app-mockup:hover { transform: none; }
+}
+
+@media (max-width: 480px) {
+    .app-mockup {
+        max-width: 100%;
+    }
+    .mockup-body {
+        padding: 10px;
+        gap: 8px;
+    }
+    .mockup-stat-cards {
+        gap: 4px;
+    }
+    .mockup-stat-card span {
+        font-size: 0.75rem;
+    }
 }
 
 /* ===== Scroll Animations ===== */
