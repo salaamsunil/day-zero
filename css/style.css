@@ -36,7 +36,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 140px;
 }
 
 body {
@@ -88,7 +88,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 130px;
 }
 
 .logo-img {
@@ -257,7 +257,7 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 2rem 80px;
+    padding: 160px 2rem 80px;
     background: var(--dark);
     overflow: hidden;
 }
@@ -1278,7 +1278,7 @@ a {
         height: 100vh;
         background: var(--white);
         flex-direction: column;
-        padding: 100px 2rem 2rem;
+        padding: 150px 2rem 2rem;
         gap: 0.25rem;
         box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
         transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
