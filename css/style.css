@@ -91,10 +91,27 @@ a {
     height: 72px;
 }
 
-.logo-img {
-    height: 58px;
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    height: 48px;
     width: auto;
-    max-width: 200px;
+    flex-shrink: 0;
+}
+
+.logo-wordmark {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .nav-menu {
@@ -871,11 +888,27 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.footer-logo {
-    height: 58px;
-    width: auto;
+.footer-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 1rem;
-    filter: brightness(0) invert(1);
+}
+
+.footer-logo-icon {
+    height: 44px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.footer-logo-wordmark {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .footer-brand p {
