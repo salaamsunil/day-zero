@@ -3,7 +3,19 @@
     "allow": [
       "Bash(start \"\" \"c:\\\\Users\\\\bonjo\\\\OneDrive\\\\Projects\\\\day-zero.com.au\\\\index.html\")",
       "Bash(git checkout:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate product info, rebrand to Day Zero Solutions, add chatbot and contact form\n\n- Fix NutriCare: dietary management for aged care \\(not nutrition labelling\\)\n- Fix RestroStock: status changed to Live \\(v1.0.0\\), added procurement features\n- Rebrand to Day Zero Solutions with \"From Day Zero to Day One\" tagline\n- Replace Crisp with custom chatbot widget \\(product Q&A, contact capture\\)\n- Wire contact form to Formsubmit.co for email delivery to hello@day-zero.com.au\n- Remove all em dashes, update stats to 2 Live / 1 In Dev, copyright 2026\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(dir:*)",
+      "Bash(identify:*)",
+      "Bash(ls:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:day-zero.com.au)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(where:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)"
     ]
   }
 }
