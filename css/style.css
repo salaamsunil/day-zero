@@ -94,6 +94,7 @@ a {
 .logo-img {
     height: 58px;
     width: auto;
+    max-width: 200px;
 }
 
 .nav-menu {
