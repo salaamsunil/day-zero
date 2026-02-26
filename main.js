@@ -1,5 +1,20 @@
 // ===== Day Zero Solutions - Main JS =====
 
+// Video placeholder loader — called from inline onclick on product cards
+function loadVideo(containerId, embedUrl) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = embedUrl;
+    iframe.width = '100%';
+    iframe.height = '200';
+    iframe.frameBorder = '0';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+    iframe.allowFullscreen = true;
+    container.innerHTML = '';
+    container.appendChild(iframe);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mobile Menu ---
@@ -209,6 +224,65 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.disabled = false;
                     btn.style.background = '';
                 }, 3000);
+            }
+        });
+    }
+
+    // --- Demo Booking Form ---
+    const demoForm = document.getElementById('demoBookingForm');
+    if (demoForm) {
+        demoForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = demoForm.querySelector('button[type="submit"]');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> &nbsp;Sending...';
+            btn.disabled = true;
+
+            const data = new FormData(demoForm);
+            const productLabels = {
+                nutricare: 'NutriCare',
+                restrostock: 'RestroStock',
+                both: 'Both products'
+            };
+            const productLabel = productLabels[data.get('product')] || data.get('product');
+
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name: data.get('name'),
+                        email: data.get('email'),
+                        organisation: data.get('organisation'),
+                        product: productLabel,
+                        preferred_day: data.get('preferred_day'),
+                        preferred_time: data.get('preferred_time'),
+                        message: data.get('message'),
+                        _subject: 'Demo booking request: ' + productLabel + ' — ' + data.get('name'),
+                        _template: 'table'
+                    })
+                });
+
+                if (res.ok) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Request received — we\'ll be in touch!';
+                    btn.style.background = '#10B981';
+                    demoForm.reset();
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.disabled = false;
+                        btn.style.background = '';
+                    }, 5000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch {
+                btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> &nbsp;Something went wrong. Try emailing us.';
+                btn.style.background = '#EF4444';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                }, 4000);
             }
         });
     }

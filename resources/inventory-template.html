@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Restaurant Inventory Template (Google Sheets) | Day Zero Solutions</title>
+    <meta name="description" content="Free restaurant inventory spreadsheet template. Covers stock tracking, par levels, purchase orders, and supplier contacts. Download free Google Sheet.">
+    <link rel="canonical" href="https://day-zero.com.au/resources/inventory-template">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://day-zero.com.au/resources/inventory-template">
+    <meta property="og:title" content="Free Restaurant Inventory Template — Google Sheets">
+    <meta property="og:description" content="Free inventory spreadsheet covering stock tracking, par levels, purchase orders, and supplier contacts. Built for independent Australian restaurants.">
+    <meta property="og:image" content="https://day-zero.com.au/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/DAZERO-12.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVLW70H83Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LVLW70H83Z');
+    </script>
+
+    <style>
+        body { background: var(--light); }
+
+        .resource-hero {
+            background: var(--dark);
+            padding: 80px 2rem 60px;
+        }
+
+        .resource-hero .container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .resource-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--mint-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .resource-hero h1 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .resource-hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 540px;
+            line-height: 1.7;
+        }
+
+        .hero-cta-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            width: 340px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-cta-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-cta-box p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+        }
+
+        .resource-form input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+            border: 1.5px solid #E2E8F0;
+            border-radius: var(--radius-sm);
+            background: var(--light);
+            color: var(--dark);
+            outline: none;
+            margin-bottom: 0.75rem;
+            transition: border-color 0.2s;
+        }
+
+        .resource-form input:focus { border-color: var(--mint); }
+        .resource-form .btn { width: 100%; margin-top: 0.25rem; }
+
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .resource-body { padding: 60px 2rem 80px; }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .content-section h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-section h2 i { color: var(--mint); font-size: 1.1rem; }
+
+        .section-intro {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Sheet preview */
+        .sheet-preview {
+            border: 1px solid #E2E8F0;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            font-size: 0.82rem;
+        }
+
+        .sheet-tab-bar {
+            background: #f0f0f0;
+            display: flex;
+            gap: 2px;
+            padding: 6px 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sheet-tab {
+            padding: 6px 14px;
+            border-radius: 4px 4px 0 0;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: default;
+            border: 1px solid #ddd;
+            border-bottom: none;
+        }
+
+        .sheet-tab.active {
+            background: var(--white);
+            color: var(--mint-dark);
+        }
+
+        .sheet-tab:not(.active) {
+            background: #e8e8e8;
+            color: #888;
+        }
+
+        .sheet-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .sheet-table th {
+            background: #4CAF50;
+            color: white;
+            padding: 7px 10px;
+            text-align: left;
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .sheet-table td {
+            padding: 6px 10px;
+            border-bottom: 1px solid #f0f0f0;
+            border-right: 1px solid #f5f5f5;
+            font-size: 0.78rem;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .sheet-table tr:nth-child(even) td { background: #fafafa; }
+        .sheet-table .col-formula { color: #1565C0; font-style: italic; }
+        .sheet-table .col-warn { background: #FFF3E0 !important; color: #E65100; font-weight: 600; }
+        .sheet-table .col-ok { background: #E8F5E9 !important; color: #2E7D32; font-weight: 600; }
+
+        .tab-section { display: none; }
+        .tab-section.active { display: block; }
+
+        /* Feature grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .feature-item-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--mint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .feature-item-text strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item-text p {
+            font-size: 0.82rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        .comparison-table th {
+            padding: 10px 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .comparison-table th:first-child { color: var(--gray); background: transparent; }
+        .comparison-table th:nth-child(2) { background: #F3F0FF; color: var(--violet-dark); border-radius: 8px 8px 0 0; }
+        .comparison-table th:nth-child(3) { background: var(--light); color: var(--dark); }
+
+        .comparison-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .comparison-table td:nth-child(2) { background: rgba(124, 58, 237, 0.03); text-align: center; }
+        .comparison-table td:nth-child(3) { background: var(--light); text-align: center; }
+
+        .check-green { color: var(--mint); font-size: 1.1rem; }
+        .check-red { color: #EF4444; font-size: 1.1rem; }
+        .check-partial { color: #F59E0B; font-size: 0.85rem; font-weight: 600; }
+
+        /* Sidebar */
+        .sidebar-sticky { position: sticky; top: 90px; }
+
+        .sidebar-cta {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-cta h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+        .sidebar-cta p { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.25rem; }
+        .sidebar-cta .btn { width: 100%; margin-bottom: 0.5rem; }
+
+        .tip-box {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-size: 0.88rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .tip-box strong { color: var(--mint-dark); }
+
+        .restrostock-feature-list { list-style: none; margin: 1rem 0; }
+        .restrostock-feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        .restrostock-feature-list li i { color: var(--mint); font-size: 0.85rem; }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: var(--mint);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 1.25rem;
+        }
+
+        .download-btn:hover {
+            background: var(--mint-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+        }
+
+        @media (max-width: 960px) {
+            .resource-hero .container { grid-template-columns: 1fr; }
+            .hero-cta-box { width: 100%; max-width: 400px; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .sidebar-sticky { position: static; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- NAV -->
+    <header class="header" id="top">
+        <nav class="nav">
+            <a href="/" class="nav-logo">
+                <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="logo-icon">
+                <span class="logo-wordmark">DAY ZERO</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/#products" class="nav-link">Products</a></li>
+                <li><a href="/resources/inventory-template" class="nav-link">Resources</a></li>
+                <li><a href="/#contact" class="nav-link cta-link">Request a Demo</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="resource-hero">
+        <div class="container">
+            <div>
+                <div class="resource-badge">
+                    <i class="fas fa-table"></i> Free Resource
+                </div>
+                <h1>Free Restaurant Inventory<br>Spreadsheet Template</h1>
+                <p>A ready-to-use Google Sheets template covering stock tracking, par levels, purchase orders, and supplier contacts — built for independent Australian restaurants.</p>
+            </div>
+            <div class="hero-cta-box">
+                <h3>Get the RestroStock Demo</h3>
+                <p>See how RestroStock does all of this automatically — in real time, with no spreadsheets.</p>
+                <form class="resource-form" id="templateForm">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Work email" required>
+                    <input type="text" name="restaurant" placeholder="Restaurant name">
+                    <button type="submit" class="btn btn-mint">Request a Demo</button>
+                    <p class="form-disclaimer">No spam. We'll only contact you about RestroStock.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="resource-body">
+        <div class="container">
+            <div class="resource-grid">
+
+                <!-- MAIN CONTENT -->
+                <div>
+
+                    <!-- Download -->
+                    <div class="content-section" style="background: linear-gradient(135deg, #F0FDF4, #E8F5E9); border: 1px solid rgba(16,185,129,0.2)">
+                        <h2><i class="fas fa-download"></i> Get the Template</h2>
+                        <p class="section-intro">
+                            Click below to open the Google Sheet template. Click <strong>File → Make a Copy</strong> to save it to your own Google Drive. No email required.
+                        </p>
+                        <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms/copy"
+                           class="download-btn" target="_blank" rel="noopener"
+                           onclick="gtag('event','template_download',{event_category:'lead',event_label:'inventory_template'})">
+                            <i class="fab fa-google"></i> Open Template in Google Sheets
+                        </a>
+                        <p style="font-size:0.82rem;color:#666;margin-top:0.75rem">
+                            <i class="fas fa-info-circle"></i> Free Google account required. No sign-up or credit card needed.
+                        </p>
+                    </div>
+
+                    <!-- What's inside -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-table-cells"></i> What's Inside the Template</h2>
+                        <p class="section-intro">Five tabs covering the full inventory cycle for a small to medium restaurant.</p>
+
+                        <!-- Tab switcher -->
+                        <div class="sheet-preview">
+                            <div class="sheet-tab-bar">
+                                <div class="sheet-tab active" onclick="showTab('stock')">📦 Stock</div>
+                                <div class="sheet-tab" onclick="showTab('orders')">🛒 Orders</div>
+                                <div class="sheet-tab" onclick="showTab('suppliers')">🤝 Suppliers</div>
+                                <div class="sheet-tab" onclick="showTab('waste')">🗑️ Waste</div>
+                                <div class="sheet-tab" onclick="showTab('dashboard')">📊 Dashboard</div>
+                            </div>
+
+                            <div id="tab-stock" class="tab-section active">
+                                <table class="sheet-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th><th>Category</th><th>Unit</th>
+                                            <th>Current Stock</th><th>Par Level</th>
+                                            <th>Status</th><th>Supplier</th><th>Unit Cost</th><th>Total Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Beef Tenderloin</td><td>Meat</td><td>kg</td>
+                                            <td>2.4</td><td>5</td>
+                                            <td class="col-warn">⚠ LOW</td><td>Vic Meats</td><td>$45.00</td>
+                                            <td class="col-formula">=$D2*$H2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Roma Tomatoes</td><td>Produce</td><td>kg</td>
+                                            <td>8.0</td><td>6</td>
+                                            <td class="col-ok">✓ OK</td><td>Fresh Direct</td><td>$3.50</td>
+                                            <td class="col-formula">$28.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Olive Oil EV</td><td>Dry Goods</td><td>L</td>
+                                            <td>0.5</td><td>3</td>
+                                            <td class="col-warn">⚠ LOW</td><td>Costco</td><td>$12.00</td>
+                                            <td class="col-formula">$6.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pasta (dry)</td><td>Dry Goods</td><td>kg</td>
+                                            <td>12</td><td>8</td>
+                                            <td class="col-ok">✓ OK</td><td>Costco</td><td>$2.80</td>
+                                            <td class="col-formula">$33.60</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="tab-orders" class="tab-section">
+                                <table class="sheet-table">
+                                    <thead>
+                                        <tr>
+                                            <th>PO #</th><th>Date</th><th>Supplier</th><th>Item</th>
+                                            <th>Qty</th><th>Unit</th><th>Unit Price</th><th>Total</th>
+                                            <th>Status</th><th>Invoice #</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>PO-0042</td><td>24/02/2026</td><td>Vic Meats</td><td>Beef Tenderloin</td>
+                                            <td>10</td><td>kg</td><td>$45.00</td><td>$450.00</td>
+                                            <td class="col-ok">Received</td><td>INV-8821</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PO-0043</td><td>25/02/2026</td><td>Fresh Direct</td><td>Tomatoes</td>
+                                            <td>15</td><td>kg</td><td>$3.50</td><td>$52.50</td>
+                                            <td class="col-warn">Pending</td><td>—</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="tab-suppliers" class="tab-section">
+                                <table class="sheet-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Supplier</th><th>Contact</th><th>Phone</th><th>Email</th>
+                                            <th>Categories</th><th>Payment Terms</th><th>Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Vic Meats</td><td>Tony</td><td>03 9xxx xxxx</td>
+                                            <td>tony@vicmeats.com.au</td><td>Meat, Poultry</td><td>Net 14</td>
+                                            <td>Order by Wed for Fri delivery</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fresh Direct</td><td>Maria</td><td>1300 xxx xxx</td>
+                                            <td>orders@freshdirect.com.au</td><td>Produce</td><td>Net 7</td>
+                                            <td>Same-day delivery if before 7am</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="tab-waste" class="tab-section">
+                                <table class="sheet-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th><th>Item</th><th>Reason</th>
+                                            <th>Qty</th><th>Unit</th><th>Unit Cost</th><th>Waste Value</th><th>Logged by</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>24/02/2026</td><td>Salmon Fillet</td><td>Expired</td>
+                                            <td>1.2</td><td>kg</td><td>$28.00</td>
+                                            <td class="col-warn">$33.60</td><td>Head Chef</td>
+                                        </tr>
+                                        <tr>
+                                            <td>24/02/2026</td><td>Mixed Salad</td><td>Over-prep</td>
+                                            <td>0.5</td><td>kg</td><td>$6.00</td>
+                                            <td>$3.00</td><td>Kitchen Hand</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="tab-dashboard" class="tab-section">
+                                <table class="sheet-table">
+                                    <thead>
+                                        <tr><th>Metric</th><th>This Week</th><th>Last Week</th><th>Change</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Total Stock Value</td>
+                                            <td class="col-formula">$4,280</td>
+                                            <td>$3,960</td>
+                                            <td style="color:#059669">▲ 8.1%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Items Below Par</td>
+                                            <td class="col-warn">6</td><td>3</td>
+                                            <td style="color:#DC2626">▲ 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Waste This Week</td>
+                                            <td>$142</td><td>$89</td>
+                                            <td style="color:#DC2626">▲ $53</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Open Purchase Orders</td>
+                                            <td>3</td><td>5</td>
+                                            <td style="color:#059669">▼ 2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-star"></i> What the Template Includes</h2>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <div class="feature-item-icon"><i class="fas fa-boxes-stacked"></i></div>
+                                <div class="feature-item-text">
+                                    <strong>Stock Register</strong>
+                                    <p>Item list with par levels, current quantities, categories, and auto-calculated stock value. Status column flags items below par automatically.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item-icon"><i class="fas fa-file-invoice"></i></div>
+                                <div class="feature-item-text">
+                                    <strong>Purchase Order Log</strong>
+                                    <p>Track purchase orders from creation through delivery and invoice matching. Status column (Pending/Received/Matched) keeps you organised.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item-icon"><i class="fas fa-truck"></i></div>
+                                <div class="feature-item-text">
+                                    <strong>Supplier Directory</strong>
+                                    <p>Contact details, categories, payment terms, and delivery notes for each supplier. No more searching for phone numbers mid-service.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item-icon"><i class="fas fa-trash-can"></i></div>
+                                <div class="feature-item-text">
+                                    <strong>Waste Tracker</strong>
+                                    <p>Log waste by item, reason, quantity, and dollar value. Weekly waste totals feed into the dashboard for trend tracking.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item-icon"><i class="fas fa-chart-bar"></i></div>
+                                <div class="feature-item-text">
+                                    <strong>Weekly Dashboard</strong>
+                                    <p>Auto-calculated summary of stock value, items below par, waste cost, and open orders — updated each week with formulas.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                                <div class="feature-item-text">
+                                    <strong>Automatic Alerts</strong>
+                                    <p>Conditional formatting highlights low-stock items in amber and critical items in red — no manual checking needed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How to use it -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-list-check"></i> How to Get Started in 30 Minutes</h2>
+                        <p class="section-intro">Four steps to have a working inventory system for your restaurant today.</p>
+                        <ol style="padding-left:1.5rem;font-size:0.95rem;color:var(--dark);line-height:2">
+                            <li><strong>Make a copy</strong> — File → Make a Copy in Google Drive</li>
+                            <li><strong>Add your suppliers</strong> — Fill in the Suppliers tab first (name, contact, categories)</li>
+                            <li><strong>Stock your register</strong> — Add all items to the Stock tab with quantities, par levels, and unit costs</li>
+                            <li><strong>Set up weekly review</strong> — Every Friday, update quantities and check the Dashboard tab for the week's summary</li>
+                        </ol>
+                        <div class="tip-box" style="margin-top:1.5rem">
+                            <strong>Pro tip:</strong> Assign one person to own stock entries. Shared sheets work best when one person is responsible for accuracy — otherwise quantities drift. When you're ready to move beyond spreadsheets, RestroStock does this in real time with no manual entry.
+                        </div>
+                    </div>
+
+                    <!-- Spreadsheet vs RestroStock -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-scale-balanced"></i> Spreadsheet vs RestroStock</h2>
+                        <p class="section-intro">The template is great for getting started. Here's when it makes sense to step up to RestroStock.</p>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>RestroStock</th>
+                                    <th>This Template</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Real-time stock levels</td>
+                                    <td><i class="fas fa-check check-green"></i></td>
+                                    <td><i class="fas fa-xmark check-red"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile access</td>
+                                    <td><i class="fas fa-check check-green"></i></td>
+                                    <td><span class="check-partial">Partial</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3-way PO matching</td>
+                                    <td><i class="fas fa-check check-green"></i></td>
+                                    <td><i class="fas fa-xmark check-red"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Supplier messaging</td>
+                                    <td><i class="fas fa-check check-green"></i></td>
+                                    <td><i class="fas fa-xmark check-red"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Auto low-stock alerts</td>
+                                    <td><i class="fas fa-check check-green"></i></td>
+                                    <td><span class="check-partial">Visual only</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Multi-user, real-time</td>
+                                    <td><i class="fas fa-check check-green"></i></td>
+                                    <td><i class="fas fa-xmark check-red"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Free to use</td>
+                                    <td><span class="check-partial">14-day trial</span></td>
+                                    <td><i class="fas fa-check check-green"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <div class="sidebar-sticky">
+
+                    <div class="sidebar-cta">
+                        <h3>Ready to upgrade?</h3>
+                        <p>RestroStock does everything in this template automatically — no manual updates, no version conflicts, real-time on any device.</p>
+                        <ul class="restrostock-feature-list">
+                            <li><i class="fas fa-check"></i> Real-time stock & expiry tracking</li>
+                            <li><i class="fas fa-check"></i> Purchase orders & 3-way matching</li>
+                            <li><i class="fas fa-check"></i> Supplier management & messaging</li>
+                            <li><i class="fas fa-check"></i> Waste & cost analytics</li>
+                            <li><i class="fas fa-check"></i> 14-day free trial</li>
+                        </ul>
+                        <a href="/#contact" class="btn btn-mint">Request a Free Demo</a>
+                        <a href="/#products" class="btn btn-outline" style="margin-top:0.5rem">Learn More</a>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>Most restaurants</strong> outgrow a spreadsheet between 8–15 staff or when managing 2+ suppliers becomes painful. RestroStock is designed for that moment.
+                    </div>
+
+                    <div class="sidebar-cta" style="margin-top:1.5rem">
+                        <h3>Also free: IDDSI Checklist</h3>
+                        <p>Running an aged care kitchen? Our IDDSI compliance checklist is also free to download.</p>
+                        <a href="/resources/iddsi-checklist" class="btn btn-primary">Get the Checklist</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="footer-logo-icon">
+                        <span class="footer-logo-wordmark">DAY ZERO</span>
+                    </div>
+                    <p>From Day Zero to Day One.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Products</h5>
+                    <a href="/#products">NutriCare</a>
+                    <a href="/#products">RestroStock</a>
+                    <a href="/#products">QueueZero</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Resources</h5>
+                    <a href="/resources/iddsi-checklist">IDDSI Checklist</a>
+                    <a href="/resources/inventory-template">Inventory Template</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <a href="/#about">About</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Day Zero Solutions. All rights reserved. Made with grit in Australia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        if (hamburger) hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Scroll progress
+        const scrollProgress = document.getElementById('scrollProgress');
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+            if (scrollProgress) {
+                const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                scrollProgress.style.width = pct + '%';
+            }
+        });
+
+        // Tab switcher
+        function showTab(name) {
+            document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.sheet-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + name).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Demo request form
+        const form = document.getElementById('templateForm');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                const data = new FormData(form);
+                try {
+                    const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            name: data.get('name'),
+                            email: data.get('email'),
+                            restaurant: data.get('restaurant'),
+                            _subject: 'RestroStock Demo Request via Inventory Template page',
+                            _template: 'table'
+                        })
+                    });
+                    if (res.ok) {
+                        btn.textContent = "Thanks! We'll be in touch shortly.";
+                        btn.style.background = '#059669';
+                        form.reset();
+                        gtag('event', 'demo_request', { event_category: 'lead', event_label: 'inventory_template' });
+                    } else throw new Error();
+                } catch {
+                    btn.textContent = 'Something went wrong — email us directly';
+                    btn.style.background = '#EF4444';
+                    setTimeout(() => { btn.textContent = 'Request a Demo'; btn.disabled = false; btn.style.background = ''; }, 4000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

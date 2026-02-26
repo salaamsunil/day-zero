@@ -1,5 +1,87 @@
 # Day Zero Solutions - Marketing Playbook
 
+> **Goal for next 90 days:** 3–5 paying customers with real testimonials. Everything else is secondary.
+
+---
+
+## Free Tool Stack (Zero Ongoing Cost)
+
+| Job | Tool | Free Limit |
+|---|---|---|
+| CRM | HubSpot Free | 1,000 contacts, unlimited users |
+| Contact finding | Hunter.io | 25 searches/month |
+| LinkedIn prospecting | LinkedRadar | 20+ templates, free |
+| LinkedIn email extraction | Wiza | 20 emails/month free |
+| Cold email sending | Gmail + own domain | Free (use day-zero.com.au) |
+| Video demos | OBS Studio + CapCut | Fully free |
+| Interactive product tour | Supademo | Free tier |
+| Screen recording | Loom Free | Limited but sufficient |
+| Social scheduling | Buffer | 30 posts/channel/month |
+| Analytics | GA4 (already live) | Free |
+
+**Built with Claude Code (zero cost to run):**
+
+| File | Purpose |
+|---|---|
+| `scripts/scrape-aged-care-guide.py` | Scrapes agedcareguide.com.au for facility contacts → CSV |
+| `scripts/outreach-generator.py` | Generates personalised email drafts from a CSV prospect list |
+| `scripts/crm.gs` | Google Apps Script CRM with pipeline stages + auto follow-up reminders |
+| `resources/iddsi-checklist.html` | Lead magnet page for NutriCare — IDDSI compliance checklist |
+| `resources/inventory-template.html` | Lead magnet page for RestroStock — inventory spreadsheet template |
+
+---
+
+## 90-Day Execution Calendar
+
+### Week 1–2: Setup
+- [ ] Optimise LinkedIn profile + create Day Zero Solutions Company Page
+- [ ] Set up HubSpot CRM free tier
+- [ ] Run `python scripts/scrape-aged-care-guide.py --state VIC --max 100` to build first lead list
+- [ ] Import CSV into `scripts/crm.gs` Google Sheet CRM
+- [ ] Join aged care LinkedIn groups (ACCPA, Ageing Australia) and hospitality groups (R&CA)
+- [ ] Join AgingHere Slack — help first, don't pitch for 2 weeks
+- [ ] Record NutriCare 90-sec demo video (OBS → CapCut)
+- [ ] Record RestroStock 90-sec demo video (OBS → CapCut)
+- [ ] Upload videos to YouTube (unlisted is fine)
+- [ ] Add YouTube video IDs to the `VIDEO_ID_HERE` placeholders in index.html
+- [ ] Set up Buffer for 3x/week LinkedIn scheduling
+
+### Week 3–4: Outreach Begins
+- [ ] Run `python scripts/outreach-generator.py --input data/aged-care-leads.csv --product nutricare --email 1`
+- [ ] Send Email 1 to first 20 aged care prospects (personalise where possible)
+- [ ] Send Email 1 to first 20 restaurant prospects
+- [ ] 10 LinkedIn connection requests per day with a personal note
+- [ ] Publish 3x per week on LinkedIn (use content backlog below)
+- [ ] Pitch guest article to Australian Ageing Agenda
+
+### Month 2: Scale + Follow Up
+- [ ] Send Email 2 + 3 to Week 3–4 batch using `outreach-generator.py --email 2`
+- [ ] New batch of 20+20 prospects from Hunter.io + Wiza
+- [ ] Engage daily in communities (R&CA LinkedIn, AgingHere Slack)
+- [ ] Publish guest article (or as LinkedIn long-form)
+- [ ] Offer 3 months free to first 3 interested leads in exchange for testimonial
+
+### Month 3: Compound + Convert
+- [ ] Case study from first pilot customer → publish on site + LinkedIn
+- [ ] Use case study as social proof in all future cold emails
+- [ ] Apply to Product Hunt
+- [ ] Submit NutriCare and RestroStock to Capterra, G2, GetApp
+- [ ] Set up Google Business Profile
+
+---
+
+## Target Metrics (Realistic, Zero Spend)
+
+| Metric | Month 1 | Month 2 | Month 3 |
+|---|---|---|---|
+| LinkedIn ICP connections | +100 | +150 | +200 |
+| Cold emails sent | 40 | 80 | 120 |
+| Demo calls booked | 2–3 | 4–6 | 6–10 |
+| Pilots started | 1 | 2–3 | 3–5 |
+| Paying customers | 0 | 1–2 | 3–5 |
+
+---
+
 ## Weekly Cadence
 
 | Day | Activity | Time |

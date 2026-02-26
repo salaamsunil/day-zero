@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDDSI Compliance Checklist for Aged Care — Free Download | Day Zero Solutions</title>
+    <meta name="description" content="Free IDDSI compliance checklist for Australian aged care facilities. Covers all 8 texture levels, documentation, staff training, and kitchen verification. Download free.">
+    <link rel="canonical" href="https://day-zero.com.au/resources/iddsi-checklist">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://day-zero.com.au/resources/iddsi-checklist">
+    <meta property="og:title" content="Free IDDSI Compliance Checklist for Aged Care Facilities">
+    <meta property="og:description" content="Practical IDDSI compliance checklist covering all 8 texture levels, allergen management, and kitchen documentation. Free for Australian aged care facilities.">
+    <meta property="og:image" content="https://day-zero.com.au/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/DAZERO-12.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVLW70H83Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LVLW70H83Z');
+    </script>
+
+    <style>
+        /* Resource page overrides */
+        body { background: var(--light); }
+
+        .resource-hero {
+            background: var(--dark);
+            padding: 80px 2rem 60px;
+        }
+
+        .resource-hero .container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .resource-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--mint-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .resource-hero h1 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .resource-hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 540px;
+            line-height: 1.7;
+        }
+
+        .hero-cta-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            width: 340px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-cta-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-cta-box p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+        }
+
+        .resource-form input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+            border: 1.5px solid #E2E8F0;
+            border-radius: var(--radius-sm);
+            background: var(--light);
+            color: var(--dark);
+            outline: none;
+            margin-bottom: 0.75rem;
+            transition: border-color 0.2s;
+        }
+
+        .resource-form input:focus { border-color: var(--violet); }
+
+        .resource-form .btn { width: 100%; margin-top: 0.25rem; }
+
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .resource-body {
+            padding: 60px 2rem 80px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .checklist-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .checklist-section h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checklist-section h2 i {
+            color: var(--violet);
+            font-size: 1.1rem;
+        }
+
+        .section-intro {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            font-size: 0.95rem;
+            color: var(--dark);
+            line-height: 1.5;
+            align-items: flex-start;
+        }
+
+        .checklist li:last-child { border-bottom: none; }
+
+        .checklist li i.fa-square-check {
+            color: var(--mint);
+            font-size: 1rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .iddsi-level {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .level-0 { background: #EFF6FF; color: #1D4ED8; }
+        .level-1 { background: #F0FDF4; color: #15803D; }
+        .level-2 { background: #FEFCE8; color: #A16207; }
+        .level-3 { background: #FFF7ED; color: #C2410C; }
+        .level-4 { background: #FDF4FF; color: #7E22CE; }
+        .level-5 { background: #FFF1F2; color: #BE123C; }
+        .level-6 { background: #F0F9FF; color: #0369A1; }
+        .level-7 { background: #F7F7F7; color: #374151; }
+
+        .iddsi-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin: 1rem 0;
+        }
+
+        .iddsi-table th {
+            background: var(--dark);
+            color: var(--white);
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .iddsi-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+
+        .iddsi-table tr:last-child td { border-bottom: none; }
+        .iddsi-table tr:nth-child(even) td { background: #fafafa; }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 90px;
+        }
+
+        .sidebar-cta {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-cta h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-cta p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-cta .btn { width: 100%; margin-bottom: 0.5rem; }
+
+        .tip-box {
+            background: rgba(124, 58, 237, 0.05);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-size: 0.88rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .tip-box strong { color: var(--violet); }
+
+        .print-btn {
+            background: var(--light);
+            border: 1.5px solid #E2E8F0;
+            color: var(--dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .print-btn:hover {
+            background: var(--dark);
+            color: var(--white);
+            border-color: var(--dark);
+        }
+
+        .nutricare-feature-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .nutricare-feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .nutricare-feature-list li i { color: var(--mint); font-size: 0.85rem; }
+
+        @media (max-width: 960px) {
+            .resource-hero .container { grid-template-columns: 1fr; }
+            .hero-cta-box { width: 100%; max-width: 400px; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .sidebar-sticky { position: static; }
+        }
+
+        @media print {
+            .header, .resource-hero .hero-cta-box, .sidebar-sticky, footer { display: none; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .checklist-section { box-shadow: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- NAV -->
+    <header class="header" id="top">
+        <nav class="nav">
+            <a href="/" class="nav-logo">
+                <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="logo-icon">
+                <span class="logo-wordmark">DAY ZERO</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/#products" class="nav-link">Products</a></li>
+                <li><a href="/resources/iddsi-checklist" class="nav-link">Resources</a></li>
+                <li><a href="/#contact" class="nav-link cta-link">Request a Demo</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="resource-hero">
+        <div class="container">
+            <div>
+                <div class="resource-badge">
+                    <i class="fas fa-file-lines"></i> Free Resource
+                </div>
+                <h1>IDDSI Compliance Checklist<br>for Aged Care Facilities</h1>
+                <p>A practical, printable checklist covering all 8 IDDSI texture levels, allergen documentation, staff training records, and kitchen verification — designed for Australian aged care facilities.</p>
+            </div>
+            <div class="hero-cta-box">
+                <h3>Get the NutriCare Demo</h3>
+                <p>See how NutriCare automates IDDSI compliance across your entire facility.</p>
+                <form class="resource-form" id="checklistForm">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Work email" required>
+                    <input type="text" name="facility" placeholder="Facility name">
+                    <button type="submit" class="btn btn-primary">Request a Demo</button>
+                    <p class="form-disclaimer">No spam. We'll only contact you about NutriCare.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="resource-body">
+        <div class="container">
+            <div class="resource-grid">
+
+                <!-- MAIN CONTENT -->
+                <div class="resource-content">
+
+                    <!-- IDDSI Reference -->
+                    <div class="checklist-section">
+                        <h2><i class="fas fa-layer-group"></i> IDDSI Framework — Quick Reference</h2>
+                        <p class="section-intro">
+                            The International Dysphagia Diet Standardisation Initiative (IDDSI) provides a globally standardised framework for describing food textures and drink thicknesses. Australian aged care facilities must align to these standards under the Aged Care Quality Standards.
+                        </p>
+                        <table class="iddsi-table">
+                            <thead>
+                                <tr>
+                                    <th>Level</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Key Characteristics</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="iddsi-level level-0">0</span></td>
+                                    <td><strong>Thin</strong></td>
+                                    <td>Drink</td>
+                                    <td>Water, juice, milk — flows like water</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="iddsi-level level-1">1</span></td>
+                                    <td><strong>Slightly Thick</strong></td>
+                                    <td>Drink</td>
+                                    <td>Thicker than water, flows through a teat</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="iddsi-level level-2">2</span></td>
+                                    <td><strong>Mildly Thick</strong></td>
+                                    <td>Drink</td>
+                                    <td>Pours off a spoon, effort needed to drink from cup</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="iddsi-level level-3">3</span></td>
+                                    <td><strong>Liquidised</strong></td>
+                                    <td>Drink / Food</td>
+                                    <td>Smooth, no lumps, can be drunk from cup or syringe</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="iddsi-level level-4">4</span></td>
+                                    <td><strong>Pureed</strong></td>
+                                    <td>Food</td>
+                                    <td>Smooth cohesive, no lumps, cannot be piped or molded</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="iddsi-level level-5">5</span></td>
+                                    <td><strong>Minced &amp; Moist</strong></td>
+                                    <td>Food</td>
+                                    <td>Small particles (4mm), moist, no separate thin liquid</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="iddsi-level level-6">6</span></td>
+                                    <td><strong>Soft &amp; Bite-Sized</strong></td>
+                                    <td>Food</td>
+                                    <td>Tender, can be mashed with tongue, max 15mm pieces</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="iddsi-level level-7">7</span></td>
+                                    <td><strong>Regular / Easy to Chew</strong></td>
+                                    <td>Food</td>
+                                    <td>Normal diet with consideration for chewing ability</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Checklist 1: Resident Profiles -->
+                    <div class="checklist-section">
+                        <h2><i class="fas fa-user-check"></i> 1. Resident Dietary Profile Documentation</h2>
+                        <p class="section-intro">Each resident must have a current, signed dietary profile on file. Review and update at least every 3 months, or when condition changes.</p>
+                        <ul class="checklist">
+                            <li><i class="fas fa-square-check"></i>Resident IDDSI texture level assigned and documented (Levels 0–7)</li>
+                            <li><i class="fas fa-square-check"></i>Texture prescription signed by a Speech-Language Pathologist (SLP) or dietitian</li>
+                            <li><i class="fas fa-square-check"></i>All allergens and intolerances documented (including cross-contamination risks)</li>
+                            <li><i class="fas fa-square-check"></i>Cultural, religious, and personal food preferences recorded</li>
+                            <li><i class="fas fa-square-check"></i>Thickener type and ratio specified for drink modifications</li>
+                            <li><i class="fas fa-square-check"></i>Assistance requirements noted (e.g., staff to sit beside, adaptive utensils)</li>
+                            <li><i class="fas fa-square-check"></i>Profile reviewed and re-signed after acute illness or hospitalization</li>
+                            <li><i class="fas fa-square-check"></i>Next review date scheduled and tracked</li>
+                            <li><i class="fas fa-square-check"></i>Resident and/or family informed of and consent to current texture level</li>
+                            <li><i class="fas fa-square-check"></i>Profile accessible to kitchen and care staff at point of meal service</li>
+                        </ul>
+                    </div>
+
+                    <!-- Checklist 2: Meal Ordering -->
+                    <div class="checklist-section">
+                        <h2><i class="fas fa-utensils"></i> 2. Meal Ordering &amp; Planning</h2>
+                        <p class="section-intro">Meal ordering systems must cross-check resident profiles at point of order to prevent incorrect texture meals reaching residents.</p>
+                        <ul class="checklist">
+                            <li><i class="fas fa-square-check"></i>Meal ordering process checks resident IDDSI level before confirming order</li>
+                            <li><i class="fas fa-square-check"></i>Allergen conflict check performed at order time (not just profile entry)</li>
+                            <li><i class="fas fa-square-check"></i>Meals for each texture level clearly differentiated on kitchen production sheets</li>
+                            <li><i class="fas fa-square-check"></i>Menu options available at each IDDSI level for all meal periods</li>
+                            <li><i class="fas fa-square-check"></i>Fortified or modified meals labeled separately from standard meals</li>
+                            <li><i class="fas fa-square-check"></i>Meal counts per texture level communicated to kitchen before each service</li>
+                            <li><i class="fas fa-square-check"></i>Process for last-minute dietary changes communicated to kitchen</li>
+                            <li><i class="fas fa-square-check"></i>Guest/visitor meals handled without cross-contaminating resident-specific production</li>
+                        </ul>
+                    </div>
+
+                    <!-- Checklist 3: Kitchen -->
+                    <div class="checklist-section">
+                        <h2><i class="fas fa-fire-burner"></i> 3. Kitchen Preparation &amp; Verification</h2>
+                        <p class="section-intro">Kitchen staff must be able to verify their output meets IDDSI standards before meals leave the kitchen. Visual spot-checks are insufficient — use standardised testing methods.</p>
+                        <ul class="checklist">
+                            <li><i class="fas fa-square-check"></i>Fork drip test used for Levels 1–4 drinks and foods</li>
+                            <li><i class="fas fa-square-check"></i>Spoon tilt test used for purees and thickened drinks</li>
+                            <li><i class="fas fa-square-check"></i>Finger test (pressing food) used for Levels 5–7</li>
+                            <li><i class="fas fa-square-check"></i>Particle size checked against IDDSI specifications (e.g. 4mm for Level 5)</li>
+                            <li><i class="fas fa-square-check"></i>Thickener preparation follows manufacturer-specified ratios by weight, not by eye</li>
+                            <li><i class="fas fa-square-check"></i>Kitchen production records show texture level for each batch prepared</li>
+                            <li><i class="fas fa-square-check"></i>Separate equipment/utensils for allergen-modified meals</li>
+                            <li><i class="fas fa-square-check"></i>Temperature checks documented before meal delivery (hot &gt;60°C, cold &lt;5°C)</li>
+                            <li><i class="fas fa-square-check"></i>Plating standards for each texture level are documented with photos</li>
+                            <li><i class="fas fa-square-check"></i>Batch labels on modified meals include texture level and allergen flags</li>
+                        </ul>
+                    </div>
+
+                    <!-- Checklist 4: Staff Training -->
+                    <div class="checklist-section">
+                        <h2><i class="fas fa-graduation-cap"></i> 4. Staff Training &amp; Competency</h2>
+                        <p class="section-intro">All staff involved in meal ordering, preparation, or service must demonstrate competency in IDDSI. Training records must be current and accessible to auditors.</p>
+                        <ul class="checklist">
+                            <li><i class="fas fa-square-check"></i>All kitchen and care staff completed IDDSI induction training (document date)</li>
+                            <li><i class="fas fa-square-check"></i>Annual IDDSI competency refresher completed for all relevant staff</li>
+                            <li><i class="fas fa-square-check"></i>Thickener preparation training completed and logged per staff member</li>
+                            <li><i class="fas fa-square-check"></i>Training records include staff name, date, trainer, and competency outcome</li>
+                            <li><i class="fas fa-square-check"></i>New staff complete IDDSI training before unsupervised meal service</li>
+                            <li><i class="fas fa-square-check"></i>Agency/casual staff briefed on facility-specific IDDSI requirements before shift</li>
+                            <li><i class="fas fa-square-check"></i>Escalation pathway known: who to call if unsure about a resident's texture level</li>
+                            <li><i class="fas fa-square-check"></i>SLP contact details available to kitchen and care staff</li>
+                        </ul>
+                    </div>
+
+                    <!-- Checklist 5: Auditing -->
+                    <div class="checklist-section">
+                        <h2><i class="fas fa-clipboard-check"></i> 5. Audit &amp; Continuous Improvement</h2>
+                        <p class="section-intro">Regular self-auditing against IDDSI standards is evidence of a well-managed quality system and will be reviewed by the Aged Care Quality and Safety Commission.</p>
+                        <ul class="checklist">
+                            <li><i class="fas fa-square-check"></i>Monthly internal dietary audit conducted and documented</li>
+                            <li><i class="fas fa-square-check"></i>Mealtime observation audit: staff observe residents during meals quarterly</li>
+                            <li><i class="fas fa-square-check"></i>Incident register captures any texture-related adverse events</li>
+                            <li><i class="fas fa-square-check"></i>Resident and family feedback on meals collected and acted on</li>
+                            <li><i class="fas fa-square-check"></i>Corrective actions from previous audits are documented and closed out</li>
+                            <li><i class="fas fa-square-check"></i>IDDSI policy and procedures reviewed annually</li>
+                            <li><i class="fas fa-square-check"></i>Dietitian involvement in menu review at least annually</li>
+                            <li><i class="fas fa-square-check"></i>Emergency/evacuation plan accounts for residents requiring modified textures</li>
+                        </ul>
+                    </div>
+
+                    <!-- Regulatory reference -->
+                    <div class="checklist-section" style="background: var(--dark); color: var(--white)">
+                        <h2 style="color:var(--white)"><i class="fas fa-scale-balanced" style="color:var(--mint-light)"></i> Regulatory Context</h2>
+                        <p class="section-intro" style="color:var(--gray)">
+                            IDDSI compliance in Australian aged care is referenced under the following frameworks:
+                        </p>
+                        <ul class="checklist" style="color:var(--gray)">
+                            <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">Aged Care Quality Standard 3</strong> — Personal care and clinical care (nutrition and hydration)</li>
+                            <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">Aged Care Quality Standard 4</strong> — Services and supports for daily living (meals and dining)</li>
+                            <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">Safe Work Australia</strong> — Aspiration and choking risk management</li>
+                            <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">IDDSI Framework (2019)</strong> — iddsi.org — the authoritative reference for all texture level definitions</li>
+                        </ul>
+                        <p style="font-size:0.85rem;color:var(--gray);margin-top:1rem;">
+                            This checklist is a practical aide-memoire and does not constitute legal advice. Always refer to the Aged Care Quality and Safety Commission for regulatory guidance.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <div class="sidebar-sticky">
+
+                    <div class="sidebar-cta">
+                        <h3>Automate this with NutriCare</h3>
+                        <p>NutriCare handles all of this automatically — IDDSI profiles per resident, allergen conflict alerts, kitchen production reports, and audit-ready documentation.</p>
+                        <ul class="nutricare-feature-list">
+                            <li><i class="fas fa-check"></i> IDDSI level on every resident profile</li>
+                            <li><i class="fas fa-check"></i> Allergen conflict warnings at order time</li>
+                            <li><i class="fas fa-check"></i> Kitchen production reports per meal period</li>
+                            <li><i class="fas fa-check"></i> Multi-site, role-based access</li>
+                            <li><i class="fas fa-check"></i> 30-minute onboarding</li>
+                        </ul>
+                        <a href="/#contact" class="btn btn-primary">Request a Free Demo</a>
+                        <a href="/#products" class="btn btn-outline" style="margin-top:0.5rem">Learn More</a>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>Tip:</strong> Print this checklist and laminate a copy for the kitchen. Use it during monthly self-audits and keep a dated log of each check completed.
+                    </div>
+
+                    <div style="margin-top:1.5rem">
+                        <button class="print-btn" onclick="window.print()">
+                            <i class="fas fa-print"></i> Print Checklist
+                        </button>
+                    </div>
+
+                    <div class="sidebar-cta" style="margin-top:1.5rem">
+                        <h3>Also free: Inventory Template</h3>
+                        <p>Running a kitchen for your facility? Our restaurant inventory template works for aged care kitchens too.</p>
+                        <a href="/resources/inventory-template" class="btn btn-mint">Get the Template</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="footer-logo-icon">
+                        <span class="footer-logo-wordmark">DAY ZERO</span>
+                    </div>
+                    <p>From Day Zero to Day One.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Products</h5>
+                    <a href="/#products">NutriCare</a>
+                    <a href="/#products">RestroStock</a>
+                    <a href="/#products">QueueZero</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Resources</h5>
+                    <a href="/resources/iddsi-checklist">IDDSI Checklist</a>
+                    <a href="/resources/inventory-template">Inventory Template</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <a href="/#about">About</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Day Zero Solutions. All rights reserved. Made with grit in Australia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        if (hamburger) hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Scroll progress
+        const scrollProgress = document.getElementById('scrollProgress');
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+            if (scrollProgress) {
+                const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                scrollProgress.style.width = pct + '%';
+            }
+        });
+
+        // Demo request form
+        const form = document.getElementById('checklistForm');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                const data = new FormData(form);
+                try {
+                    const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            name: data.get('name'),
+                            email: data.get('email'),
+                            facility: data.get('facility'),
+                            _subject: 'NutriCare Demo Request via IDDSI Checklist page',
+                            _template: 'table'
+                        })
+                    });
+                    if (res.ok) {
+                        btn.textContent = "Thanks! We'll be in touch shortly.";
+                        btn.style.background = '#10B981';
+                        form.reset();
+                        gtag('event', 'demo_request', { event_category: 'lead', event_label: 'iddsi_checklist' });
+                    } else throw new Error();
+                } catch {
+                    btn.textContent = 'Something went wrong — email us directly';
+                    btn.style.background = '#EF4444';
+                    setTimeout(() => { btn.textContent = 'Request a Demo'; btn.disabled = false; btn.style.background = ''; }, 4000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -87,7 +87,8 @@
                 <li><a href="#products" class="nav-link">Products</a></li>
                 <li><a href="#coming-soon" class="nav-link">Coming Soon</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link cta-link">Get in Touch</a></li>
+                <li><a href="resources/iddsi-checklist" class="nav-link">Resources</a></li>
+                <li><a href="#book-demo" class="nav-link cta-link">Book a Demo</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
@@ -138,8 +139,19 @@
                         <li><i class="fas fa-check"></i> Multi-period meal ordering</li>
                         <li><i class="fas fa-check"></i> Kitchen production reports</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Request a Demo</a>
+                    <a href="#book-demo" class="btn btn-primary">Book a Demo</a>
                     <p class="social-proof">✓ Free demo &nbsp;·&nbsp; No lock-in contracts &nbsp;·&nbsp; Setup in 30 minutes</p>
+                    <!-- Video demo placeholder — replace src with YouTube embed URL when ready -->
+                    <div class="video-placeholder" id="nutricare-video">
+                        <div class="video-thumb" onclick="loadVideo('nutricare-video','https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1')">
+                            <div class="video-play-btn"><i class="fas fa-play"></i></div>
+                            <span class="video-label">Watch: NutriCare 90-sec demo</span>
+                        </div>
+                        <!-- Uncomment and add your YouTube video ID when ready:
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        -->
+                    </div>
                 </div>
                 <div class="product-visual">
                     <div class="app-mockup mockup-nutricare">
@@ -187,8 +199,19 @@
                         <li><i class="fas fa-check"></i> Supplier management & messaging</li>
                         <li><i class="fas fa-check"></i> Waste & analytics dashboard</li>
                     </ul>
-                    <a href="#contact" class="btn btn-mint">Request a Demo</a>
+                    <a href="#book-demo" class="btn btn-mint">Book a Demo</a>
                     <p class="social-proof">✓ 14-day free trial &nbsp;·&nbsp; No credit card needed &nbsp;·&nbsp; Cancel any time</p>
+                    <!-- Video demo placeholder — replace src with YouTube embed URL when ready -->
+                    <div class="video-placeholder" id="restrostock-video">
+                        <div class="video-thumb" onclick="loadVideo('restrostock-video','https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1')">
+                            <div class="video-play-btn"><i class="fas fa-play"></i></div>
+                            <span class="video-label">Watch: RestroStock 90-sec demo</span>
+                        </div>
+                        <!-- Uncomment and add your YouTube video ID when ready:
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        -->
+                    </div>
                 </div>
                 <div class="product-visual">
                     <div class="app-mockup mockup-restrostock">
@@ -244,6 +267,61 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BOOK A DEMO ========== -->
+    <section class="book-demo" id="book-demo">
+        <div class="container">
+            <div class="demo-grid">
+                <div class="demo-info">
+                    <p class="section-tag">No Calendly Needed</p>
+                    <h2 class="section-title">Book a 15-Minute Demo</h2>
+                    <p class="demo-desc">Tell us which product you'd like to see and when works for you. We'll send a calendar invite within one business day.</p>
+                    <ul class="demo-benefits">
+                        <li><i class="fas fa-check"></i> See the product live, not a recording</li>
+                        <li><i class="fas fa-check"></i> Ask questions specific to your facility or restaurant</li>
+                        <li><i class="fas fa-check"></i> No sales pressure — just a genuine look at the product</li>
+                        <li><i class="fas fa-check"></i> 15 minutes, done</li>
+                    </ul>
+                </div>
+                <form class="demo-form" id="demoBookingForm">
+                    <div class="demo-form-row">
+                        <input type="text" name="name" placeholder="Your name" required>
+                        <input type="email" name="email" placeholder="Email address" required>
+                    </div>
+                    <input type="text" name="organisation" placeholder="Facility / restaurant name">
+                    <select name="product" required>
+                        <option value="" disabled selected>Which product?</option>
+                        <option value="nutricare">NutriCare (aged care dietary management)</option>
+                        <option value="restrostock">RestroStock (restaurant inventory)</option>
+                        <option value="both">Both — I manage multiple businesses</option>
+                    </select>
+                    <div class="demo-form-row">
+                        <select name="preferred_day">
+                            <option value="" disabled selected>Preferred day</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Any day</option>
+                        </select>
+                        <select name="preferred_time">
+                            <option value="" disabled selected>Preferred time (AEST)</option>
+                            <option>Morning (9am–12pm)</option>
+                            <option>Lunchtime (12pm–2pm)</option>
+                            <option>Afternoon (2pm–5pm)</option>
+                            <option>Any time</option>
+                        </select>
+                    </div>
+                    <textarea name="message" placeholder="Anything specific you'd like to see in the demo? (optional)" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-calendar-check"></i> &nbsp;Request a Demo Time
+                    </button>
+                    <p class="demo-disclaimer">We respond within one business day. No spam, ever.</p>
+                </form>
             </div>
         </div>
     </section>
@@ -396,6 +474,12 @@
                     <a href="#products">NutriCare</a>
                     <a href="#products">RestroStock</a>
                     <a href="#products">QueueZero</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Resources</h5>
+                    <a href="resources/iddsi-checklist">IDDSI Checklist</a>
+                    <a href="resources/inventory-template">Inventory Template</a>
+                    <a href="#book-demo">Book a Demo</a>
                 </div>
                 <div class="footer-links">
                     <h5>Company</h5>

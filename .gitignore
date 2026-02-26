@@ -1,0 +1,10 @@
+# Prospect data CSVs — keep private, don't commit
+data/
+scripts/__pycache__/
+scripts/*.pyc
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
