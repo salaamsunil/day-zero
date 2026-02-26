@@ -439,18 +439,27 @@
                     <div class="content-section" style="background: linear-gradient(135deg, #F0FDF4, #E8F5E9); border: 1px solid rgba(16,185,129,0.2)">
                         <h2><i class="fas fa-download"></i> Get the Template</h2>
                         <p class="section-intro">
-                            Enter your email below and we'll send you the Google Sheets link within one business day. Free, no strings attached.
+                            Enter your email and get instant access. Free, no strings attached.
                         </p>
                         <form id="templateRequestForm" style="display:flex;gap:0.75rem;max-width:440px;flex-wrap:wrap;margin-top:0.5rem">
                             <input type="email" name="email" placeholder="Your email address" required
                                 style="flex:1;min-width:200px;padding:0.85rem 1rem;border:1.5px solid #C6F6D5;border-radius:10px;font-size:0.9rem;font-family:inherit;outline:none;background:white;transition:border-color 0.2s"
                                 onfocus="this.style.borderColor='#10B981'" onblur="this.style.borderColor='#C6F6D5'">
                             <button type="submit" class="download-btn" style="width:auto;padding:0.85rem 1.25rem;font-size:0.9rem;gap:0.5rem;margin-top:0;flex-shrink:0">
-                                <i class="fas fa-paper-plane"></i> Send Me the Link
+                                <i class="fas fa-paper-plane"></i> Get Instant Access
                             </button>
                         </form>
+                        <div id="templateLink" style="display:none;margin-top:1.25rem;padding:1.25rem 1.5rem;background:white;border-radius:12px;border:1.5px solid #10B981">
+                            <p style="margin:0 0 0.75rem;font-weight:700;color:#065F46;font-size:1rem"><i class="fas fa-check-circle" style="color:#10B981"></i> Here's your template link</p>
+                            <a href="https://docs.google.com/spreadsheets/d/1rHv0uQYHzfi7SVzbgR9mfomUJ0e7pI2bKoiC4tZJDmw/copy"
+                               target="_blank" rel="noopener"
+                               style="display:inline-flex;align-items:center;gap:0.5rem;background:#10B981;color:white;padding:0.75rem 1.25rem;border-radius:9px;font-weight:600;font-size:0.95rem;text-decoration:none">
+                                <i class="fas fa-table"></i> Open in Google Sheets
+                            </a>
+                            <p style="margin:0.75rem 0 0;font-size:0.82rem;color:#555">Click to make your own copy. No sign-in required.</p>
+                        </div>
                         <p style="font-size:0.82rem;color:#555;margin-top:0.75rem">
-                            <i class="fas fa-lock" style="color:#10B981"></i> No spam. We'll send the link once and never email you without permission.
+                            <i class="fas fa-lock" style="color:#10B981"></i> No spam. Your email is only used to send you this link.
                         </p>
                     </div>
 
@@ -865,11 +874,11 @@
                 e.preventDefault();
                 const btn = templateRequestForm.querySelector('button');
                 const originalText = btn.innerHTML;
-                btn.innerHTML = 'Sending...';
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> One sec...';
                 btn.disabled = true;
                 const data = new FormData(templateRequestForm);
                 try {
-                    const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                    await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                         body: JSON.stringify({
@@ -878,17 +887,11 @@
                             _template: 'table'
                         })
                     });
-                    if (res.ok) {
-                        btn.innerHTML = '<i class="fas fa-check"></i> Check your inbox soon!';
-                        btn.style.background = '#059669';
-                        templateRequestForm.reset();
-                        gtag('event', 'template_request', { event_category: 'lead', event_label: 'inventory_template_download' });
-                    } else throw new Error();
-                } catch {
-                    btn.innerHTML = 'Something went wrong - email us directly.';
-                    btn.style.background = '#EF4444';
-                    setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; btn.style.background = ''; }, 4000);
-                }
+                } catch (_) {}
+                // Always reveal the link regardless of fetch result
+                templateRequestForm.style.display = 'none';
+                document.getElementById('templateLink').style.display = 'block';
+                gtag('event', 'template_request', { event_category: 'lead', event_label: 'inventory_template_download' });
             });
         }
     </script>
