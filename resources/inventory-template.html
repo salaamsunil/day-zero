@@ -10,7 +10,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://day-zero.com.au/resources/inventory-template">
-    <meta property="og:title" content="Free Restaurant Inventory Template — Google Sheets">
+    <meta property="og:title" content="Free Restaurant Inventory Template for Google Sheets">
     <meta property="og:description" content="Free inventory spreadsheet covering stock tracking, par levels, purchase orders, and supplier contacts. Built for independent Australian restaurants.">
     <meta property="og:image" content="https://day-zero.com.au/images/og-image.png">
 
@@ -382,7 +382,19 @@
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/#products" class="nav-link">Products</a></li>
-                <li><a href="/resources/inventory-template" class="nav-link">Resources</a></li>
+                <li class="nav-dropdown">
+                    <a href="/resources/inventory-template" class="nav-link nav-has-dropdown">
+                        Resources <i class="fas fa-chevron-down nav-chevron"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/resources/iddsi-checklist" class="nav-dropdown-item">
+                            <small>NutriCare</small>IDDSI Compliance Checklist
+                        </a>
+                        <a href="/resources/inventory-template" class="nav-dropdown-item">
+                            <small>RestroStock</small>Inventory Spreadsheet Template
+                        </a>
+                    </div>
+                </li>
                 <li><a href="/#contact" class="nav-link cta-link">Request a Demo</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -399,11 +411,11 @@
                     <i class="fas fa-table"></i> Free Resource
                 </div>
                 <h1>Free Restaurant Inventory<br>Spreadsheet Template</h1>
-                <p>A ready-to-use Google Sheets template covering stock tracking, par levels, purchase orders, and supplier contacts — built for independent Australian restaurants.</p>
+                <p>A ready-to-use Google Sheets template covering stock tracking, par levels, purchase orders, and supplier contacts. Built for independent Australian restaurants.</p>
             </div>
             <div class="hero-cta-box">
                 <h3>Get the RestroStock Demo</h3>
-                <p>See how RestroStock does all of this automatically — in real time, with no spreadsheets.</p>
+                <p>See how RestroStock does all of this automatically, in real time, with no spreadsheets.</p>
                 <form class="resource-form" id="templateForm">
                     <input type="text" name="name" placeholder="Your name" required>
                     <input type="email" name="email" placeholder="Work email" required>
@@ -427,15 +439,18 @@
                     <div class="content-section" style="background: linear-gradient(135deg, #F0FDF4, #E8F5E9); border: 1px solid rgba(16,185,129,0.2)">
                         <h2><i class="fas fa-download"></i> Get the Template</h2>
                         <p class="section-intro">
-                            Click below to open the Google Sheet template. Click <strong>File → Make a Copy</strong> to save it to your own Google Drive. No email required.
+                            Enter your email below and we'll send you the Google Sheets link within one business day. Free, no strings attached.
                         </p>
-                        <a href="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms/copy"
-                           class="download-btn" target="_blank" rel="noopener"
-                           onclick="gtag('event','template_download',{event_category:'lead',event_label:'inventory_template'})">
-                            <i class="fab fa-google"></i> Open Template in Google Sheets
-                        </a>
-                        <p style="font-size:0.82rem;color:#666;margin-top:0.75rem">
-                            <i class="fas fa-info-circle"></i> Free Google account required. No sign-up or credit card needed.
+                        <form id="templateRequestForm" style="display:flex;gap:0.75rem;max-width:440px;flex-wrap:wrap;margin-top:0.5rem">
+                            <input type="email" name="email" placeholder="Your email address" required
+                                style="flex:1;min-width:200px;padding:0.85rem 1rem;border:1.5px solid #C6F6D5;border-radius:10px;font-size:0.9rem;font-family:inherit;outline:none;background:white;transition:border-color 0.2s"
+                                onfocus="this.style.borderColor='#10B981'" onblur="this.style.borderColor='#C6F6D5'">
+                            <button type="submit" class="download-btn" style="width:auto;padding:0.85rem 1.25rem;font-size:0.9rem;gap:0.5rem;margin-top:0;flex-shrink:0">
+                                <i class="fas fa-paper-plane"></i> Send Me the Link
+                            </button>
+                        </form>
+                        <p style="font-size:0.82rem;color:#555;margin-top:0.75rem">
+                            <i class="fas fa-lock" style="color:#10B981"></i> No spam. We'll send the link once and never email you without permission.
                         </p>
                     </div>
 
@@ -468,7 +483,7 @@
                                             <td>Beef Tenderloin</td><td>Meat</td><td>kg</td>
                                             <td>2.4</td><td>5</td>
                                             <td class="col-warn">⚠ LOW</td><td>Vic Meats</td><td>$45.00</td>
-                                            <td class="col-formula">=$D2*$H2</td>
+                                            <td class="col-formula">$108.00</td>
                                         </tr>
                                         <tr>
                                             <td>Roma Tomatoes</td><td>Produce</td><td>kg</td>
@@ -510,7 +525,7 @@
                                         <tr>
                                             <td>PO-0043</td><td>25/02/2026</td><td>Fresh Direct</td><td>Tomatoes</td>
                                             <td>15</td><td>kg</td><td>$3.50</td><td>$52.50</td>
-                                            <td class="col-warn">Pending</td><td>—</td>
+                                            <td class="col-warn">Pending</td><td>n/a</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -631,14 +646,14 @@
                                 <div class="feature-item-icon"><i class="fas fa-chart-bar"></i></div>
                                 <div class="feature-item-text">
                                     <strong>Weekly Dashboard</strong>
-                                    <p>Auto-calculated summary of stock value, items below par, waste cost, and open orders — updated each week with formulas.</p>
+                                    <p>Auto-calculated summary of stock value, items below par, waste cost, and open orders, updated each week with formulas.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <div class="feature-item-icon"><i class="fas fa-triangle-exclamation"></i></div>
                                 <div class="feature-item-text">
                                     <strong>Automatic Alerts</strong>
-                                    <p>Conditional formatting highlights low-stock items in amber and critical items in red — no manual checking needed.</p>
+                                    <p>Conditional formatting highlights low-stock items in amber and critical items in red, with no manual checking needed.</p>
                                 </div>
                             </div>
                         </div>
@@ -649,13 +664,13 @@
                         <h2><i class="fas fa-list-check"></i> How to Get Started in 30 Minutes</h2>
                         <p class="section-intro">Four steps to have a working inventory system for your restaurant today.</p>
                         <ol style="padding-left:1.5rem;font-size:0.95rem;color:var(--dark);line-height:2">
-                            <li><strong>Make a copy</strong> — File → Make a Copy in Google Drive</li>
-                            <li><strong>Add your suppliers</strong> — Fill in the Suppliers tab first (name, contact, categories)</li>
-                            <li><strong>Stock your register</strong> — Add all items to the Stock tab with quantities, par levels, and unit costs</li>
-                            <li><strong>Set up weekly review</strong> — Every Friday, update quantities and check the Dashboard tab for the week's summary</li>
+                            <li><strong>Make a copy:</strong> File &gt; Make a Copy in Google Drive</li>
+                            <li><strong>Add your suppliers:</strong> Fill in the Suppliers tab first (name, contact, categories)</li>
+                            <li><strong>Stock your register:</strong> Add all items to the Stock tab with quantities, par levels, and unit costs</li>
+                            <li><strong>Set up weekly review:</strong> Every Friday, update quantities and check the Dashboard tab for the week's summary</li>
                         </ol>
                         <div class="tip-box" style="margin-top:1.5rem">
-                            <strong>Pro tip:</strong> Assign one person to own stock entries. Shared sheets work best when one person is responsible for accuracy — otherwise quantities drift. When you're ready to move beyond spreadsheets, RestroStock does this in real time with no manual entry.
+                            <strong>Pro tip:</strong> Assign one person to own stock entries. Shared sheets work best when one person is responsible for accuracy, or quantities drift. When you're ready to move beyond spreadsheets, RestroStock does this in real time with no manual entry.
                         </div>
                     </div>
 
@@ -718,7 +733,7 @@
 
                     <div class="sidebar-cta">
                         <h3>Ready to upgrade?</h3>
-                        <p>RestroStock does everything in this template automatically — no manual updates, no version conflicts, real-time on any device.</p>
+                        <p>RestroStock does everything in this template automatically, with no manual updates, no version conflicts, and real-time access on any device.</p>
                         <ul class="restrostock-feature-list">
                             <li><i class="fas fa-check"></i> Real-time stock & expiry tracking</li>
                             <li><i class="fas fa-check"></i> Purchase orders & 3-way matching</li>
@@ -836,9 +851,43 @@
                         gtag('event', 'demo_request', { event_category: 'lead', event_label: 'inventory_template' });
                     } else throw new Error();
                 } catch {
-                    btn.textContent = 'Something went wrong — email us directly';
+                    btn.textContent = 'Something went wrong. Email us directly.';
                     btn.style.background = '#EF4444';
                     setTimeout(() => { btn.textContent = 'Request a Demo'; btn.disabled = false; btn.style.background = ''; }, 4000);
+                }
+            });
+        }
+
+        // Template link request form
+        const templateRequestForm = document.getElementById('templateRequestForm');
+        if (templateRequestForm) {
+            templateRequestForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = templateRequestForm.querySelector('button');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Sending...';
+                btn.disabled = true;
+                const data = new FormData(templateRequestForm);
+                try {
+                    const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            email: data.get('email'),
+                            _subject: 'Inventory Template Request - Day Zero',
+                            _template: 'table'
+                        })
+                    });
+                    if (res.ok) {
+                        btn.innerHTML = '<i class="fas fa-check"></i> Check your inbox soon!';
+                        btn.style.background = '#059669';
+                        templateRequestForm.reset();
+                        gtag('event', 'template_request', { event_category: 'lead', event_label: 'inventory_template_download' });
+                    } else throw new Error();
+                } catch {
+                    btn.innerHTML = 'Something went wrong - email us directly.';
+                    btn.style.background = '#EF4444';
+                    setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; btn.style.background = ''; }, 4000);
                 }
             });
         }

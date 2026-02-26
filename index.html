@@ -87,7 +87,19 @@
                 <li><a href="#products" class="nav-link">Products</a></li>
                 <li><a href="#coming-soon" class="nav-link">Coming Soon</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="resources/iddsi-checklist" class="nav-link">Resources</a></li>
+                <li class="nav-dropdown" id="navResourcesDropdown">
+                    <a href="resources/iddsi-checklist" class="nav-link nav-has-dropdown">
+                        Resources <i class="fas fa-chevron-down nav-chevron"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="resources/iddsi-checklist" class="nav-dropdown-item">
+                            <small>NutriCare</small>IDDSI Compliance Checklist
+                        </a>
+                        <a href="resources/inventory-template" class="nav-dropdown-item">
+                            <small>RestroStock</small>Inventory Spreadsheet Template
+                        </a>
+                    </div>
+                </li>
                 <li><a href="#book-demo" class="nav-link cta-link">Book a Demo</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -141,17 +153,7 @@
                     </ul>
                     <a href="#book-demo" class="btn btn-primary">Book a Demo</a>
                     <p class="social-proof">✓ Free demo &nbsp;·&nbsp; No lock-in contracts &nbsp;·&nbsp; Setup in 30 minutes</p>
-                    <!-- Video demo placeholder — replace src with YouTube embed URL when ready -->
-                    <div class="video-placeholder" id="nutricare-video">
-                        <div class="video-thumb" onclick="loadVideo('nutricare-video','https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1')">
-                            <div class="video-play-btn"><i class="fas fa-play"></i></div>
-                            <span class="video-label">Watch: NutriCare 90-sec demo</span>
-                        </div>
-                        <!-- Uncomment and add your YouTube video ID when ready:
-                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        -->
-                    </div>
+                    <!-- VIDEO: add a YouTube iframe here once your 90-sec NutriCare demo is recorded -->
                 </div>
                 <div class="product-visual">
                     <div class="app-mockup mockup-nutricare">
@@ -165,7 +167,7 @@
                                 <div class="mockup-resident-info">
                                     <div class="mockup-res-name">Margaret Wilson</div>
                                     <div class="mockup-badges">
-                                        <span class="mbadge mbadge-iddsi">IDDSI 4 — Pureed</span>
+                                        <span class="mbadge mbadge-iddsi">IDDSI 4: Pureed</span>
                                         <span class="mbadge mbadge-allergen">Gluten Free</span>
                                         <span class="mbadge mbadge-allergen">Dairy Free</span>
                                     </div>
@@ -179,7 +181,7 @@
                             <div class="mockup-meal-row">
                                 <span class="mockup-meal done">Breakfast ✓</span>
                                 <span class="mockup-meal done">Lunch ✓</span>
-                                <span class="mockup-meal pending">Dinner —</span>
+                                <span class="mockup-meal pending">Dinner -</span>
                             </div>
                         </div>
                     </div>
@@ -201,17 +203,7 @@
                     </ul>
                     <a href="#book-demo" class="btn btn-mint">Book a Demo</a>
                     <p class="social-proof">✓ 14-day free trial &nbsp;·&nbsp; No credit card needed &nbsp;·&nbsp; Cancel any time</p>
-                    <!-- Video demo placeholder — replace src with YouTube embed URL when ready -->
-                    <div class="video-placeholder" id="restrostock-video">
-                        <div class="video-thumb" onclick="loadVideo('restrostock-video','https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1')">
-                            <div class="video-play-btn"><i class="fas fa-play"></i></div>
-                            <span class="video-label">Watch: RestroStock 90-sec demo</span>
-                        </div>
-                        <!-- Uncomment and add your YouTube video ID when ready:
-                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        -->
-                    </div>
+                    <!-- VIDEO: add a YouTube iframe here once your 90-sec RestroStock demo is recorded -->
                 </div>
                 <div class="product-visual">
                     <div class="app-mockup mockup-restrostock">
@@ -234,7 +226,7 @@
                                 <div class="mockup-bar" style="--h: 75%"></div>
                             </div>
                             <div class="mockup-alert-strip">
-                                <i class="fas fa-triangle-exclamation"></i> Tomatoes: 2 kg — reorder now
+                                <i class="fas fa-triangle-exclamation"></i> Tomatoes: 2 kg, reorder now
                             </div>
                         </div>
                     </div>
@@ -282,9 +274,23 @@
                     <ul class="demo-benefits">
                         <li><i class="fas fa-check"></i> See the product live, not a recording</li>
                         <li><i class="fas fa-check"></i> Ask questions specific to your facility or restaurant</li>
-                        <li><i class="fas fa-check"></i> No sales pressure — just a genuine look at the product</li>
+                        <li><i class="fas fa-check"></i> No sales pressure. Just a genuine look at the product.</li>
                         <li><i class="fas fa-check"></i> 15 minutes, done</li>
                     </ul>
+                    <div class="demo-stats">
+                        <div>
+                            <span class="demo-stat-num">15 min</span>
+                            <span class="demo-stat-label">Demo length</span>
+                        </div>
+                        <div>
+                            <span class="demo-stat-num">&lt; 24 hrs</span>
+                            <span class="demo-stat-label">Response time</span>
+                        </div>
+                        <div>
+                            <span class="demo-stat-num">Free</span>
+                            <span class="demo-stat-label">No commitment</span>
+                        </div>
+                    </div>
                 </div>
                 <form class="demo-form" id="demoBookingForm">
                     <div class="demo-form-row">
@@ -296,7 +302,7 @@
                         <option value="" disabled selected>Which product?</option>
                         <option value="nutricare">NutriCare (aged care dietary management)</option>
                         <option value="restrostock">RestroStock (restaurant inventory)</option>
-                        <option value="both">Both — I manage multiple businesses</option>
+                        <option value="both">Both - I manage multiple businesses</option>
                     </select>
                     <div class="demo-form-row">
                         <select name="preferred_day">

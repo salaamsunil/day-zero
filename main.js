@@ -27,12 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
         });
 
-        navMenu.querySelectorAll('.nav-link').forEach(link => {
+        navMenu.querySelectorAll('.nav-link:not(.nav-has-dropdown)').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
+    }
+
+    // --- Resources dropdown: mobile tap toggle ---
+    const resourcesDropdown = document.getElementById('navResourcesDropdown');
+    if (resourcesDropdown) {
+        const dropdownToggle = resourcesDropdown.querySelector('.nav-has-dropdown');
+        if (dropdownToggle && window.innerWidth <= 768) {
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                resourcesDropdown.classList.toggle('mob-open');
+            });
+        }
     }
 
     // --- Header scroll effect + Scroll progress bar ---
