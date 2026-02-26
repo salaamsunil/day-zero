@@ -324,6 +324,15 @@
             .sidebar-sticky { position: static; }
         }
 
+        @media (max-width: 640px) {
+            .resource-hero { padding: 70px 1.25rem 36px; }
+            .resource-body { padding: 36px 1rem 56px; }
+            .checklist-section { padding: 1.5rem 1.1rem; }
+            .hero-cta-box { padding: 1.5rem 1.1rem; }
+            .iddsi-table { font-size: 0.78rem; }
+            .iddsi-table th, .iddsi-table td { padding: 8px 8px; }
+        }
+
         @media print {
             .header, .resource-hero .hero-cta-box, .sidebar-sticky, footer { display: none; }
             .resource-grid { grid-template-columns: 1fr; }
@@ -649,6 +658,20 @@
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
+
+        // Mobile Resources dropdown
+        const resourcesDropdown = document.querySelector('.nav-dropdown');
+        if (resourcesDropdown) {
+            const toggle = resourcesDropdown.querySelector('.nav-has-dropdown');
+            if (toggle) {
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        resourcesDropdown.classList.toggle('mob-open');
+                    }
+                });
+            }
+        }
 
         // Scroll progress
         const scrollProgress = document.getElementById('scrollProgress');
