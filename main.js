@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Scroll-reveal animations ---
     const fadeTargets = document.querySelectorAll(
-        '.product-card, .soon-card, .about-content, .contact-grid, .stat'
+        '.product-card, .testimonial-card, .soon-card, .about-content, .contact-grid, .stat'
     );
 
     fadeTargets.forEach(el => el.classList.add('fade-up'));
