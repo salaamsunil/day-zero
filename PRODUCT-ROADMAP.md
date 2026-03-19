@@ -1,7 +1,8 @@
 # Day Zero Solutions - Product Roadmap
 
-> **Last updated:** February 2026
+> **Last updated:** March 2026
 > **Note:** Gentle Gourmet has been retired. All aged care dietary management is under the NutriCare brand.
+> **RestroStock** has been rebranded to **RestroAI** with an AI-first feature set.
 
 ---
 
@@ -9,70 +10,156 @@
 
 | Product | Version | Status | Tech Stack |
 |---------|---------|--------|------------|
-| NutriCare | v0.2.1 | Live | Next.js 16, React 19, PostgreSQL, Prisma 7 |
-| RestroStock | v1.0.0 | Live | React 18, Express, SQLite, TypeScript |
+| NutriCare | v0.9.4 | Live | Next.js 16, React 19, PostgreSQL (Supabase), Prisma 7, Tailwind CSS 4 |
+| RestroAI | v1.2.0 | Live | React 18, Express, PostgreSQL, TypeScript |
 | QueueZero | — | In Development | TBD |
 
+**Production URLs:**
+- NutriCare: https://www.nutri-care.app
+- RestroAI: (private beta)
+
 ---
 
-## NutriCare Roadmap
+## NutriCare — Shipped Features (v0.9.4)
 
-### Current (v0.2.1) - Live
-- IDDSI texture level compliance
-- Resident dietary profiles (allergies, preferences, texture levels)
-- Multi-period meal ordering (Breakfast, Lunch, Dinner, Snacks)
-- Kitchen production reports
-- Allergen conflict warnings
-- Multi-site support with role-based access control
+NutriCare is a comprehensive dietary management platform for Australian aged care facilities. All features below are live in production.
 
-### Next Release (v0.3.0)
-- [ ] Resident photo and profile enhancements
+### Core Platform
+- ✅ Multi-tenant architecture (Organisation → Site → Resident hierarchy)
+- ✅ 10-role RBAC (SUPER_ADMIN through READ_ONLY)
+- ✅ Multi-site user assignments with per-site access control
+- ✅ Dark mode (system preference + manual toggle)
+- ✅ Audit logging for healthcare compliance
+- ✅ Soft deletes with 7-year retention policy
+
+### Resident Management
+- ✅ Resident dietary profiles (IDDSI textures, allergens, preferences, dislikes)
+- ✅ Resident lifecycle status (ACTIVE/INACTIVE)
+- ✅ Resident photo upload (Supabase Storage)
+- ✅ QR code labels per resident
+- ✅ Custom fields (site-configurable)
+- ✅ Wing/room assignment with room occupancy validation
+- ✅ Room history audit trail
+- ✅ FHIR R4 export per resident
+- ✅ Family portal (shareable read-only view via magic link)
+- ✅ MUST malnutrition screening (3-step scoring, risk categories)
+- ✅ Weight tracking with sparkline and ≥3 kg drop alert
+- ✅ Incident log (falls, refused meals, choking, etc.)
+- ✅ Order history with intake bars
+- ✅ Document attachments (PDF/image, Supabase Storage, signed URLs)
+- ✅ Medications list with food-interaction warnings (12-rule engine)
+- ✅ Resident self-service portal (magic-link ordering, no login required)
+
+### Menu & Meal Management
+- ✅ IDDSI texture levels: Solid (LQ3–RG7) + Fluid (TN0–EX4)
+- ✅ Multi-period meal ordering (Breakfast, Lunch, Dinner, Snacks, etc.)
+- ✅ Menu weekly planner with copy-last-week function
+- ✅ Date-based order validation (cutoff enforcement)
+- ✅ Allergen conflict detection at ordering (hard block / soft warning / info)
+- ✅ Texture conflict detection at ordering
+- ✅ One-per-category auto-swap with toast notification
+- ✅ Per-period order notes
+- ✅ Voice ordering (Web Speech API)
+- ✅ Multi-resident bulk ordering
+- ✅ Menu item nutrition (calories, protein, carbs, fat)
+
+### Kitchen Operations
+- ✅ Kitchen production reports and prep checklists
+- ✅ Kitchen Display System (KDS) — full-screen real-time board, 10s polling, slide-in animations
+- ✅ Delivery tracking with per-meal confirmation
+- ✅ Intake percentage recording (0/25/50/75/100%) per meal delivery
+- ✅ Waste notes at delivery
+- ✅ Tray docket printing
+- ✅ Meal satisfaction surveys (1–5 star, per delivered order)
+
+### Analytics & Reports
+- ✅ Site dashboard with MetricCards and meal period progress
+- ✅ Waste analytics (intake distribution, low-intake alerts, daily trend, by meal period)
+- ✅ Nutritional compliance report (ESPEN 2022 calorie/protein targets, MUST-adjusted)
+- ✅ Meal satisfaction analytics (weekly trend, by-period breakdown, recent comments)
+- ✅ Kitchen prep analytics
+- ✅ Weekly email digest (Resend, Vercel Cron)
+
+### Staff & Operations
+- ✅ Staff rostering with shift management
+- ✅ Clock-in kiosk (WebAuthn biometric + PIN fallback + face recognition AI)
+- ✅ Attendance supervisor view
+- ✅ AI roster suggestions (Claude Haiku, 4-week demand history)
+- ✅ Birthday notifications (resident birthdays flagged in notification bell)
+
+### Bulk Operations & Integration
+- ✅ Bulk resident upload (Excel, upsert by externalId)
+- ✅ Bulk menu items upload (Excel, org-scoped, upsert)
+- ✅ Bulk meal periods upload (Excel, site-scoped, upsert)
+- ✅ Bulk menus upload (Excel, idempotent)
+- ✅ Integration API (M2M authentication, API keys, bcrypt-hashed)
+  - POST /api/integration/residents
+  - POST /api/integration/menu-items
+  - POST /api/integration/meal-periods
+  - PUT /api/integration/menus
+  - GET /api/integration/orders (JSON + CSV)
+- ✅ Admin API key management (/admin/api-keys)
+
+### AI Features
+- ✅ NutriAssist AI chat (Claude Haiku, 8 tools: resident profiles, orders, kitchen status, menus, allergen conflicts, missing orders today, allergen summary, prep summary)
+- ✅ AI clinical note drafting (Claude Haiku)
+- ✅ Predictive deterioration alerts
+- ✅ Nutritional gap detection
+- ✅ AI face recognition clock-in
+- ✅ AI roster suggestions
+
+### Exports & Print
+- ✅ Styled Excel exports (residents, orders, prep lists, menus) with dietary context columns and allergen warning highlighting
+- ✅ A4 landscape print layouts with systematic table formatting
+- ✅ FHIR R4 JSON export per resident
+
+---
+
+## NutriCare — Next Release (v1.0.0)
+
+Planned for Q2 2026. Focus: hardening, onboarding, and first enterprise customers.
+
+- [ ] Onboarding wizard (guided setup for new sites)
+- [ ] Resident transfer between sites
+- [ ] Advanced notification preferences (email + in-app per event type)
 - [ ] Meal plan templates (reusable weekly/fortnightly plans)
-- [ ] Notification system (allergen alerts, order deadlines)
-- [ ] Audit trail for dietary profile changes
-- [ ] CSV/PDF export for reports
-
-### Future (v0.4.0+)
-- [ ] Family portal (view resident meal plans)
-- [ ] Dietitian collaboration features
-- [ ] Integration with aged care management systems
-- [ ] Nutrition tracking and reporting
-- [ ] Mobile app for kitchen staff
-- [ ] Automated ordering based on meal plan templates
+- [ ] Dietitian collaboration portal (external dietitian account type)
+- [ ] Automated MUST screening reminders (cron, per site, per resident)
+- [ ] ACQSC audit report generator (single PDF covering all compliance evidence)
+- [ ] Public API documentation site (docs.nutri-care.app)
 
 ---
 
-## RestroStock Roadmap
+## RestroAI Roadmap
 
-### Current (v1.0.0) - Live
+RestroAI (formerly RestroStock) is an AI-native restaurant operating system for Australian food businesses.
+
+### Current (v1.2.0) — Live
 - Real-time stock tracking with low-stock and expiry alerts
-- Purchase order workflow
-- 3-way matching (PO, Goods Receipt, Invoice)
-- Supplier management and messaging
+- Purchase order workflow with 3-way matching (PO, GRN, Invoice)
+- Supplier management
 - Waste tracking
 - Analytics dashboard
 - Multi-location storage and multi-unit inventory
+- Recipe costing
+- Online ordering (Stripe, QR table menus)
+- Kitchen display system (KDS)
+- AI-powered insights (RestroAI chat)
+- Staff scheduling with AI suggestions
+- Carbon footprint tracking per dish
 
-### Next Release (v1.1.0)
-- [ ] Recipe costing (link recipes to stock items)
-- [ ] Automated reorder suggestions
+### Next Release (v1.3.0)
+- [ ] Automated reorder suggestions (AI-driven)
 - [ ] Supplier performance scoring
-- [ ] Enhanced analytics (trend lines, period comparisons)
 - [ ] Barcode/QR scanning for stocktake
-
-### Future (v1.2.0+)
 - [ ] POS integration (Square, Lightspeed)
 - [ ] Accounting integration (Xero, MYOB)
-- [ ] Multi-currency support for international suppliers
-- [ ] Mobile app for stocktake
-- [ ] Predictive ordering (AI-driven)
-- [ ] Team permissions and approval workflows
 
 ---
 
 ## QueueZero Roadmap
 
-### Phase 1: MVP
+### Phase 1: MVP (Planned)
 - [ ] Mobile-first ordering page (web-based, no app download)
 - [ ] Menu management (items, pricing, availability toggles)
 - [ ] Live queue visibility for customers
@@ -89,30 +176,18 @@
 - [ ] Multi-vendor support (food halls, market organisers)
 
 ### Phase 3: Scale
-- [ ] POS integration
 - [ ] Analytics (popular items, peak times, revenue trends)
-- [ ] Kitchen display system (KDS)
 - [ ] API for third-party integrations
 - [ ] White-label options for food truck collectives
 
 ---
 
-## Coming Soon (On Website)
-
-These features are listed on the "Coming Soon" section of the website:
-
-1. **Analytics Dashboard** — Cross-product insights showing sales, waste, customer flow in one place
-2. **AI Menu Advisor** — Data-driven menu recommendations based on sales trends, seasonality, and food cost margins
-3. **POS Integrations** — Seamless connections to Square, Lightspeed, and other popular Australian POS systems
-
----
-
 ## Long-Term Vision
 
-Day Zero Solutions aims to become an **integrated hospitality platform** where aged care facilities, restaurants, and food vendors can manage their entire food operation from a single ecosystem:
+Day Zero Solutions aims to become an **integrated hospitality and care platform** where aged care facilities, restaurants, and food vendors can manage their entire food operation from a single ecosystem:
 
-- **NutriCare** handles dietary compliance and resident care
-- **RestroStock** handles back-of-house inventory and procurement
+- **NutriCare** handles dietary compliance and resident care in aged care
+- **RestroAI** handles restaurant operations (inventory, ordering, staff, AI)
 - **QueueZero** handles front-of-house ordering and customer experience
 - **Shared Analytics** ties everything together with cross-product insights
 
@@ -120,13 +195,13 @@ Each product works independently (buy one, use one), but together they create a 
 
 ---
 
-## Development Priorities (Q1-Q2 2026)
+## Development Priorities (Q2 2026)
 
-1. **NutriCare v0.3.0** — Priority focus for go-to-market (first paying customers)
-2. **QueueZero MVP** — Build core MVP for beta testing
-3. **RestroStock v1.1.0** — Recipe costing and reorder suggestions
-4. **Website** — Blog section for content marketing
-5. **Integrations** — Begin POS integration research and planning
+1. **NutriCare v1.0.0** — Onboarding, dietitian portal, ACQSC report generator
+2. **RestroAI v1.3.0** — POS integrations, supplier scoring
+3. **QueueZero MVP** — Begin core build
+4. **Website** — Blog/content hub for SEO (aged care dietary compliance)
+5. **Integrations** — NutriCare ↔ major ACMS platforms (AutumnCare, Epicor)
 
 ---
 
@@ -136,4 +211,8 @@ Each product works independently (buy one, use one), but together they create a 
 - **Was:** Enhanced version of NutriCare (v0.4.0)
 - **Decision:** Consolidated back into NutriCare brand to avoid confusion
 - **Codebase:** `Gentle-Gourmet---MVP` repo (archived)
-- **Features:** Any unique Gentle Gourmet features will be incorporated into future NutriCare releases
+- **Features:** All Gentle Gourmet features were incorporated into NutriCare v0.5+
+
+### RestroStock (Rebranded)
+- **Was:** RestroStock v1.0.0
+- **Decision:** Rebranded to RestroAI to reflect AI-first roadmap direction
