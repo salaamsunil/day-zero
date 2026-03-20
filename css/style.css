@@ -85,6 +85,15 @@ a {
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 
+/* Light-hero pages: nav always shows frosted glass (no dark background to blend into) */
+body.light-hero .header {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+
 /* White text/logo when nav is transparent (over dark hero) */
 .header:not(.scrolled) .logo-wordmark {
     color: var(--white);
