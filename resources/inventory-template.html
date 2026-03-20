@@ -407,12 +407,13 @@
                         Resources <i class="fas fa-chevron-down nav-chevron"></i>
                     </a>
                     <div class="nav-dropdown-menu">
-                        <a href="/resources/iddsi-checklist" class="nav-dropdown-item">
-                            <small>NutriCare</small>IDDSI Compliance Checklist
-                        </a>
-                        <a href="/resources/inventory-template" class="nav-dropdown-item">
-                            <small>RestroStock</small>Inventory Spreadsheet Template
-                        </a>
+                        <div class="nav-dropdown-group-label">NutriCare</div>
+                        <a href="/resources/iddsi-checklist" class="nav-dropdown-item">IDDSI Compliance Checklist</a>
+                        <a href="/resources/must-screening-guide" class="nav-dropdown-item">MUST Malnutrition Screening Guide</a>
+                        <a href="/resources/aged-care-dietary-documentation-checklist" class="nav-dropdown-item">Dietary Documentation Checklist</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <div class="nav-dropdown-group-label">RestroAI</div>
+                        <a href="/resources/inventory-template" class="nav-dropdown-item">Inventory Spreadsheet Template</a>
                     </div>
                 </li>
                 <li><a href="/#contact" class="nav-link cta-link">Request a Demo</a></li>
@@ -827,39 +828,6 @@
     </footer>
 
     <script>
-        // Mobile menu
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-        if (hamburger) hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Mobile Resources dropdown
-        const resourcesDropdown = document.querySelector('.nav-dropdown');
-        if (resourcesDropdown) {
-            const toggle = resourcesDropdown.querySelector('.nav-has-dropdown');
-            if (toggle) {
-                toggle.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        resourcesDropdown.classList.toggle('mob-open');
-                    }
-                });
-            }
-        }
-
-        // Scroll progress
-        const scrollProgress = document.getElementById('scrollProgress');
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', () => {
-            if (header) header.classList.toggle('scrolled', window.scrollY > 20);
-            if (scrollProgress) {
-                const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-                scrollProgress.style.width = pct + '%';
-            }
-        });
-
         // Tab switcher
         function showTab(name) {
             document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
@@ -885,7 +853,7 @@
                             name: data.get('name'),
                             email: data.get('email'),
                             restaurant: data.get('restaurant'),
-                            _subject: 'RestroStock Demo Request via Inventory Template page',
+                            _subject: 'RestroAI Demo Request via Inventory Template page',
                             _template: 'table'
                         })
                     });
