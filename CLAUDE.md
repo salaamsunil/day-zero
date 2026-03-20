@@ -3,12 +3,12 @@
 ## Writing & Copy Rules
 
 ### No em dashes
-**Never use em dashes (`—` or `&mdash;`) anywhere in site content.**
+**Never use em dashes (`—` or `&mdash;`) anywhere in site content, including any new copy written by Claude.**
 Use these alternatives instead:
 - Clause separation: use a comma, period, or semicolon
 - List item labels (e.g. "Step 1: BMI"): use a colon
 - Inline parenthetical: use parentheses or reword the sentence
-- Applies to: `index.html`, `privacy.html`, all `resources/*.html`, and any new pages
+- Applies to: `index.html`, `privacy.html`, all `resources/*.html`, any new pages, and any inline content (disclaimers, banners, CTAs)
 
 ## Tech Stack
 - Plain HTML / CSS / vanilla JS — no build tools, no npm, no frameworks
