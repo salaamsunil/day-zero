@@ -39,12 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const resourcesDropdown = document.getElementById('navResourcesDropdown');
     if (resourcesDropdown) {
         const dropdownToggle = resourcesDropdown.querySelector('.nav-has-dropdown');
-        if (dropdownToggle && window.innerWidth <= 768) {
+        if (dropdownToggle) {
             dropdownToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                resourcesDropdown.classList.toggle('mob-open');
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    resourcesDropdown.classList.toggle('mob-open');
+                }
             });
         }
+
+        // Close dropdown when a resource item is tapped (also closes nav)
+        resourcesDropdown.querySelectorAll('.nav-dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                resourcesDropdown.classList.remove('mob-open');
+                hamburger && hamburger.classList.remove('active');
+                navMenu && navMenu.classList.remove('active');
+            });
+        });
+
+        // Close dropdown when tapping outside
+        document.addEventListener('click', (e) => {
+            if (!resourcesDropdown.contains(e.target)) {
+                resourcesDropdown.classList.remove('mob-open');
+            }
+        });
     }
 
     // --- Header scroll effect + Scroll progress bar ---

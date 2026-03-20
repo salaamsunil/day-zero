@@ -1306,6 +1306,14 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     50%       { border-color: transparent; }
 }
 
+/* Product CTA button row — handles single or multiple buttons */
+.product-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
 /* ===== SOCIAL PROOF ===== */
 .social-proof {
     font-size: 0.78rem;
@@ -1721,6 +1729,8 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
         gap: 0.25rem;
         box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
         transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-menu.active {
@@ -2139,17 +2149,36 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
         transform: none;
         box-shadow: none;
         border: none;
-        background: rgba(124,58,237,0.04);
+        background: rgba(124, 58, 237, 0.04);
         border-radius: 8px;
         opacity: 1;
         pointer-events: auto;
-        padding: 4px;
+        padding: 4px 4px 8px;
         margin-top: 4px;
         display: none;
+        min-width: unset;
     }
     .nav-dropdown-menu::before { display: none; }
     .nav-dropdown.mob-open .nav-dropdown-menu { display: block; }
-    .nav-dropdown-item { font-size: 0.95rem; }
+    .nav-dropdown-item {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.9rem;
+    }
+    .nav-dropdown-group-label {
+        font-size: 0.62rem;
+        padding: 0.5rem 0.9rem 0.25rem;
+        margin-top: 4px;
+    }
+    .nav-dropdown-divider {
+        margin: 6px 0.9rem;
+    }
+    /* Chevron visual cue for toggle */
+    .nav-has-dropdown .nav-chevron {
+        transition: transform 0.25s ease;
+    }
+    .nav-dropdown.mob-open .nav-chevron {
+        transform: rotate(180deg);
+    }
 }
 
 /* ===== BOOK A DEMO SECTION ===== */
@@ -2357,11 +2386,32 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
         padding: 2rem 1.5rem;
     }
 
+    /* Stack multiple product CTA buttons */
+    .product-cta-row {
+        flex-direction: column;
+    }
+    .product-cta-row .btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0 !important;
+    }
+
     .contact-form {
         padding: 1.5rem;
     }
 
     .container {
         padding: 0 1.25rem;
+    }
+
+    /* Demo stats: stack vertically on small screens */
+    .demo-stats {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    /* Hero stats bar: tighter text */
+    .hero-stat span {
+        font-size: 0.75rem;
     }
 }
