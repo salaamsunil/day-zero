@@ -338,6 +338,36 @@
             .resource-grid { grid-template-columns: 1fr; }
             .checklist-section { box-shadow: none; border: 1px solid #ddd; }
         }
+        /* Disclaimer banner */
+        .resource-disclaimer {
+            background: #fffbeb;
+            border-bottom: 1px solid #fde68a;
+            padding: 0.7rem 1.5rem;
+        }
+        .resource-disclaimer > div {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+        }
+        .resource-disclaimer i {
+            color: #d97706;
+            font-size: 0.9rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .resource-disclaimer p {
+            font-size: 0.8rem;
+            color: #78350f;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .resource-disclaimer a {
+            color: #92400e;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
     </style>
 </head>
 <body>
@@ -403,6 +433,14 @@
             </div>
         </div>
     </section>
+
+    <!-- DISCLAIMER -->
+    <div class="resource-disclaimer">
+        <div>
+            <i class="fas fa-circle-exclamation"></i>
+            <p><strong>General information only.</strong> This checklist is a practical reference and is not a substitute for clinical or regulatory advice. IDDSI texture levels must be prescribed by a qualified Speech Pathologist. Always verify with the current <a href="https://iddsi.org" target="_blank" rel="noopener">IDDSI Framework</a> and <a href="https://www.acqsc.gov.au" target="_blank" rel="noopener">ACQSC guidance</a>. Do not rely solely on this resource for compliance decisions.</p>
+        </div>
+    </div>
 
     <!-- BODY -->
     <div class="resource-body">
@@ -576,9 +614,6 @@
                             <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">Safe Work Australia:</strong> Aspiration and choking risk management</li>
                             <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">IDDSI Framework (2019):</strong> iddsi.org, the authoritative reference for all texture level definitions</li>
                         </ul>
-                        <p style="font-size:0.85rem;color:var(--gray);margin-top:1rem;">
-                            This checklist is a practical aide-memoire and does not constitute legal advice. Always refer to the Aged Care Quality and Safety Commission for regulatory guidance.
-                        </p>
                     </div>
 
                 </div>
