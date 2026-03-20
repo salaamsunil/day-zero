@@ -70,28 +70,44 @@ a {
     left: 0;
     right: 0;
     z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Frosted glass background lives on ::before so that backdrop-filter does NOT
+   apply directly to .header — this prevents .header from becoming a containing
+   block for position:fixed children (nav drawer), which would break mobile layout */
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: transparent;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    border-bottom: 1px solid transparent;
-    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    pointer-events: none;
 }
 
 .header.scrolled {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+.header.scrolled::before {
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 
 /* Light-hero pages: nav always shows frosted glass (no dark background to blend into) */
 body.light-hero .header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+body.light-hero .header::before {
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 body.light-hero .header:not(.scrolled) .logo-wordmark { color: var(--dark); }
 body.light-hero .header:not(.scrolled) .logo-icon { filter: none; }
@@ -203,12 +219,18 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 .hamburger {
     display: none;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
     z-index: 1001;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
@@ -1720,21 +1742,24 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 280px;
-        height: 100vh;
+        height: 100%;
         background: var(--white);
         flex-direction: column;
         padding: 90px 2rem 2rem;
         gap: 0.25rem;
         box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
-        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        z-index: 999;
     }
 
     .nav-menu.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     .nav-link {
