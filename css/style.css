@@ -93,6 +93,14 @@ body.light-hero .header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
+body.light-hero .header:not(.scrolled) .logo-wordmark { color: var(--dark); }
+body.light-hero .header:not(.scrolled) .logo-icon { filter: none; }
+body.light-hero .header:not(.scrolled) .nav-link { color: var(--dark); }
+body.light-hero .header:not(.scrolled) .nav-link:hover { color: var(--violet); background: rgba(124, 58, 237, 0.06); }
+body.light-hero .header:not(.scrolled) .hamburger span { background: var(--dark); }
+body.light-hero .header:not(.scrolled) .cta-link { background: var(--violet) !important; border: none !important; color: var(--white) !important; }
+body.light-hero .header:not(.scrolled) .cta-link:hover { background: var(--violet-dark) !important; }
+body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacity: 0.7; }
 
 /* White text/logo when nav is transparent (over dark hero) */
 .header:not(.scrolled) .logo-wordmark {

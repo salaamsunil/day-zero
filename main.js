@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const interest = data.get('interest');
             const interestLabels = {
                 nutricare: 'NutriCare',
-                restrostock: 'RestroStock',
+                restroai: 'RestroAI',
                 queuezero: 'QueueZero',
                 general: 'General'
             };
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = new FormData(demoForm);
             const productLabels = {
                 nutricare: 'NutriCare',
-                restrostock: 'RestroStock',
+                restroai: 'RestroAI',
                 both: 'Both products'
             };
             const productLabel = productLabels[data.get('product')] || data.get('product');
@@ -309,15 +309,15 @@ document.addEventListener('DOMContentLoaded', () => {
 function initChatbot() {
     const RESPONSES = {
         nutricare: {
-            text: 'NutriCare is our dietary management platform built for aged care facilities. It helps manage resident dietary profiles, IDDSI-compliant meal plans, multi-period meal ordering, and kitchen production reports. It\'s live and ready to go!',
-            cta: { label: 'Request a Demo', action: 'contact' }
+            text: 'NutriCare is our AI-powered dietary management platform for aged care facilities. It includes real-time allergen and IDDSI texture conflict detection, NutriAssist AI for clinical Q&A, MUST malnutrition screening, weight tracking, incident logs, a Kitchen Display System, nutritional compliance reports, a family portal, and full multi-site RBAC. It\'s live at nutri-care.app.',
+            cta: { label: 'Book a Demo', action: 'contact' }
         },
-        restrostock: {
-            text: 'RestroStock is our inventory and procurement system for restaurants. It features real-time stock and expiry tracking, purchase orders with 3-way matching (PO, GRN, Invoice), supplier management, and waste analytics. It\'s live now!',
-            cta: { label: 'Request a Demo', action: 'contact' }
+        restroai: {
+            text: 'RestroAI is our AI-native restaurant operating system, live at restroai.app. It covers AI insights and predictive ordering, online ordering with QR menus, kitchen display, staff rostering, a clock-in kiosk, HACCP compliance, waste tracking, carbon tracking, and a full inventory and procurement module with 3-way matching.',
+            cta: { label: 'Explore RestroAI', action: 'contact' }
         },
         queuezero: {
-            text: 'QueueZero is our upcoming mobile ordering and queue management system for food trucks and pop-ups. It\'ll feature mobile-first ordering, live queue visibility, and order-ahead scheduling. Currently in development!',
+            text: 'QueueZero is our upcoming mobile ordering and queue management system built for food trucks and pop-ups. Customers order ahead, you cook ahead. Features will include mobile-first ordering, live queue visibility, and order-ahead scheduling. Currently in development.',
             cta: { label: 'Join the Waitlist', action: 'contact' }
         }
     };
@@ -440,7 +440,7 @@ function initChatbot() {
             'Hi there! I\'m the Day Zero assistant. How can I help you today?',
             [
                 { label: 'Tell me about NutriCare', action: 'nutricare' },
-                { label: 'Tell me about RestroStock', action: 'restrostock' },
+                { label: 'Tell me about RestroAI', action: 'restroai' },
                 { label: 'Tell me about QueueZero', action: 'queuezero' },
                 { label: 'Get in touch', action: 'contact' }
             ]
@@ -451,7 +451,7 @@ function initChatbot() {
     function showMenu() {
         addQuickReplies([
             { label: 'About NutriCare', action: 'nutricare' },
-            { label: 'About RestroStock', action: 'restrostock' },
+            { label: 'About RestroAI', action: 'restroai' },
             { label: 'About QueueZero', action: 'queuezero' },
             { label: 'Get in touch', action: 'contact' }
         ]);
@@ -470,7 +470,7 @@ function initChatbot() {
         } else if (action === 'menu') {
             botReply('What else can I help with?', [
                 { label: 'About NutriCare', action: 'nutricare' },
-                { label: 'About RestroStock', action: 'restrostock' },
+                { label: 'About RestroAI', action: 'restroai' },
                 { label: 'About QueueZero', action: 'queuezero' },
                 { label: 'Get in touch', action: 'contact' }
             ]);
