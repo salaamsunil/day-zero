@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Food Cost Guide: Calculate Food Cost % + Free Template | Day Zero Solutions</title>
+    <meta name="description" content="Free guide to calculating restaurant food cost percentage, recipe costing, and menu engineering. Includes benchmarks for Australian restaurants and a free calculation template.">
+    <link rel="canonical" href="https://day-zero.com.au/resources/restaurant-food-cost-guide">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://day-zero.com.au/resources/restaurant-food-cost-guide">
+    <meta property="og:title" content="Restaurant Food Cost Guide: Calculate Food Cost % Free Template">
+    <meta property="og:description" content="Calculate food cost percentage, cost per dish, and identify your most profitable menu items. Free guide and template for Australian restaurants.">
+    <meta property="og:image" content="https://day-zero.com.au/images/og-image.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVLW70H83Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LVLW70H83Z');
+    </script>
+
+    <style>
+        body { background: var(--light); }
+
+        .resource-hero {
+            background: var(--dark);
+            padding: 80px 2rem 60px;
+        }
+
+        .resource-hero .container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .resource-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--mint-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .resource-hero h1 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .resource-hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 540px;
+            line-height: 1.7;
+        }
+
+        .hero-cta-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            width: 340px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-cta-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-cta-box p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+        }
+
+        .resource-form input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+            border: 1.5px solid #E2E8F0;
+            border-radius: var(--radius-sm);
+            background: var(--light);
+            color: var(--dark);
+            outline: none;
+            margin-bottom: 0.75rem;
+            transition: border-color 0.2s;
+        }
+
+        .resource-form input:focus { border-color: var(--mint); }
+        .resource-form .btn { width: 100%; margin-top: 0.25rem; }
+
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .resource-body { padding: 60px 2rem 80px; }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .content-section h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-section h2 i { color: var(--mint); font-size: 1.1rem; }
+
+        .section-intro {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Formula block */
+        .formula-block {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1.5px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .formula-block .formula {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .formula-block p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Benchmark table */
+        .benchmark-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 1.25rem;
+        }
+
+        .benchmark-table th {
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.82rem;
+            font-weight: 700;
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--mint-dark);
+        }
+
+        .benchmark-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.88rem;
+            color: var(--dark);
+        }
+
+        .benchmark-table tr:last-child td { border-bottom: none; }
+
+        .tag-green { display: inline-block; background: #ecfdf5; color: #065f46; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+        .tag-yellow { display: inline-block; background: #fffbeb; color: #92400e; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+        .tag-red { display: inline-block; background: #fef2f2; color: #991b1b; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+
+        /* Steps */
+        .step-list { list-style: none; counter-reset: steps; margin-top: 1.25rem; }
+
+        .step-list li {
+            counter-increment: steps;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .step-list li:last-child { border-bottom: none; }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--mint);
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-content strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .step-content p {
+            font-size: 0.88rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Matrix grid */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .matrix-card {
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            border: 1.5px solid transparent;
+        }
+
+        .matrix-card.stars { background: #ecfdf5; border-color: #6ee7b7; }
+        .matrix-card.plowhorses { background: #eff6ff; border-color: #93c5fd; }
+        .matrix-card.puzzles { background: #fffbeb; border-color: #fcd34d; }
+        .matrix-card.dogs { background: #fef2f2; border-color: #fca5a5; }
+
+        .matrix-card h4 {
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+
+        .matrix-card.stars h4 { color: #065f46; }
+        .matrix-card.plowhorses h4 { color: #1e40af; }
+        .matrix-card.puzzles h4 { color: #92400e; }
+        .matrix-card.dogs h4 { color: #991b1b; }
+
+        .matrix-card p {
+            font-size: 0.82rem;
+            color: var(--dark);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1.25rem 0;
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-item strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-item p {
+            font-size: 0.88rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Sidebar */
+        .sidebar-sticky { position: sticky; top: 90px; }
+
+        .sidebar-cta {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-cta h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+        .sidebar-cta p { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.25rem; }
+        .sidebar-cta .btn { width: 100%; margin-bottom: 0.5rem; }
+
+        .tip-box {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-size: 0.88rem;
+            color: var(--dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tip-box strong { color: var(--mint-dark); }
+
+        .restrostock-feature-list { list-style: none; margin: 1rem 0; }
+        .restrostock-feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        .restrostock-feature-list li i { color: var(--mint); font-size: 0.85rem; }
+
+        /* Example calc */
+        .calc-example {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            margin: 1.25rem 0;
+            font-size: 0.88rem;
+        }
+
+        .calc-example table { width: 100%; border-collapse: collapse; }
+        .calc-example td { padding: 5px 0; color: var(--dark); }
+        .calc-example td:last-child { text-align: right; font-weight: 600; }
+        .calc-example .total-row td { border-top: 1px solid #e2e8f0; padding-top: 10px; font-weight: 700; color: var(--mint-dark); font-size: 1rem; }
+
+        .comparison-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+        @media (max-width: 960px) {
+            .resource-hero .container { grid-template-columns: 1fr; }
+            .hero-cta-box { width: 100%; max-width: 400px; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .sidebar-sticky { position: static; }
+            .matrix-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .resource-hero { padding: 70px 1.25rem 36px; }
+            .resource-body { padding: 36px 1rem 56px; }
+            .content-section { padding: 1.5rem; }
+            .formula-block { padding: 1.25rem; }
+        }
+    </style>
+</head>
+<body class="light-hero">
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- NAV -->
+    <header class="header" id="top">
+        <nav class="nav">
+            <a href="/" class="nav-logo">
+                <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="logo-icon">
+                <span class="logo-wordmark">DAY ZERO</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/#products" class="nav-link">Products</a></li>
+                <li class="nav-dropdown" id="navResourcesDropdown">
+                    <a href="/resources/restaurant-food-cost-guide" class="nav-link nav-has-dropdown">
+                        Resources <i class="fas fa-chevron-down nav-chevron"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-group-label">NutriCare</div>
+                        <a href="/resources/iddsi-checklist" class="nav-dropdown-item">IDDSI Compliance Checklist</a>
+                        <a href="/resources/must-screening-guide" class="nav-dropdown-item">MUST Malnutrition Screening Guide</a>
+                        <a href="/resources/aged-care-dietary-documentation-checklist" class="nav-dropdown-item">Dietary Documentation Checklist</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <div class="nav-dropdown-group-label">RestroAI</div>
+                        <a href="/resources/inventory-template" class="nav-dropdown-item">Inventory Spreadsheet Template</a>
+                        <a href="/resources/restaurant-food-cost-guide" class="nav-dropdown-item">Restaurant Food Cost Guide</a>
+                        <a href="/resources/restaurant-haccp-checklist" class="nav-dropdown-item">HACCP Compliance Checklist</a>
+                    </div>
+                </li>
+                <li><a href="/#contact" class="nav-link cta-link">Request a Demo</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="resource-hero">
+        <div class="container">
+            <div>
+                <div class="resource-badge">
+                    <i class="fas fa-calculator"></i> Free Guide
+                </div>
+                <h1>Restaurant Food Cost Guide:<br>Calculate Your Margins and Fix Them</h1>
+                <p>Learn how to calculate food cost percentage, cost per dish, and identify which menu items are hurting your margins. Practical benchmarks and steps built for independent Australian restaurants.</p>
+            </div>
+            <div class="hero-cta-box">
+                <h3>See RestroAI in Action</h3>
+                <p>RestroAI calculates recipe costs automatically and alerts you when margins slip below target.</p>
+                <form class="resource-form" id="foodCostForm">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Work email" required>
+                    <input type="text" name="restaurant" placeholder="Restaurant name">
+                    <button type="submit" class="btn btn-mint">Request a Demo</button>
+                    <p class="form-disclaimer">No spam. We'll only contact you about RestroAI.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="resource-body">
+        <div class="container">
+            <div class="resource-grid">
+                <!-- MAIN CONTENT -->
+                <div>
+
+                    <!-- What is food cost % -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-percent"></i> What is Food Cost Percentage?</h2>
+                        <p class="section-intro">Food cost percentage tells you what proportion of your revenue goes toward the ingredients used to make a dish. It is one of the most important metrics for any restaurant owner to track.</p>
+
+                        <div class="formula-block">
+                            <div class="formula">Food Cost % = (Cost of Ingredients / Selling Price) &times; 100</div>
+                            <p>Applied to each dish, or to the whole business using COGS / Total Revenue</p>
+                        </div>
+
+                        <p style="font-size:0.92rem;color:var(--dark);line-height:1.7">For example: if a burger costs $4.50 in ingredients and sells for $18, the food cost is 25%. That means 75 cents of every dollar goes to labour, rent, power, and profit.</p>
+
+                        <p style="font-size:0.92rem;color:var(--dark);line-height:1.7;margin-top:1rem">Most restaurateurs track this at two levels: per dish (to price the menu correctly) and across the whole business (to spot category problems and supplier price creep).</p>
+                    </div>
+
+                    <!-- Australian benchmarks -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-chart-line"></i> Australian Restaurant Benchmarks</h2>
+                        <p class="section-intro">Food cost targets vary by segment. Use these as a starting point for your own business.</p>
+
+                        <table class="benchmark-table">
+                            <thead>
+                                <tr>
+                                    <th>Restaurant type</th>
+                                    <th>Target food cost %</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fine dining</td>
+                                    <td>25&ndash;30%</td>
+                                    <td><span class="tag-green">Healthy</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Casual dining / bistro</td>
+                                    <td>28&ndash;32%</td>
+                                    <td><span class="tag-green">Healthy</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Cafe / brunch</td>
+                                    <td>25&ndash;30%</td>
+                                    <td><span class="tag-green">Healthy</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Quick service / takeaway</td>
+                                    <td>28&ndash;35%</td>
+                                    <td><span class="tag-yellow">Watch</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Food trucks / pop-ups</td>
+                                    <td>30&ndash;38%</td>
+                                    <td><span class="tag-yellow">Watch</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Anything above 40%</td>
+                                    <td>Check your pricing and suppliers</td>
+                                    <td><span class="tag-red">Action needed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="tip-box" style="margin-top:1.5rem">
+                            <strong>Keep in mind:</strong> food cost % alone does not tell the full story. A high-volume dish at 35% can be more profitable than a low-volume dish at 22%. Track both margin and sales volume together.
+                        </div>
+                    </div>
+
+                    <!-- How to calculate recipe cost -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-list-ol"></i> How to Calculate the Cost of a Dish</h2>
+                        <p class="section-intro">Costing a recipe takes five steps. Walk through it once for each dish on your menu, then update it whenever ingredient prices change.</p>
+
+                        <ol class="step-list">
+                            <li>
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <strong>List every ingredient with exact quantities</strong>
+                                    <p>Include everything: proteins, produce, sauces, garnishes, cooking oil. Use the actual portion size served, not the pack size you buy.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <strong>Calculate the cost per unit for each ingredient</strong>
+                                    <p>Divide the purchase price by the quantity in the pack. A 5 kg bag of flour at $8.50 = $1.70 per kg. A 6 L tin of tomatoes at $12 = $2.00 per litre.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <strong>Multiply quantity by unit cost for each ingredient</strong>
+                                    <p>If a dish uses 200 g of chicken at $14/kg, that ingredient costs $2.80. Repeat for every item on the list.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <strong>Add a waste factor (typically 5&ndash;15%)</strong>
+                                    <p>Raw chicken loses around 20% in cooking. Whole fish loses 50%+ in filleting. Apply a trim/shrink factor to your raw costs so you are costing what actually lands on the plate.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <strong>Sum the ingredient costs to get cost per portion</strong>
+                                    <p>Divide by your yield if you batch-cook (e.g. a 10-portion bolognese costs $38 to make = $3.80 per serve).</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <!-- Example calculation -->
+                        <h3 style="font-size:1rem;font-weight:700;color:var(--dark);margin:1.75rem 0 0.75rem">Example: Grilled Chicken Burger</h3>
+                        <div class="calc-example">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Chicken breast (180g, after shrink)</td>
+                                        <td>$2.88</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brioche bun</td>
+                                        <td>$0.75</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lettuce, tomato, pickle</td>
+                                        <td>$0.55</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sauce (aioli + mustard)</td>
+                                        <td>$0.22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chips (150g frozen)</td>
+                                        <td>$0.90</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Oil, seasoning, garnish</td>
+                                        <td>$0.18</td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td>Total cost per serve</td>
+                                        <td>$4.48</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="margin-top:1rem;font-size:0.85rem;color:var(--gray)">Selling price: $22.00 &nbsp;|&nbsp; Food cost: <strong style="color:var(--mint-dark)">20.4%</strong> &nbsp;|&nbsp; Rating: <span class="tag-green">Excellent</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Menu engineering -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-grid-2"></i> Menu Engineering: Rank Your Dishes</h2>
+                        <p class="section-intro">Menu engineering is the practice of ranking every dish by two dimensions: how profitable it is, and how often it sells. The result tells you exactly what to promote, reprice, or drop.</p>
+
+                        <div class="matrix-grid">
+                            <div class="matrix-card stars">
+                                <h4><i class="fas fa-star"></i> Stars</h4>
+                                <p>High margin, high popularity. Your best dishes. Feature these prominently on the menu and in marketing. Never discount them.</p>
+                            </div>
+                            <div class="matrix-card plowhorses">
+                                <h4><i class="fas fa-horse"></i> Plowhorses</h4>
+                                <p>Low margin, high popularity. Customers love them but they are not making you much money. Try raising the price by $1&ndash;2 or reducing portion cost slightly.</p>
+                            </div>
+                            <div class="matrix-card puzzles">
+                                <h4><i class="fas fa-puzzle-piece"></i> Puzzles</h4>
+                                <p>High margin, low popularity. Good margins but not ordered often. Reposition on the menu, retrain staff to recommend them, or rewrite the description.</p>
+                            </div>
+                            <div class="matrix-card dogs">
+                                <h4><i class="fas fa-dog"></i> Dogs</h4>
+                                <p>Low margin, low popularity. Usually candidates for removal. Keep only if they serve a strategic purpose (e.g. dietary requirements, table anchor item).</p>
+                            </div>
+                        </div>
+
+                        <div class="tip-box" style="margin-top:1.5rem">
+                            <strong>To classify your dishes:</strong> calculate gross profit per dish (not food cost %), rank by sales volume over 4&ndash;8 weeks, then plot each item. Anything above the average gross profit is "high margin"; anything above average sales volume is "high popularity".
+                        </div>
+                    </div>
+
+                    <!-- Common mistakes -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-triangle-exclamation"></i> Common Mistakes That Push Food Cost Up</h2>
+                        <p class="section-intro">Most food cost problems come from one of five causes. Each has a practical fix.</p>
+
+                        <div style="font-size:0.9rem;color:var(--dark);line-height:1.8">
+                            <p><strong>1. Portion drift.</strong> Staff eyeball portions instead of weighing them. A 20 g difference on every chicken dish adds up fast across a service. Fix: use a scale for proteins, a ladle guide for sauces, and run spot checks weekly.</p>
+
+                            <p style="margin-top:1rem"><strong>2. Pricing off memory, not calculation.</strong> Menus are priced when you open and never revisited. If chicken, eggs, or avocado have gone up 30%, your food cost % has risen even if your prices have not. Fix: re-cost the menu every quarter.</p>
+
+                            <p style="margin-top:1rem"><strong>3. Supplier price creep.</strong> Invoices drift slightly higher each delivery without anyone noticing. Fix: compare invoice prices against your purchase orders every week. A 5% variance threshold is a reasonable trigger for review.</p>
+
+                            <p style="margin-top:1rem"><strong>4. Over-ordering and spoilage.</strong> Ordering too much leads to waste that never makes it to the plate. Fix: track par levels for your top-20 ingredients and order to restock to par, not to fill the cool room.</p>
+
+                            <p style="margin-top:1rem"><strong>5. No recipe cards.</strong> When dishes are made from memory, consistency and costing both suffer. Fix: write a recipe card for every dish with gram weights, method, and plating notes. This also speeds up training.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-circle-question"></i> Frequently Asked Questions</h2>
+
+                        <div class="faq-item">
+                            <strong>What food cost % should I target?</strong>
+                            <p>For most Australian casual dining restaurants, 28&ndash;32% is the target. Cafes and fine dining typically aim for 25&ndash;30%. Food trucks often run higher at 30&ndash;38% due to lower labour costs offsetting the margin. What matters most is that your blended food cost % leaves enough room after labour, rent, and overheads for profit.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>How often should I re-cost my menu?</strong>
+                            <p>At minimum, quarterly. In practice, whenever a key ingredient (protein, dairy, seasonal produce) has a significant price change. If you are buying from two or more suppliers, check for price drift monthly.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>Do I need to cost every single menu item?</strong>
+                            <p>Yes, but start with your top 10 by sales volume since those have the biggest impact on your overall food cost. Once those are accurate, work through the rest of the menu.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>Should I include packaging in my food cost?</strong>
+                            <p>For dine-in: no, packaging is usually tracked as a separate supply cost. For takeaway and delivery: yes, include packaging in the recipe cost since it is a direct cost of producing that item for sale.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>What is the difference between food cost % and gross profit margin?</strong>
+                            <p>Food cost % tells you what percentage of the selling price goes to ingredients. Gross profit margin is 100% minus food cost % (plus other direct costs). Both are useful. Food cost % is more practical for day-to-day kitchen management; gross profit margin is more useful for financial reporting.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <div class="sidebar-sticky">
+
+                    <div class="sidebar-cta">
+                        <h3>Automate your food costing</h3>
+                        <p>RestroAI links your ingredient costs to recipes automatically. When a supplier price changes, every dish that uses that ingredient is re-costed instantly and you get an alert if the margin drops below target.</p>
+                        <ul class="restrostock-feature-list">
+                            <li><i class="fas fa-check"></i> Recipe builder with gram-level costing</li>
+                            <li><i class="fas fa-check"></i> Automatic food cost alerts</li>
+                            <li><i class="fas fa-check"></i> Menu matrix (Stars, Plowhorses, Puzzles, Dogs)</li>
+                            <li><i class="fas fa-check"></i> Supplier price benchmarking</li>
+                            <li><i class="fas fa-check"></i> AI-powered predictive ordering</li>
+                            <li><i class="fas fa-check"></i> 14-day free trial</li>
+                        </ul>
+                        <a href="/#contact" class="btn btn-mint">Request a Free Demo</a>
+                        <a href="/#products" class="btn btn-outline" style="margin-top:0.5rem">Learn More</a>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>Benchmark rule of thumb:</strong> if your food cost % is consistently above your target, check suppliers first (price creep), then portions (drift), then menu pricing (stale prices). In that order.
+                    </div>
+
+                    <div class="sidebar-cta" style="margin-top:1.5rem">
+                        <h3>Also free: Inventory Template</h3>
+                        <p>Start tracking stock, par levels, and purchase orders with our free Google Sheets template for restaurants.</p>
+                        <a href="/resources/inventory-template" class="btn btn-outline">Get the Template</a>
+                    </div>
+
+                    <div class="sidebar-cta" style="margin-top:1.5rem">
+                        <h3>Also free: HACCP Checklist</h3>
+                        <p>Stay on top of food safety compliance with our practical HACCP checklist for Australian restaurant kitchens.</p>
+                        <a href="/resources/restaurant-haccp-checklist" class="btn btn-outline">Get the Checklist</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="footer-logo-icon">
+                        <span class="footer-logo-wordmark">DAY ZERO</span>
+                    </div>
+                    <p>From Day Zero to Day One.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Products</h5>
+                    <a href="/#products">NutriCare</a>
+                    <a href="/#products">RestroAI</a>
+                    <a href="/#products">QueueZero</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Resources</h5>
+                    <a href="/resources/iddsi-checklist">IDDSI Checklist</a>
+                    <a href="/resources/inventory-template">Inventory Template</a>
+                    <a href="/resources/restaurant-food-cost-guide">Food Cost Guide</a>
+                    <a href="/resources/restaurant-haccp-checklist">HACCP Checklist</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <a href="/#about">About</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Day Zero Solutions. All rights reserved. Made with grit in Australia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Demo request form
+        const form = document.getElementById('foodCostForm');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                const data = new FormData(form);
+                try {
+                    const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            name: data.get('name'),
+                            email: data.get('email'),
+                            restaurant: data.get('restaurant'),
+                            _subject: 'RestroAI Demo Request via Food Cost Guide page',
+                            _template: 'table'
+                        })
+                    });
+                    if (res.ok) {
+                        btn.textContent = "Thanks! We'll be in touch shortly.";
+                        btn.style.background = '#059669';
+                        form.reset();
+                        gtag('event', 'demo_request', { event_category: 'lead', event_label: 'food_cost_guide' });
+                    } else throw new Error();
+                } catch {
+                    btn.textContent = 'Something went wrong. Email us directly.';
+                    btn.style.background = '#EF4444';
+                    setTimeout(() => { btn.textContent = 'Request a Demo'; btn.disabled = false; btn.style.background = ''; }, 4000);
+                }
+            });
+        }
+    </script>
+    <script src="/main.js"></script>
+</body>
+</html>

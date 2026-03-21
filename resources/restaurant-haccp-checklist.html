@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant HACCP Compliance Checklist: Free Template for Australian Kitchens | Day Zero Solutions</title>
+    <meta name="description" content="Free HACCP compliance checklist for Australian restaurant kitchens. Covers critical control points, temperature logs, cleaning schedules, and documentation for food safety audits.">
+    <link rel="canonical" href="https://day-zero.com.au/resources/restaurant-haccp-checklist">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://day-zero.com.au/resources/restaurant-haccp-checklist">
+    <meta property="og:title" content="Free Restaurant HACCP Compliance Checklist for Australian Kitchens">
+    <meta property="og:description" content="Practical HACCP checklist covering critical control points, temperature monitoring, cleaning schedules, and audit documentation for Australian restaurants.">
+    <meta property="og:image" content="https://day-zero.com.au/images/og-image.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVLW70H83Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LVLW70H83Z');
+    </script>
+
+    <style>
+        body { background: var(--light); }
+
+        .resource-hero {
+            background: var(--dark);
+            padding: 80px 2rem 60px;
+        }
+
+        .resource-hero .container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .resource-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--mint-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .resource-hero h1 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .resource-hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 540px;
+            line-height: 1.7;
+        }
+
+        .hero-cta-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            width: 340px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-cta-box h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+        .hero-cta-box p { font-size: 0.85rem; color: var(--gray); margin-bottom: 1.25rem; }
+
+        .resource-form input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+            border: 1.5px solid #E2E8F0;
+            border-radius: var(--radius-sm);
+            background: var(--light);
+            color: var(--dark);
+            outline: none;
+            margin-bottom: 0.75rem;
+            transition: border-color 0.2s;
+        }
+
+        .resource-form input:focus { border-color: var(--mint); }
+        .resource-form .btn { width: 100%; margin-top: 0.25rem; }
+
+        .form-disclaimer { font-size: 0.75rem; color: var(--gray); margin-top: 0.75rem; text-align: center; }
+
+        /* Disclaimer banner */
+        .resource-disclaimer {
+            background: #fffbeb;
+            border-bottom: 1px solid #fde68a;
+            padding: 0.7rem 1.5rem;
+        }
+        .resource-disclaimer > div {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+        }
+        .resource-disclaimer i { color: #d97706; font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; }
+        .resource-disclaimer p { font-size: 0.8rem; color: #78350f; margin: 0; line-height: 1.6; }
+        .resource-disclaimer a { color: #92400e; text-decoration: underline; text-underline-offset: 2px; }
+
+        .resource-body { padding: 60px 2rem 80px; }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .content-section h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-section h2 i { color: var(--mint); font-size: 1.1rem; }
+
+        .section-intro { font-size: 0.95rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.6; }
+
+        /* Checklist items */
+        .checklist-group { margin-bottom: 2rem; }
+        .checklist-group:last-child { margin-bottom: 0; }
+
+        .checklist-group h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.15);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 0.9rem;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .checklist-item:last-child { border-bottom: none; }
+
+        .checklist-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .checklist-item .note {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        /* Temperature reference table */
+        .temp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 1.25rem;
+        }
+
+        .temp-table th {
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.82rem;
+            font-weight: 700;
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--mint-dark);
+        }
+
+        .temp-table td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; }
+        .temp-table tr:last-child td { border-bottom: none; }
+
+        .temp-cold { color: #1e40af; font-weight: 700; }
+        .temp-hot { color: #b45309; font-weight: 700; }
+        .temp-danger { color: #dc2626; font-weight: 700; }
+
+        /* CCP cards */
+        .ccp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .ccp-card {
+            border: 1.5px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            background: rgba(16, 185, 129, 0.03);
+        }
+
+        .ccp-card h4 {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--mint-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ccp-card p { font-size: 0.82rem; color: var(--dark); margin: 0; line-height: 1.5; }
+
+        /* Tip and FAQ */
+        .tip-box {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-size: 0.88rem;
+            color: var(--dark);
+            line-height: 1.6;
+            margin-top: 1.25rem;
+        }
+
+        .tip-box strong { color: var(--mint-dark); }
+
+        .faq-item { border-bottom: 1px solid #f0f0f0; padding: 1.25rem 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item strong { display: block; font-size: 0.95rem; color: var(--dark); margin-bottom: 0.4rem; }
+        .faq-item p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; margin: 0; }
+
+        /* Sidebar */
+        .sidebar-sticky { position: sticky; top: 90px; }
+
+        .sidebar-cta {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-cta h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+        .sidebar-cta p { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.25rem; }
+        .sidebar-cta .btn { width: 100%; margin-bottom: 0.5rem; }
+
+        .sidebar-tip {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-size: 0.88rem;
+            color: var(--dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-tip strong { color: var(--mint-dark); }
+
+        .restrostock-feature-list { list-style: none; margin: 1rem 0; }
+        .restrostock-feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        .restrostock-feature-list li i { color: var(--mint); font-size: 0.85rem; }
+
+        @media (max-width: 960px) {
+            .resource-hero .container { grid-template-columns: 1fr; }
+            .hero-cta-box { width: 100%; max-width: 400px; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .sidebar-sticky { position: static; }
+            .ccp-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .resource-hero { padding: 70px 1.25rem 36px; }
+            .resource-body { padding: 36px 1rem 56px; }
+            .content-section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="light-hero">
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- NAV -->
+    <header class="header" id="top">
+        <nav class="nav">
+            <a href="/" class="nav-logo">
+                <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="logo-icon">
+                <span class="logo-wordmark">DAY ZERO</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/#products" class="nav-link">Products</a></li>
+                <li class="nav-dropdown" id="navResourcesDropdown">
+                    <a href="/resources/restaurant-haccp-checklist" class="nav-link nav-has-dropdown">
+                        Resources <i class="fas fa-chevron-down nav-chevron"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-group-label">NutriCare</div>
+                        <a href="/resources/iddsi-checklist" class="nav-dropdown-item">IDDSI Compliance Checklist</a>
+                        <a href="/resources/must-screening-guide" class="nav-dropdown-item">MUST Malnutrition Screening Guide</a>
+                        <a href="/resources/aged-care-dietary-documentation-checklist" class="nav-dropdown-item">Dietary Documentation Checklist</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <div class="nav-dropdown-group-label">RestroAI</div>
+                        <a href="/resources/inventory-template" class="nav-dropdown-item">Inventory Spreadsheet Template</a>
+                        <a href="/resources/restaurant-food-cost-guide" class="nav-dropdown-item">Restaurant Food Cost Guide</a>
+                        <a href="/resources/restaurant-haccp-checklist" class="nav-dropdown-item">HACCP Compliance Checklist</a>
+                    </div>
+                </li>
+                <li><a href="/#contact" class="nav-link cta-link">Request a Demo</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="resource-hero">
+        <div class="container">
+            <div>
+                <div class="resource-badge">
+                    <i class="fas fa-clipboard-check"></i> Free Checklist
+                </div>
+                <h1>Restaurant HACCP Compliance Checklist for Australian Kitchens</h1>
+                <p>A practical, printable HACCP checklist covering critical control points, temperature monitoring, cleaning schedules, and the documentation your kitchen needs for food safety audits under the Food Standards Code.</p>
+            </div>
+            <div class="hero-cta-box">
+                <h3>See RestroAI in Action</h3>
+                <p>RestroAI logs HACCP temperature checks and cleaning completions automatically, with an audit trail ready for inspections.</p>
+                <form class="resource-form" id="haccpForm">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Work email" required>
+                    <input type="text" name="restaurant" placeholder="Restaurant name">
+                    <button type="submit" class="btn btn-mint">Request a Demo</button>
+                    <p class="form-disclaimer">No spam. We'll only contact you about RestroAI.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <div class="resource-disclaimer">
+        <div>
+            <i class="fas fa-circle-exclamation"></i>
+            <p><strong>General information only.</strong> This checklist is a practical starting point. HACCP requirements vary by state, local council, and premises type. Always verify current requirements with your local council environmental health officer and refer to the <a href="https://www.foodstandards.gov.au/foodsafety/standards/pages/standardsoverview.aspx" target="_blank" rel="noopener">Food Standards Australia New Zealand (FSANZ) Food Safety Standards</a>. Day Zero Solutions accepts no liability for regulatory outcomes. Consult a qualified food safety consultant for your specific situation.</p>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="resource-body">
+        <div class="container">
+            <div class="resource-grid">
+                <!-- MAIN CONTENT -->
+                <div>
+
+                    <!-- What is HACCP -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-shield-halved"></i> What is HACCP?</h2>
+                        <p class="section-intro">HACCP stands for Hazard Analysis and Critical Control Points. It is a systematic, preventive approach to food safety that identifies where hazards can occur during food preparation and puts controls in place to prevent them.</p>
+
+                        <p style="font-size:0.92rem;color:var(--dark);line-height:1.7">In Australia, HACCP principles underpin Standard 3.2.1 of the <strong>Food Standards Code</strong> (Food Safety Programs), which is mandatory for some food businesses and strongly recommended for all others. Businesses that supply food to hospitals, aged care facilities, childcare centres, or certain retail chains are typically required to have a documented food safety program based on HACCP principles.</p>
+
+                        <p style="font-size:0.92rem;color:var(--dark);line-height:1.7;margin-top:1rem">Even if you are not legally required to have a formal food safety program, following HACCP principles reduces the risk of a food safety incident, protects your customers, and provides documented evidence that you are managing food safety properly if an incident does occur.</p>
+
+                        <div class="tip-box">
+                            <strong>Key legislation:</strong> Food Standards Australia New Zealand (FSANZ) Food Standards Code, Standard 3.2.1 (Food Safety Programs), Standard 3.2.2 (Food Safety Practices and General Requirements), Standard 3.2.3 (Food Premises and Equipment). Your state or territory may have additional requirements.
+                        </div>
+                    </div>
+
+                    <!-- Temperature reference -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-temperature-half"></i> Temperature Reference Guide</h2>
+                        <p class="section-intro">Temperature control is the most critical HACCP tool for most restaurant kitchens. Food must be kept out of the danger zone (5&deg;C to 60&deg;C) where bacteria multiply rapidly.</p>
+
+                        <table class="temp-table">
+                            <thead>
+                                <tr>
+                                    <th>Zone</th>
+                                    <th>Temperature</th>
+                                    <th>Requirement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cold storage (fridges)</td>
+                                    <td class="temp-cold">0&deg;C to 5&deg;C</td>
+                                    <td>Check twice daily. Log deviations immediately.</td>
+                                </tr>
+                                <tr>
+                                    <td>Freezer storage</td>
+                                    <td class="temp-cold">-18&deg;C or below</td>
+                                    <td>Check daily. Any product above -15&deg;C needs assessment.</td>
+                                </tr>
+                                <tr>
+                                    <td>Hot holding</td>
+                                    <td class="temp-hot">60&deg;C or above</td>
+                                    <td>Check every 2 hours during service. Discard after 4 hours.</td>
+                                </tr>
+                                <tr>
+                                    <td>Cooking (poultry, mince, sausages)</td>
+                                    <td class="temp-hot">75&deg;C core (minimum)</td>
+                                    <td>Probe the thickest part. Hold for at least 15 seconds.</td>
+                                </tr>
+                                <tr>
+                                    <td>Cooking (whole muscle beef, lamb)</td>
+                                    <td class="temp-hot">63&deg;C core</td>
+                                    <td>Rest for 3 minutes minimum after reaching target.</td>
+                                </tr>
+                                <tr>
+                                    <td>Cooling (cooked food)</td>
+                                    <td class="temp-cold">60&deg;C to 21&deg;C in 2 hours</td>
+                                    <td>Then from 21&deg;C to 5&deg;C within a further 4 hours.</td>
+                                </tr>
+                                <tr>
+                                    <td>Danger zone</td>
+                                    <td class="temp-danger">5&deg;C to 60&deg;C</td>
+                                    <td>Bacteria double every 20 minutes. Maximum 4 hours total exposure for high-risk foods.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Critical Control Points -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-location-crosshairs"></i> Critical Control Points for Restaurants</h2>
+                        <p class="section-intro">A Critical Control Point (CCP) is a step in your process where a control measure is essential to prevent or eliminate a food safety hazard. Most restaurant kitchens have six key CCPs.</p>
+
+                        <div class="ccp-grid">
+                            <div class="ccp-card">
+                                <h4><i class="fas fa-truck"></i> 1. Receiving deliveries</h4>
+                                <p>Check temperatures of refrigerated goods on arrival. Reject anything above 5&deg;C (or above 0&deg;C for seafood). Check use-by dates and packaging integrity.</p>
+                            </div>
+                            <div class="ccp-card">
+                                <h4><i class="fas fa-snowflake"></i> 2. Cold storage</h4>
+                                <p>Maintain 0&deg;C to 5&deg;C. Raw proteins on the bottom shelf, ready-to-eat foods on top. Log fridge temperatures twice daily. Rotate stock (FIFO).</p>
+                            </div>
+                            <div class="ccp-card">
+                                <h4><i class="fas fa-fire-burner"></i> 3. Cooking</h4>
+                                <p>Reach minimum safe internal temperatures for all proteins. Use a calibrated probe thermometer. Record the temperature and time for high-risk items.</p>
+                            </div>
+                            <div class="ccp-card">
+                                <h4><i class="fas fa-clock"></i> 4. Hot holding</h4>
+                                <p>Keep hot food at 60&deg;C or above throughout service. Check every 2 hours. Do not mix fresh and held batches. Discard after 4 hours of total holding time.</p>
+                            </div>
+                            <div class="ccp-card">
+                                <h4><i class="fas fa-arrow-down-to-line"></i> 5. Cooling</h4>
+                                <p>Cool cooked food rapidly. Use shallow trays, blast chillers, or ice baths. 60&deg;C to 21&deg;C within 2 hours. 21&deg;C to 5&deg;C within a further 4 hours. Label with date/time.</p>
+                            </div>
+                            <div class="ccp-card">
+                                <h4><i class="fas fa-plate-utensils"></i> 6. Service and display</h4>
+                                <p>Separate raw and ready-to-eat foods. Use separate tongs and utensils. Monitor buffet and display temperatures. Remove items that have been out for more than 4 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Daily checklist -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-sun"></i> Daily HACCP Checklist</h2>
+                        <p class="section-intro">Print and complete this checklist at the start and end of each service. Keep completed records for a minimum of 12 months.</p>
+
+                        <div class="checklist-group">
+                            <h3>Opening checks</h3>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Check and record temperature of all fridges and cool rooms
+                                    <span class="note">Target: 0&deg;C to 5&deg;C. Log the actual reading and initials.</span>
+                                </span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Check and record freezer temperature
+                                    <span class="note">Target: -18&deg;C or below.</span>
+                                </span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Check use-by and best-before dates on all high-risk items in storage
+                                    <span class="note">Remove and discard any expired stock.</span>
+                                </span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Verify stock is stored correctly (raw proteins below ready-to-eat foods, all covered and labelled)
+                                </span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Check that probe thermometers are calibrated and in ice water reading 0&deg;C
+                                    <span class="note">Calibrate with boiling water (100&deg;C) or ice water (0&deg;C) at least weekly.</span>
+                                </span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Confirm handwashing stations are stocked (soap, paper towel, warm running water)</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Confirm sanitiser spray bottles are labelled, in date, and at correct concentration</span>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h3>During service</h3>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Check and log temperature of hot-held items every 2 hours
+                                    <span class="note">Target: 60&deg;C or above. Discard if below for more than 30 minutes.</span>
+                                </span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Record internal temperature of all high-risk cooked proteins (poultry, mince, pork, sausages)</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Ensure cross-contamination controls are in place (separate boards, utensils, and surfaces for raw and ready-to-eat)</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Confirm staff are washing hands after handling raw protein, touching their face, or returning from breaks</span>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h3>Closing checks</h3>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Check and record end-of-service fridge and cool room temperatures</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Label all prepared items with date of preparation and use-by date (maximum 3 days for most high-risk foods)</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Dispose of any food that has exceeded its time-temperature limits</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Sanitise all food contact surfaces, including benches, slicers, and chopping boards</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Store cleaning cloths in sanitising solution or replace with fresh ones</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Ensure all bins are emptied and bin areas are clean</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Sign and file completed daily log</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weekly cleaning schedule -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-broom"></i> Weekly Cleaning and Sanitation Schedule</h2>
+                        <p class="section-intro">Deep cleaning tasks that must be completed and documented each week. Assign a responsible staff member and record the completion date and initials.</p>
+
+                        <div class="checklist-group">
+                            <h3>Weekly tasks</h3>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Clean and sanitise fridge and cool room interiors (shelves, door seals, handles)</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Degrease and clean oven, grill, and fryer interiors</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Clean and sanitise dishwasher interior, filters, and spray arms</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Descale coffee machine (if applicable) and clean milk frother lines</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Clean rangehood filters (remove and degrease with hot water)</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Sanitise all food prep areas including underneath and behind equipment</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Check pest control stations and log observations</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Inspect dry storage areas for signs of moisture, pests, or damaged packaging</span>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h3>Monthly tasks</h3>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Professional rangehood and duct cleaning (or every 3 months for high-volume kitchens)</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Calibrate and test all probe thermometers against a reference standard</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Review and update allergen menu documentation</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Conduct food safety training refresher with all kitchen staff</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <span>Review supplier food safety certificates (letters of guarantee)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documentation -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-folder-open"></i> Records You Must Keep</h2>
+                        <p class="section-intro">If you have a documented food safety program, your records are what prove it is working. Local councils and state agencies can ask to see these records during an inspection.</p>
+
+                        <div style="font-size:0.9rem;color:var(--dark);line-height:1.8">
+                            <p><strong>Temperature logs.</strong> Date, time, equipment name, recorded temperature, and staff initials. Keep for at least 12 months.</p>
+                            <p style="margin-top:0.75rem"><strong>Cooking and cooling records.</strong> For high-risk items: dish name, batch size, start temperature, end temperature, and time achieved. Particularly important for catering and high-volume production.</p>
+                            <p style="margin-top:0.75rem"><strong>Cleaning completion records.</strong> Daily, weekly, and monthly cleaning tasks with date, staff member, and sign-off. A simple initials sheet works fine.</p>
+                            <p style="margin-top:0.75rem"><strong>Delivery acceptance records.</strong> Date, supplier, goods received, temperature on arrival, and acceptance or rejection decision.</p>
+                            <p style="margin-top:0.75rem"><strong>Staff food safety training records.</strong> Names, dates, and certificates for Food Handler training. All food handlers in Australia must have completed food safety training appropriate to their role.</p>
+                            <p style="margin-top:0.75rem"><strong>Corrective action records.</strong> Any time you identify a problem (out-of-range temperature, pest sighting, contamination event), document what happened and what you did about it.</p>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>Digital vs paper:</strong> both are acceptable. Digital logs with timestamps (such as those in RestroAI) are easier to retrieve during an inspection and harder to lose. Whatever format you use, the records must be accurate, legible, and accessible.
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="content-section">
+                        <h2><i class="fas fa-circle-question"></i> Frequently Asked Questions</h2>
+
+                        <div class="faq-item">
+                            <strong>Do all Australian restaurants need a HACCP plan?</strong>
+                            <p>Not all businesses are legally required to have a formal HACCP plan under Standard 3.2.1. However, all food businesses must comply with Standard 3.2.2 (Food Safety Practices), which covers most of the practical requirements described in this checklist. Check with your local council environmental health officer to confirm what applies to your premises and business type.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>What food handler training is required in Australia?</strong>
+                            <p>Standard 3.2.2A (which commenced in December 2023) requires at least one person in a food business to be a trained Food Safety Supervisor (FSS) holding a Nationally Recognised Qualification. All other food handlers must also have food safety skills and knowledge appropriate to their role. Training requirements vary slightly by state and territory.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>How long do I need to keep food safety records?</strong>
+                            <p>Standard 3.2.1 requires records to be kept for a minimum of 12 months. Some businesses keep them for 24 months as a precaution, particularly if they supply other businesses (catering, meal kits, aged care).</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>What happens if my fridge temperature goes out of range overnight?</strong>
+                            <p>First, check whether the deviation was brief or extended. If a fridge was found at 8&deg;C in the morning, assess how long it was above 5&deg;C. Foods that have spent a cumulative 4 hours or more in the danger zone (5&deg;C to 60&deg;C) should generally be discarded. Document the incident, what you discarded, and what corrective action you took (repair, restock, temporary use of another fridge).</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <strong>Do I need a separate cutting board for raw meat and vegetables?</strong>
+                            <p>Yes. Cross-contamination from raw proteins (particularly poultry) to ready-to-eat foods is one of the most common causes of food poisoning outbreaks. Use colour-coded boards (red for raw meat, green for vegetables, yellow for poultry, blue for raw seafood) and sanitise between use. Replace boards that are heavily scored since deep grooves cannot be adequately sanitised.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <div class="sidebar-sticky">
+
+                    <div class="sidebar-cta">
+                        <h3>Log HACCP checks automatically</h3>
+                        <p>RestroAI records temperature checks, cleaning task completions, and supplier receipts with a full audit trail. Generate inspection-ready reports in one click.</p>
+                        <ul class="restrostock-feature-list">
+                            <li><i class="fas fa-check"></i> Digital temperature log with alerts</li>
+                            <li><i class="fas fa-check"></i> Cleaning schedule and completion tracking</li>
+                            <li><i class="fas fa-check"></i> Supplier delivery acceptance records</li>
+                            <li><i class="fas fa-check"></i> AI-powered compliance inspection reports</li>
+                            <li><i class="fas fa-check"></i> Full audit trail for all records</li>
+                            <li><i class="fas fa-check"></i> 14-day free trial</li>
+                        </ul>
+                        <a href="/#contact" class="btn btn-mint">Request a Free Demo</a>
+                        <a href="/#products" class="btn btn-outline" style="margin-top:0.5rem">Learn More</a>
+                    </div>
+
+                    <div class="sidebar-tip">
+                        <strong>Inspection ready:</strong> an environmental health officer can ask to see your records at any time during a routine inspection. Digital logs with automatic timestamps are the easiest to produce on short notice.
+                    </div>
+
+                    <div class="sidebar-cta">
+                        <h3>Also free: Food Cost Guide</h3>
+                        <p>Learn how to calculate food cost percentage, cost per dish, and which menu items are hurting your margins.</p>
+                        <a href="/resources/restaurant-food-cost-guide" class="btn btn-outline">Read the Guide</a>
+                    </div>
+
+                    <div class="sidebar-cta" style="margin-top:1.5rem">
+                        <h3>Also free: Inventory Template</h3>
+                        <p>Start tracking stock, par levels, and purchase orders with our free Google Sheets template.</p>
+                        <a href="/resources/inventory-template" class="btn btn-outline">Get the Template</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="footer-logo-icon">
+                        <span class="footer-logo-wordmark">DAY ZERO</span>
+                    </div>
+                    <p>From Day Zero to Day One.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Products</h5>
+                    <a href="/#products">NutriCare</a>
+                    <a href="/#products">RestroAI</a>
+                    <a href="/#products">QueueZero</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Resources</h5>
+                    <a href="/resources/iddsi-checklist">IDDSI Checklist</a>
+                    <a href="/resources/inventory-template">Inventory Template</a>
+                    <a href="/resources/restaurant-food-cost-guide">Food Cost Guide</a>
+                    <a href="/resources/restaurant-haccp-checklist">HACCP Checklist</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <a href="/#about">About</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="/privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Day Zero Solutions. All rights reserved. Made with grit in Australia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Demo request form
+        const form = document.getElementById('haccpForm');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                const data = new FormData(form);
+                try {
+                    const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            name: data.get('name'),
+                            email: data.get('email'),
+                            restaurant: data.get('restaurant'),
+                            _subject: 'RestroAI Demo Request via HACCP Checklist page',
+                            _template: 'table'
+                        })
+                    });
+                    if (res.ok) {
+                        btn.textContent = "Thanks! We'll be in touch shortly.";
+                        btn.style.background = '#059669';
+                        form.reset();
+                        gtag('event', 'demo_request', { event_category: 'lead', event_label: 'haccp_checklist' });
+                    } else throw new Error();
+                } catch {
+                    btn.textContent = 'Something went wrong. Email us directly.';
+                    btn.style.background = '#EF4444';
+                    setTimeout(() => { btn.textContent = 'Request a Demo'; btn.disabled = false; btn.style.background = ''; }, 4000);
+                }
+            });
+        }
+    </script>
+    <script src="/main.js"></script>
+</body>
+</html>

@@ -1480,7 +1480,7 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 .mockup-meal.done { background: #ecfdf5; color: #059669; font-weight: 600; }
 .mockup-meal.pending { background: #f3f4f6; color: #9ca3af; }
 
-/* RestroStock mockup styles */
+/* RestroAI mockup styles */
 .mockup-stat-cards { display: flex; gap: 6px; }
 
 .mockup-stat-card {
