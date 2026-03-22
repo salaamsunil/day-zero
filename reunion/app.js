@@ -48,6 +48,7 @@ function addParticles(containerId, count) {
 
 function setupLock() {
     if (localStorage.getItem(AUTH_KEY) === '1') {
+        document.getElementById('lockScreen').style.display = 'none';
         showSite();
         return;
     }
