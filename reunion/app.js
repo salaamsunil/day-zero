@@ -481,11 +481,21 @@ function setupLightbox() {
     const backdrop = document.getElementById('lightboxBackdrop');
 
     function openLightbox(url) {
-        // Convert YouTube watch URL to embed URL
-        const embedUrl = url
-            .replace('watch?v=', 'embed/')
-            .replace('youtu.be/', 'www.youtube.com/embed/');
-        frame.src = embedUrl + '?autoplay=1';
+        let embedUrl = url;
+        if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
+            // YouTube: convert to embed
+            embedUrl = url
+                .replace('watch?v=', 'embed/')
+                .replace('youtu.be/', 'www.youtube.com/embed/');
+            embedUrl += (embedUrl.includes('?') ? '&' : '?') + 'autoplay=1';
+        } else if (url.includes('drive.google.com')) {
+            // Google Drive: extract file ID and use /preview embed
+            const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+            if (match) {
+                embedUrl = 'https://drive.google.com/file/d/' + match[1] + '/preview';
+            }
+        }
+        frame.src = embedUrl;
         box.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     }
