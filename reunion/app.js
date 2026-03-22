@@ -243,10 +243,12 @@ function buildTeacherCard(t) {
 
     card.innerHTML = `
         <div class="teacher-avatar">${avatarInner}</div>
-        <div class="teacher-name">${t.name}</div>
-        <div class="teacher-subject">${t.subject}</div>
-        <div class="teacher-message">${t.message}</div>
-        ${videoBtnHtml}
+        <div class="teacher-body">
+            <div class="teacher-name">${t.name}</div>
+            <div class="teacher-subject">${t.subject}</div>
+            <div class="teacher-message">${t.message}</div>
+            ${videoBtnHtml}
+        </div>
     `;
     return card;
 }
