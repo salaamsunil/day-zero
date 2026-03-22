@@ -89,38 +89,32 @@ plan.md                 ← This file
 
 ---
 
-## TODO — Immediate Next Steps
+## TODO — Docket
+
+### Google / Business Setup (in progress)
+- [ ] **Migrate Search Console + GA4** to hello@day-zero.com.au (see migration steps below)
+- [ ] **Google Business Profile** — create at business.google.com using hello@day-zero.com.au
+- [ ] **LinkedIn Company Page** — Day Zero Solutions (highest ROI social for B2B)
+- [ ] **Add real social links** — footer has # placeholders for Facebook, LinkedIn, Twitter
 
 ### Product Visuals
-- [ ] **Product screen snippets** — Take real screenshots from NutriCare and RestroStock apps, replace CSS mockups with actual product UI in device/browser frames
-- [ ] **NutriCare screens to capture:** resident dietary profile view, IDDSI compliance dashboard, meal ordering screen, kitchen production report
-- [ ] **RestroStock screens to capture:** stock overview dashboard, purchase order workflow, 3-way matching view, waste tracking chart
-- [ ] **QueueZero** — Keep existing animated mockup / placeholder until V1 is ready
+- [ ] **Product screen snippets** — Take real screenshots from NutriCare and RestroAI apps, replace CSS mockups with actual product UI
+- [ ] **NutriCare screens:** resident dietary profile view, IDDSI compliance dashboard, meal ordering screen, kitchen production report
+- [ ] **RestroAI screens:** stock overview dashboard, purchase order workflow, 3-way matching view, waste tracking chart
+
+### Demo Videos
+- [ ] **NutriCare** — 60-90 sec walkthrough: onboarding, resident profile, meal order, kitchen report (OBS + CapCut)
+- [ ] **RestroAI** — 60-90 sec walkthrough: stock check, low-stock alert, raise PO, receive goods, match invoice
+- [ ] Embed videos in product cards once recorded (replace VIDEO_ID_HERE placeholders in index.html)
 
 ### Domain Linking
-- [ ] **nutri-care.app** — Point to NutriCare product section or dedicated landing page (owned, needs DNS config + content)
-- [ ] **restrostock.app** — Point to RestroStock product section (owned, needs DNS config + content)
-- [ ] **queuezero.app** — Point to QueueZero waitlist section (owned, needs DNS config + content)
-- [ ] Add canonical links and OG tags per product domain if they get separate landing pages
+- [ ] **nutri-care.app** — redirect or dedicated landing page (DNS config needed)
+- [ ] **restroai.app** — redirect to RestroAI section (DNS config needed; formerly restrostock.app)
+- [ ] **queuezero.app** — redirect to waitlist section (DNS config needed)
 
-### Product Demo Videos
-- [ ] **NutriCare** — 60–90 sec screen-recorded walkthrough: onboarding → resident profile → meal order → kitchen report. Target after V1 production-ready.
-- [ ] **RestroStock** — 60–90 sec walkthrough: stock check → low-stock alert → raise PO → receive goods → match invoice. Target after V1 production-ready.
-- [ ] **QueueZero** — Concept/explainer video once MVP is in development
-- [ ] Embed videos in product cards (YouTube embed or autoplay loop `<video>` tag)
-- [ ] Consider short looping GIF/video as hero background or product card header
-
-### Business Profiles & Listings
-- [ ] Google Business Profile (business.google.com — free)
+### Business Listings
 - [ ] List NutriCare on Capterra, G2, GetApp
-- [ ] List RestroStock on Capterra, G2, GetApp
-- [ ] Add real social media links (footer has # placeholders for Facebook, LinkedIn, Twitter)
-
-### Demo Booking
-- [ ] Set up Calendly for "Request a Demo" flow — link both NutriCare and RestroStock CTAs
-- [ ] Consider product-specific Calendly links with pre-filled product info
-
-### Launch
+- [ ] List RestroAI on Capterra, G2, GetApp
 - [ ] Product Hunt launch (Day Zero + individual products)
 
 ---
