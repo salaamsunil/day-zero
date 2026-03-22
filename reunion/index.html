@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>25 Year Reunion &mdash; Dr G V Joshi Rotary EM School</title>
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== LOCK SCREEN ========== -->
+<div id="lockScreen" class="lock-screen">
+    <div id="lockParticles" class="lock-particles"></div>
+    <div class="lock-content">
+        <div class="lock-emblem">
+            <div class="lock-ring">
+                <span class="lock-ring-number">25</span>
+            </div>
+        </div>
+        <h1 class="lock-school">Dr G V Joshi Rotary<br>English Medium School</h1>
+        <p class="lock-batch">Class of 2001 &middot; 25 Year Reunion</p>
+        <p class="lock-date-line">18 &amp; 19 April 2026 &middot; Hubballi</p>
+        <div class="lock-form">
+            <div class="lock-input-row" id="lockInputRow">
+                <input
+                    type="password"
+                    id="lockPassword"
+                    class="lock-input"
+                    placeholder="Enter secret code"
+                    autocomplete="off"
+                    maxlength="30"
+                >
+                <button id="lockSubmit" class="lock-btn">
+                    <span>Unlock</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <p id="lockError" class="lock-error" aria-live="polite"></p>
+            <p class="lock-hint">Hint: think about the date of the event</p>
+        </div>
+    </div>
+</div>
+
+<!-- ========== MAIN CONTENT ========== -->
+<div id="mainContent" class="main-content hidden">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div id="heroParticles" class="hero-particles"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Class of 2001</span>
+                <i class="fas fa-star"></i>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-years">25 Years</span>
+                <span class="hero-school">Dr G V Joshi Rotary<br>English Medium School</span>
+            </h1>
+            <p class="hero-location">Hubballi, Karnataka &middot; Class of 2001</p>
+            <div class="countdown" id="countdown">
+                <div class="count-box">
+                    <span class="count-val" id="countDays">00</span>
+                    <span class="count-lbl">Days</span>
+                </div>
+                <span class="count-sep">:</span>
+                <div class="count-box">
+                    <span class="count-val" id="countHours">00</span>
+                    <span class="count-lbl">Hours</span>
+                </div>
+                <span class="count-sep">:</span>
+                <div class="count-box">
+                    <span class="count-val" id="countMins">00</span>
+                    <span class="count-lbl">Mins</span>
+                </div>
+                <span class="count-sep">:</span>
+                <div class="count-box">
+                    <span class="count-val" id="countSecs">00</span>
+                    <span class="count-lbl">Secs</span>
+                </div>
+            </div>
+            <a href="#attendees" class="hero-scroll-hint">
+                <span>Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <span class="stat-val stat-green" id="statConfirmed">0</span>
+                <span class="stat-lbl"><i class="fas fa-check-circle"></i> Confirmed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-val stat-amber" id="statThinking">0</span>
+                <span class="stat-lbl"><i class="fas fa-clock"></i> Still Deciding</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-val stat-violet" id="statTeachers">0</span>
+                <span class="stat-lbl"><i class="fas fa-chalkboard-user"></i> Teachers</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-val stat-gold" id="statDays">0</span>
+                <span class="stat-lbl"><i class="fas fa-calendar-days"></i> Days to Go</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ATTENDEES -->
+    <section class="section-light" id="attendees">
+        <div class="container">
+            <div class="section-hd">
+                <h2 class="section-title">Who's Coming</h2>
+                <p class="section-sub">Your classmates, confirmed and counting</p>
+            </div>
+            <div class="attendees-controls">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="ftab active" data-filter="all">All</button>
+                    <button class="ftab" data-filter="confirmed">
+                        Coming <span class="ftab-count" id="tabConfirmed"></span>
+                    </button>
+                    <button class="ftab" data-filter="thinking">
+                        Deciding <span class="ftab-count" id="tabThinking"></span>
+                    </button>
+                    <button class="ftab" data-filter="teacher">
+                        Teachers <span class="ftab-count" id="tabTeachers"></span>
+                    </button>
+                </div>
+                <div class="search-wrap">
+                    <i class="fas fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="attendeeSearch" class="search-input" placeholder="Search name...">
+                </div>
+            </div>
+            <div class="attendees-grid" id="attendeesGrid"></div>
+            <p class="attendees-note" id="noResults" style="display:none;">No results found.</p>
+        </div>
+    </section>
+
+    <!-- TRAVEL MAP -->
+    <section class="section-dark" id="travel">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <h2 class="section-title">Where We're Travelling From</h2>
+                <p class="section-sub">Classmates converging from across the world</p>
+            </div>
+            <div class="map-wrap">
+                <div id="reunionMap"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot legend-venue"></span>
+                        <span>Hubballi (Venue)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot legend-city"></span>
+                        <span>Origin city (size = number coming)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEACHERS -->
+    <section class="section-light" id="teachers">
+        <div class="container">
+            <div class="section-hd">
+                <span class="section-badge">Special Guests</span>
+                <h2 class="section-title">Our Teachers Are Joining Us</h2>
+                <p class="section-sub">The people who shaped us, back for this milestone</p>
+            </div>
+            <div class="teachers-grid" id="teachersGrid"></div>
+        </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="section-dark" id="event">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <h2 class="section-title">Event Details</h2>
+                <p class="section-sub">Everything you need to know</p>
+            </div>
+            <div class="event-grid">
+                <div class="event-map-col">
+                    <div class="venue-map-wrap">
+                        <iframe
+                            id="venueMapFrame"
+                            class="venue-map"
+                            src=""
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="venue-label">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <strong>Dennison Hotel</strong>
+                            <span>Hubballi, Karnataka</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-info-col" id="eventInfoCol">
+                    <!-- populated by app.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section class="section-light" id="announcements">
+        <div class="container">
+            <div class="section-hd">
+                <h2 class="section-title">Announcements</h2>
+                <p class="section-sub">Latest updates from the organising team</p>
+            </div>
+            <div class="announcements-list" id="announcementsList"></div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section-dark" id="gallery">
+        <div class="container">
+            <div class="gallery-placeholder">
+                <div class="gallery-icon-wrap">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <h3>Gallery Coming Soon</h3>
+                <p>Photos and memories from the reunion will appear here. Check back after the event!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reunion-footer">
+        <div class="footer-inner">
+            <div class="footer-school">Dr G V Joshi Rotary English Medium School</div>
+            <div class="footer-meta">Class of 2001 &middot; 25 Year Reunion &middot; 18 &amp; 19 April 2026</div>
+            <div class="footer-love">Made with <span class="heart">&#9829;</span> by a classmate</div>
+        </div>
+    </footer>
+
+</div><!-- /mainContent -->
+
+<!-- VIDEO LIGHTBOX -->
+<div id="videoLightbox" class="lightbox hidden">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-box">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close video">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="lightbox-video-wrap">
+            <iframe id="lightboxFrame" src="" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
