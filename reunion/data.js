@@ -16,15 +16,25 @@ const REUNION_DATA = {
     venueAddress: "Dennison Hotel, Hubballi, Karnataka",
     signupAmount: "5,500",
     signupCurrency: "INR",
-    signupDeadline: "2026-04-10",
+    signupDeadline: "2026-03-31",
     includes: [
-      "Two evenings of celebration",
+      "Two full days of celebration",
       "T-shirt for all attendees",
-      "Dinner and drinks both nights",
+      "Breakfast and lunch both days",
       "Games, performances and surprises",
       "Group photo session"
     ],
     whatsappLink: "https://chat.whatsapp.com/REPLACE_WITH_REAL_LINK",
+    // UPI payment details — fill in when ready
+    // upiId: "yourname@upi",
+    // upiQrImage: "/reunion/upi-qr.jpg",
+    // upiDeepLink: "upi://pay?pa=yourname@upi&pn=Reunion2026&am=5500&cu=INR",
+    upiId: null,
+    upiQrImage: null,
+    upiDeepLink: null,
+    // Google Forms sign-up link — fill in when ready
+    // signupFormUrl: "https://forms.gle/YOURFORMID",
+    signupFormUrl: null,
     // Replace with the embed URL from Google Maps for Dennison Hotel, Hubballi
     mapsEmbed: "https://maps.google.com/maps?q=Dennison+Hotel+Hubballi+Karnataka&output=embed"
   },
@@ -137,9 +147,14 @@ const REUNION_DATA = {
   // Announcements — add new ones at the TOP of this array (newest first)
   announcements: [
     {
+      date: "2026-03-23",
+      title: "Sign-up deadline: 31 March",
+      text: "The t-shirt cutoff has passed, but you can still register and join us! Sign up before 31 March to confirm your spot. Payment details coming soon."
+    },
+    {
       date: "2026-03-22",
       title: "T-shirts confirmed!",
-      text: "T-shirts have been ordered for everyone who signs up by April 10. Make sure you register and pay before the deadline to get yours."
+      text: "T-shirts have been locked in for everyone who signed up by 23 March. You can still register after the cutoff but may not receive a t-shirt."
     },
     {
       date: "2026-03-20",

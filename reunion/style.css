@@ -649,8 +649,10 @@ a { color: inherit; text-decoration: none; }
     padding: 1rem;
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.875rem;
     transition: var(--transition);
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .teacher-card:hover {
@@ -670,7 +672,7 @@ a { color: inherit; text-decoration: none; }
 
 .teacher-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-.teacher-body { flex: 1; min-width: 0; }
+.teacher-body { flex: 1; min-width: 0; word-break: break-word; overflow-wrap: anywhere; }
 
 .teacher-name {
     font-size: 0.95rem; font-weight: 800;
@@ -812,6 +814,72 @@ a { color: inherit; text-decoration: none; }
 }
 
 .event-wa-btn:hover { opacity: 0.88; }
+
+/* Payment / UPI block */
+.event-upi-block {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.125rem;
+    margin-bottom: 1.25rem;
+}
+
+.event-upi-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.875rem;
+}
+
+.event-upi-inner {
+    display: flex; gap: 1.25rem; align-items: flex-start; flex-wrap: wrap;
+}
+
+.event-upi-qr {
+    width: 100px; height: 100px; flex-shrink: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden; border: 1px solid var(--dark-border);
+    background: #fff;
+}
+
+.event-upi-qr img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.event-upi-details { flex: 1; min-width: 160px; }
+
+.event-upi-id {
+    font-size: 0.88rem; font-weight: 700; color: var(--gold);
+    margin-bottom: 0.5rem; word-break: break-all;
+}
+
+.event-upi-id-label {
+    font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.875rem;
+}
+
+.event-upi-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: var(--gold); color: #0D0D1A;
+    border: none; border-radius: 100px;
+    font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 700;
+    cursor: pointer; text-decoration: none;
+    transition: background 0.2s; touch-action: manipulation;
+}
+
+.event-upi-btn:hover { background: var(--gold-dark); }
+
+/* Sign-up form CTA */
+.event-form-btn {
+    display: flex; align-items: center; justify-content: center; gap: 0.625rem;
+    width: 100%; padding: 0.875rem;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: #0D0D1A;
+    border: none; border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 800;
+    cursor: pointer; text-decoration: none;
+    transition: opacity 0.2s; margin-bottom: 1rem;
+    touch-action: manipulation;
+}
+
+.event-form-btn:hover { opacity: 0.88; }
 
 /* ============================================================
    ANNOUNCEMENTS
@@ -1046,7 +1114,7 @@ a { color: inherit; text-decoration: none; }
     .attendees-grid { grid-template-columns: repeat(2, 1fr); gap: 0.625rem; }
     .attendee-card  { padding: 0.75rem 0.625rem; gap: 0.5rem; }
     .attendee-name  { font-size: 0.78rem; }
-    .attendee-location { display: none; }
+    .attendee-location { font-size: 0.65rem; }
     .avatar { width: 38px; height: 38px; font-size: 0.72rem; }
 
     /* Map */

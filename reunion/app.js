@@ -296,6 +296,37 @@ function renderEventDetails() {
 
     const deadline = formatDate(ev.signupDeadline);
 
+    // UPI payment block — only rendered when upiId or upiQrImage is set
+    let upiHtml = '';
+    if (ev.upiId || ev.upiQrImage) {
+        const qrHtml = ev.upiQrImage
+            ? `<div class="event-upi-qr"><img src="${ev.upiQrImage}" alt="UPI QR code"></div>`
+            : '';
+        const deepLinkHtml = ev.upiDeepLink
+            ? `<a href="${ev.upiDeepLink}" class="event-upi-btn"><i class="fas fa-mobile-screen"></i> Pay via UPI app</a>`
+            : '';
+        const upiIdHtml = ev.upiId
+            ? `<div class="event-upi-id">${ev.upiId}</div><div class="event-upi-id-label">UPI ID: copy and pay in any UPI app</div>`
+            : '';
+        upiHtml = `
+        <div class="event-upi-block">
+            <div class="event-upi-title">Pay via UPI</div>
+            <div class="event-upi-inner">
+                ${qrHtml}
+                <div class="event-upi-details">
+                    ${upiIdHtml}                    ${deepLinkHtml}
+                </div>
+            </div>
+        </div>`;
+    }
+
+    // Google Forms sign-up CTA - only rendered when signupFormUrl is set
+    const formBtnHtml = ev.signupFormUrl
+        ? `<a href="${ev.signupFormUrl}" target="_blank" rel="noopener" class="event-form-btn">
+               <i class="fas fa-clipboard-list"></i> Register &amp; Sign Up
+           </a>`
+        : '';
+
     col.innerHTML = `
         <div class="event-dates-badge">${datesHtml}</div>
         <div class="event-includes-title">What's included</div>
@@ -309,6 +340,8 @@ function renderEventDetails() {
                 <i class="fas fa-clock"></i> Sign up by ${deadline}
             </div>
         </div>
+        ${formBtnHtml}
+        ${upiHtml}
         <a href="${ev.whatsappLink}" target="_blank" rel="noopener" class="event-wa-btn">
             <i class="fab fa-whatsapp"></i> Join the WhatsApp Group
         </a>
