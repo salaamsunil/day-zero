@@ -16,7 +16,7 @@ const REUNION_DATA = {
     venueAddress: "Dennison Hotel, Hubballi, Karnataka",
     signupAmount: "5,500",
     signupCurrency: "INR",
-    signupDeadline: "2026-03-31",
+    signupDeadline: "2026-04-16",
     includes: [
       "Two full days of celebration",
       "T-shirt for all attendees",
@@ -38,7 +38,7 @@ const REUNION_DATA = {
   },
 
   stats: {
-    confirmed: 67,
+    confirmed: 68,
     thinking: 0,
     teachers: 0,
     totalInvited: 130
@@ -148,18 +148,18 @@ const REUNION_DATA = {
   announcements: [
     {
       date: "2026-03-23",
-      title: "67 batchmates confirmed!",
-      text: "We have crossed 67 confirmed attendees and counting. Share the page and let's get more classmates on board before 31 March!"
+      title: "68 batchmates confirmed!",
+      text: "We have 68 confirmed attendees and the list is growing. Sign up before 16 April to secure your spot!"
     },
     {
       date: "2026-03-23",
-      title: "Sign-up deadline: 31 March",
-      text: "The t-shirt cutoff has passed, but you can still register and join us! Sign up before 31 March to confirm your spot. Pay via UPI to Vinod Solanki (vinodsolanki70@oksbi) and fill the Google Form to complete your registration."
+      title: "Sign-up extended to 16 April",
+      text: "Great news! Registration is now open until 16 April. Note: t-shirts are only guaranteed for those who signed up by 22 March. Pay via UPI to Vinod Solanki (vinodsolanki70@oksbi) and fill the Google Form to complete your registration."
     },
     {
       date: "2026-03-22",
       title: "T-shirts confirmed!",
-      text: "T-shirts have been locked in for everyone who signed up by 23 March. You can still register after the cutoff but may not receive a t-shirt."
+      text: "T-shirts have been locked in for everyone who signed up by 22 March. You can still register until 16 April to join us, but t-shirts are not guaranteed after the cutoff."
     },
     {
       date: "2026-03-20",
