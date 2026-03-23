@@ -24,7 +24,7 @@ const REUNION_DATA = {
       "Games, performances and surprises",
       "Group photo session"
     ],
-    whatsappLink: "https://chat.whatsapp.com/REPLACE_WITH_REAL_LINK",
+    whatsappLink: "https://wa.me/",
     // Replace with the embed URL from Google Maps for Dennison Hotel, Hubballi
     mapsEmbed: "https://maps.google.com/maps?q=Dennison+Hotel+Hubballi+Karnataka&output=embed",
 

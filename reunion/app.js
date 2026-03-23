@@ -346,8 +346,8 @@ function renderEventDetails() {
         </div>
         ${formBtnHtml}
         ${upiHtml}
-        <a href="${ev.whatsappLink}" target="_blank" rel="noopener" class="event-wa-btn">
-            <i class="fab fa-whatsapp"></i> Join the WhatsApp Group
+        <a href="${ev.whatsappLink}" class="event-wa-btn">
+            <i class="fab fa-whatsapp"></i> Check WhatsApp for Updates
         </a>
     `;
 }
