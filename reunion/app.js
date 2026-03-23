@@ -224,6 +224,10 @@ function applyFilters() {
 function renderTeachers() {
     const grid = document.getElementById('teachersGrid');
     if (!grid) return;
+    if (!REUNION_DATA.teachers || REUNION_DATA.teachers.length === 0) {
+        grid.innerHTML = '<p style="color:#94A3B8;font-size:0.9rem;text-align:center;padding:2rem 0;">Teacher details coming soon.</p>';
+        return;
+    }
     grid.innerHTML = '';
     REUNION_DATA.teachers.forEach(t => grid.appendChild(buildTeacherCard(t)));
 }
