@@ -162,7 +162,7 @@ const REUNION_DATA = {
       text: "T-shirts have been locked in for everyone who signed up by 22 March. You can still register until 16 April to join us, but t-shirts are not guaranteed after the cutoff."
     },
     {
-      date: "2026-03-20",
+      date: "2025-12-21",
       title: "Venue locked in",
       text: "Dennison Hotel in Hubballi is confirmed for both days of April 18 and 19. We have the entire banquet hall reserved just for us."
     },
