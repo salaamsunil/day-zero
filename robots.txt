@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /reunion/
 
 Sitemap: https://day-zero.com.au/sitemap.xml
