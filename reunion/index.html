@@ -153,36 +153,6 @@
         </div>
     </section>
 
-    <!-- ATTENDEES -->
-    <section class="section-light" id="attendees">
-        <div class="container">
-            <div class="section-hd">
-                <h2 class="section-title">Who's Coming</h2>
-                <p class="section-sub">Your classmates, confirmed and counting</p>
-            </div>
-            <div class="attendees-controls">
-                <div class="filter-tabs" id="filterTabs">
-                    <button class="ftab active" data-filter="all">All</button>
-                    <button class="ftab" data-filter="confirmed">
-                        Coming <span class="ftab-count" id="tabConfirmed"></span>
-                    </button>
-                    <button class="ftab" data-filter="thinking">
-                        Deciding <span class="ftab-count" id="tabThinking"></span>
-                    </button>
-                    <button class="ftab" data-filter="teacher">
-                        Teachers <span class="ftab-count" id="tabTeachers"></span>
-                    </button>
-                </div>
-                <div class="search-wrap">
-                    <i class="fas fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="attendeeSearch" class="search-input" placeholder="Search name...">
-                </div>
-            </div>
-            <div class="attendees-grid" id="attendeesGrid"></div>
-            <p class="attendees-note" id="noResults" style="display:none;">No results found.</p>
-        </div>
-    </section>
-
     <!-- TRAVEL MAP -->
     <section class="section-dark" id="travel">
         <div class="container">
@@ -260,6 +230,36 @@
                 <p class="section-sub">Latest updates from the organising team</p>
             </div>
             <div class="announcements-list" id="announcementsList"></div>
+        </div>
+    </section>
+
+    <!-- WHO'S COMING -->
+    <section class="section-light" id="attendees">
+        <div class="container">
+            <div class="section-hd">
+                <h2 class="section-title">Who's Coming</h2>
+                <p class="section-sub">Your classmates, confirmed and counting</p>
+            </div>
+            <div class="attendees-controls">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="ftab active" data-filter="confirmed">
+                        Coming <span class="ftab-count" id="tabConfirmed"></span>
+                    </button>
+                    <button class="ftab" data-filter="thinking">
+                        Deciding <span class="ftab-count" id="tabThinking"></span>
+                    </button>
+                    <button class="ftab" data-filter="all">All</button>
+                    <button class="ftab" data-filter="teacher">
+                        Teachers <span class="ftab-count" id="tabTeachers"></span>
+                    </button>
+                </div>
+                <div class="search-wrap">
+                    <i class="fas fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="attendeeSearch" class="search-input" placeholder="Search name...">
+                </div>
+            </div>
+            <div class="attendees-grid" id="attendeesGrid"></div>
+            <p class="attendees-note" id="noResults" style="display:none;">No results found.</p>
         </div>
     </section>
 
