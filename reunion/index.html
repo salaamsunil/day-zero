@@ -233,23 +233,6 @@
         </div>
     </section>
 
-    <!-- GUESS THE CLASSMATE GAME -->
-    <section class="section-dark" id="game">
-        <div class="container">
-            <div class="section-hd section-hd-light">
-                <span class="section-badge"><i class="fas fa-gamepad"></i> Mini Game</span>
-                <h2 class="section-title">Guess the Classmate</h2>
-                <p class="section-sub">25 years on, do you still recognise everyone? 10 questions, initials only.</p>
-            </div>
-            <div class="game-trigger-wrap">
-                <button type="button" id="playGameBtn" class="game-trigger-btn">
-                    <i class="fas fa-play"></i> Play Game
-                </button>
-                <p class="game-trigger-note">Uses the confirmed attendee list. Takes about 2 minutes.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- WHO'S COMING -->
     <section class="section-light" id="attendees">
         <div class="container">
@@ -303,48 +286,6 @@
     </footer>
 
 </div><!-- /mainContent -->
-
-<!-- GUESS THE CLASSMATE MODAL -->
-<div id="gameModal" class="game-modal hidden">
-    <div class="game-modal-backdrop" id="gameModalBackdrop"></div>
-    <div class="game-modal-box" role="dialog" aria-modal="true">
-        <div class="game-modal-header">
-            <div class="game-modal-title-row">
-                <span class="game-modal-badge"><i class="fas fa-gamepad"></i> Guess the Classmate</span>
-                <div id="gameProgress" class="game-progress-text">1 / 10</div>
-            </div>
-            <button type="button" id="gameClose" class="game-close-btn" aria-label="Close game">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="game-progress-bar-wrap">
-            <div id="gameProgressBar" class="game-progress-bar" style="width:10%"></div>
-        </div>
-        <div class="game-score-strip">
-            <span class="game-score-label">Score</span>
-            <span id="gameScoreDisplay" class="game-score-val">0</span>
-        </div>
-        <div id="gameQuestion" class="game-question-panel">
-            <div class="game-avatar-wrap">
-                <div id="gameAvatar" class="avatar avatar-confirmed game-avatar">AB</div>
-            </div>
-            <div id="gameClue" class="game-clue">
-                <span id="gameClueFlag">&#127470;&#127475;</span>
-                <span id="gameClueLocation" class="game-clue-location">India</span>
-            </div>
-            <div id="gameOptions" class="game-options"></div>
-        </div>
-        <div id="gameResult" class="game-result-panel hidden">
-            <div class="game-result-trophy"><i id="gameResultIcon" class="fas fa-trophy"></i></div>
-            <div id="gameResultScore" class="game-result-score">7 / 10</div>
-            <div id="gameResultMessage" class="game-result-message">You know your batch pretty well!</div>
-            <button type="button" id="gamePlayAgain" class="game-play-again-btn">
-                <i class="fas fa-rotate-right"></i> Play Again
-            </button>
-            <button type="button" id="gameResultClose" class="game-result-close-btn">Close</button>
-        </div>
-    </div>
-</div>
 
 <!-- VIDEO LIGHTBOX -->
 <div id="videoLightbox" class="lightbox hidden">

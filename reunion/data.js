@@ -34,7 +34,11 @@ const REUNION_DATA = {
     upiDeepLink: "upi://pay?pa=vinodsolanki70@oksbi&pn=Vinod%20Solanki&am=5500&cu=INR",
 
     // Google Forms sign-up link
-    signupFormUrl: "https://forms.gle/iei9DFGvm56DPruM6"
+    signupFormUrl: "https://forms.gle/iei9DFGvm56DPruM6",
+
+    // Talent show / performance registration
+    talentFormUrl: "https://forms.gle/ZGv5aSUMtWRASEENA",
+    talentDeadline: "2026-04-07"
   },
 
   stats: {
@@ -239,7 +243,7 @@ const REUNION_DATA = {
       text: "Dennison Hotel in Hubballi is confirmed for both days of April 18 and 19. We have the entire banquet hall reserved just for us."
     },
     {
-      date: "2026-03-15",
+      date: "2025-12-15",
       title: "Teachers are joining us!",
       text: "Several of our beloved teachers have confirmed attendance. Share this page and encourage more classmates to sign up!"
     }

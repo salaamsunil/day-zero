@@ -102,7 +102,6 @@ function initAll() {
     setupFilters();
     setupSearch();
     setupLightbox();
-    setupGame();
     addParticles('heroParticles', 22);
     // Map needs the container to be visible first
     setTimeout(initMap, 400);
@@ -332,6 +331,25 @@ function renderEventDetails() {
            </a>`
         : '';
 
+    // Talent / performance registration block
+    let talentHtml = '';
+    if (ev.talentFormUrl) {
+        const talentDeadline = ev.talentDeadline ? formatDate(ev.talentDeadline) : '';
+        const deadlineNote = talentDeadline ? `<div class="event-talent-deadline"><i class="fas fa-clock"></i> Entries close ${talentDeadline}</div>` : '';
+        talentHtml = `
+        <div class="event-talent-block">
+            <div class="event-talent-icon"><i class="fas fa-microphone-lines"></i></div>
+            <div class="event-talent-body">
+                <div class="event-talent-title">Got a hidden talent?</div>
+                <div class="event-talent-sub">Perform at the reunion. Singers, dancers, comedians, storytellers welcome.</div>
+                ${deadlineNote}
+                <a href="${ev.talentFormUrl}" target="_blank" rel="noopener" class="event-talent-btn">
+                    <i class="fas fa-star"></i> Register to Perform
+                </a>
+            </div>
+        </div>`;
+    }
+
     col.innerHTML = `
         <div class="event-dates-badge">${datesHtml}</div>
         <div class="event-includes-title">What's included</div>
@@ -347,6 +365,7 @@ function renderEventDetails() {
         </div>
         ${formBtnHtml}
         ${upiHtml}
+        ${talentHtml}
         <a href="${ev.whatsappLink}" class="event-wa-btn">
             <i class="fab fa-whatsapp"></i> Check WhatsApp for Updates
         </a>
@@ -556,148 +575,6 @@ function setupLightbox() {
         const btn = e.target.closest('.teacher-video-btn');
         if (btn) openLightbox(btn.dataset.url);
     });
-}
-
-// ── Guess the Classmate Game ───────────────────────────────────
-
-const GAME_QUESTIONS = 10;
-const GAME_MESSAGES = [
-    { min: 10, max: 10, icon: 'fas fa-trophy',            msg: 'You know everyone! See you at the reunion.' },
-    { min: 8,  max: 9,  icon: 'fas fa-star',              msg: 'Almost perfect. 25 years and still sharp!' },
-    { min: 6,  max: 7,  icon: 'fas fa-face-smile',        msg: 'Not bad. A few faces blurred over the years.' },
-    { min: 4,  max: 5,  icon: 'fas fa-graduation-cap',    msg: 'You remember half the batch. The reunion will help!' },
-    { min: 1,  max: 3,  icon: 'fas fa-clock',             msg: '25 years is a long time. Good thing we have name tags!' },
-    { min: 0,  max: 0,  icon: 'fas fa-face-rolling-eyes', msg: '25 years is a long time...' }
-];
-let gameState = { pool: [], questions: [], current: 0, score: 0, answered: false };
-
-function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-}
-
-function setupGame() {
-    const modal   = document.getElementById('gameModal');
-    const playBtn = document.getElementById('playGameBtn');
-    const closeBtn = document.getElementById('gameClose');
-    const backdrop = document.getElementById('gameModalBackdrop');
-    const playAgain = document.getElementById('gamePlayAgain');
-    const resultClose = document.getElementById('gameResultClose');
-
-    if (!playBtn) return;
-
-    playBtn.addEventListener('click', () => { initGame(); modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; });
-    closeBtn.addEventListener('click', closeGame);
-    backdrop.addEventListener('click', closeGame);
-    playAgain.addEventListener('click', initGame);
-    resultClose.addEventListener('click', closeGame);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeGame(); });
-
-    function closeGame() {
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-    }
-}
-
-function initGame() {
-    const confirmed = (REUNION_DATA.attendees || []).filter(a => a.status === 'confirmed' && !a.teacher);
-    gameState.pool = shuffle([...confirmed]);
-    gameState.questions = gameState.pool.slice(0, Math.min(GAME_QUESTIONS, gameState.pool.length));
-    gameState.current = 0;
-    gameState.score = 0;
-    gameState.answered = false;
-
-    document.getElementById('gameScoreDisplay').textContent = '0';
-    document.getElementById('gameResult').classList.add('hidden');
-    document.getElementById('gameQuestion').classList.remove('hidden');
-    nextQuestion();
-}
-
-function nextQuestion() {
-    gameState.answered = false;
-    const q = gameState.questions[gameState.current];
-    const total = gameState.questions.length;
-    const num = gameState.current + 1;
-
-    document.getElementById('gameProgress').textContent = num + ' / ' + total;
-    document.getElementById('gameProgressBar').style.width = (num / total * 100) + '%';
-
-    const avatar = document.getElementById('gameAvatar');
-    avatar.textContent = initials(q.name);
-    avatar.className = 'avatar avatar-confirmed game-avatar';
-
-    document.getElementById('gameClueFlag').textContent = q.flag || '';
-    document.getElementById('gameClueLocation').textContent = q.location || 'India';
-
-    // Build 4 options: 1 correct + 3 random decoys
-    const others = gameState.pool.filter(a => a.name !== q.name);
-    shuffle(others);
-    const decoys = others.slice(0, 3);
-    const options = shuffle([q, ...decoys]);
-
-    const container = document.getElementById('gameOptions');
-    container.innerHTML = '';
-    options.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'game-option-btn';
-        btn.textContent = opt.name;
-        btn.addEventListener('click', () => handleAnswer(opt.name, q.name));
-        container.appendChild(btn);
-    });
-}
-
-function handleAnswer(chosen, correct) {
-    if (gameState.answered) return;
-    gameState.answered = true;
-
-    const avatar = document.getElementById('gameAvatar');
-    const btns = document.querySelectorAll('.game-option-btn');
-    const isCorrect = chosen === correct;
-
-    if (isCorrect) {
-        gameState.score++;
-        avatar.classList.add('flash-correct');
-    } else {
-        avatar.classList.add('flash-wrong');
-    }
-
-    document.getElementById('gameScoreDisplay').textContent = gameState.score;
-
-    btns.forEach(btn => {
-        btn.disabled = true;
-        if (btn.textContent === correct) {
-            btn.classList.add(isCorrect ? 'opt-correct' : 'opt-reveal');
-        } else if (btn.textContent === chosen && !isCorrect) {
-            btn.classList.add('opt-wrong');
-        }
-    });
-
-    setTimeout(() => {
-        gameState.current++;
-        if (gameState.current < gameState.questions.length) {
-            nextQuestion();
-        } else {
-            showResult();
-        }
-    }, 1100);
-}
-
-function showResult() {
-    document.getElementById('gameQuestion').classList.add('hidden');
-    const result = document.getElementById('gameResult');
-    result.classList.remove('hidden');
-
-    const s = gameState.score;
-    const total = gameState.questions.length;
-    const entry = GAME_MESSAGES.find(m => s >= m.min && s <= m.max) || GAME_MESSAGES[GAME_MESSAGES.length - 1];
-
-    document.getElementById('gameResultIcon').className = entry.icon;
-    document.getElementById('gameResultScore').textContent = s + ' / ' + total;
-    document.getElementById('gameResultMessage').textContent = entry.msg;
 }
 
 // ── Boot ──────────────────────────────────────────────────────
