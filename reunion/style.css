@@ -358,30 +358,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   HYPE VIDEO
-   ============================================================ */
-
-.hype-video-section { padding-bottom: 2.5rem; }
-
-.hype-video-wrap {
-    max-width: 780px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 48px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.06);
-    background: #000;
-}
-
-.hype-video {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 480px;
-    object-fit: contain;
-}
-
-/* ============================================================
    STATS BAR
    ============================================================ */
 
