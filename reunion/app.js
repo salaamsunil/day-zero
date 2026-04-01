@@ -128,12 +128,17 @@ function renderAttendees() {
     document.getElementById('tabTeachers').textContent  = teacherCount;
 
     grid.innerHTML = '';
+    let confirmedSerial = 0, thinkingSerial = 0, teacherSerial = 0;
     sorted.forEach(person => {
-        grid.appendChild(buildAttendeeCard(person));
+        let serial = 0;
+        if (person.isTeacher)                serial = ++teacherSerial;
+        else if (person.status === 'confirmed') serial = ++confirmedSerial;
+        else if (person.status === 'thinking')  serial = ++thinkingSerial;
+        grid.appendChild(buildAttendeeCard(person, serial));
     });
 }
 
-function buildAttendeeCard(person) {
+function buildAttendeeCard(person, serial) {
     const card = document.createElement('div');
     card.className = 'attendee-card';
     card.dataset.status  = person.status;
@@ -158,10 +163,14 @@ function buildAttendeeCard(person) {
         : person.status === 'thinking'  ? 'Deciding...'
         : 'Can\'t Make It';
 
+    const serialHtml = serial ? `<span class="attendee-serial">#${serial}</span>` : '';
     card.innerHTML = `
         <div class="${avatarClass}">${avatarInner}</div>
         <div class="attendee-info">
-            <div class="attendee-name">${person.name}</div>
+            <div class="attendee-name-row">
+                <div class="attendee-name">${person.name}</div>
+                ${serialHtml}
+            </div>
             <div class="attendee-meta">
                 <span class="${pillClass}">${pillText}</span>
                 <span class="attendee-location">${person.flag || ''} ${person.location}</span>
