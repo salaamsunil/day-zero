@@ -224,8 +224,8 @@ const REUNION_DATA = {
   announcements: [
     {
       date: "2026-03-23",
-      title: "77 batchmates confirmed!",
-      text: "We have 77 confirmed attendees and the list is growing. Sign up before 16 April to secure your spot!"
+      title: "76 batchmates confirmed!",
+      text: "We have 76 confirmed attendees and the list is growing. Sign up before 16 April to secure your spot!"
     },
     {
       date: "2026-03-23",
