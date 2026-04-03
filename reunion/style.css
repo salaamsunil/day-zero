@@ -1066,6 +1066,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .ann-text { font-size: 0.875rem; color: #4B5563; line-height: 1.6; }
+.ann-link { color: #F5A623; text-decoration: underline; word-break: break-all; }
+.ann-link:hover { color: #e8930a; }
 
 /* ============================================================
    GALLERY PLACEHOLDER

@@ -15,7 +15,7 @@ const REUNION_DATA = {
     venue: "Dennison Hotel",
     venueAddress: "Dennison Hotel, Hubballi, Karnataka",
     signupAmount: "5,500",
-    signupCurrency: "INR",
+    signupCurrency: "₹",
     signupDeadline: "2026-04-16",
     includes: [
       "Two full days of celebration",
@@ -448,6 +448,11 @@ const REUNION_DATA = {
 
   // Announcements — add new ones at the TOP of this array (newest first)
   announcements: [
+    {
+      date: "2026-04-03",
+      title: "Share your school photos for the reunion video",
+      text: "We are compiling a special memory video for the reunion and need your school photos and videos! Please send them to <a href=\"mailto:rotary.reunion.2001@gmail.com\" class=\"ann-link\">rotary.reunion.2001@gmail.com</a> as soon as possible so there is enough time to put it all together. Send early — the sooner the better!"
+    },
     {
       date: "2026-03-23",
       title: "76 batchmates confirmed!",
