@@ -164,19 +164,53 @@ function buildAttendeeCard(person, serial) {
         : 'Can\'t Make It';
 
     const serialHtml = serial ? `<span class="attendee-serial">#${serial}</span>` : '';
+
+    // Profile expand panel (only for confirmed with profile data)
+    const hasProfile = person.status === 'confirmed' && (person.org || person.role || person.linkedin || person.achievement || person.education);
+    let profileHtml = '';
+    if (hasProfile) {
+        const orgLine = (person.role || person.org)
+            ? `<div class="ap-org"><i class="fas fa-briefcase"></i> ${[person.org, person.role ? '(' + person.role + ')' : ''].filter(Boolean).join(' ')}</div>`
+            : '';
+        const eduLine = person.education
+            ? `<span class="ap-tag">${person.education}</span>`
+            : '';
+        const liLine = person.linkedin
+            ? `<a href="${person.linkedin}" target="_blank" rel="noopener" class="ap-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>`
+            : '';
+        const achLine = person.achievement
+            ? `<div class="ap-achievement"><i class="fas fa-star"></i> ${person.achievement}</div>`
+            : '';
+        profileHtml = `
+        <div class="attendee-profile">
+            ${orgLine}
+            <div class="ap-tags-row">${eduLine}${liLine}</div>
+            ${achLine}
+        </div>`;
+        card.dataset.expandable = 'true';
+    }
+
     card.innerHTML = `
         <div class="${avatarClass}">${avatarInner}</div>
         <div class="attendee-info">
             <div class="attendee-name-row">
                 <div class="attendee-name">${person.name}</div>
-                ${serialHtml}
+                <div class="attendee-name-right">
+                    ${serialHtml}
+                    ${hasProfile ? '<i class="fas fa-chevron-down ap-chevron"></i>' : ''}
+                </div>
             </div>
             <div class="attendee-meta">
                 <span class="${pillClass}">${pillText}</span>
                 <span class="attendee-location">${person.flag || ''} ${person.location}</span>
             </div>
+            ${profileHtml}
         </div>
     `;
+
+    if (hasProfile) {
+        card.addEventListener('click', () => card.classList.toggle('expanded'));
+    }
     return card;
 }
 
