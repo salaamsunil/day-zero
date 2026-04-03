@@ -43,7 +43,7 @@ const REUNION_DATA = {
   stats: {
     confirmed: 76,
     thinking: 60,
-    teachers: 0,
+    teachers: 37,
     totalInvited: 130
   },
 
@@ -443,8 +443,49 @@ const REUNION_DATA = {
     { city: "Sagar",       lat: 14.1668,   lng: 75.0272,   count: 1  }
   ],
 
-  // Teacher tribute cards — to be added once names are confirmed
-  teachers: [],
+  // Teacher tribute cards
+  // Fields: name, subject, message, photo (path), videoUrl
+  // nameEditable: true = name unknown, someone can fill it in via the page
+  // subject and message are always editable on the page; edits save to browser localStorage
+  teachers: [
+    { name: "Anita",          subject: "", message: "", photo: "/reunion/Teachers/Anita Teacher.jpeg",                         videoUrl: null },
+    { name: "Fareeda",        subject: "", message: "", photo: "/reunion/Teachers/Anita and Fareeda Teacher.jpeg",              videoUrl: null },
+    { name: "Aparna",         subject: "", message: "", photo: "/reunion/Teachers/Aparna Teacher.jpeg",                        videoUrl: null },
+    { name: "Ashwini",        subject: "", message: "", photo: "/reunion/Teachers/Ashwini Teacher.jpeg",                       videoUrl: null },
+    { name: "Geeta Pawar",    subject: "", message: "", photo: "/reunion/Teachers/Geeta Pawar Teacher.jpeg",                   videoUrl: null },
+    { name: "Greshom Naik",   subject: "", message: "", photo: "/reunion/Teachers/Greshom Naik Sir.jpeg",                      videoUrl: null },
+    { name: "Jaya",           subject: "", message: "", photo: "/reunion/Teachers/Jaya Teacher.jpeg",                          videoUrl: null },
+    { name: "Kulkarni",       subject: "", message: "", photo: "/reunion/Teachers/Kulkarni Sir.jpeg",                          videoUrl: null },
+    { name: "Manisha",        subject: "", message: "", photo: "/reunion/Teachers/Manisha Teacher.jpeg",                       videoUrl: null },
+    { name: "Mary",           subject: "", message: "", photo: "/reunion/Teachers/Mary Teacher.jpeg",                          videoUrl: null },
+    { name: "Matilda",        subject: "", message: "", photo: "/reunion/Teachers/Matilda Teacher.jpeg",                       videoUrl: null },
+    { name: "Mr. Mylarappa",  subject: "School Staff", message: "", photo: "/reunion/Teachers/Mr Mylarappa Peon.jpeg",         videoUrl: null },
+    { name: "Padki",          subject: "", message: "", photo: "/reunion/Teachers/Padki Teacher.jpeg",                         videoUrl: null },
+    { name: "Pinto",          subject: "", message: "", photo: "/reunion/Teachers/Pinto Teacher.jpeg",                         videoUrl: null },
+    { name: "Pratibha",       subject: "", message: "", photo: "/reunion/Teachers/Pratibha Teacher.jpeg",                      videoUrl: null },
+    { name: "Pratiksha",      subject: "Librarian",  message: "", photo: "/reunion/Teachers/Pratiksha Teacher - Librarian.jpeg", videoUrl: null },
+    { name: "Savita Nagaraj", subject: "", message: "", photo: "/reunion/Teachers/Savita Nagaraj Teacher.jpeg",                videoUrl: null },
+    { name: "Shakuntala",     subject: "", message: "", photo: "/reunion/Teachers/Shakuntala Teacher.jpeg",                    videoUrl: null },
+    { name: "Sheela",         subject: "", message: "", photo: "/reunion/Teachers/Sheela Teacher.jpeg",                        videoUrl: null },
+    { name: "Shirolkar",      subject: "", message: "", photo: "/reunion/Teachers/Shirolkar Teacher.jpeg",                     videoUrl: null },
+    { name: "Sunita",         subject: "", message: "", photo: "/reunion/Teachers/Sunita Teacher.jpeg",                        videoUrl: null },
+    { name: "Varda",          subject: "", message: "", photo: "/reunion/Teachers/Varda Teacher.jpeg",                         videoUrl: null },
+    { name: "Veena",          subject: "", message: "", photo: "/reunion/Teachers/Veena Teacher.jpeg",                         videoUrl: null },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-03-29 at 22.38.01.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-03-29 at 22.38.33.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-03-29 at 23.29.53.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-03-30 at 00.22.03.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-03-30 at 00.48.54.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-03-30 at 01.18.50.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.03.03.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.03.05.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.03.43.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.03.46.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.03.47 (1).jpeg",           videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.03.47.jpeg",               videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.03.48 (1).jpeg",           videoUrl: null, nameEditable: true },
+    { name: "", subject: "", message: "", photo: "/reunion/Teachers/WhatsApp Image 2026-04-03 at 16.05.30.jpeg",               videoUrl: null, nameEditable: true }
+  ],
 
   // Announcements — add new ones at the TOP of this array (newest first)
   announcements: [

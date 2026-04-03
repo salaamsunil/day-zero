@@ -169,9 +169,11 @@ function buildAttendeeCard(person, serial) {
     const hasProfile = person.status === 'confirmed' && (person.org || person.role || person.linkedin || person.achievement || person.education);
     let profileHtml = '';
     if (hasProfile) {
-        const orgLine = (person.role || person.org)
-            ? `<div class="ap-org"><i class="fas fa-briefcase"></i> ${[person.org, person.role ? '(' + person.role + ')' : ''].filter(Boolean).join(' ')}</div>`
-            : '';
+        const roleLabel = { Business: 'Business Owner', Government: 'Government', 'Home Maker': 'Home Maker' }[person.role] || null;
+        const jobTitle = person.jobTitle || roleLabel;
+        const orgLine = person.org
+            ? `<div class="ap-org"><i class="fas fa-briefcase"></i> ${jobTitle ? `<span class="ap-jobtitle">${jobTitle}</span> at ` : ''}${person.org}</div>`
+            : (jobTitle ? `<div class="ap-org"><i class="fas fa-briefcase"></i> ${jobTitle}</div>` : '');
         const eduLine = person.education
             ? `<span class="ap-tag">${person.education}</span>`
             : '';
@@ -264,40 +266,78 @@ function applyFilters() {
 
 // ── Teachers ──────────────────────────────────────────────────
 
+function teacherStorageKey(t) {
+    // Key based on photo filename so it survives data.js edits
+    return 'teacher_edit_' + t.photo.split('/').pop();
+}
+
+function loadTeacherEdits(t) {
+    try {
+        const saved = localStorage.getItem(teacherStorageKey(t));
+        if (saved) return Object.assign({}, t, JSON.parse(saved));
+    } catch (e) { /* ignore */ }
+    return t;
+}
+
+function saveTeacherEdits(t, name, subject, message) {
+    try {
+        localStorage.setItem(teacherStorageKey(t), JSON.stringify({ name, subject, message }));
+    } catch (e) { /* ignore */ }
+}
+
 function renderTeachers() {
     const grid = document.getElementById('teachersGrid');
     if (!grid) return;
-    if (!REUNION_DATA.teachers || REUNION_DATA.teachers.length === 0) {
-        grid.innerHTML = '<p style="color:#94A3B8;font-size:0.9rem;text-align:center;padding:2rem 0;">Teacher details coming soon.</p>';
-        return;
-    }
     grid.innerHTML = '';
-    REUNION_DATA.teachers.forEach(t => grid.appendChild(buildTeacherCard(t)));
+    REUNION_DATA.teachers.forEach(t => grid.appendChild(buildTeacherCard(loadTeacherEdits(t))));
 }
 
 function buildTeacherCard(t) {
     const card = document.createElement('div');
     card.className = 'teacher-card';
 
-    const avatarInner = t.photo
-        ? `<img src="${t.photo}" alt="${t.name}" loading="lazy">`
-        : initials(t.name);
+    const photoSrc = t.photo.replace(/ /g, '%20');
+    const avatarInner = `<img src="${photoSrc}" alt="${t.name || 'Teacher'}" loading="lazy">`;
 
-    const videoBtnHtml = t.videoUrl
-        ? `<button class="teacher-video-btn" data-url="${t.videoUrl}">
-               <i class="fas fa-play"></i> Watch their message
-           </button>`
-        : '';
+    const nameEditable = t.nameEditable || !t.name;
+    const nameHtml = `<div class="teacher-name teacher-editable${nameEditable ? ' teacher-name-empty' : ''}" contenteditable="true" data-field="name" data-placeholder="Tap to add name">${t.name || ''}</div>`;
+    const subjectHtml = `<div class="teacher-subject teacher-editable${!t.subject ? ' teacher-field-empty' : ''}" contenteditable="true" data-field="subject" data-placeholder="Tap to add subject">${t.subject || ''}</div>`;
+    const messageHtml = `<div class="teacher-message teacher-editable${!t.message ? ' teacher-field-empty' : ''}" contenteditable="true" data-field="message" data-placeholder="Tap to add message">${t.message || ''}</div>`;
 
     card.innerHTML = `
         <div class="teacher-avatar">${avatarInner}</div>
         <div class="teacher-body">
-            <div class="teacher-name">${t.name}</div>
-            <div class="teacher-subject">${t.subject}</div>
-            <div class="teacher-message">${t.message}</div>
-            ${videoBtnHtml}
+            ${nameHtml}
+            ${subjectHtml}
+            <div class="teacher-edit-hint"><i class="fas fa-pen-to-square"></i> Tap fields to edit. Saves in your browser.</div>
+            ${messageHtml}
         </div>
     `;
+
+    // Wire up editable fields
+    card.querySelectorAll('.teacher-editable').forEach(el => {
+        // Show placeholder if empty
+        if (!el.textContent.trim()) el.classList.add('showing-placeholder');
+
+        el.addEventListener('focus', () => {
+            el.classList.remove('showing-placeholder');
+        });
+
+        el.addEventListener('blur', () => {
+            const val = el.textContent.trim();
+            if (!val) el.classList.add('showing-placeholder');
+            // Save all three fields from this card
+            const body = el.closest('.teacher-body');
+            const name    = body.querySelector('[data-field="name"]').textContent.trim();
+            const subject = body.querySelector('[data-field="subject"]').textContent.trim();
+            const message = body.querySelector('[data-field="message"]').textContent.trim();
+            saveTeacherEdits(t, name, subject, message);
+        });
+
+        // Prevent newlines
+        el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); el.blur(); } });
+    });
+
     return card;
 }
 
