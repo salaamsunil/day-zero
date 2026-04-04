@@ -712,22 +712,18 @@ a { color: inherit; text-decoration: none; }
 
 .teachers-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-/* Mobile: horizontal card (avatar left, content right) */
 .teacher-card {
     background: var(--light-card);
     border: 1.5px solid var(--light-border);
     border-radius: var(--radius);
-    padding: 1rem;
     display: flex;
-    align-items: flex-start;
-    gap: 0.875rem;
+    flex-direction: column;
     transition: var(--transition);
     overflow: hidden;
-    max-width: 100%;
 }
 
 .teacher-card:hover {
@@ -735,19 +731,23 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 0 8px 32px rgba(245,166,35,0.12);
 }
 
-.teacher-avatar {
-    width: 56px; height: 56px; flex-shrink: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6D28D9, var(--violet));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; font-weight: 800; color: #fff;
+.teacher-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
-    border: 2px solid rgba(245,166,35,0.2);
+    background: linear-gradient(135deg, #1e1b4b, #2d1b69);
+    flex-shrink: 0;
 }
 
-.teacher-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.teacher-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
 
-.teacher-body { flex: 1; min-width: 0; word-break: break-word; overflow-wrap: anywhere; }
+.teacher-body { padding: 0.75rem; word-break: break-word; overflow-wrap: anywhere; }
 
 .teacher-name {
     font-size: 0.95rem; font-weight: 800;
@@ -769,41 +769,6 @@ a { color: inherit; text-decoration: none; }
 .teacher-message:not(.teacher-field-empty):not(:focus)::before { content: '\201C'; }
 .teacher-message:not(.teacher-field-empty):not(:focus)::after  { content: '\201D'; }
 
-/* Editable teacher fields */
-.teacher-editable {
-    outline: none;
-    border-bottom: 1.5px dashed rgba(255,255,255,0.15);
-    border-radius: 2px;
-    transition: border-color 0.15s, background 0.15s;
-    cursor: text;
-    min-height: 1.2em;
-}
-
-.teacher-editable:focus {
-    border-bottom-color: var(--gold);
-    background: rgba(245,166,35,0.05);
-    padding: 0.1rem 0.2rem;
-    border-radius: 4px 4px 0 0;
-}
-
-.teacher-editable.showing-placeholder::before {
-    content: attr(data-placeholder);
-    color: #64748B;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 0.78rem;
-    pointer-events: none;
-}
-
-.teacher-editable.showing-placeholder { color: transparent; }
-.teacher-editable.showing-placeholder:focus { color: inherit; }
-.teacher-editable.showing-placeholder:focus::before { display: none; }
-
-.teacher-edit-hint {
-    font-size: 0.65rem; color: #475569;
-    margin-bottom: 0.5rem;
-    display: flex; align-items: center; gap: 0.3rem;
-}
 
 /* Student profile job title */
 .ap-jobtitle { color: #E2E8F0; font-weight: 600; }
@@ -1228,19 +1193,9 @@ a { color: inherit; text-decoration: none; }
    RESPONSIVE — mobile first
    ============================================================ */
 
-/* ── Tablet and up: teachers go 2 columns, cards go vertical/centered ── */
+/* ── Tablet and up: teachers 3 columns ── */
 @media (min-width: 640px) {
-    .teachers-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-
-    .teacher-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1.75rem 1.5rem;
-    }
-
-    .teacher-avatar { width: 72px; height: 72px; font-size: 1.4rem; }
-
+    .teachers-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .teacher-video-btn { padding: 0.55rem 1.1rem; font-size: 0.82rem; }
 }
 

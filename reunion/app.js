@@ -266,30 +266,11 @@ function applyFilters() {
 
 // ── Teachers ──────────────────────────────────────────────────
 
-function teacherStorageKey(t) {
-    // Key based on photo filename so it survives data.js edits
-    return 'teacher_edit_' + t.photo.split('/').pop();
-}
-
-function loadTeacherEdits(t) {
-    try {
-        const saved = localStorage.getItem(teacherStorageKey(t));
-        if (saved) return Object.assign({}, t, JSON.parse(saved));
-    } catch (e) { /* ignore */ }
-    return t;
-}
-
-function saveTeacherEdits(t, name, subject, message) {
-    try {
-        localStorage.setItem(teacherStorageKey(t), JSON.stringify({ name, subject, message }));
-    } catch (e) { /* ignore */ }
-}
-
 function renderTeachers() {
     const grid = document.getElementById('teachersGrid');
     if (!grid) return;
     grid.innerHTML = '';
-    REUNION_DATA.teachers.forEach(t => grid.appendChild(buildTeacherCard(loadTeacherEdits(t))));
+    REUNION_DATA.teachers.forEach(t => grid.appendChild(buildTeacherCard(t)));
 }
 
 function buildTeacherCard(t) {
@@ -297,46 +278,20 @@ function buildTeacherCard(t) {
     card.className = 'teacher-card';
 
     const photoSrc = t.photo.replace(/ /g, '%20');
-    const avatarInner = `<img src="${photoSrc}" alt="${t.name || 'Teacher'}" loading="lazy">`;
-
-    const nameEditable = t.nameEditable || !t.name;
-    const nameHtml = `<div class="teacher-name teacher-editable${nameEditable ? ' teacher-name-empty' : ''}" contenteditable="true" data-field="name" data-placeholder="Tap to add name">${t.name || ''}</div>`;
-    const subjectHtml = `<div class="teacher-subject teacher-editable${!t.subject ? ' teacher-field-empty' : ''}" contenteditable="true" data-field="subject" data-placeholder="Tap to add subject">${t.subject || ''}</div>`;
-    const messageHtml = `<div class="teacher-message teacher-editable${!t.message ? ' teacher-field-empty' : ''}" contenteditable="true" data-field="message" data-placeholder="Tap to add message">${t.message || ''}</div>`;
+    const nameHtml  = t.name    ? `<div class="teacher-name">${t.name}</div>` : '';
+    const subjectHtml = t.subject ? `<div class="teacher-subject">${t.subject}</div>` : '';
+    const messageHtml = t.message ? `<div class="teacher-message">${t.message}</div>` : '';
 
     card.innerHTML = `
-        <div class="teacher-avatar">${avatarInner}</div>
+        <div class="teacher-photo">
+            <img src="${photoSrc}" alt="${t.name || 'Teacher'}" loading="lazy">
+        </div>
         <div class="teacher-body">
             ${nameHtml}
             ${subjectHtml}
-            <div class="teacher-edit-hint"><i class="fas fa-pen-to-square"></i> Tap fields to edit. Saves in your browser.</div>
             ${messageHtml}
         </div>
     `;
-
-    // Wire up editable fields
-    card.querySelectorAll('.teacher-editable').forEach(el => {
-        // Show placeholder if empty
-        if (!el.textContent.trim()) el.classList.add('showing-placeholder');
-
-        el.addEventListener('focus', () => {
-            el.classList.remove('showing-placeholder');
-        });
-
-        el.addEventListener('blur', () => {
-            const val = el.textContent.trim();
-            if (!val) el.classList.add('showing-placeholder');
-            // Save all three fields from this card
-            const body = el.closest('.teacher-body');
-            const name    = body.querySelector('[data-field="name"]').textContent.trim();
-            const subject = body.querySelector('[data-field="subject"]').textContent.trim();
-            const message = body.querySelector('[data-field="message"]').textContent.trim();
-            saveTeacherEdits(t, name, subject, message);
-        });
-
-        // Prevent newlines
-        el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); el.blur(); } });
-    });
 
     return card;
 }
