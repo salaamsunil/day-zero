@@ -16,7 +16,22 @@
       "Bash(where:*)",
       "Bash(python:*)",
       "Bash(pip install:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "WebSearch",
+      "Bash(reset:*)",
+      "WebFetch(domain:resend.com)",
+      "Bash(grep -n \"disclaimer\\\\|general information\\\\|not a substitute\\\\|professional advice\\\\|legal\\\\|liability\" resources/*.html -i)",
+      "Bash(grep -n \"<body\" resources/*.html privacy.html)",
+      "Bash(sed -i 's/<body>/<body class=\"\"light-hero\"\">/' resources/iddsi-checklist.html resources/must-screening-guide.html resources/aged-care-dietary-documentation-checklist.html resources/inventory-template.html privacy.html)",
+      "Bash(grep -n \"main.js\" resources/*.html privacy.html)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i 's|</body>|    <script src=\"\"/main.js\"\"></script>\\\\n</body>|' \"$f\")",
+      "Bash(echo \"Done: $f\")",
+      "Bash(done)",
+      "WebFetch(domain:www.abn.business.gov.au)",
+      "WebFetch(domain:abr.business.gov.au)",
+      "Bash(python3:*)"
     ]
   }
 }
