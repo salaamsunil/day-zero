@@ -743,7 +743,7 @@ a { color: inherit; text-decoration: none; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 15%;
     display: block;
 }
 
@@ -838,7 +838,7 @@ a { color: inherit; text-decoration: none; }
 .tvc-thumb img {
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 15%;
     display: block;
     transition: transform 0.3s;
 }

@@ -271,7 +271,9 @@ function renderTeachers() {
     const grid = document.getElementById('teachersGrid');
     if (!grid) return;
     grid.innerHTML = '';
-    REUNION_DATA.teachers.forEach(t => grid.appendChild(buildTeacherCard(t)));
+    REUNION_DATA.teachers
+        .filter(t => t.photo)
+        .forEach(t => grid.appendChild(buildTeacherCard(t)));
 }
 
 function buildTeacherCard(t) {
