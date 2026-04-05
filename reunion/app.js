@@ -95,6 +95,7 @@ function showSite() {
 function initAll() {
     renderAttendees();
     renderTeachers();
+    renderTeacherVideos();
     renderAnnouncements();
     renderEventDetails();
     startCountdown();
@@ -575,25 +576,33 @@ function greatCircleArc(lat1, lng1, lat2, lng2, n) {
 function setupLightbox() {
     const box      = document.getElementById('videoLightbox');
     const frame    = document.getElementById('lightboxFrame');
+    const vid      = document.getElementById('lightboxVideo');
     const closeBtn = document.getElementById('lightboxClose');
     const backdrop = document.getElementById('lightboxBackdrop');
 
     function openLightbox(url) {
-        let embedUrl = url;
-        if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
-            // YouTube: convert to embed
-            embedUrl = url
-                .replace('watch?v=', 'embed/')
-                .replace('youtu.be/', 'www.youtube.com/embed/');
-            embedUrl += (embedUrl.includes('?') ? '&' : '?') + 'autoplay=1';
-        } else if (url.includes('drive.google.com')) {
-            // Google Drive: extract file ID and use /preview embed
-            const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-            if (match) {
-                embedUrl = 'https://drive.google.com/file/d/' + match[1] + '/preview';
+        if (url.includes('.mp4') || url.includes('cloudinary.com/video')) {
+            // Direct Cloudinary mp4 — use <video> element
+            frame.style.display = 'none';
+            vid.style.display = 'block';
+            vid.src = url;
+            vid.play();
+        } else {
+            // YouTube / Google Drive — use iframe
+            vid.style.display = 'none';
+            frame.style.display = 'block';
+            let embedUrl = url;
+            if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
+                embedUrl = url
+                    .replace('watch?v=', 'embed/')
+                    .replace('youtu.be/', 'www.youtube.com/embed/');
+                embedUrl += (embedUrl.includes('?') ? '&' : '?') + 'autoplay=1';
+            } else if (url.includes('drive.google.com')) {
+                const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+                if (match) embedUrl = 'https://drive.google.com/file/d/' + match[1] + '/preview';
             }
+            frame.src = embedUrl;
         }
-        frame.src = embedUrl;
         box.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     }
@@ -601,6 +610,10 @@ function setupLightbox() {
     function closeLightbox() {
         box.classList.add('hidden');
         frame.src = '';
+        vid.pause();
+        vid.src = '';
+        vid.style.display = 'none';
+        frame.style.display = 'block';
         document.body.style.overflow = '';
     }
 
@@ -608,11 +621,49 @@ function setupLightbox() {
     backdrop.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-    // Delegate from teachers grid
-    document.getElementById('teachersGrid').addEventListener('click', e => {
+    // Delegate from teachers grid and video grid
+    document.addEventListener('click', e => {
         const btn = e.target.closest('.teacher-video-btn');
         if (btn) openLightbox(btn.dataset.url);
     });
+}
+
+// ── Teacher Videos ─────────────────────────────────────────────
+
+function cloudinaryThumb(videoUrl) {
+    // Generate a thumbnail image URL from a Cloudinary video URL
+    return videoUrl
+        .replace('/video/upload/q_auto/f_auto/', '/video/upload/so_0,w_600/')
+        .replace('.mp4', '.jpg');
+}
+
+function renderTeacherVideos() {
+    const section = document.getElementById('teacherVideosSection');
+    const grid    = document.getElementById('teacherVideosGrid');
+    if (!section || !grid) return;
+
+    const videos = REUNION_DATA.teachers.filter(t => t.videoUrl);
+    if (!videos.length) return;
+
+    grid.innerHTML = '';
+    videos.forEach(t => {
+        const thumb = cloudinaryThumb(t.videoUrl);
+        const label = t.name || 'Teacher';
+        const card  = document.createElement('div');
+        card.className = 'tvc-card';
+        card.innerHTML = `
+            <div class="tvc-thumb">
+                <img src="${thumb}" alt="${label}" loading="lazy">
+                <button class="tvc-play teacher-video-btn" data-url="${t.videoUrl}" aria-label="Play video from ${label}">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+            <div class="tvc-label">${label}</div>
+        `;
+        grid.appendChild(card);
+    });
+
+    section.style.display = '';
 }
 
 // ── Boot ──────────────────────────────────────────────────────
