@@ -737,6 +737,7 @@ a { color: inherit; text-decoration: none; }
     overflow: hidden;
     background: linear-gradient(135deg, #1e1b4b, #2d1b69);
     flex-shrink: 0;
+    cursor: zoom-in;
 }
 
 .teacher-photo img {
@@ -1278,6 +1279,30 @@ a { color: inherit; text-decoration: none; }
 .lightbox-video-wrap iframe {
     position: absolute; inset: 0;
     width: 100%; height: 100%; border: none;
+}
+
+/* Image mode: drop the 16:9 padding, let image set its own size */
+.lightbox-image-mode .lightbox-box {
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image-mode .lightbox-video-wrap {
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 88vh;
+}
+
+.lightbox-image-mode #lightboxImage {
+    max-height: 88vh;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.6);
 }
 
 /* ============================================================

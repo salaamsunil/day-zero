@@ -286,7 +286,7 @@ function buildTeacherCard(t) {
     const messageHtml = t.message ? `<div class="teacher-message">${t.message}</div>` : '';
 
     card.innerHTML = `
-        <div class="teacher-photo">
+        <div class="teacher-photo" data-src="${photoSrc}" role="button" tabindex="0" aria-label="View photo of ${t.name || 'Teacher'}">
             <img src="${photoSrc}" alt="${t.name || 'Teacher'}" loading="lazy">
         </div>
         <div class="teacher-body">
@@ -579,20 +579,28 @@ function setupLightbox() {
     const box      = document.getElementById('videoLightbox');
     const frame    = document.getElementById('lightboxFrame');
     const vid      = document.getElementById('lightboxVideo');
+    const img      = document.getElementById('lightboxImage');
     const closeBtn = document.getElementById('lightboxClose');
     const backdrop = document.getElementById('lightboxBackdrop');
 
-    function openLightbox(url) {
-        if (url.includes('.mp4') || url.includes('cloudinary.com/video')) {
-            // Direct Cloudinary mp4 — use <video> element
-            frame.style.display = 'none';
-            vid.style.display = 'block';
+    function resetMedia() {
+        frame.style.display = 'none'; frame.src = '';
+        vid.style.display   = 'none'; vid.pause(); vid.src = '';
+        img.style.display   = 'none'; img.src = '';
+    }
+
+    window.openLightbox = function(url, type) {
+        resetMedia();
+        if (type === 'image') {
+            img.src = url;
+            img.style.display = 'block';
+            box.classList.add('lightbox-image-mode');
+        } else if (url.includes('.mp4') || url.includes('cloudinary.com/video')) {
             vid.src = url;
+            vid.style.display = 'block';
             vid.play();
+            box.classList.remove('lightbox-image-mode');
         } else {
-            // YouTube / Google Drive — use iframe
-            vid.style.display = 'none';
-            frame.style.display = 'block';
             let embedUrl = url;
             if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
                 embedUrl = url
@@ -604,18 +612,17 @@ function setupLightbox() {
                 if (match) embedUrl = 'https://drive.google.com/file/d/' + match[1] + '/preview';
             }
             frame.src = embedUrl;
+            frame.style.display = 'block';
+            box.classList.remove('lightbox-image-mode');
         }
         box.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-    }
+    };
 
     function closeLightbox() {
         box.classList.add('hidden');
-        frame.src = '';
-        vid.pause();
-        vid.src = '';
-        vid.style.display = 'none';
-        frame.style.display = 'block';
+        box.classList.remove('lightbox-image-mode');
+        resetMedia();
         document.body.style.overflow = '';
     }
 
@@ -623,10 +630,16 @@ function setupLightbox() {
     backdrop.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-    // Delegate from teachers grid and video grid
+    // Delegate: video play buttons
     document.addEventListener('click', e => {
         const btn = e.target.closest('.teacher-video-btn');
         if (btn) openLightbox(btn.dataset.url);
+    });
+
+    // Delegate: teacher photo expand
+    document.addEventListener('click', e => {
+        const photo = e.target.closest('.teacher-photo[data-src]');
+        if (photo) openLightbox(photo.dataset.src, 'image');
     });
 }
 
