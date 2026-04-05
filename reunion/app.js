@@ -212,6 +212,7 @@ function buildAttendeeCard(person, serial) {
     `;
 
     if (hasProfile) {
+        card.classList.add('expanded');
         card.addEventListener('click', () => card.classList.toggle('expanded'));
     }
     return card;
