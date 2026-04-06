@@ -629,6 +629,8 @@ function setupLightbox() {
 
     closeBtn.addEventListener('click', closeLightbox);
     backdrop.addEventListener('click', closeLightbox);
+    // Also close when clicking the outer overlay directly (catches video mode)
+    box.addEventListener('click', e => { if (!e.target.closest('.lightbox-box')) closeLightbox(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
     // Delegate: video play buttons
