@@ -46,10 +46,10 @@ const REUNION_DATA = {
         sessions: [
           {
             time: "1:30 PM",
-            venue: "Dr G V Joshi Rotary EM School",
+            venue: "Dr G V Joshi Rotary High School",
             dresscode: "Blue Jeans + Reunion T-shirt",
-            dresscodeNote: "T-shirt will be provided on the day",
-            highlight: "Assembly and group photo at 1:30 PM — don't miss!",
+            dresscodeNote: "T-shirts distributed prior to the event",
+            highlight: "Assembly and group photo at 1:30 PM. Don't miss!",
             items: [
               "Relive those classroom days where friendships were born",
               "Refreshing High Tea at the school",
@@ -65,7 +65,7 @@ const REUNION_DATA = {
             time: "10:00 AM",
             venue: "Dennison Hotel",
             dresscode: "Formals (Indian or Western)",
-            highlight: "Big group photo — don't miss!",
+            highlight: "Big group photo. Don't miss!",
             items: [
               "Formal function and felicitation of teaching and non-teaching staff",
               "Moments of sharing and reminiscing",
@@ -88,18 +88,12 @@ const REUNION_DATA = {
     ]
   },
 
-  // Video messages from batchmates encouraging others to join
-  // playlist: array of URLs plays sequentially in the lightbox
+  // Video messages from batchmates — single combined playlist, plays in order
   friendVideos: [
     {
-      label: "Aditya",
-      featured: true,
-      videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527467/Video_message_Aditya_krhhdy.mp4"
-    },
-    {
-      label: "Reunion Friends + Anand",
-      featured: false,
+      label: "Reunion Messages from Batchmates",
       playlist: [
+        "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527467/Video_message_Aditya_krhhdy.mp4",
         "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527547/Reunion-Friends_eacgln.mp4",
         "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527459/Video_message_Anand_dyrsya.mp4"
       ]
@@ -558,7 +552,7 @@ const REUNION_DATA = {
     {
       date: "2026-04-03",
       title: "Share your school photos for the reunion video",
-      text: "We are compiling a special memory video for the reunion and need your school photos and videos! Please send them to <a href=\"mailto:rotary.reunion.2001@gmail.com\" class=\"ann-link\">rotary.reunion.2001@gmail.com</a> as soon as possible so there is enough time to put it all together. Send early — the sooner the better!"
+      text: "We are compiling a special memory video for the reunion and need your school photos and videos! Please send them to <a href=\"mailto:rotary.reunion.2001@gmail.com\" class=\"ann-link\">rotary.reunion.2001@gmail.com</a> as soon as possible so there is enough time to put it all together. Send early, the sooner the better!"
     },
     {
       date: "2026-03-23",

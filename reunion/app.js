@@ -339,8 +339,6 @@ function renderEventDetails() {
         </div>
     `).join('');
 
-    const includesHtml = ev.includes.map(i => `<li>${i}</li>`).join('');
-
     const deadline = formatDate(ev.signupDeadline);
 
     // Schedule timeline
@@ -425,8 +423,6 @@ function renderEventDetails() {
     col.innerHTML = `
         <div class="event-dates-badge">${datesHtml}</div>
         ${scheduleHtml}
-        <div class="event-includes-title">What's included</div>
-        <ul class="event-includes-list">${includesHtml}</ul>
         <div class="event-signup-block">
             <div>
                 <div class="event-signup-amount">${ev.signupCurrency} ${ev.signupAmount}</div>
