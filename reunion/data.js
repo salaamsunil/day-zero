@@ -88,6 +88,24 @@ const REUNION_DATA = {
     ]
   },
 
+  // Video messages from batchmates encouraging others to join
+  // playlist: array of URLs plays sequentially in the lightbox
+  friendVideos: [
+    {
+      label: "Aditya",
+      featured: true,
+      videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527467/Video_message_Aditya_krhhdy.mp4"
+    },
+    {
+      label: "Reunion Friends + Anand",
+      featured: false,
+      playlist: [
+        "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527547/Reunion-Friends_eacgln.mp4",
+        "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527459/Video_message_Anand_dyrsya.mp4"
+      ]
+    }
+  ],
+
   stats: {
     confirmed: 76,
     thinking: 60,

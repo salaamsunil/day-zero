@@ -96,6 +96,7 @@ function initAll() {
     renderAttendees();
     renderTeachers();
     renderTeacherVideos();
+    renderBatchmateVideos();
     renderAnnouncements();
     renderEventDetails();
     startCountdown();
@@ -614,19 +615,40 @@ function setupLightbox() {
     const closeBtn = document.getElementById('lightboxClose');
     const backdrop = document.getElementById('lightboxBackdrop');
 
+    let currentPlaylist = [];
+    let playlistIndex   = 0;
+
+    function playNext() {
+        playlistIndex++;
+        if (playlistIndex < currentPlaylist.length) {
+            vid.src = currentPlaylist[playlistIndex];
+            vid.play();
+        }
+    }
+    vid.addEventListener('ended', playNext);
+
     function resetMedia() {
         frame.style.display = 'none'; frame.src = '';
         vid.style.display   = 'none'; vid.pause(); vid.src = '';
         img.style.display   = 'none'; img.src = '';
+        currentPlaylist = []; playlistIndex = 0;
     }
 
-    window.openLightbox = function(url, type) {
+    window.openLightbox = function(url, type, playlist) {
         resetMedia();
         if (type === 'image') {
             img.src = url;
             img.style.display = 'block';
             box.classList.add('lightbox-image-mode');
-        } else if (url.includes('.mp4') || url.includes('cloudinary.com/video')) {
+        } else if (playlist && playlist.length) {
+            currentPlaylist = playlist;
+            playlistIndex   = 0;
+            vid.src = playlist[0];
+            vid.style.display = 'block';
+            vid.play();
+            box.classList.remove('lightbox-image-mode');
+        } else if (url && (url.includes('.mp4') || url.includes('cloudinary.com/video'))) {
+            currentPlaylist = [url];
             vid.src = url;
             vid.style.display = 'block';
             vid.play();
@@ -663,10 +685,12 @@ function setupLightbox() {
     box.addEventListener('click', e => { if (!e.target.closest('.lightbox-box')) closeLightbox(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-    // Delegate: video play buttons
+    // Delegate: teacher/batchmate video play buttons
     document.addEventListener('click', e => {
-        const btn = e.target.closest('.teacher-video-btn');
-        if (btn) openLightbox(btn.dataset.url);
+        const btn = e.target.closest('.teacher-video-btn, .bv-play');
+        if (!btn) return;
+        const playlist = btn.dataset.playlist ? JSON.parse(btn.dataset.playlist) : null;
+        openLightbox(btn.dataset.url || null, null, playlist);
     });
 
     // Delegate: teacher photo expand
@@ -712,6 +736,38 @@ function renderTeacherVideos() {
     });
 
     section.style.display = '';
+}
+
+// ── Batchmate Videos ──────────────────────────────────────────
+
+function renderBatchmateVideos() {
+    const grid = document.getElementById('batchmateVideoGrid');
+    if (!grid || !REUNION_DATA.friendVideos || !REUNION_DATA.friendVideos.length) return;
+
+    grid.innerHTML = '';
+    REUNION_DATA.friendVideos.forEach(v => {
+        const thumbUrl = v.videoUrl
+            ? cloudinaryThumb(v.videoUrl)
+            : cloudinaryThumb(v.playlist[0]);
+
+        const btnAttrs = v.playlist
+            ? `data-playlist='${JSON.stringify(v.playlist)}'`
+            : `data-url="${v.videoUrl}"`;
+
+        const card = document.createElement('div');
+        card.className = 'bv-card' + (v.featured ? ' bv-featured' : '');
+        card.innerHTML = `
+            <div class="bv-thumb">
+                <img src="${thumbUrl}" alt="${v.label}" loading="lazy">
+                <button class="bv-play" ${btnAttrs} aria-label="Play message from ${v.label}">
+                    <i class="fas fa-play"></i>
+                </button>
+                ${v.playlist ? '<span class="bv-playlist-badge"><i class="fas fa-layer-group"></i> 2 videos</span>' : ''}
+            </div>
+            <div class="bv-label">${v.label}</div>
+        `;
+        grid.appendChild(card);
+    });
 }
 
 // ── Boot ──────────────────────────────────────────────────────
