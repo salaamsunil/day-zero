@@ -575,7 +575,7 @@ a { color: inherit; text-decoration: none; }
     display: none;
     margin-top: 0.6rem;
     padding-top: 0.6rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid #E2E8F0;
     gap: 0.35rem;
     flex-direction: column;
 }
@@ -583,12 +583,12 @@ a { color: inherit; text-decoration: none; }
 .attendee-card.expanded .attendee-profile { display: flex; }
 
 .ap-org {
-    font-size: 0.75rem; color: #94A3B8;
+    font-size: 0.75rem; color: #475569;
     display: flex; align-items: flex-start; gap: 0.35rem;
     line-height: 1.4;
 }
 
-.ap-org i { margin-top: 0.15rem; flex-shrink: 0; font-size: 0.65rem; }
+.ap-org i { margin-top: 0.15rem; flex-shrink: 0; font-size: 0.65rem; color: #94A3B8; }
 
 .ap-tags-row {
     display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;
@@ -596,20 +596,20 @@ a { color: inherit; text-decoration: none; }
 
 .ap-tag {
     font-size: 0.65rem; font-weight: 600;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: #94A3B8;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    color: #475569;
     padding: 0.15rem 0.5rem; border-radius: 50px;
 }
 
 .ap-linkedin {
     font-size: 0.7rem; font-weight: 600;
-    color: #60A5FA;
+    color: #2563EB;
     display: flex; align-items: center; gap: 0.25rem;
     text-decoration: none;
 }
 
-.ap-linkedin:hover { color: #93C5FD; }
+.ap-linkedin:hover { color: #1D4ED8; }
 
 .ap-achievement {
     font-size: 0.72rem; color: #F5A623;
@@ -772,7 +772,7 @@ a { color: inherit; text-decoration: none; }
 
 
 /* Student profile job title */
-.ap-jobtitle { color: #E2E8F0; font-weight: 600; }
+.ap-jobtitle { color: #1E293B; font-weight: 600; }
 
 /* ============================================================
    TEACHER VIDEOS SUBSECTION
