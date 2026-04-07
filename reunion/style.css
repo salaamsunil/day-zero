@@ -29,7 +29,10 @@
     --transition:  all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+    box-sizing: border-box; margin: 0; padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
 
 html { scroll-behavior: smooth; }
 
@@ -39,7 +42,14 @@ body {
     color: var(--text-white);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+button, a, [role="button"] {
+    touch-action: manipulation;
 }
 
 img { max-width: 100%; display: block; }
@@ -1458,6 +1468,9 @@ a { color: inherit; text-decoration: none; }
     position: fixed; inset: 0; z-index: 9998;
     display: flex; align-items: center; justify-content: center;
     padding: 1rem;
+    /* Respect notch/status bar on iPhone and Android */
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
 }
 
 .lightbox-backdrop {
@@ -1477,7 +1490,7 @@ a { color: inherit; text-decoration: none; }
 
 .lightbox-close {
     position: absolute; top: 0.75rem; right: 0.75rem;
-    width: 36px; height: 36px;
+    width: 44px; height: 44px;
     border-radius: 50%;
     background: rgba(255,255,255,0.1);
     border: none; color: #fff; cursor: pointer; z-index: 2;
@@ -1612,5 +1625,40 @@ a { color: inherit; text-decoration: none; }
     .stat-item      { min-width: 44%; flex: none; padding: 0.5rem; }
     .count-box      { min-width: 50px; padding: 0.5rem 0.5rem; }
     .count-sep      { font-size: 1.2rem; }
+    /* Hero title on very small screens */
+    .hero-years  { font-size: 3rem; }
+    .hero-school { font-size: 0.95rem; }
+}
+
+/* ── Mobile polish (all phones) ── */
+@media (max-width: 767px) {
+    /* Improve tap targets */
+    .attendee-card[data-expandable="true"],
+    .teacher-photo,
+    .bv-play, .tvc-play,
+    .ftab, .lock-btn {
+        touch-action: manipulation;
+    }
+
+    /* Profile text — slightly larger for readability */
+    .ap-org       { font-size: 0.8rem; }
+    .ap-tag       { font-size: 0.7rem; }
+    .ap-linkedin  { font-size: 0.75rem; }
+
+    /* Batchmate video section */
+    .bv-grid      { gap: 0.75rem; }
+    .bv-label     { font-size: 0.8rem; }
+
+    /* Schedule text */
+    .sched-time, .sched-venue { font-size: 0.82rem; }
+    .sched-items li           { font-size: 0.82rem; }
+
+    /* Teacher videos subsection */
+    .teacher-videos-hd { gap: 0.75rem; }
+    .teacher-videos-hd > .fa-circle-play { font-size: 1.6rem; }
+    .teacher-videos-title { font-size: 1rem; }
+
+    /* Lock screen input — prevent iOS zoom on focus (needs 16px+) */
+    .lock-input { font-size: 16px; }
 }
 
