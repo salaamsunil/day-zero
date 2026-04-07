@@ -37,7 +37,55 @@ const REUNION_DATA = {
 
     // Talent show / performance registration
     talentFormUrl: "https://forms.gle/ZGv5aSUMtWRASEENA",
-    talentDeadline: "2026-04-07"
+    talentDeadline: "2026-04-07",
+
+    // Reunion schedule — extracted from official schedule image
+    schedule: [
+      {
+        day: "Day 1", date: "Saturday, 18 April 2026",
+        sessions: [
+          {
+            time: "1:30 PM",
+            venue: "Dr G V Joshi Rotary EM School",
+            dresscode: "Blue Jeans + Reunion T-shirt",
+            dresscodeNote: "T-shirt will be provided on the day",
+            highlight: "Assembly and group photo at 1:30 PM — don't miss!",
+            items: [
+              "Relive those classroom days where friendships were born",
+              "Refreshing High Tea at the school",
+              "Visit to the Primary School"
+            ]
+          }
+        ]
+      },
+      {
+        day: "Day 2", date: "Sunday, 19 April 2026",
+        sessions: [
+          {
+            time: "10:00 AM",
+            venue: "Dennison Hotel",
+            dresscode: "Formals (Indian or Western)",
+            highlight: "Big group photo — don't miss!",
+            items: [
+              "Formal function and felicitation of teaching and non-teaching staff",
+              "Moments of sharing and reminiscing",
+              "Reconnect with friends and informal interactions"
+            ]
+          },
+          {
+            time: "7:00 PM",
+            venue: "Dennison Hotel",
+            dresscode: "Partywear",
+            highlight: null,
+            items: [
+              "Fun games, performances and lots of laughter",
+              "Reconnect, relive memories and celebrate 25 years together",
+              "Dance floor and Dinner"
+            ]
+          }
+        ]
+      }
+    ]
   },
 
   stats: {

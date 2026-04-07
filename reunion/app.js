@@ -342,6 +342,35 @@ function renderEventDetails() {
 
     const deadline = formatDate(ev.signupDeadline);
 
+    // Schedule timeline
+    let scheduleHtml = '';
+    if (ev.schedule && ev.schedule.length) {
+        scheduleHtml = ev.schedule.map(dayBlock => {
+            const sessionsHtml = dayBlock.sessions.map((s, i) => `
+                <div class="sched-session">
+                    <div class="sched-session-header">
+                        <span class="sched-time"><i class="fas fa-clock"></i> ${s.time}</span>
+                        <span class="sched-venue"><i class="fas fa-location-dot"></i> ${s.venue}</span>
+                    </div>
+                    <div class="sched-dresscode"><i class="fas fa-shirt"></i> ${s.dresscode}${s.dresscodeNote ? ` <span class="sched-dresscode-note">(${s.dresscodeNote})</span>` : ''}</div>
+                    ${s.highlight ? `<div class="sched-highlight"><i class="fas fa-star"></i> ${s.highlight}</div>` : ''}
+                    <ul class="sched-items">${s.items.map(it => `<li>${it}</li>`).join('')}</ul>
+                    ${i < dayBlock.sessions.length - 1 ? '<div class="sched-session-divider"></div>' : ''}
+                </div>
+            `).join('');
+            return `
+                <div class="sched-day">
+                    <div class="sched-day-header">
+                        <span class="sched-day-label">${dayBlock.day}</span>
+                        <span class="sched-day-date">${dayBlock.date}</span>
+                    </div>
+                    ${sessionsHtml}
+                </div>
+            `;
+        }).join('');
+        scheduleHtml = `<div class="event-schedule">${scheduleHtml}</div>`;
+    }
+
     // UPI payment block — only rendered when upiId or upiQrImage is set
     let upiHtml = '';
     if (ev.upiId || ev.upiQrImage) {
@@ -394,6 +423,7 @@ function renderEventDetails() {
 
     col.innerHTML = `
         <div class="event-dates-badge">${datesHtml}</div>
+        ${scheduleHtml}
         <div class="event-includes-title">What's included</div>
         <ul class="event-includes-list">${includesHtml}</ul>
         <div class="event-signup-block">
