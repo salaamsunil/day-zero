@@ -556,7 +556,7 @@ const REUNION_DATA = {
     {
       date: "2026-04-08",
       title: "T-shirt collection for Hubli-Dharwad friends",
-      text: "Friends based in Hubli-Dharwad and those who chose to collect in Hubli, please collect your t-shirt from <strong>Chandan's Office</strong> anytime between <strong>11 AM and 7 PM, before 16 April</strong>. No changes in sizes; they have been packed as per the Google Form you filled. Outstation friends not on the collection list will receive their t-shirts shortly. Address: Lakshmi Building, Hosur 2nd, Hubballi 580029. <a href=\"https://www.google.com/maps/search/Lakkimar%20Building/@15.35570658,75.13213341,17z?hl=en\" target=\"_blank\" rel=\"noopener\" class=\"ann-link\">Open in Google Maps</a>. Registration is still open from 23 March to 16 April (t-shirts for group photo on Day 1 are not included for late registrations)."
+      text: "Friends based in Hubli-Dharwad and those who chose to collect in Hubli, please collect your t-shirt from <strong>Chandan's Office</strong> anytime between <strong>11 AM and 7 PM, before 16 April</strong>. No changes in sizes; they have been packed as per the Google Form you filled. Outstation friends not on the collection list will receive their t-shirts shortly. Address: Lakkimar Building, Hosur 2nd, Hubballi 580029. <a href=\"https://www.google.com/maps/search/Lakkimar%20Building/@15.35570658,75.13213341,17z?hl=en\" target=\"_blank\" rel=\"noopener\" class=\"ann-link\">Open in Google Maps</a>. Registration is still open from 23 March to 16 April (t-shirts for group photo on Day 1 are not included for late registrations)."
     },
     {
       date: "2026-04-03",
