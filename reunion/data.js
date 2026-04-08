@@ -88,15 +88,19 @@ const REUNION_DATA = {
     ]
   },
 
-  // Video messages from batchmates — single combined playlist, plays in order
+  // Video messages from batchmates — one entry per video
   friendVideos: [
     {
-      label: "Reunion Messages from Batchmates",
-      playlist: [
-        "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527467/Video_message_Aditya_krhhdy.mp4",
-        "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527547/Reunion-Friends_eacgln.mp4",
-        "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527459/Video_message_Anand_dyrsya.mp4"
-      ]
+      label: "Reunion Message 1",
+      videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527467/Video_message_Aditya_krhhdy.mp4"
+    },
+    {
+      label: "Reunion Message 2",
+      videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527547/Reunion-Friends_eacgln.mp4"
+    },
+    {
+      label: "Reunion Message 3",
+      videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775527459/Video_message_Anand_dyrsya.mp4"
     }
   ],
 
@@ -552,7 +556,7 @@ const REUNION_DATA = {
     {
       date: "2026-04-08",
       title: "T-shirt collection for Hubli-Dharwad friends",
-      text: "Friends based in Hubli-Dharwad and those who chose to collect in Hubli, please collect your t-shirt from <strong>Chandan's Office</strong> anytime between <strong>11 AM and 7 PM, before 16 April</strong>. No changes in sizes; they have been packed as per the Google Form you filled. Outstation friends not on the collection list will receive their t-shirts shortly. Address: Hosur 2nd, Hubballi 580029. <a href=\"https://www.google.com/maps/search/Lakkimar%20Building/@15.35570658,75.13213341,17z?hl=en\" target=\"_blank\" rel=\"noopener\" class=\"ann-link\">Open in Google Maps</a>. Registration is still open from 23 March to 16 April (t-shirts for group photo on Day 1 are not included for late registrations)."
+      text: "Friends based in Hubli-Dharwad and those who chose to collect in Hubli, please collect your t-shirt from <strong>Chandan's Office</strong> anytime between <strong>11 AM and 7 PM, before 16 April</strong>. No changes in sizes; they have been packed as per the Google Form you filled. Outstation friends not on the collection list will receive their t-shirts shortly. Address: Lakshmi Building, Hosur 2nd, Hubballi 580029. <a href=\"https://www.google.com/maps/search/Lakkimar%20Building/@15.35570658,75.13213341,17z?hl=en\" target=\"_blank\" rel=\"noopener\" class=\"ann-link\">Open in Google Maps</a>. Registration is still open from 23 March to 16 April (t-shirts for group photo on Day 1 are not included for late registrations)."
     },
     {
       date: "2026-04-03",

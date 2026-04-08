@@ -743,26 +743,21 @@ function renderBatchmateVideos() {
     if (!grid || !REUNION_DATA.friendVideos || !REUNION_DATA.friendVideos.length) return;
 
     grid.innerHTML = '';
-    let msgIndex = 0;
     REUNION_DATA.friendVideos.forEach(v => {
-        const urls = v.playlist || (v.videoUrl ? [v.videoUrl] : []);
-        urls.forEach(url => {
-            msgIndex++;
-            const label = `Reunion Message ${msgIndex}`;
-            const thumbUrl = cloudinaryThumb(url);
-            const card = document.createElement('div');
-            card.className = 'bv-card';
-            card.innerHTML = `
-                <div class="bv-thumb">
-                    <img src="${thumbUrl}" alt="${label}" loading="lazy">
-                    <button class="bv-play" data-url="${url}" aria-label="Play ${label}">
-                        <i class="fas fa-play"></i>
-                    </button>
-                </div>
-                <div class="bv-label">${label}</div>
-            `;
-            grid.appendChild(card);
-        });
+        if (!v.videoUrl) return;
+        const thumbUrl = cloudinaryThumb(v.videoUrl);
+        const card = document.createElement('div');
+        card.className = 'bv-card';
+        card.innerHTML = `
+            <div class="bv-thumb">
+                <img src="${thumbUrl}" alt="${v.label}" loading="lazy">
+                <button class="bv-play" data-url="${v.videoUrl}" aria-label="Play ${v.label}">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+            <div class="bv-label">${v.label}</div>
+        `;
+        grid.appendChild(card);
     });
 }
 
