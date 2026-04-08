@@ -743,28 +743,26 @@ function renderBatchmateVideos() {
     if (!grid || !REUNION_DATA.friendVideos || !REUNION_DATA.friendVideos.length) return;
 
     grid.innerHTML = '';
+    let msgIndex = 0;
     REUNION_DATA.friendVideos.forEach(v => {
-        const thumbUrl = v.videoUrl
-            ? cloudinaryThumb(v.videoUrl)
-            : cloudinaryThumb(v.playlist[0]);
-
-        const btnAttrs = v.playlist
-            ? `data-playlist='${JSON.stringify(v.playlist)}'`
-            : `data-url="${v.videoUrl}"`;
-
-        const card = document.createElement('div');
-        card.className = 'bv-card' + (v.featured ? ' bv-featured' : '');
-        card.innerHTML = `
-            <div class="bv-thumb">
-                <img src="${thumbUrl}" alt="${v.label}" loading="lazy">
-                <button class="bv-play" ${btnAttrs} aria-label="Play message from ${v.label}">
-                    <i class="fas fa-play"></i>
-                </button>
-                ${v.playlist ? '<span class="bv-playlist-badge"><i class="fas fa-layer-group"></i> 2 videos</span>' : ''}
-            </div>
-            <div class="bv-label">${v.label}</div>
-        `;
-        grid.appendChild(card);
+        const urls = v.playlist || (v.videoUrl ? [v.videoUrl] : []);
+        urls.forEach(url => {
+            msgIndex++;
+            const label = `Reunion Message ${msgIndex}`;
+            const thumbUrl = cloudinaryThumb(url);
+            const card = document.createElement('div');
+            card.className = 'bv-card';
+            card.innerHTML = `
+                <div class="bv-thumb">
+                    <img src="${thumbUrl}" alt="${label}" loading="lazy">
+                    <button class="bv-play" data-url="${url}" aria-label="Play ${label}">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+                <div class="bv-label">${label}</div>
+            `;
+            grid.appendChild(card);
+        });
     });
 }
 
@@ -775,31 +773,31 @@ function setupMapFullscreen() {
     const wrap  = document.getElementById('mapWrap');
     if (!btn || !wrap) return;
 
+    function exitMapFullscreen() {
+        wrap.classList.remove('map-fullscreen');
+        btn.innerHTML = '<i class="fas fa-expand"></i>';
+        btn.setAttribute('aria-label', 'Expand map');
+        document.body.style.overflow = '';
+        setTimeout(() => { if (window._reunionMap) window._reunionMap.invalidateSize(); }, 320);
+    }
+
     btn.addEventListener('click', () => {
         const isFullscreen = wrap.classList.toggle('map-fullscreen');
-        btn.innerHTML = isFullscreen
-            ? '<i class="fas fa-compress"></i>'
-            : '<i class="fas fa-expand"></i>';
-        btn.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen' : 'Expand map');
-        document.body.style.overflow = isFullscreen ? 'hidden' : '';
-        // Invalidate Leaflet map size after transition
-        setTimeout(() => {
-            const mapEl = document.getElementById('reunionMap');
-            if (mapEl && mapEl._leaflet_id) {
-                const map = window._reunionMap;
-                if (map) map.invalidateSize();
-            }
-        }, 320);
+        if (isFullscreen) {
+            btn.innerHTML = '<i class="fas fa-xmark"></i>';
+            btn.setAttribute('aria-label', 'Close fullscreen map');
+            document.body.style.overflow = 'hidden';
+            // Force Leaflet to recalculate after the fixed layout settles
+            setTimeout(() => { if (window._reunionMap) window._reunionMap.invalidateSize(); }, 50);
+            setTimeout(() => { if (window._reunionMap) window._reunionMap.invalidateSize(); }, 350);
+        } else {
+            exitMapFullscreen();
+        }
     });
 
     // ESC to exit fullscreen
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && wrap.classList.contains('map-fullscreen')) {
-            wrap.classList.remove('map-fullscreen');
-            btn.innerHTML = '<i class="fas fa-expand"></i>';
-            btn.setAttribute('aria-label', 'Expand map');
-            document.body.style.overflow = '';
-        }
+        if (e.key === 'Escape' && wrap.classList.contains('map-fullscreen')) exitMapFullscreen();
     });
 }
 

@@ -220,49 +220,52 @@
         </div>
     </section>
 
-    <!-- BATCHMATE VIDEOS -->
-    <section class="section-dark" id="batchmateVideos">
-        <div class="container">
-            <div class="section-hd section-hd-light">
-                <span class="section-badge"><i class="fas fa-video"></i> From Your Batchmates</span>
-                <h2 class="section-title">Hear It from Them</h2>
-                <p class="section-sub">Your classmates have a message for you</p>
-            </div>
-            <div class="bv-grid" id="batchmateVideoGrid"></div>
-        </div>
-    </section>
-
-    <!-- TEACHERS -->
-    <section class="section-light" id="teachers">
-        <div class="container">
-            <div class="section-hd">
-                <span class="section-badge">Special Guests</span>
-                <h2 class="section-title">Our Teachers Are Joining Us</h2>
-                <p class="section-sub">The people who shaped us, back for this milestone</p>
-            </div>
-            <div class="teachers-grid" id="teachersGrid"></div>
-            <div class="teacher-videos-section" id="teacherVideosSection" style="display:none">
-                <div class="teacher-videos-hd">
-                    <i class="fas fa-circle-play"></i>
-                    <div>
-                        <h3 class="teacher-videos-title">Special Messages</h3>
-                        <p class="teacher-videos-sub">Hear what they have to say about the reunion</p>
-                    </div>
-                </div>
-                <div class="teacher-videos-grid" id="teacherVideosGrid"></div>
-            </div>
-        </div>
-    </section>
-
     <!-- GALLERY -->
     <section class="section-dark" id="gallery">
         <div class="container">
+            <div class="section-hd section-hd-light">
+                <span class="section-badge"><i class="fas fa-camera-retro"></i> Gallery</span>
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-sub">Photos, videos and messages from your batch</p>
+            </div>
+
+            <!-- Photo gallery placeholder -->
             <div class="gallery-placeholder">
                 <div class="gallery-icon-wrap">
                     <i class="fas fa-camera-retro"></i>
                 </div>
-                <h3>Gallery Coming Soon</h3>
+                <h3>Photos Coming Soon</h3>
                 <p>Photos and memories from the reunion will appear here. Check back after the event!</p>
+            </div>
+
+            <!-- FROM YOUR BATCHMATES subsection -->
+            <div class="gallery-subsection">
+                <div class="gallery-sub-hd">
+                    <span class="section-badge"><i class="fas fa-video"></i> From Your Batchmates</span>
+                    <h3 class="gallery-sub-title">Hear It from Them</h3>
+                    <p class="gallery-sub-sub">Your classmates have a message for you</p>
+                </div>
+                <div class="bv-grid" id="batchmateVideoGrid"></div>
+            </div>
+
+            <!-- SPECIAL MESSAGES subsection (teacher videos) -->
+            <div class="gallery-subsection" id="teacherVideosSection" style="display:none">
+                <div class="gallery-sub-hd">
+                    <span class="section-badge"><i class="fas fa-circle-play"></i> Special Messages</span>
+                    <h3 class="gallery-sub-title">Special Messages</h3>
+                    <p class="gallery-sub-sub">Hear what they have to say about the reunion</p>
+                </div>
+                <div class="teacher-videos-grid" id="teacherVideosGrid"></div>
+            </div>
+
+            <!-- SPECIAL GUESTS subsection (teacher photos) -->
+            <div class="gallery-subsection" id="teachers">
+                <div class="gallery-sub-hd">
+                    <span class="section-badge">Special Guests</span>
+                    <h3 class="gallery-sub-title">Our Teachers Are Joining Us</h3>
+                    <p class="gallery-sub-sub">The people who shaped us, back for this milestone</p>
+                </div>
+                <div class="teachers-grid" id="teachersGrid"></div>
             </div>
         </div>
     </section>
