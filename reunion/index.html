@@ -156,8 +156,11 @@
                 <h2 class="section-title">Where We're Travelling From</h2>
                 <p class="section-sub">Classmates converging from across the world</p>
             </div>
-            <div class="map-wrap">
+            <div class="map-wrap" id="mapWrap">
                 <div id="reunionMap"></div>
+                <button type="button" id="mapFullscreenBtn" class="map-fullscreen-btn" aria-label="Expand map">
+                    <i class="fas fa-expand"></i>
+                </button>
                 <div class="map-legend">
                     <div class="legend-item">
                         <span class="legend-dot legend-venue"></span>
@@ -168,40 +171,6 @@
                         <span>Origin city (size = number coming)</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BATCHMATE VIDEOS -->
-    <section class="section-dark" id="batchmateVideos">
-        <div class="container">
-            <div class="section-hd section-hd-light">
-                <span class="section-badge"><i class="fas fa-video"></i> From Your Batchmates</span>
-                <h2 class="section-title">Hear It from Them</h2>
-                <p class="section-sub">Your classmates have a message for you</p>
-            </div>
-            <div class="bv-grid" id="batchmateVideoGrid"></div>
-        </div>
-    </section>
-
-    <!-- TEACHERS -->
-    <section class="section-light" id="teachers">
-        <div class="container">
-            <div class="section-hd">
-                <span class="section-badge">Special Guests</span>
-                <h2 class="section-title">Our Teachers Are Joining Us</h2>
-                <p class="section-sub">The people who shaped us, back for this milestone</p>
-            </div>
-            <div class="teachers-grid" id="teachersGrid"></div>
-            <div class="teacher-videos-section" id="teacherVideosSection" style="display:none">
-                <div class="teacher-videos-hd">
-                    <i class="fas fa-circle-play"></i>
-                    <div>
-                        <h3 class="teacher-videos-title">Special Messages</h3>
-                        <p class="teacher-videos-sub">Hear what they have to say about the reunion</p>
-                    </div>
-                </div>
-                <div class="teacher-videos-grid" id="teacherVideosGrid"></div>
             </div>
         </div>
     </section>
@@ -251,6 +220,53 @@
         </div>
     </section>
 
+    <!-- BATCHMATE VIDEOS -->
+    <section class="section-dark" id="batchmateVideos">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <span class="section-badge"><i class="fas fa-video"></i> From Your Batchmates</span>
+                <h2 class="section-title">Hear It from Them</h2>
+                <p class="section-sub">Your classmates have a message for you</p>
+            </div>
+            <div class="bv-grid" id="batchmateVideoGrid"></div>
+        </div>
+    </section>
+
+    <!-- TEACHERS -->
+    <section class="section-light" id="teachers">
+        <div class="container">
+            <div class="section-hd">
+                <span class="section-badge">Special Guests</span>
+                <h2 class="section-title">Our Teachers Are Joining Us</h2>
+                <p class="section-sub">The people who shaped us, back for this milestone</p>
+            </div>
+            <div class="teachers-grid" id="teachersGrid"></div>
+            <div class="teacher-videos-section" id="teacherVideosSection" style="display:none">
+                <div class="teacher-videos-hd">
+                    <i class="fas fa-circle-play"></i>
+                    <div>
+                        <h3 class="teacher-videos-title">Special Messages</h3>
+                        <p class="teacher-videos-sub">Hear what they have to say about the reunion</p>
+                    </div>
+                </div>
+                <div class="teacher-videos-grid" id="teacherVideosGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section-dark" id="gallery">
+        <div class="container">
+            <div class="gallery-placeholder">
+                <div class="gallery-icon-wrap">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <h3>Gallery Coming Soon</h3>
+                <p>Photos and memories from the reunion will appear here. Check back after the event!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- WHO'S COMING -->
     <section class="section-light" id="attendees">
         <div class="container">
@@ -281,25 +297,12 @@
         </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="section-dark" id="gallery">
-        <div class="container">
-            <div class="gallery-placeholder">
-                <div class="gallery-icon-wrap">
-                    <i class="fas fa-camera-retro"></i>
-                </div>
-                <h3>Gallery Coming Soon</h3>
-                <p>Photos and memories from the reunion will appear here. Check back after the event!</p>
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="reunion-footer">
         <div class="footer-inner">
             <div class="footer-school">Dr G V Joshi Rotary English Medium School</div>
             <div class="footer-meta">Class of 2001 &middot; 25 Year Reunion &middot; 18 &amp; 19 April 2026</div>
-            <div class="footer-love">Made with <span class="heart">&#9829;</span> for the Class of 2001 &middot; Built by <a href="https://day-zero.com.au" target="_blank" rel="noopener" class="footer-dz-link"><img src="/images/dazero-icon.svg" alt="Day Zero" class="footer-dz-icon"> Day Zero</a></div>
+            <div class="footer-love">Made with <span class="heart">&#9829;</span> for the Class of 2001</div>
         </div>
     </footer>
 

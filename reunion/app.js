@@ -104,6 +104,7 @@ function initAll() {
     setupFilters();
     setupSearch();
     setupLightbox();
+    setupMapFullscreen();
     addParticles('heroParticles', 22);
     // Map needs the container to be visible first
     setTimeout(initMap, 400);
@@ -483,13 +484,14 @@ function animateCounters() {
 
     animateCounter('statConfirmed', d.stats.confirmed);
     animateCounter('statThinking',  d.stats.thinking);
-    animateCounter('statTeachers',  d.stats.teachers);
+    animateCounter('statTeachers',  30, '+');
     animateCounter('statDays',      daysToGo);
 }
 
-function animateCounter(id, target) {
+function animateCounter(id, target, suffix) {
     const el = document.getElementById(id);
     if (!el) return;
+    const sfx = suffix || '';
     const duration = 1200;
     const step = 16;
     const steps = duration / step;
@@ -499,10 +501,10 @@ function animateCounter(id, target) {
     const timer = setInterval(() => {
         current += inc;
         if (current >= target) {
-            el.textContent = target;
+            el.textContent = target + sfx;
             clearInterval(timer);
         } else {
-            el.textContent = Math.floor(current);
+            el.textContent = Math.floor(current) + sfx;
         }
     }, step);
 }
@@ -516,7 +518,7 @@ function initMap() {
     const venue = REUNION_DATA.travelPins.find(p => p.isVenue);
     if (!venue) return;
 
-    const map = L.map('reunionMap', {
+    const map = window._reunionMap = L.map('reunionMap', {
         center: [20, 70],
         zoom: 3,
         zoomControl: true,
@@ -699,9 +701,9 @@ function setupLightbox() {
 // ── Teacher Videos ─────────────────────────────────────────────
 
 function cloudinaryThumb(videoUrl) {
-    // Generate a thumbnail image URL from a Cloudinary video URL
+    // Generate a thumbnail image URL from a Cloudinary video URL (frame at 5 seconds)
     return videoUrl
-        .replace('/video/upload/q_auto/f_auto/', '/video/upload/so_0,w_600/')
+        .replace('/video/upload/q_auto/f_auto/', '/video/upload/so_5,w_600/')
         .replace('.mp4', '.jpg');
 }
 
@@ -763,6 +765,41 @@ function renderBatchmateVideos() {
             <div class="bv-label">${v.label}</div>
         `;
         grid.appendChild(card);
+    });
+}
+
+// ── Map Fullscreen ────────────────────────────────────────────
+
+function setupMapFullscreen() {
+    const btn   = document.getElementById('mapFullscreenBtn');
+    const wrap  = document.getElementById('mapWrap');
+    if (!btn || !wrap) return;
+
+    btn.addEventListener('click', () => {
+        const isFullscreen = wrap.classList.toggle('map-fullscreen');
+        btn.innerHTML = isFullscreen
+            ? '<i class="fas fa-compress"></i>'
+            : '<i class="fas fa-expand"></i>';
+        btn.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen' : 'Expand map');
+        document.body.style.overflow = isFullscreen ? 'hidden' : '';
+        // Invalidate Leaflet map size after transition
+        setTimeout(() => {
+            const mapEl = document.getElementById('reunionMap');
+            if (mapEl && mapEl._leaflet_id) {
+                const map = window._reunionMap;
+                if (map) map.invalidateSize();
+            }
+        }, 320);
+    });
+
+    // ESC to exit fullscreen
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && wrap.classList.contains('map-fullscreen')) {
+            wrap.classList.remove('map-fullscreen');
+            btn.innerHTML = '<i class="fas fa-expand"></i>';
+            btn.setAttribute('aria-label', 'Expand map');
+            document.body.style.overflow = '';
+        }
     });
 }
 
