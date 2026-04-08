@@ -314,10 +314,11 @@
 <!-- VIDEO LIGHTBOX -->
 <div id="videoLightbox" class="lightbox hidden">
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <!-- Close button sits outside .lightbox-box so video elements can't obscure it -->
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <i class="fas fa-xmark"></i>
+    </button>
     <div class="lightbox-box">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Close video">
-            <i class="fas fa-times"></i>
-        </button>
         <div class="lightbox-video-wrap">
             <iframe id="lightboxFrame" src="" allowfullscreen></iframe>
             <video id="lightboxVideo" src="" controls playsinline style="display:none;width:100%;height:100%;background:#000;"></video>
