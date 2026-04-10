@@ -551,8 +551,44 @@ const REUNION_DATA = {
     { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355509/WhatsApp_Image_2026-04-03_at_16.05.30_cymdjc.jpg",               videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355536/WhatsApp_Video_2026-04-03_at_16.05.30_kp2jwd.mp4" }
   ],
 
+  // Donations — grouped by purpose
+  donations: [
+    // Staff Support Fund
+    { group: "Staff Support Fund",         name: "Megha Pattar",     amount: 10000 },
+    { group: "Staff Support Fund",         name: "Suman Kanchan",    amount: 10000 },
+    { group: "Staff Support Fund",         name: "Chetana Joshi",    amount: 10000 },
+    { group: "Staff Support Fund",         name: "Ashwini Wali",     amount: 3000  },
+    { group: "Staff Support Fund",         name: "Shrivalli V",      amount: 10000 },
+    { group: "Staff Support Fund",         name: "Kavita Kalyan",    amount: 10000 },
+    { group: "Staff Support Fund",         name: "Swati Patnekar",   amount: 10000 },
+    { group: "Staff Support Fund",         name: "Naveena Thakur",   amount: 10000 },
+    { group: "Staff Support Fund",         name: "Ashok Oswal",      amount: 10000 },
+    { group: "Staff Support Fund",         name: "Varsha Deshpande", amount: 10000 },
+    { group: "Staff Support Fund",         name: "Vandana Jain",     amount: 10000 },
+    { group: "Staff Support Fund",         name: "Naina Nadkarni",   amount: 20000 },
+    { group: "Staff Support Fund",         name: "Vishwas P",        amount: 25000 },
+    { group: "Staff Support Fund",         name: "Priya Kulkarni",   amount: 10000 },
+    { group: "Staff Support Fund",         name: "Harsha Gourish",   amount: 5000  },
+    { group: "Staff Support Fund",         name: "Chandan Ijari",    amount: 5000  },
+    // Teacher Gifts / Dakshina
+    { group: "Teacher Gifts / Dakshina",   name: "Girish M Hiremath", amount: 5000  },
+    { group: "Teacher Gifts / Dakshina",   name: "Sridhar",           amount: 10000 },
+    { group: "Teacher Gifts / Dakshina",   name: "Sagar Tonapi",      amount: 10000 },
+    { group: "Teacher Gifts / Dakshina",   name: "Sumit Baddi",       amount: 5000  }
+  ],
+
   // Announcements — add new ones at the TOP of this array (newest first)
   announcements: [
+    {
+      date: "2026-04-10",
+      title: "Teacher gifts: voluntary contributions welcome",
+      text: "Our outreach has been incredible: we now expect 40+ teachers at the event, up from the original 20+. This has increased costs for outstation travel and stay, local pickups and drops, and silver gifts (prices have risen significantly since Nov/Dec). The additional expense is approx. <strong>₹90,000–1 Lakh</strong>, going entirely to teacher and staff gifts during the felicitation. If you would like to contribute further, please come forward. This is entirely voluntary; all other arrangements remain on track."
+    },
+    {
+      date: "2026-04-10",
+      title: "Staff Support Fund: collection now closed",
+      text: "We have identified two beneficiaries for the Teacher and Staff Support fund and will be handing over the collected amount to them. The collection drive is now closed. Sincere thanks to everyone who contributed."
+    },
     {
       date: "2026-04-08",
       title: "T-shirt collection for Hubli-Dharwad friends",
