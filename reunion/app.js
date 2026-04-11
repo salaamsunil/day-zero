@@ -129,7 +129,6 @@ function renderAttendees() {
 
     document.getElementById('tabConfirmed').textContent = confirmedCount;
     document.getElementById('tabThinking').textContent  = thinkingCount;
-    document.getElementById('tabTeachers').textContent  = teacherCount;
 
     grid.innerHTML = '';
     let confirmedSerial = 0, thinkingSerial = 0, teacherSerial = 0;
