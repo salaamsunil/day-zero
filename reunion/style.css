@@ -1633,6 +1633,19 @@ a { color: inherit; text-decoration: none; }
 
 /* Close button is a direct child of .lightbox (fixed overlay), not .lightbox-box,
    so video/iframe elements in their own stacking context cannot obscure it */
+/* Close bar — inside .lightbox-box, always above the video, thumb-friendly on mobile */
+.lightbox-close-bar {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    width: 100%; padding: 0.75rem 1rem;
+    background: rgba(0,0,0,0.85);
+    border: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.5px;
+    touch-action: manipulation;
+}
+.lightbox-close-bar:active { background: rgba(255,255,255,0.1); }
+
+/* Floating X button — kept for desktop, boosted with GPU layer for mobile */
 .lightbox-close {
     position: fixed; top: 1rem; right: 1rem;
     width: 48px; height: 48px;
@@ -1646,10 +1659,12 @@ a { color: inherit; text-decoration: none; }
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     touch-action: manipulation;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .lightbox-close:hover  { background: rgba(255,255,255,0.18); }
-.lightbox-close:active { transform: scale(0.92); }
+.lightbox-close:active { transform: scale(0.92) translateZ(0); }
 
 .lightbox-video-wrap {
     position: relative; padding-bottom: 56.25%;

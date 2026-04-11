@@ -659,8 +659,9 @@ function setupLightbox() {
     const frame    = document.getElementById('lightboxFrame');
     const vid      = document.getElementById('lightboxVideo');
     const img      = document.getElementById('lightboxImage');
-    const closeBtn = document.getElementById('lightboxClose');
-    const backdrop = document.getElementById('lightboxBackdrop');
+    const closeBtn  = document.getElementById('lightboxClose');
+    const closeBar  = document.getElementById('lightboxCloseBar');
+    const backdrop  = document.getElementById('lightboxBackdrop');
 
     let currentPlaylist = [];
     let playlistIndex   = 0;
@@ -727,6 +728,7 @@ function setupLightbox() {
     }
 
     closeBtn.addEventListener('click', closeLightbox);
+    if (closeBar) closeBar.addEventListener('click', closeLightbox);
     backdrop.addEventListener('click', closeLightbox);
     // Also close when clicking the outer overlay directly (catches video mode)
     box.addEventListener('click', e => { if (!e.target.closest('.lightbox-box')) closeLightbox(); });
