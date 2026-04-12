@@ -47,6 +47,7 @@ const REUNION_DATA = {
           {
             time: "1:30 PM",
             venue: "Dr G V Joshi Rotary High School",
+            venueQuery: "Dr G V Joshi Rotary High School, Adarsh Nagar, Hubballi, Karnataka",
             dresscode: "Blue Jeans + Reunion T-shirt",
             dresscodeNote: "T-shirts distributed prior to the event",
             highlight: "Assembly and group photo at 1:30 PM. Don't miss!",
@@ -59,6 +60,7 @@ const REUNION_DATA = {
           {
             time: "7:00 PM",
             venue: "Dennison Hotel",
+            venueQuery: "Dennison Hotel, Hubballi, Karnataka",
             dresscode: "Partywear",
             highlight: null,
             items: [
@@ -75,6 +77,7 @@ const REUNION_DATA = {
           {
             time: "10:00 AM",
             venue: "Dennison Hotel",
+            venueQuery: "Dennison Hotel, Hubballi, Karnataka",
             dresscode: "Formals (Indian or Western)",
             highlight: "Big group photo. Don't miss!",
             items: [

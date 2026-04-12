@@ -104,7 +104,6 @@ function initAll() {
     setupFilters();
     setupSearch();
     setupLightbox();
-    setupMapFullscreen();
     addParticles('heroParticles', 22);
     // Map needs the container to be visible first
     setTimeout(initMap, 400);
@@ -338,18 +337,24 @@ function renderEventDetails() {
     let scheduleHtml = '';
     if (ev.schedule && ev.schedule.length) {
         scheduleHtml = ev.schedule.map(dayBlock => {
-            const sessionsHtml = dayBlock.sessions.map((s, i) => `
+            const sessionsHtml = dayBlock.sessions.map((s, i) => {
+                const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(s.venueQuery || s.venue)}`;
+                return `
                 <div class="sched-session">
                     <div class="sched-session-header">
                         <span class="sched-time"><i class="fas fa-clock"></i> ${s.time}</span>
-                        <span class="sched-venue"><i class="fas fa-location-dot"></i> ${s.venue}</span>
+                        <a class="sched-venue sched-venue-link" href="${navUrl}" target="_blank" rel="noopener" aria-label="Navigate to ${s.venue}">
+                            <i class="fas fa-location-dot"></i> ${s.venue}
+                            <i class="fas fa-diamond-turn-right sched-venue-nav"></i>
+                        </a>
                     </div>
                     <div class="sched-dresscode"><i class="fas fa-shirt"></i> ${s.dresscode}${s.dresscodeNote ? ` <span class="sched-dresscode-note">(${s.dresscodeNote})</span>` : ''}</div>
                     ${s.highlight ? `<div class="sched-highlight"><i class="fas fa-star"></i> ${s.highlight}</div>` : ''}
                     <ul class="sched-items">${s.items.map(it => `<li>${it}</li>`).join('')}</ul>
                     ${i < dayBlock.sessions.length - 1 ? '<div class="sched-session-divider"></div>' : ''}
                 </div>
-            `).join('');
+            `;
+            }).join('');
             return `
                 <div class="sched-day">
                     <div class="sched-day-header">
@@ -751,41 +756,6 @@ function renderBatchmateVideos() {
             <div class="bv-label">${v.label}</div>
         `;
         grid.appendChild(card);
-    });
-}
-
-// ── Map Fullscreen ────────────────────────────────────────────
-
-function setupMapFullscreen() {
-    const btn   = document.getElementById('mapFullscreenBtn');
-    const wrap  = document.getElementById('mapWrap');
-    if (!btn || !wrap) return;
-
-    function exitMapFullscreen() {
-        wrap.classList.remove('map-fullscreen');
-        btn.innerHTML = '<i class="fas fa-expand"></i>';
-        btn.setAttribute('aria-label', 'Expand map');
-        document.body.style.overflow = '';
-        setTimeout(() => { if (window._reunionMap) window._reunionMap.invalidateSize(); }, 320);
-    }
-
-    btn.addEventListener('click', () => {
-        const isFullscreen = wrap.classList.toggle('map-fullscreen');
-        if (isFullscreen) {
-            btn.innerHTML = '<i class="fas fa-xmark"></i>';
-            btn.setAttribute('aria-label', 'Close fullscreen map');
-            document.body.style.overflow = 'hidden';
-            // Force Leaflet to recalculate after the fixed layout settles
-            setTimeout(() => { if (window._reunionMap) window._reunionMap.invalidateSize(); }, 50);
-            setTimeout(() => { if (window._reunionMap) window._reunionMap.invalidateSize(); }, 350);
-        } else {
-            exitMapFullscreen();
-        }
-    });
-
-    // ESC to exit fullscreen
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && wrap.classList.contains('map-fullscreen')) exitMapFullscreen();
     });
 }
 
