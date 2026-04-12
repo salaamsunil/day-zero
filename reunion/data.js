@@ -55,6 +55,17 @@ const REUNION_DATA = {
               "Refreshing High Tea at the school",
               "Visit to the Primary School"
             ]
+          },
+          {
+            time: "7:00 PM",
+            venue: "Dennison Hotel",
+            dresscode: "Partywear",
+            highlight: null,
+            items: [
+              "Fun games, performances and lots of laughter",
+              "Reconnect, relive memories and celebrate 25 years together",
+              "Dance floor and Dinner"
+            ]
           }
         ]
       },
@@ -70,17 +81,6 @@ const REUNION_DATA = {
               "Formal function and felicitation of teaching and non-teaching staff",
               "Moments of sharing and reminiscing",
               "Reconnect with friends and informal interactions"
-            ]
-          },
-          {
-            time: "7:00 PM",
-            venue: "Dennison Hotel",
-            dresscode: "Partywear",
-            highlight: null,
-            items: [
-              "Fun games, performances and lots of laughter",
-              "Reconnect, relive memories and celebrate 25 years together",
-              "Dance floor and Dinner"
             ]
           }
         ]
