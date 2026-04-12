@@ -108,8 +108,8 @@ const REUNION_DATA = {
   ],
 
   stats: {
-    confirmed: 76,
-    thinking: 60,
+    confirmed: 77,
+    thinking: 59,
     teachers: 37,
     totalInvited: 130
   },
@@ -422,7 +422,7 @@ const REUNION_DATA = {
       role: "Private",    org: null,                                    education: null,       linkedin: null,
       achievement: null },
 
-    { name: "Umesh Akki",                 location: "India",              status: "confirmed", flag: "🇮🇳", photo: null, isTeacher: false,
+    { name: "Umesh Akki",                 location: "India",              status: "thinking",  flag: "🇮🇳", photo: null, isTeacher: false,
       role: null,         org: null,                                    education: null,       linkedin: null,
       achievement: null },
 
@@ -430,7 +430,7 @@ const REUNION_DATA = {
     { name: "Aditi Hombali",              location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Akshata Shanbag",            location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Ameetkumar Dalvi",           location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
-    { name: "Amruta M Salimath",          location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
+    { name: "Amruta M Salimath",          location: "India", status: "confirmed", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Anand Bengeri",              location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Anand G Akki",              location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Anand S",                    location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
@@ -466,7 +466,7 @@ const REUNION_DATA = {
     { name: "Priyanka Tilavalli",         location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Rakesh Kombali",             location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Ramyashree B S",             location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
-    { name: "Sandesh N Shetty",           location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
+    { name: "Sandesh N Shetty",           location: "India", status: "confirmed", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Sangeeta Pai",               location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Sanjay Kumar Jain",          location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Shilpa Kamatar",             location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
@@ -540,27 +540,18 @@ const REUNION_DATA = {
     { name: "Ushe Monakshi Teacher",  subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775356386/Ushe_Monakshi_Teacher_t9fckg.jpg",           videoUrl: null },
     { name: "Varda Teacher",          subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355501/Varda_Teacher_sbcph6.jpg",                    videoUrl: null },
     { name: "Veena Teacher",          subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355502/Veena_Teacher_xs8imy.jpg",                    videoUrl: null },
-    // Sanskrit teacher — video only, name from filename
-    { name: "Sanskrit Teacher",       subject: "Sanskrit", message: "", photo: null,                                                                                                              videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355571/Sanskrit_Teacher_tvhz5t.mp4" },
-    // Unknown teachers — names to be filled in data.js once identified
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355503/WhatsApp_Image_2026-03-30_at_01.18.50_r5yeuz.jpg",               videoUrl: null },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355503/WhatsApp_Image_2026-04-03_at_16.03.03_cynobe.jpg",               videoUrl: null },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355504/WhatsApp_Image_2026-04-03_at_16.03.05_nldmnv.jpg",               videoUrl: null },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355504/WhatsApp_Image_2026-04-03_at_16.03.43_i1pmlx.jpg",               videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355527/WhatsApp_Video_2026-04-03_at_16.03.43_tlcicu.mp4" },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355506/WhatsApp_Image_2026-04-03_at_16.03.46_chbd9y.jpg",               videoUrl: null },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355506/WhatsApp_Image_2026-04-03_at_16.03.47_1_ytwgym.jpg",             videoUrl: null },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355507/WhatsApp_Image_2026-04-03_at_16.03.47_ntvcva.jpg", videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355521/WhatsApp_Video_2026-04-03_at_16.03.47_kktqgd.mp4" },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355510/WhatsApp_Image_2026-04-03_at_16.03.48_1_jqfplp.jpg",             videoUrl: null },
-    { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355509/WhatsApp_Image_2026-04-03_at_16.05.30_cymdjc.jpg",               videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355536/WhatsApp_Video_2026-04-03_at_16.05.30_kp2jwd.mp4" }
+    { name: "Savitri Teacher",        subject: "Sanskrit", message: "", photo: null,                                                                                                              videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355571/Sanskrit_Teacher_tvhz5t.mp4" },
+    { name: "Cynthia Teacher",        subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355503/WhatsApp_Image_2026-04-03_at_16.03.03_cynobe.jpg",               videoUrl: null },
+    { name: "Sandra Teacher",         subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355504/WhatsApp_Image_2026-04-03_at_16.03.05_nldmnv.jpg",               videoUrl: null },
+    { name: "Bharati Teacher",        subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355504/WhatsApp_Image_2026-04-03_at_16.03.43_i1pmlx.jpg",               videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355527/WhatsApp_Video_2026-04-03_at_16.03.43_tlcicu.mp4" },
+    { name: "Babu Singh Sir",         subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355506/WhatsApp_Image_2026-04-03_at_16.03.46_chbd9y.jpg",               videoUrl: null },
+    { name: "Angadi Sir",             subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355506/WhatsApp_Image_2026-04-03_at_16.03.47_1_ytwgym.jpg",             videoUrl: null },
+    { name: "Bheemappa",              subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355510/WhatsApp_Image_2026-04-03_at_16.03.48_1_jqfplp.jpg",             videoUrl: null },
+    { name: "Vani Gudi Teacher",      subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355509/WhatsApp_Image_2026-04-03_at_16.05.30_cymdjc.jpg",               videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355536/WhatsApp_Video_2026-04-03_at_16.05.30_kp2jwd.mp4" }
   ],
 
   // Announcements — add new ones at the TOP of this array (newest first)
   announcements: [
-    {
-      date: "2026-04-10",
-      title: "Teacher gifts: voluntary contributions welcome",
-      text: "Our outreach has been incredible: we now expect 40+ teachers at the event, up from the original 20+. This has increased costs for outstation travel and stay, local pickups and drops, and silver gifts (prices have risen significantly since Nov/Dec). The additional expense is approx. <strong>₹90,000–1 Lakh</strong>, going entirely to teacher and staff gifts during the felicitation. If you would like to contribute further, please come forward. This is entirely voluntary; all other arrangements remain on track."
-    },
     {
       date: "2026-04-10",
       title: "Staff Support Fund: collection now closed",
