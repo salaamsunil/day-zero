@@ -332,13 +332,6 @@ function renderEventDetails() {
     const ev = REUNION_DATA.event;
     mapFrame.src = ev.mapsEmbed;
 
-    const datesHtml = ev.dates.map(d => `
-        <div class="event-date-chip">
-            <i class="fas fa-calendar-check"></i>
-            <span>${formatEventDate(d)}</span>
-        </div>
-    `).join('');
-
     const deadline = formatDate(ev.signupDeadline);
 
     // Schedule timeline
@@ -421,7 +414,6 @@ function renderEventDetails() {
     }
 
     col.innerHTML = `
-        <div class="event-dates-badge">${datesHtml}</div>
         ${scheduleHtml}
         <div class="event-signup-block">
             <div>
