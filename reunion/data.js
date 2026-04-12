@@ -551,47 +551,6 @@ const REUNION_DATA = {
     { name: "", subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355509/WhatsApp_Image_2026-04-03_at_16.05.30_cymdjc.jpg",               videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355536/WhatsApp_Video_2026-04-03_at_16.05.30_kp2jwd.mp4" }
   ],
 
-  // Donations — grouped by purpose
-  donations: [
-    // Staff Support Fund
-    { group: "Staff Support Fund",         name: "Megha Pattar",     amount: 10000 },
-    { group: "Staff Support Fund",         name: "Suman Kanchan",    amount: 10000 },
-    { group: "Staff Support Fund",         name: "Chetana Joshi",    amount: 10000 },
-    { group: "Staff Support Fund",         name: "Ashwini Wali",     amount: 3000  },
-    { group: "Staff Support Fund",         name: "Shrivalli V",      amount: 10000 },
-    { group: "Staff Support Fund",         name: "Kavita Kalyan",    amount: 10000 },
-    { group: "Staff Support Fund",         name: "Swati Patnekar",   amount: 10000 },
-    { group: "Staff Support Fund",         name: "Naveena Thakur",   amount: 10000 },
-    { group: "Staff Support Fund",         name: "Ashok Oswal",      amount: 10000 },
-    { group: "Staff Support Fund",         name: "Varsha Deshpande", amount: 10000 },
-    { group: "Staff Support Fund",         name: "Vandana Jain",     amount: 10000 },
-    { group: "Staff Support Fund",         name: "Naina Nadkarni",   amount: 20000 },
-    { group: "Staff Support Fund",         name: "Vishwas P",        amount: 25000 },
-    { group: "Staff Support Fund",         name: "Priya Kulkarni",   amount: 10000 },
-    { group: "Staff Support Fund",         name: "Harsha Gourish",   amount: 5000  },
-    { group: "Staff Support Fund",         name: "Chandan Ijari",    amount: 5000  },
-    // Teacher Gifts / Dakshina
-    { group: "Teacher Gifts / Dakshina",   name: "Ashwin Pujari",       amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Shrikanth",           amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Bharat Acharya",      amount: 35000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Sagar Tonapi",        amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Naveena Thakur",      amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Sumit Baddi",         amount: 5000  },
-    { group: "Teacher Gifts / Dakshina",   name: "Shridhar",            amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Girish Hiremath",     amount: 5000  },
-    { group: "Teacher Gifts / Dakshina",   name: "Anonymous",           amount: 5000  },
-    { group: "Teacher Gifts / Dakshina",   name: "Shilpa Shibargatti",  amount: 51000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Aditya Kulkarni",     amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Aditi Hombali",       amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Prasanna Hegde",      amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Raju Rottigowda",     amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Aparna Limaye",       amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Avinash Yalagi",      amount: 5000  },
-    { group: "Teacher Gifts / Dakshina",   name: "Hajira Khazi",        amount: 5000  },
-    { group: "Teacher Gifts / Dakshina",   name: "Supriya Sangodimath", amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Chetan Salian",       amount: 10000 }
-  ],
-
   // Announcements — add new ones at the TOP of this array (newest first)
   announcements: [
     {

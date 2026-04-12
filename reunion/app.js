@@ -98,7 +98,6 @@ function initAll() {
     renderTeacherVideos();
     renderBatchmateVideos();
     renderAnnouncements();
-    renderDonations();
     renderEventDetails();
     startCountdown();
     animateCounters();
@@ -323,55 +322,6 @@ function renderAnnouncements() {
     });
 }
 
-// ── Donations ─────────────────────────────────────────────────
-
-function renderDonations() {
-    const list = document.getElementById('donationsList');
-    const totalEl = document.getElementById('donationsTotal');
-    if (!list || !REUNION_DATA.donations) return;
-
-    list.innerHTML = '';
-    let grandTotal = 0;
-    let currentGroup = null;
-    let serial = 0;
-    let groupTotal = 0;
-
-    const flush = () => {
-        if (currentGroup === null) return;
-        const subtotal = document.createElement('div');
-        subtotal.className = 'donation-subtotal';
-        subtotal.innerHTML = `<span>Subtotal</span><span>&#8377;${groupTotal.toLocaleString('en-IN')}</span>`;
-        list.appendChild(subtotal);
-        groupTotal = 0;
-    };
-
-    REUNION_DATA.donations.forEach(d => {
-        if (d.group !== currentGroup) {
-            flush();
-            currentGroup = d.group;
-            serial = 0;
-            const header = document.createElement('div');
-            header.className = 'donation-group-header';
-            header.textContent = d.group;
-            list.appendChild(header);
-        }
-        serial++;
-        grandTotal += d.amount;
-        groupTotal += d.amount;
-        const row = document.createElement('div');
-        row.className = 'donation-row';
-        row.innerHTML = `
-            <span class="donation-serial">${serial}</span>
-            <span class="donation-name">${d.name}</span>
-            <span class="donation-amount">&#8377;${d.amount.toLocaleString('en-IN')}</span>
-        `;
-        list.appendChild(row);
-    });
-    flush();
-
-    if (totalEl) totalEl.textContent = '\u20B9' + grandTotal.toLocaleString('en-IN');
-}
-
 // ── Event Details ─────────────────────────────────────────────
 
 function renderEventDetails() {
@@ -494,8 +444,8 @@ function renderEventDetails() {
 // ── Countdown ─────────────────────────────────────────────────
 
 function startCountdown() {
-    // April 18, 2026 00:00 IST (UTC+5:30)
-    const target = new Date('2026-04-18T00:00:00+05:30');
+    // April 18, 2026 1:30 PM IST (UTC+5:30)
+    const target = new Date('2026-04-18T13:30:00+05:30');
 
     function tick() {
         const now  = new Date();
@@ -528,7 +478,7 @@ function startCountdown() {
 
 function animateCounters() {
     const d = REUNION_DATA;
-    const target = new Date('2026-04-18T00:00:00+05:30');
+    const target = new Date('2026-04-18T13:30:00+05:30');
     const daysToGo = Math.max(0, Math.floor((target - new Date()) / 86400000));
 
     animateCounter('statConfirmed', d.stats.confirmed);
