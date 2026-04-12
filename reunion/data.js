@@ -574,7 +574,27 @@ const REUNION_DATA = {
     { group: "Teacher Gifts / Dakshina",   name: "Girish M Hiremath", amount: 5000  },
     { group: "Teacher Gifts / Dakshina",   name: "Sridhar",           amount: 10000 },
     { group: "Teacher Gifts / Dakshina",   name: "Sagar Tonapi",      amount: 10000 },
-    { group: "Teacher Gifts / Dakshina",   name: "Sumit Baddi",       amount: 5000  }
+    { group: "Teacher Gifts / Dakshina",   name: "Sumit Baddi",       amount: 5000  },
+    // Gifts Felicitation
+    { group: "Gifts Felicitation",         name: "Ashwin Pujari",       amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Shrikanth",           amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Bharat Acharya",      amount: 35000 },
+    { group: "Gifts Felicitation",         name: "Sagar Tonapi",        amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Naveena Thakur",      amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Sumit Baddi",         amount: 5000  },
+    { group: "Gifts Felicitation",         name: "Shridhar",            amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Girish Hiremath",     amount: 5000  },
+    { group: "Gifts Felicitation",         name: "Anonymous",           amount: 5000  },
+    { group: "Gifts Felicitation",         name: "Shilpa Shibargatti",  amount: 51000 },
+    { group: "Gifts Felicitation",         name: "Aditya Kulkarni",     amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Aditi Hombali",       amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Prasanna Hegde",      amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Raju Rottigowda",     amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Aparna Limaye",       amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Avinash Yalagi",      amount: 5000  },
+    { group: "Gifts Felicitation",         name: "Hajira Khazi",        amount: 5000  },
+    { group: "Gifts Felicitation",         name: "Supriya Sangodimath", amount: 10000 },
+    { group: "Gifts Felicitation",         name: "Chetan Salian",       amount: 10000 }
   ],
 
   // Announcements — add new ones at the TOP of this array (newest first)
