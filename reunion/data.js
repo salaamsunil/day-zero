@@ -47,26 +47,30 @@ const REUNION_DATA = {
           {
             time: "1:30 PM",
             venue: "Dr G V Joshi Rotary High School",
+            subvenue: null,
             venueQuery: "Dr G V Joshi Rotary High School, Adarsh Nagar, Hubballi, Karnataka",
             dresscode: "Blue Jeans + Reunion T-shirt",
-            dresscodeNote: "T-shirts distributed prior to the event",
+            dresscodeNote: "No room to change at the venue, please arrive in Jeans and Reunion T-shirt",
             highlight: "Assembly and group photo at 1:30 PM. Don't miss!",
             items: [
               "Relive those classroom days where friendships were born",
               "Refreshing High Tea at the school",
-              "Visit to the Primary School"
+              "Followed by a visit to the Primary School",
+              "Wind up by 5:00 PM"
             ]
           },
           {
             time: "7:00 PM",
             venue: "Dennison Hotel",
+            subvenue: "Bubble Lounge",
             venueQuery: "Dennison Hotel, Hubballi, Karnataka",
             dresscode: "Partywear",
             highlight: null,
             items: [
               "Fun games, performances and lots of laughter",
               "Reconnect, relive memories and celebrate 25 years together",
-              "Dance floor and Dinner"
+              "DJ, dance floor and dinner",
+              "Party hard, stay late, don't leave until Dennison staff kick you out"
             ]
           }
         ]
@@ -77,13 +81,16 @@ const REUNION_DATA = {
           {
             time: "10:00 AM",
             venue: "Dennison Hotel",
+            subvenue: "Royale Hall",
             venueQuery: "Dennison Hotel, Hubballi, Karnataka",
             dresscode: "Formals (Indian or Western)",
-            highlight: "Big group photo. Don't miss!",
+            highlight: "Big group photo at 10:00 AM. Don't miss!",
             items: [
               "Formal function and felicitation of teaching and non-teaching staff",
               "Moments of sharing and reminiscing",
-              "Reconnect with friends and informal interactions"
+              "Lunch and informal interactions",
+              "Wrap up with full hearts and promises to not wait another 25 years",
+              "End by 3:00 PM"
             ]
           }
         ]

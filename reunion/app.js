@@ -344,7 +344,7 @@ function renderEventDetails() {
                     <div class="sched-session-header">
                         <span class="sched-time"><i class="fas fa-clock"></i> ${s.time}</span>
                         <a class="sched-venue sched-venue-link" href="${navUrl}" target="_blank" rel="noopener" aria-label="Navigate to ${s.venue}">
-                            <i class="fas fa-location-dot"></i> ${s.venue}
+                            <i class="fas fa-location-dot"></i> ${s.venue}${s.subvenue ? ` <span class="sched-subvenue">&middot; ${s.subvenue}</span>` : ''}
                             <i class="fas fa-diamond-turn-right sched-venue-nav"></i>
                         </a>
                     </div>
