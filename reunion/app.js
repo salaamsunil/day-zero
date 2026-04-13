@@ -699,9 +699,9 @@ function setupLightbox() {
 // ── Teacher Videos ─────────────────────────────────────────────
 
 function cloudinaryThumb(videoUrl) {
-    // Generate a thumbnail image URL from a Cloudinary video URL (frame at 5 seconds)
+    // Generate a 16:9 thumbnail with face-aware cropping from a Cloudinary video
     return videoUrl
-        .replace('/video/upload/q_auto/f_auto/', '/video/upload/so_5,w_600/')
+        .replace('/video/upload/q_auto/f_auto/', '/video/upload/so_auto,w_600,h_338,c_fill,g_auto/')
         .replace('.mp4', '.jpg');
 }
 
