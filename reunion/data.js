@@ -116,7 +116,7 @@ const REUNION_DATA = {
 
   stats: {
     confirmed: 77,
-    thinking: 59,
+    thinking: 57,
     teachers: 37,
     totalInvited: 130
   },
@@ -441,14 +441,12 @@ const REUNION_DATA = {
     { name: "Anand Bengeri",              location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Anand G Akki",              location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Anand S",                    location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
-    { name: "Anandkumar R",               location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Anoopkumar Patil",           location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Anup U S",                   location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Aparna Barge",               location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Ashok Kumar Ostwal",         location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Ashwin S",                   location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Ashwini N L",                location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
-    { name: "Ashwini Patil",              location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Bharath Acharya",            location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Bhargavi S Kotate",          location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
     { name: "Chaitra Deshnur",            location: "India", status: "thinking", flag: "🇮🇳", photo: null, isTeacher: false },
