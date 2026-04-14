@@ -367,7 +367,7 @@ const REUNION_DATA = {
 
     { name: "Sandeep Kulkarni",           location: "Hubli, IN",          status: "confirmed", flag: "🇮🇳", photo: null, isTeacher: false,
       role: "Private",    org: "Infosys",                               education: "Graduate", linkedin: "https://www.linkedin.com/in/sandeep-kulkarni-64146b48",
-      achievement: "IIM Rohtak certificate programme; Founding President, Corporate Toastmasters Club" },
+      achievement: null },
 
     { name: "Swati Patnekar",             location: "Melbourne, AU",      status: "confirmed", flag: "🇦🇺", photo: null, isTeacher: false,
       role: "Private",    org: null,                                    education: "PG",       linkedin: null,
