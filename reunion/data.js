@@ -117,7 +117,7 @@ const REUNION_DATA = {
   stats: {
     confirmed: 77,
     thinking: 57,
-    teachers: 37,
+    teachers: 38,
     totalInvited: 130
   },
 
@@ -547,6 +547,7 @@ const REUNION_DATA = {
     { name: "Veena Teacher",          subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355502/Veena_Teacher_xs8imy.jpg",                    videoUrl: null },
     { name: "Savitri Teacher",        subject: "Sanskrit", message: "", photo: null,                                                                                                              videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355571/Sanskrit_Teacher_tvhz5t.mp4" },
     { name: "Cynthia Teacher",        subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355503/WhatsApp_Image_2026-04-03_at_16.03.03_cynobe.jpg",               videoUrl: null },
+    { name: "Cecilia Teacher",        subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1776274278/Cecilia_Teacher_pn9ypr.jpg",                                     videoUrl: null },
     { name: "Sandra Teacher",         subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355504/WhatsApp_Image_2026-04-03_at_16.03.05_nldmnv.jpg",               videoUrl: null },
     { name: "Bharati Teacher",        subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355504/WhatsApp_Image_2026-04-03_at_16.03.43_i1pmlx.jpg",               videoUrl: "https://res.cloudinary.com/dfcvk0ynv/video/upload/q_auto/f_auto/v1775355527/WhatsApp_Video_2026-04-03_at_16.03.43_tlcicu.mp4" },
     { name: "Babu Singh Sir",         subject: "", message: "", photo: "https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1775355506/WhatsApp_Image_2026-04-03_at_16.03.46_chbd9y.jpg",               videoUrl: null },
