@@ -331,8 +331,6 @@ function renderEventDetails() {
     const ev = REUNION_DATA.event;
     mapFrame.src = ev.mapsEmbed;
 
-    const deadline = formatDate(ev.signupDeadline);
-
     // Schedule timeline
     let scheduleHtml = '';
     if (ev.schedule && ev.schedule.length) {
@@ -368,74 +366,7 @@ function renderEventDetails() {
         scheduleHtml = `<div class="event-schedule">${scheduleHtml}</div>`;
     }
 
-    // UPI payment block — only rendered when upiId or upiQrImage is set
-    let upiHtml = '';
-    if (ev.upiId || ev.upiQrImage) {
-        const qrHtml = ev.upiQrImage
-            ? `<div class="event-upi-qr"><img src="${ev.upiQrImage}" alt="UPI QR code"></div>`
-            : '';
-        const deepLinkHtml = ev.upiDeepLink
-            ? `<a href="${ev.upiDeepLink}" class="event-upi-btn"><i class="fas fa-mobile-screen"></i> Pay via UPI app</a>`
-            : '';
-        const upiIdHtml = ev.upiId
-            ? `<div class="event-upi-id">${ev.upiId}</div><div class="event-upi-id-label">UPI ID: copy and pay in any UPI app</div>`
-            : '';
-        upiHtml = `
-        <div class="event-upi-block">
-            <div class="event-upi-title">Pay via UPI</div>
-            <div class="event-upi-inner">
-                ${qrHtml}
-                <div class="event-upi-details">
-                    ${upiIdHtml}                    ${deepLinkHtml}
-                </div>
-            </div>
-        </div>`;
-    }
-
-    // Google Forms sign-up CTA - only rendered when signupFormUrl is set
-    const formBtnHtml = ev.signupFormUrl
-        ? `<a href="${ev.signupFormUrl}" target="_blank" rel="noopener" class="event-form-btn">
-               <i class="fas fa-clipboard-list"></i> Register &amp; Sign Up
-           </a>`
-        : '';
-
-    // Talent / performance registration block
-    let talentHtml = '';
-    if (ev.talentFormUrl) {
-        const talentDeadline = ev.talentDeadline ? formatDate(ev.talentDeadline) : '';
-        const deadlineNote = talentDeadline ? `<div class="event-talent-deadline"><i class="fas fa-clock"></i> Entries close ${talentDeadline}</div>` : '';
-        talentHtml = `
-        <div class="event-talent-block">
-            <div class="event-talent-icon"><i class="fas fa-microphone-lines"></i></div>
-            <div class="event-talent-body">
-                <div class="event-talent-title">Got a hidden talent?</div>
-                <div class="event-talent-sub">Perform at the reunion. Singers, dancers, comedians, storytellers welcome.</div>
-                ${deadlineNote}
-                <a href="${ev.talentFormUrl}" target="_blank" rel="noopener" class="event-talent-btn">
-                    <i class="fas fa-star"></i> Register to Perform
-                </a>
-            </div>
-        </div>`;
-    }
-
-    col.innerHTML = `
-        ${scheduleHtml}
-        <div class="event-signup-block">
-            <div>
-                <div class="event-signup-amount">${ev.signupCurrency} ${ev.signupAmount}</div>
-                <div class="event-signup-note">per person, all inclusive</div>
-            </div>
-            <div class="event-signup-deadline">
-                <i class="fas fa-clock"></i> Sign up by ${deadline}
-            </div>
-        </div>
-        ${formBtnHtml}
-        ${upiHtml}
-        ${talentHtml}
-        <a href="${ev.whatsappLink}" class="event-wa-btn">
-            <i class="fab fa-whatsapp"></i> Check WhatsApp for Updates
-        </a>
-    `;
+    col.innerHTML = scheduleHtml;
 }
 
 // ── Countdown ─────────────────────────────────────────────────
