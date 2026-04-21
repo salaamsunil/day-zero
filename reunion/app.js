@@ -357,37 +357,6 @@ function renderEventDetails() {
 
 // ── Countdown ─────────────────────────────────────────────────
 
-function startCountdown() {
-    // April 18, 2026 1:30 PM IST (UTC+5:30)
-    const target = new Date('2026-04-18T13:30:00+05:30');
-
-    function tick() {
-        const now  = new Date();
-        const diff = target - now;
-
-        if (diff <= 0) {
-            document.getElementById('countDays').textContent  = '00';
-            document.getElementById('countHours').textContent = '00';
-            document.getElementById('countMins').textContent  = '00';
-            document.getElementById('countSecs').textContent  = '00';
-            return;
-        }
-
-        const days  = Math.floor(diff / 86400000);
-        const hours = Math.floor((diff % 86400000) / 3600000);
-        const mins  = Math.floor((diff % 3600000)  / 60000);
-        const secs  = Math.floor((diff % 60000)    / 1000);
-
-        document.getElementById('countDays').textContent  = String(days).padStart(2, '0');
-        document.getElementById('countHours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('countMins').textContent  = String(mins).padStart(2, '0');
-        document.getElementById('countSecs').textContent  = String(secs).padStart(2, '0');
-    }
-
-    tick();
-    setInterval(tick, 1000);
-}
-
 // ── Animated Counters ─────────────────────────────────────────
 
 function animateCounters() {
