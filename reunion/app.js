@@ -99,7 +99,6 @@ function initAll() {
     renderBatchmateVideos();
     renderAnnouncements();
     renderEventDetails();
-    startCountdown();
     animateCounters();
     setupFilters();
     setupSearch();
@@ -115,27 +114,15 @@ function renderAttendees() {
     const grid = document.getElementById('attendeesGrid');
     if (!grid) return;
 
-    const sorted = [...REUNION_DATA.attendees].sort((a, b) => {
-        const order = { confirmed: 0, thinking: 1, notcoming: 2 };
-        // Teachers at end within their status group? No — teachers first if confirmed
-        return (order[a.status] || 0) - (order[b.status] || 0);
-    });
-
-    const confirmedCount = sorted.filter(a => a.status === 'confirmed' && !a.isTeacher).length;
-    const thinkingCount  = sorted.filter(a => a.status === 'thinking'  && !a.isTeacher).length;
-    const teacherCount   = sorted.filter(a => a.isTeacher).length;
+    const confirmed = REUNION_DATA.attendees.filter(a => a.status === 'confirmed');
+    const confirmedCount = confirmed.filter(a => !a.isTeacher).length;
 
     document.getElementById('tabConfirmed').textContent = confirmedCount;
-    document.getElementById('tabThinking').textContent  = thinkingCount;
 
     grid.innerHTML = '';
-    let confirmedSerial = 0, thinkingSerial = 0, teacherSerial = 0;
-    sorted.forEach(person => {
-        let serial = 0;
-        if (person.isTeacher)                serial = ++teacherSerial;
-        else if (person.status === 'confirmed') serial = ++confirmedSerial;
-        else if (person.status === 'thinking')  serial = ++thinkingSerial;
-        grid.appendChild(buildAttendeeCard(person, serial));
+    let serial = 0;
+    confirmed.forEach(person => {
+        grid.appendChild(buildAttendeeCard(person, ++serial));
     });
 }
 
@@ -249,7 +236,6 @@ function applyFilters() {
 
         let filterMatch = true;
         if (activeFilter === 'confirmed') filterMatch = status === 'confirmed' && !teacher;
-        else if (activeFilter === 'thinking') filterMatch = status === 'thinking' && !teacher;
         else if (activeFilter === 'teacher') filterMatch = teacher;
 
         const searchMatch = !query || name.includes(query);
@@ -406,13 +392,9 @@ function startCountdown() {
 
 function animateCounters() {
     const d = REUNION_DATA;
-    const target = new Date('2026-04-18T13:30:00+05:30');
-    const daysToGo = Math.max(0, Math.floor((target - new Date()) / 86400000));
 
     animateCounter('statConfirmed', d.stats.confirmed);
-    animateCounter('statThinking',  d.stats.thinking);
     animateCounter('statTeachers',  40, '+');
-    animateCounter('statDays',      daysToGo);
 }
 
 function animateCounter(id, target, suffix) {
