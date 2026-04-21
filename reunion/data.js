@@ -247,7 +247,7 @@ const REUNION_DATA = {
 
     { name: "Rajeev Dalavi",              location: "Melbourne, AU",      status: "confirmed", flag: "🇦🇺", photo: null, isTeacher: false,
       role: "Private",    org: null,                                    education: null,       linkedin: "https://www.linkedin.com/in/rajeev-dalavi/",
-      achievement: null },
+      achievement: null, couldNotAttend: true },
 
     { name: "Anand Kumar R",              location: "Sydney, AU",         status: "confirmed", flag: "🇦🇺", photo: null, isTeacher: false,
       role: "Private",    org: "HCLTech",                               education: "PG",       linkedin: null,

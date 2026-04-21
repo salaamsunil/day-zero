@@ -152,6 +152,7 @@ function buildAttendeeCard(person, serial) {
         : 'Can\'t Make It';
 
     const serialHtml = serial ? `<span class="attendee-serial">#${serial}</span>` : '';
+    const absentHtml = person.couldNotAttend ? '<span class="pill-absent">Could not attend</span>' : '';
 
     // Profile expand panel (only for confirmed with profile data)
     const hasProfile = person.status === 'confirmed' && (person.org || person.role || person.linkedin || person.achievement || person.education);
@@ -192,6 +193,7 @@ function buildAttendeeCard(person, serial) {
             </div>
             <div class="attendee-meta">
                 <span class="${pillClass}">${pillText}</span>
+                ${absentHtml}
                 <span class="attendee-location">${person.flag || ''} ${person.location}</span>
             </div>
             ${profileHtml}
