@@ -101,10 +101,13 @@
             </h1>
             <p class="hero-location">Hubballi, Karnataka</p>
             <div class="hero-group-photo">
-                <div class="hero-photo-frame">
+                <div class="hero-photo-frame hero-photo-clickable" id="heroPhotoFrame"
+                     data-full="https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1776793302/2H5A7265_tovj3u.jpg"
+                     role="button" tabindex="0" aria-label="View full size group photo">
                     <img src="https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/w_1200/v1776793302/2H5A7265_tovj3u.jpg"
                          alt="Class of 2001 group photo at 25 Year Reunion"
                          loading="eager">
+                    <div class="hero-photo-zoom"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
                 <p class="hero-photo-caption">Rotary School Reunion, Batch of 2001</p>
             </div>
@@ -123,97 +126,6 @@
                 <span class="stat-val stat-violet" id="statTeachers">0</span>
                 <span class="stat-lbl"><i class="fas fa-chalkboard-user"></i> Teachers</span>
             </div>
-        </div>
-    </section>
-
-    <!-- TRAVEL MAP -->
-    <section class="section-dark" id="travel">
-        <div class="container">
-            <div class="section-hd section-hd-light">
-                <h2 class="section-title">Where We're Travelling From</h2>
-                <p class="section-sub">Classmates converging from across the world</p>
-            </div>
-            <div class="map-wrap" id="mapWrap">
-                <div id="reunionMap"></div>
-                <div class="map-legend">
-                    <div class="legend-item">
-                        <span class="legend-dot legend-venue"></span>
-                        <span>Hubballi (Venue)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot legend-city"></span>
-                        <span>Origin city (size = number coming)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EVENT DETAILS -->
-    <section class="section-dark" id="event">
-        <div class="container">
-            <div class="section-hd section-hd-light">
-                <h2 class="section-title">Event Details</h2>
-                <p class="section-sub">Everything you need to know</p>
-            </div>
-            <div class="event-grid">
-                <div class="event-map-col">
-                    <div class="venue-block">
-                        <div class="venue-day-badge">Day 1 Afternoon &middot; 18 Apr</div>
-                        <div class="venue-map-wrap">
-                            <iframe
-                                id="schoolMapFrame"
-                                class="venue-map"
-                                src="https://maps.google.com/maps?q=Dr+G+V+Joshi+Rotary+High+School+Adarsh+Nagar+Hubballi&output=embed"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                        <div class="venue-label">
-                            <i class="fas fa-location-dot"></i>
-                            <div>
-                                <strong>Dr G V Joshi Rotary High School</strong>
-                                <span>Adarsh Nagar, Hubballi, Karnataka</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="venue-block">
-                        <div class="venue-day-badge">Day 1 Evening &amp; Day 2 &middot; 18&ndash;19 Apr</div>
-                        <div class="venue-map-wrap">
-                            <iframe
-                                id="venueMapFrame"
-                                class="venue-map"
-                                src=""
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                        <div class="venue-label">
-                            <i class="fas fa-location-dot"></i>
-                            <div>
-                                <strong>Dennison Hotel</strong>
-                                <span>Hubballi, Karnataka</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-info-col" id="eventInfoCol">
-                    <!-- populated by app.js -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ANNOUNCEMENTS -->
-    <section class="section-light" id="announcements">
-        <div class="container">
-            <div class="section-hd">
-                <h2 class="section-title">Announcements</h2>
-                <p class="section-sub">Latest updates from the organising team</p>
-            </div>
-            <div class="announcements-list" id="announcementsList"></div>
         </div>
     </section>
 
@@ -301,6 +213,97 @@
             </div>
             <div class="attendees-grid" id="attendeesGrid"></div>
             <p class="attendees-note" id="noResults" style="display:none;">No results found.</p>
+        </div>
+    </section>
+
+    <!-- TRAVEL MAP -->
+    <section class="section-dark" id="travel">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <h2 class="section-title">Where We Travelled From</h2>
+                <p class="section-sub">Classmates who converged from across the world</p>
+            </div>
+            <div class="map-wrap" id="mapWrap">
+                <div id="reunionMap"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot legend-venue"></span>
+                        <span>Hubballi (Venue)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot legend-city"></span>
+                        <span>Origin city (size = number attending)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="section-dark" id="event">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <h2 class="section-title">Event Details</h2>
+                <p class="section-sub">Everything you need to know</p>
+            </div>
+            <div class="event-grid">
+                <div class="event-map-col">
+                    <div class="venue-block">
+                        <div class="venue-day-badge">Day 1 Afternoon &middot; 18 Apr</div>
+                        <div class="venue-map-wrap">
+                            <iframe
+                                id="schoolMapFrame"
+                                class="venue-map"
+                                src="https://maps.google.com/maps?q=Dr+G+V+Joshi+Rotary+High+School+Adarsh+Nagar+Hubballi&output=embed"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="venue-label">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <strong>Dr G V Joshi Rotary High School</strong>
+                                <span>Adarsh Nagar, Hubballi, Karnataka</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="venue-block">
+                        <div class="venue-day-badge">Day 1 Evening &amp; Day 2 &middot; 18&ndash;19 Apr</div>
+                        <div class="venue-map-wrap">
+                            <iframe
+                                id="venueMapFrame"
+                                class="venue-map"
+                                src=""
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="venue-label">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <strong>Dennison Hotel</strong>
+                                <span>Hubballi, Karnataka</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-info-col" id="eventInfoCol">
+                    <!-- populated by app.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section class="section-light" id="announcements">
+        <div class="container">
+            <div class="section-hd">
+                <h2 class="section-title">Announcements</h2>
+                <p class="section-sub">Latest updates from the organising team</p>
+            </div>
+            <div class="announcements-list" id="announcementsList"></div>
         </div>
     </section>
 

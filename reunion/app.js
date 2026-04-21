@@ -363,7 +363,7 @@ function animateCounters() {
     const d = REUNION_DATA;
 
     animateCounter('statConfirmed', d.stats.confirmed);
-    animateCounter('statTeachers',  40, '+');
+    animateCounter('statTeachers',  30, '+');
 }
 
 function animateCounter(id, target, suffix) {
@@ -576,6 +576,14 @@ function setupLightbox() {
         const photo = e.target.closest('.teacher-photo[data-src]');
         if (photo) openLightbox(photo.dataset.src, 'image');
     });
+
+    // Hero group photo expand
+    const heroFrame = document.getElementById('heroPhotoFrame');
+    if (heroFrame) {
+        heroFrame.addEventListener('click', () => {
+            openLightbox(heroFrame.dataset.full, 'image');
+        });
+    }
 }
 
 // ── Teacher Videos ─────────────────────────────────────────────
