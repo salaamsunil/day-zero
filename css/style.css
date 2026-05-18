@@ -1559,137 +1559,78 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     }
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonials {
+/* ===== FOUNDER NOTE ===== */
+.founder-note {
     padding: 80px 0;
     background: var(--white);
     position: relative;
 }
 
-.testimonials .section-tag,
-.testimonials .section-title {
+.founder-note .container {
+    max-width: 780px;
+}
+
+.founder-note .section-tag,
+.founder-note .section-title {
     text-align: center;
 }
 
-.testimonials .section-title {
-    margin-bottom: 0.75rem;
+.founder-note .section-title {
+    margin-bottom: 2.25rem;
 }
 
-.testimonials .section-sub {
-    text-align: center;
-    margin: 0 auto 3rem;
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.testimonial-card {
-    background: var(--white);
+.founder-note-body {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.04), rgba(16, 185, 129, 0.03));
+    border: 1px solid rgba(124, 58, 237, 0.12);
     border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    transition: var(--transition);
+    padding: 2.5rem 2.75rem;
     position: relative;
-    isolation: isolate;
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.06);
 }
 
-.testimonial-card::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: calc(var(--radius) + 1px);
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(16, 185, 129, 0.08), rgba(249, 115, 22, 0.08));
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.4s ease;
-}
-
-.testimonial-card:hover::before {
-    opacity: 1;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 48px rgba(124, 58, 237, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.testimonial-stars {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 1rem;
-    color: #f59e0b;
-    font-size: 0.9rem;
-}
-
-.testimonial-quote {
-    font-size: 1rem;
-    color: #475569;
-    line-height: 1.75;
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    position: relative;
-}
-
-.testimonial-quote::before {
+.founder-note-body::before {
     content: '\201C';
-    font-size: 3rem;
-    line-height: 0;
-    vertical-align: -0.6em;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+    font-size: 4rem;
+    line-height: 1;
     color: var(--violet-light);
-    opacity: 0.4;
-    margin-right: 2px;
-    font-style: normal;
+    opacity: 0.35;
+    font-family: Georgia, serif;
 }
 
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 0.875rem;
+.founder-note-body p {
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.1rem;
 }
 
-.testimonial-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--white);
-    flex-shrink: 0;
+.founder-note-body p:last-of-type {
+    margin-bottom: 0;
 }
 
-.avatar-violet {
-    background: linear-gradient(135deg, var(--violet), var(--violet-light));
-}
-
-.avatar-mint {
-    background: linear-gradient(135deg, var(--mint-dark), var(--mint-light));
-}
-
-.testimonial-name {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1.3;
-}
-
-.testimonial-role {
-    display: block;
-    font-size: 0.78rem;
+.founder-note-signature {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(124, 58, 237, 0.12);
+    font-size: 0.85rem;
     color: var(--gray);
-    margin-top: 1px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
-    .testimonial-grid {
-        grid-template-columns: 1fr;
+    .founder-note-body {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .founder-note-body::before {
+        top: 0.25rem;
+        left: 1rem;
+        font-size: 3rem;
     }
 }
 
