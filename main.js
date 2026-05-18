@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Scroll-reveal animations ---
     const fadeTargets = document.querySelectorAll(
-        '.product-card, .founder-note-body, .soon-card, .about-content, .contact-grid, .stat'
+        '.product-card, .founder-note-body, .soon-card, .about-content, .contact-methods-row, .stat'
     );
 
     fadeTargets.forEach(el => el.classList.add('fade-up'));
@@ -150,66 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.5 });
     document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserver.observe(el));
-
-    // --- Contact form handler (Formsubmit.co) ---
-    const form = document.getElementById('contactForm');
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-
-            const data = new FormData(form);
-            const interest = data.get('interest');
-            const interestLabels = {
-                nutricare: 'NutriCare',
-                restroai: 'RestroAI',
-                queuezero: 'QueueZero',
-                general: 'General'
-            };
-            const interestLabel = interestLabels[interest] || 'General';
-
-            const payload = {
-                name: data.get('name'),
-                email: data.get('email'),
-                interest: interest,
-                message: data.get('message'),
-                _subject: 'New enquiry about ' + interestLabel + ' from day-zero.com.au',
-                _template: 'table'
-            };
-
-            try {
-                const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (res.ok) {
-                    btn.textContent = 'Thanks, ' + payload.name + '! We\'ll be in touch.';
-                    btn.style.background = '#10B981';
-                    form.reset();
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.disabled = false;
-                        btn.style.background = '';
-                    }, 4000);
-                } else {
-                    throw new Error('Submission failed');
-                }
-            } catch {
-                btn.textContent = 'Something went wrong. Try again.';
-                btn.style.background = '#EF4444';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                }, 3000);
-            }
-        });
-    }
 
     // --- QueueZero Waitlist Form (Formsubmit.co) ---
     const waitlistForm = document.getElementById('waitlistForm');
@@ -272,7 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const productLabels = {
                 nutricare: 'NutriCare',
                 restroai: 'RestroAI',
-                both: 'Both products'
+                queuezero: 'QueueZero',
+                multiple: 'Multiple products'
             };
             const productLabel = productLabels[data.get('product')] || data.get('product');
 
