@@ -1315,6 +1315,33 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     }
 }
 
+/* ===== PRODUCT PRICING ===== */
+.product-pricing {
+    font-size: 0.9rem;
+    color: var(--dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding: 0.85rem 1.1rem;
+    background: var(--light);
+    border-radius: 10px;
+    border: 1px solid rgba(124, 58, 237, 0.12);
+}
+
+.product-pricing i {
+    color: var(--violet);
+    margin-right: 0.4rem;
+}
+
+.product-pricing a {
+    color: var(--violet);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.product-pricing a:hover {
+    text-decoration: underline;
+}
+
 /* ===== APP MOCKUPS ===== */
 .app-mockup {
     width: 320px;
