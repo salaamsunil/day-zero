@@ -1364,6 +1364,13 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     50%       { transform: perspective(900px) rotateY(-6deg) rotateX(2deg) translateY(-8px); }
 }
 
+/* Real product screenshot inside the chrome frame */
+.mockup-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* Browser chrome */
 .mockup-chrome {
     background: #f0f0f0;
