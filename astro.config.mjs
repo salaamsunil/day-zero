@@ -18,6 +18,7 @@ export default defineConfig({
       serialize(item) {
         if (item.url === 'https://day-zero.com.au/privacy') item.url = 'https://day-zero.com.au/privacy.html';
         if (item.url === 'https://day-zero.com.au/terms') item.url = 'https://day-zero.com.au/terms.html';
+        if (item.url === 'https://day-zero.com.au/products') item.url = 'https://day-zero.com.au/products.html';
         return item;
       },
       // Resource lead-magnet pages are served as static files from public/

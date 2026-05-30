@@ -2,11 +2,11 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base
-    title="Day Zero Solutions - From Day Zero to Day One"
-    description="Day Zero Solutions builds software for hospitality, aged care, and food businesses. NutriCare for senior dietary management, RestroAI for restaurant management, QueueZero for mobile ordering."
+    title="Day Zero Solutions - Operations software for hospitality and aged care"
+    description="Day Zero is an Australian software studio. NutriCare for aged care dietary safety and RestroAI for restaurant operations: deep, live products with a domain-grounded AI agent at the core."
     canonical="https://day-zero.com.au/"
-    ogTitle="Day Zero Solutions - From Day Zero to Day One"
-    ogDescription="Australian software studio building tools for hospitality, aged care, and food businesses. NutriCare, RestroAI, and QueueZero."
+    ogTitle="Day Zero Solutions - Operations software for hospitality and aged care"
+    ogDescription="An Australian software studio building NutriCare for aged care and RestroAI for restaurants, with a domain-grounded AI agent at the core."
     isHome={true}
 >
     <!-- ========== HERO ========== -->
@@ -14,10 +14,10 @@ import Base from '../layouts/Base.astro';
         <div class="hero-content">
             <p class="hero-tag">From Day Zero to Day One.</p>
             <h1 class="hero-title">Building the solutions<br><span class="gradient-text">that get you ready</span><br>for Day One.</h1>
-            <p class="hero-sub">We build software for <span id="typewriter" class="typewriter-word">hospitality</span>. Real tools for real problems, from kitchen ops to the care floor.</p>
+            <p class="hero-sub">We build software for <span id="typewriter" class="typewriter-word">hospitality</span>. Real tools for the real operation, from the kitchen pass to the care floor.</p>
             <div class="hero-actions">
-                <a href="#products" class="btn btn-primary">See Our Products</a>
-                <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                <a href="#products" class="btn btn-primary">See the products</a>
+                <a href="#book-demo" class="btn btn-outline">Book a demo</a>
             </div>
         </div>
         <div class="hero-glow"></div>
@@ -25,42 +25,43 @@ import Base from '../layouts/Base.astro';
         <div class="hero-glow-3"></div>
     </section>
 
-    <!-- ===== HERO STATS BAR ===== -->
-    <div class="hero-stats-bar">
-        <div class="hero-stat"><i class="fas fa-clock"></i><span>30-min onboarding</span></div>
-        <div class="hero-stat"><i class="fas fa-layer-group"></i><span>IDDSI Compliant</span></div>
-        <div class="hero-stat"><i class="fas fa-file-invoice"></i><span>3-way matched</span></div>
-        <div class="hero-stat"><i class="fas fa-ban"></i><span>Zero spreadsheets</span></div>
-    </div>
+    <!-- ========== THESIS ========== -->
+    <section class="thesis" id="thesis">
+        <div class="container">
+            <p class="section-tag">Why we exist</p>
+            <h2 class="thesis-title">Same regulation. Same operator pain.<br>A different cheque size.</h2>
+            <div class="thesis-body">
+                <p>Hospitality and aged care are demanding, tightly regulated, low-margin businesses. The people who run them deserve software built around how the work actually happens: the resident's dietary profile, the IDDSI texture level, the supplier invoice, the compliance record. Not generic tools they have to bend their operation around.</p>
+                <p>The regulation is the same whether you run one site or fifty. The operator pain is the same. The cheque is not. Day Zero builds software that fits the operator, the regulation, and the budget at the same time.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- ========== PRODUCTS ========== -->
+    <!-- ========== FLAGSHIP PRODUCTS ========== -->
     <section class="products" id="products">
         <div class="container">
-            <p class="section-tag">What We Build</p>
-            <h2 class="section-title">Products</h2>
+            <p class="section-tag">Flagship products</p>
+            <h2 class="section-title">Two products, live and deep.</h2>
+            <p class="section-sub">Each built end to end for its industry, in production today, and run by real operators.</p>
 
             <!-- NutriCare -->
             <div class="product-card product-nutricare">
                 <div class="product-info">
+                    <span class="product-kicker"><i class="fas fa-heart-pulse"></i> Aged care</span>
                     <h3 class="product-name">NutriCare</h3>
-                    <p class="product-tagline">AI-powered dietary safety for aged care.</p>
-                    <p class="product-desc">The complete dietary management platform for aged care facilities. Real-time allergen conflict detection, full IDDSI texture compliance, AI clinical tools, and end-to-end kitchen workflows, built to protect residents and free up your care team.</p>
+                    <p class="product-tagline">The dietary safety and care-intelligence platform for aged care.</p>
+                    <p class="product-desc">From resident dietary profiles to the kitchen tray and back. Real-time allergen and IDDSI texture conflict detection, malnutrition screening, and the compliance evidence the strengthened Aged Care Quality Standards now demand, daily.</p>
                     <ul class="product-features">
-                        <li><i class="fas fa-check"></i> Real-time allergen &amp; IDDSI texture conflict detection</li>
-                        <li><i class="fas fa-check"></i> NutriAssist AI: ask anything about orders, gaps &amp; allergens</li>
-                        <li><i class="fas fa-check"></i> Clinical tools: MUST screening, weight tracking, incident logs</li>
-                        <li><i class="fas fa-check"></i> Kitchen Display System, delivery tracking &amp; intake recording</li>
-                        <li><i class="fas fa-check"></i> Nutritional compliance reports (ESPEN 2022 targets)</li>
-                        <li><i class="fas fa-check"></i> Family portal, resident self-service &amp; FHIR R4 export</li>
-                        <li><i class="fas fa-check"></i> Bulk operations, professional Excel exports &amp; integration API</li>
-                        <li><i class="fas fa-check"></i> Multi-site, 10-role RBAC &amp; full audit trail</li>
+                        <li><i class="fas fa-check"></i> Allergen &amp; IDDSI texture conflict detection at the point of order</li>
+                        <li><i class="fas fa-check"></i> MUST screening, weight trends, intake tracking, SIRS-ready incident logs</li>
+                        <li><i class="fas fa-check"></i> Clinical evidence to ESPEN 2022, GLIM 2019, AND/ASPEN, Quality Standard 6</li>
+                        <li><i class="fas fa-check"></i> NutriAssist AI, family portal, FHIR R4 export, 10-role RBAC, full audit trail</li>
                     </ul>
-                    <p class="product-pricing"><i class="fas fa-tag"></i> From <strong>A$10 per resident / month</strong>, with a 30-day free trial. Tiers scale by the modules you need and facility size, with volume discounts for larger facilities. Pilot deployments available. <a href="#book-demo">Get a deployment quote.</a></p>
+                    <p class="product-pricing"><i class="fas fa-tag"></i> From <strong>A$10 per resident / month</strong>, 30-day free trial, volume discounts for larger facilities. Pilot deployments available.</p>
                     <div class="product-cta-row">
-                        <a href="#book-demo" class="btn btn-primary">Book a Demo</a>
-                        <a href="https://www.nutri-care.app" target="_blank" rel="noopener" class="btn btn-outline">Visit nutri-care.app</a>
+                        <a href="https://www.nutri-care.app" target="_blank" rel="noopener" class="btn btn-primary">Visit nutri-care.app</a>
+                        <a href="#book-demo" class="btn btn-outline">Book a demo</a>
                     </div>
-                    <p class="social-proof">✓ Free demo &nbsp;·&nbsp; No lock-in contracts &nbsp;·&nbsp; Setup in a day</p>
                 </div>
                 <div class="product-visual">
                     <div class="app-mockup mockup-nutricare">
@@ -98,20 +99,21 @@ import Base from '../layouts/Base.astro';
             <!-- RestroAI -->
             <div class="product-card product-restrostock">
                 <div class="product-info">
+                    <span class="product-kicker product-kicker-mint"><i class="fas fa-utensils"></i> Restaurants</span>
                     <h3 class="product-name">RestroAI</h3>
-                    <p class="product-tagline">The AI-native restaurant operating system.</p>
-                    <p class="product-desc">From inventory and procurement to online ordering, staff scheduling, and AI-powered insights. RestroAI runs the back of house so your team can focus on the food.</p>
+                    <p class="product-tagline">The operating system for independent Australian restaurants.</p>
+                    <p class="product-desc">The back office and the floor in one system. Procurement with 3-way matching, recipe costing and menu engineering, online ordering, kitchen display, and HACCP, tuned to Australian suppliers, GST, and food-cost realities.</p>
                     <ul class="product-features">
-                        <li><i class="fas fa-check"></i> AI insights, chat &amp; predictive ordering</li>
-                        <li><i class="fas fa-check"></i> Online ordering, QR menus &amp; kitchen display</li>
-                        <li><i class="fas fa-check"></i> Staff rostering, clock-in kiosk &amp; HACCP</li>
-                        <li><i class="fas fa-check"></i> Carbon tracking &amp; sustainability badge</li>
+                        <li><i class="fas fa-check"></i> Inventory, purchase orders, goods receipts, invoice OCR &amp; 3-way matching</li>
+                        <li><i class="fas fa-check"></i> Recipe costing &amp; menu engineering (stars / dogs), waste analytics</li>
+                        <li><i class="fas fa-check"></i> Online ordering, QR menus, kitchen display, reservations, loyalty</li>
+                        <li><i class="fas fa-check"></i> Predictive ordering, smart procurement &amp; RestroAI chat on the data</li>
                     </ul>
-                    <p class="product-pricing"><i class="fas fa-tag"></i> Plans from <strong>A$49/month</strong> (or A$490/year), with a 15-day free trial and no credit card required. <a href="https://restroai.app" target="_blank" rel="noopener">See full pricing on restroai.app.</a></p>
+                    <p class="product-pricing"><i class="fas fa-tag"></i> Plans from <strong>A$49/month</strong> (or A$490/year), 15-day free trial, no credit card required.</p>
                     <div class="product-cta-row">
-                        <a href="https://restroai.app" target="_blank" rel="noopener" class="btn btn-mint">Explore RestroAI</a>
+                        <a href="https://restroai.app" target="_blank" rel="noopener" class="btn btn-mint">Explore restroai.app</a>
+                        <a href="#book-demo" class="btn btn-outline">Book a demo</a>
                     </div>
-                    <p class="social-proof">✓ 15-day free trial &nbsp;·&nbsp; No credit card needed &nbsp;·&nbsp; Cancel any time</p>
                 </div>
                 <div class="product-visual">
                     <div class="app-mockup mockup-restrostock">
@@ -140,33 +142,106 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- QueueZero -->
-            <div class="product-card product-queuezero">
-                <div class="product-info">
-                    <h3 class="product-name">QueueZero</h3>
-                    <p class="product-tagline">Queue-busting for food trucks.</p>
-                    <p class="product-desc">Mobile ordering and queue management purpose-built for food trucks and pop-ups. Your customers order ahead, you cook ahead. Everybody wins.</p>
-                    <ul class="product-features">
-                        <li><i class="fas fa-check"></i> Mobile-first ordering</li>
-                        <li><i class="fas fa-check"></i> Live queue visibility</li>
-                        <li><i class="fas fa-check"></i> Order-ahead scheduling</li>
-                        <li><i class="fas fa-check"></i> No hardware needed</li>
-                    </ul>
-                    <p class="product-pricing"><i class="fas fa-tag"></i> Launch pricing follows a tier model. Foundation cohort gets locked-in launch rates.</p>
+    <!-- ========== AGENTIC AI SIGNATURE ========== -->
+    <section class="agent-sig" id="ai">
+        <div class="container">
+            <div class="agent-head">
+                <p class="section-tag">How our AI works</p>
+                <h2 class="section-title">AI that answers to the record.</h2>
+                <p class="agent-lead">Most software bolts a chatbot on the side. Ours reads the live operational record, reasons over it, and shows its working. The same agent pattern runs across our products: no invented data, no guesses on a resident's safety or a night's food cost.</p>
+            </div>
+
+            <div class="agent-cards">
+                <!-- NutriAssist (NutriCare) -->
+                <div class="agent-card" aria-hidden="true">
+                    <div class="agent-card-head">
+                        <span class="agent-card-dot"></span> NutriAssist
+                        <span class="agent-card-tag">NutriCare</span>
+                    </div>
+                    <div class="agent-msg agent-msg-user">
+                        Can Robert Chen have the grilled salmon for dinner?
+                    </div>
+                    <div class="agent-msg agent-msg-bot">
+                        <p><strong>No.</strong> Two conflicts on Robert's profile:</p>
+                        <ul>
+                            <li><span class="agent-flag flag-red">Allergen</span> Grilled salmon uses a gluten-based marinade. Robert has a documented <strong>gluten allergy</strong>.</li>
+                            <li><span class="agent-flag flag-amber">Texture</span> The dish is served IDDSI Level 7 (Regular). Robert is prescribed <strong>Level 4 (Pureed)</strong>.</li>
+                        </ul>
+                        <p class="agent-cite">Source: Robert Chen, dietary profile, updated 2 days ago.</p>
+                    </div>
+                </div>
+
+                <!-- RestroAI chat -->
+                <div class="agent-card" aria-hidden="true">
+                    <div class="agent-card-head agent-card-head-mint">
+                        <span class="agent-card-dot agent-card-dot-mint"></span> RestroAI chat
+                        <span class="agent-card-tag agent-card-tag-mint">RestroAI</span>
+                    </div>
+                    <div class="agent-msg agent-msg-user agent-msg-user-mint">
+                        Why is my food cost up this week?
+                    </div>
+                    <div class="agent-msg agent-msg-bot">
+                        <p><strong>Up 2.3 points to 34.1%.</strong> The main driver is chicken breast:</p>
+                        <ul>
+                            <li><span class="agent-flag flag-amber">Price drift</span> Sunrise Poultry billed <strong>$9.80/kg</strong>, 14% above the 90-day average of $8.60.</li>
+                            <li><span class="agent-flag flag-blue">Impact</span> About <strong>$130</strong> extra at this week's usage. Two suppliers quote under $8.90.</li>
+                        </ul>
+                        <p class="agent-cite">Source: invoice INV-2043, Sunrise Poultry, received 2 days ago.</p>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="agent-points">
+                <li><i class="fas fa-database"></i> <strong>Grounded.</strong> Every answer is retrieved from your own records in real time, scoped to your site.</li>
+                <li><i class="fas fa-list-check"></i> <strong>Verifiable.</strong> It cites the profile, the texture level, the invoice line. You can check the working.</li>
+                <li><i class="fas fa-scale-balanced"></i> <strong>Regulation-aware.</strong> It speaks IDDSI, allergens, HACCP, and food cost, not generic prompts.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========== QUEUEZERO (EMERGING) ========== -->
+    <section class="emerging" id="coming-soon">
+        <div class="container">
+            <div class="emerging-card">
+                <div class="emerging-info">
+                    <span class="product-kicker product-kicker-orange"><i class="fas fa-bolt"></i> In development</span>
+                    <h3 class="emerging-name">QueueZero</h3>
+                    <p class="emerging-desc">Mobile ordering and queue-busting for food trucks and pop-ups. Customers order ahead, you cook ahead. No app to download, no hardware to buy. In active development, with a foundation cohort forming now.</p>
                     <form class="waitlist-form" id="waitlistForm">
                         <div class="waitlist-input-group">
                             <input type="email" name="email" placeholder="Enter your email" required>
-                            <button type="submit" class="btn btn-orange">Join Waitlist</button>
+                            <button type="submit" class="btn btn-orange">Join the waitlist</button>
                         </div>
-                        <p class="waitlist-hint">Get notified when QueueZero launches. No spam.</p>
+                        <p class="waitlist-hint">Foundation cohort gets locked-in launch pricing. No spam.</p>
                     </form>
                 </div>
-                <div class="product-visual">
+                <div class="emerging-visual">
                     <div class="product-icon-wrap icon-orange">
                         <i class="fas fa-bolt"></i>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMPLIANCE BAND ========== -->
+    <section class="compliance" id="compliance">
+        <div class="container">
+            <p class="section-tag">Built for Australian regulation</p>
+            <h2 class="section-title">The standards are in the product, not the brochure.</h2>
+            <div class="compliance-chips">
+                <span class="compliance-chip">IDDSI</span>
+                <span class="compliance-chip">Aged Care Quality Standards</span>
+                <span class="compliance-chip">SIRS</span>
+                <span class="compliance-chip">HACCP</span>
+                <span class="compliance-chip">FHIR R4</span>
+                <span class="compliance-chip">Privacy Act 1988</span>
+                <span class="compliance-chip">GST / ABN / BAS</span>
+                <span class="compliance-chip">ESPEN 2022</span>
+                <span class="compliance-chip">AU data residency</span>
             </div>
         </div>
     </section>
@@ -176,13 +251,13 @@ import Base from '../layouts/Base.astro';
         <div class="container">
             <div class="demo-grid">
                 <div class="demo-info">
-                    <p class="section-tag">See the Product</p>
-                    <h2 class="section-title">Book a 15-Minute Demo</h2>
+                    <p class="section-tag">See the product</p>
+                    <h2 class="section-title">Book a 15-minute demo</h2>
                     <p class="demo-desc">Tell us which product you'd like to see and when works for you. We'll send a calendar invite within one business day.</p>
                     <ul class="demo-benefits">
                         <li><i class="fas fa-check"></i> See the product live, not a recording</li>
                         <li><i class="fas fa-check"></i> Ask questions specific to your facility or restaurant</li>
-                        <li><i class="fas fa-check"></i> No sales pressure. Just a genuine look at the product.</li>
+                        <li><i class="fas fa-check"></i> No sales pressure. A genuine look at the product.</li>
                         <li><i class="fas fa-check"></i> 15 minutes, done</li>
                     </ul>
                     <div class="demo-stats">
@@ -209,7 +284,7 @@ import Base from '../layouts/Base.astro';
                     <select name="product" required>
                         <option value="" disabled selected>Which product?</option>
                         <option value="nutricare">NutriCare (aged care dietary management)</option>
-                        <option value="restroai">RestroAI (restaurant management)</option>
+                        <option value="restroai">RestroAI (restaurant operations)</option>
                         <option value="queuezero">QueueZero (mobile ordering, early access)</option>
                         <option value="multiple">Multiple products</option>
                     </select>
@@ -233,7 +308,7 @@ import Base from '../layouts/Base.astro';
                     </div>
                     <textarea name="message" placeholder="Anything specific you'd like to see in the demo? (optional)" rows="3"></textarea>
                     <button type="submit" class="btn btn-primary btn-full">
-                        <i class="fas fa-calendar-check"></i> &nbsp;Request a Demo Time
+                        <i class="fas fa-calendar-check"></i> &nbsp;Request a demo time
                     </button>
                     <p class="demo-disclaimer">We respond within one business day. No spam, ever.</p>
                 </form>
@@ -241,125 +316,32 @@ import Base from '../layouts/Base.astro';
         </div>
     </section>
 
-    <!-- ========== TRUST / SOCIAL PROOF ========== -->
-    <section class="trust" id="trust">
-        <div class="container">
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <div class="trust-icon"><i class="fas fa-flag"></i></div>
-                    <strong>Australian Owned</strong>
-                    <p>Built and operated in Australia</p>
-                </div>
-                <div class="trust-badge">
-                    <div class="trust-icon"><i class="fas fa-server"></i></div>
-                    <strong>Data Hosted in AU</strong>
-                    <p>Your data stays on Australian soil</p>
-                </div>
-                <div class="trust-badge">
-                    <div class="trust-icon"><i class="fas fa-shield-halved"></i></div>
-                    <strong>Privacy Act Compliant</strong>
-                    <p>Aligned with Australian privacy law</p>
-                </div>
-                <div class="trust-badge">
-                    <div class="trust-icon"><i class="fas fa-headset"></i></div>
-                    <strong>Local Support</strong>
-                    <p>Real people in your time zone</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== MISSION ========== -->
-    <section class="founder-note" id="mission">
-        <div class="container">
-            <p class="section-tag">Mission</p>
-            <h2 class="section-title">Built for the Australian operator.</h2>
-            <div class="founder-note-body">
-                <p>Australian hospitality and aged care run on software designed for someone else. American POS systems that fumble local tax and supplier networks. International dietary platforms that treat IDDSI as an afterthought. Tools that demand operators rebuild their workflows around the software, instead of the other way round.</p>
-                <p>We build the alternative. <strong>NutriCare</strong> is purpose-built around IDDSI texture levels and the Aged Care Quality Standards. <strong>RestroAI</strong> runs the back of house with AI tuned to Australian suppliers, food cost realities, and HACCP. <strong>QueueZero</strong> is the order-ahead layer the food-truck circuit has needed for a decade.</p>
-                <p>We ship weekly. We listen to operators. We build with the rigour the work demands.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== COMING SOON ========== -->
-    <section class="coming-soon" id="coming-soon">
-        <div class="container">
-            <p class="section-tag">Roadmap</p>
-            <h2 class="section-title">Shipping Next</h2>
-            <p class="section-sub">What we're building into the platform next.</p>
-            <div class="soon-grid">
-                <div class="soon-card">
-                    <div class="soon-icon"><i class="fas fa-chart-line"></i></div>
-                    <h4>Analytics Dashboard</h4>
-                    <p>Cross-product insights that show you the big picture. Sales, waste, customer flow, all in one place.</p>
-                </div>
-                <div class="soon-card">
-                    <div class="soon-icon"><i class="fas fa-robot"></i></div>
-                    <h4>AI Menu Advisor</h4>
-                    <p>Data-driven menu recommendations based on sales trends, seasonality, and food cost margins.</p>
-                </div>
-                <div class="soon-card">
-                    <div class="soon-icon"><i class="fas fa-plug"></i></div>
-                    <h4>POS Integrations</h4>
-                    <p>Seamless connections to Square, Lightspeed, and other popular POS systems used in Australian hospitality.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== ABOUT ========== -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <p class="section-tag">Who We Are</p>
-                <h2 class="section-title">Built by operators,<br>for operators.</h2>
-                <p class="about-text">Day Zero Solutions is an Australian software studio focused on hospitality, aged care, and the food industry. We've been in the trenches, running kitchens, managing stock, and caring for residents. We build the tools we wish we'd had.</p>
-                <p class="about-text">Our philosophy is simple: <strong>from Day Zero to Day One.</strong> Every product we build starts with a real problem and a real conversation with the people who live it every day. We ship fast, listen hard, and iterate relentlessly.</p>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-target="3">3</span>
-                        <span class="stat-label">Products</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="3">3</span>
-                        <span class="stat-label">Industries</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="100" data-suffix="%">100%</span>
-                        <span class="stat-label">Australian-built</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== CONTACT ========== -->
     <section class="contact" id="contact">
         <div class="container">
-            <p class="section-tag">Say Hello</p>
+            <p class="section-tag">Say hello</p>
             <h2 class="section-title">Let's build something together.</h2>
             <p class="section-sub">Want to see a product? Use the booking form above. For anything else, here's how to reach us.</p>
             <div class="contact-methods contact-methods-row">
                 <a href="mailto:hello@day-zero.com.au" class="contact-item">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div>
-                        <strong>Email Us</strong>
+                        <strong>Email us</strong>
                         <p>hello@day-zero.com.au</p>
                     </div>
                 </a>
                 <a href="#book-demo" class="contact-item">
                     <div class="contact-icon"><i class="fas fa-calendar-check"></i></div>
                     <div>
-                        <strong>Book a Demo</strong>
+                        <strong>Book a demo</strong>
                         <p>15 minutes, no commitment</p>
                     </div>
                 </a>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
-                        <strong>Based In</strong>
-                        <p>Australia</p>
+                        <strong>Based in</strong>
+                        <p>Brisbane, Australia</p>
                     </div>
                 </div>
             </div>

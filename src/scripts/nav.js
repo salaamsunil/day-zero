@@ -47,6 +47,16 @@ function initNav() {
         });
     }
 
+    // --- Logo: scroll to the very top (the #top anchor sits on the fixed
+    //     header, so a plain anchor jump does nothing). ---
+    const navLogo = document.querySelector('.nav-logo');
+    if (navLogo && (navLogo.getAttribute('href') || '').endsWith('#top')) {
+        navLogo.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // --- Header scroll effect + scroll progress bar ---
     const header = document.querySelector('.header');
     const scrollProgress = document.getElementById('scrollProgress');
