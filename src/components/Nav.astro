@@ -1,0 +1,41 @@
+---
+// Shared site navigation. `isHome` switches anchor links between
+// same-page (#products) and homepage-relative (/#products).
+const { isHome = false } = Astro.props;
+const base = isHome ? '#' : '/#';
+---
+<header class="header" id="top">
+    <nav class="nav">
+        <a href={isHome ? '#top' : '/'} class="nav-logo">
+            <img src="/images/dazero-icon.svg" alt="Day Zero Solutions" class="logo-icon" />
+            <span class="logo-wordmark">DAY ZERO</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href={`${base}products`} class="nav-link">Products</a></li>
+            <li><a href={`${base}coming-soon`} class="nav-link">Coming Soon</a></li>
+            <li><a href={`${base}about`} class="nav-link">About</a></li>
+            <li class="nav-dropdown" id="navResourcesDropdown">
+                <a href="/resources/iddsi-checklist" class="nav-link nav-has-dropdown">
+                    Resources <i class="fas fa-chevron-down nav-chevron"></i>
+                </a>
+                <div class="nav-dropdown-menu">
+                    <div class="nav-dropdown-group-label">NutriCare</div>
+                    <a href="/resources/iddsi-checklist" class="nav-dropdown-item">IDDSI Compliance Checklist</a>
+                    <a href="/resources/must-screening-guide" class="nav-dropdown-item">MUST Malnutrition Screening Guide</a>
+                    <a href="/resources/aged-care-dietary-documentation-checklist" class="nav-dropdown-item">Dietary Documentation Checklist</a>
+                    <div class="nav-dropdown-divider"></div>
+                    <div class="nav-dropdown-group-label">RestroAI</div>
+                    <a href="/resources/inventory-template" class="nav-dropdown-item">Inventory Spreadsheet Template</a>
+                    <a href="/resources/restaurant-food-cost-guide" class="nav-dropdown-item">Restaurant Food Cost Guide</a>
+                    <a href="/resources/restaurant-haccp-checklist" class="nav-dropdown-item">HACCP Compliance Checklist</a>
+                </div>
+            </li>
+            <li><a href={`${base}book-demo`} class="nav-link cta-link">Book a Demo</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>

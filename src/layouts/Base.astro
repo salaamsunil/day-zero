@@ -1,0 +1,105 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const {
+    title,
+    description,
+    canonical,
+    ogTitle,
+    ogDescription,
+    ogImage = 'https://day-zero.com.au/images/og-image.png',
+    bodyClass = '',
+    isHome = false,
+    noindex = false,
+} = Astro.props;
+
+const resolvedOgTitle = ogTitle ?? title;
+const resolvedOgDescription = ogDescription ?? description;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="google-site-verification" content="IumsWJs639g1J-MhseCcdJ6FuM9--V6al5A0vYXJKWM" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:title" content={resolvedOgTitle} />
+    <meta property="og:description" content={resolvedOgDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={resolvedOgTitle} />
+    <meta name="twitter:description" content={resolvedOgDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/dazero-icon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Preconnect for external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Fonts + icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    {isHome && (
+        <script type="application/ld+json" set:html={JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Day Zero Solutions Pty Ltd',
+            alternateName: 'Day Zero',
+            url: 'https://day-zero.com.au',
+            logo: 'https://day-zero.com.au/images/dazero-icon.svg',
+            description: 'Australian software studio building operations software for hospitality, aged care, and food businesses.',
+            address: { '@type': 'PostalAddress', addressCountry: 'AU', addressRegion: 'QLD', addressLocality: 'Brisbane' },
+            contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'hello@day-zero.com.au', areaServed: 'AU', availableLanguage: 'English' },
+            identifier: [
+                { '@type': 'PropertyValue', propertyID: 'ACN', value: '698240907' },
+                { '@type': 'PropertyValue', propertyID: 'ABN', value: '95698240907' }
+            ],
+            sameAs: []
+        })} />
+    )}
+
+    <!-- Google Analytics (GA4) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-LVLW70H83Z"></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LVLW70H83Z');
+    </script>
+</head>
+<body class={bodyClass}>
+    {isHome && <div class="scroll-progress" id="scrollProgress"></div>}
+
+    <Nav isHome={isHome} />
+
+    <slot />
+
+    <Footer />
+
+    <script>
+        import '../scripts/nav.js';
+    </script>
+</body>
+</html>

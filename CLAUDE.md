@@ -11,9 +11,13 @@ Use these alternatives instead:
 - Applies to: `index.html`, `privacy.html`, all `resources/*.html`, any new pages, and any inline content (disclaimers, banners, CTAs)
 
 ## Tech Stack
-- Plain HTML / CSS / vanilla JS — no build tools, no npm, no frameworks
-- Hosted on GitHub Pages at day-zero.com.au
-- No new dependencies unless explicitly approved
+- **Astro** (static output, `build: { format: 'file' }`) with `@astrojs/mdx` and `@astrojs/sitemap`. Migrated from plain HTML on 2026-05-30 (studio-hub rebuild).
+- Pages live in `src/pages/*.astro`; shared shell in `src/layouts/Base.astro`; `src/components/Nav.astro` + `Footer.astro`; global styles in `src/styles/global.css`; client JS in `src/scripts/` (`nav.js` on every page, `home.js` only on the homepage).
+- Static passthrough assets (favicons, images, CNAME, robots, and the legacy resource lead-magnet pages) live in `public/`. The 6 `public/resources/*.html` pages are served verbatim for now; MDX conversion is a later phase.
+- Commands: `npm run dev`, `npm run build`, `npm run preview`.
+- Hosted on GitHub Pages at day-zero.com.au. Deploy via `.github/workflows/deploy.yml` (GitHub Actions) once Pages source is switched from legacy branch-serving to "GitHub Actions".
+- URLs use `.html` (e.g. `/privacy.html`) to match the pre-migration site; keep canonicals and the sitemap aligned to that form.
+- No new dependencies unless explicitly approved. The no-em-dash, brand-voice, and address-privacy rules apply to all `.astro` and `.mdx` content exactly as they did to the old HTML.
 
 ## Products (accurate names)
 - **NutriCare** — dietary management for aged care (live)
@@ -26,7 +30,7 @@ Use these alternatives instead:
 - Nav is transparent over the dark hero, snaps to frosted glass on scroll
 
 ## CSS Conventions
-- All colours via CSS variables in `:root` (see `css/style.css`)
+- All colours via CSS variables in `:root` (see `src/styles/global.css`; the root `css/style.css` is the pre-migration source and the copy used by the legacy `public/resources/*.html` pages)
 - Pseudo-element audit: check `::before`/`::after` conflicts before adding new ones
 - No inline styles except for one-off layout overrides (e.g. `style="margin-left:0.5rem"`)
 
