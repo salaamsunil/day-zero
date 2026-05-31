@@ -1370,6 +1370,11 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     width: 100%;
     height: auto;
 }
+/* Real desktop screenshots need a wider frame than the toy mockups */
+.app-mockup.has-shot {
+    width: 100%;
+    max-width: 540px;
+}
 
 /* Browser chrome */
 .mockup-chrome {
@@ -2586,7 +2591,8 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 
 .agent-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; position: relative; }
 
-.agent-points { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 3rem; position: relative; }
+.agent-note { text-align: center; font-size: 0.82rem; color: #94a3b8; margin-top: 1.25rem; position: relative; }
+.agent-points { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 2.5rem; position: relative; }
 .agent-points li { font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; display: flex; flex-direction: column; gap: 0.5rem; }
 .agent-points i { color: var(--mint-light); font-size: 1.15rem; }
 .agent-points strong { color: #fff; }
@@ -2728,6 +2734,15 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 .hub-desc { font-size: 1.02rem; line-height: 1.8; color: #475569; margin-bottom: 1.5rem; max-width: 60ch; }
 .hub-features { margin-bottom: 0; }
 .hub-features li { opacity: 1; transform: none; }
+.hub-planned-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--orange-dark);
+    margin-bottom: 0.6rem;
+}
+.hub-planned li i { color: var(--gray); }
 
 .hub-facts {
     background: var(--light);

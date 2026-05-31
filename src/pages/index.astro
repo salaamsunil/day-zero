@@ -25,24 +25,12 @@ import Base from '../layouts/Base.astro';
         <div class="hero-glow-3"></div>
     </section>
 
-    <!-- ========== THESIS ========== -->
-    <section class="thesis" id="thesis">
-        <div class="container">
-            <p class="section-tag">Why we exist</p>
-            <h2 class="thesis-title">Same regulation. Same operator pain.<br>A different cheque size.</h2>
-            <div class="thesis-body">
-                <p>Hospitality and aged care are demanding, tightly regulated, low-margin businesses. The people who run them deserve software built around how the work actually happens: the resident's dietary profile, the IDDSI texture level, the supplier invoice, the compliance record. Not generic tools they have to bend their operation around.</p>
-                <p>The regulation is the same whether you run one site or fifty. The operator pain is the same. The cheque is not. Day Zero builds software that fits the operator, the regulation, and the budget at the same time.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== FLAGSHIP PRODUCTS ========== -->
     <section class="products" id="products">
         <div class="container">
             <p class="section-tag">Flagship products</p>
-            <h2 class="section-title">Two products, live and deep.</h2>
-            <p class="section-sub">Each built end to end for its industry, in production today, and run by real operators.</p>
+            <h2 class="section-title">Two products, in production.</h2>
+            <p class="section-sub">Each built end to end for a single industry, with public pricing and a free trial. No sales gate to take a look.</p>
 
             <!-- NutriCare -->
             <div class="product-card product-nutricare">
@@ -64,34 +52,12 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
                 <div class="product-visual">
-                    <div class="app-mockup mockup-nutricare">
+                    <div class="app-mockup has-shot mockup-nutricare">
                         <div class="mockup-chrome">
                             <div class="mockup-dots"><span></span><span></span><span></span></div>
                             <span class="mockup-url">nutri-care.app</span>
                         </div>
-                        <div class="mockup-body">
-                            <div class="mockup-resident-card">
-                                <div class="mockup-avatar"></div>
-                                <div class="mockup-resident-info">
-                                    <div class="mockup-res-name">Margaret Wilson</div>
-                                    <div class="mockup-badges">
-                                        <span class="mbadge mbadge-iddsi">IDDSI 4: Pureed</span>
-                                        <span class="mbadge mbadge-allergen">Gluten Free</span>
-                                        <span class="mbadge mbadge-allergen">Dairy Free</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mockup-stats-row">
-                                <div class="mockup-mini-stat"><span>24</span><small>Residents</small></div>
-                                <div class="mockup-mini-stat"><span>3</span><small>Pending</small></div>
-                                <div class="mockup-mini-stat accent"><span>100%</span><small>Compliant</small></div>
-                            </div>
-                            <div class="mockup-meal-row">
-                                <span class="mockup-meal done">Breakfast ✓</span>
-                                <span class="mockup-meal done">Lunch ✓</span>
-                                <span class="mockup-meal pending">Dinner -</span>
-                            </div>
-                        </div>
+                        <img src="/images/products/Nutricare-dashboard1.png" alt="NutriCare dashboard showing the NutriAssist shift briefing alongside resident and meal-order stats" class="mockup-screenshot" loading="lazy" width="1913" height="916">
                     </div>
                 </div>
             </div>
@@ -116,29 +82,12 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
                 <div class="product-visual">
-                    <div class="app-mockup mockup-restrostock">
+                    <div class="app-mockup has-shot mockup-restrostock">
                         <div class="mockup-chrome">
                             <div class="mockup-dots"><span></span><span></span><span></span></div>
                             <span class="mockup-url">restroai.app</span>
                         </div>
-                        <div class="mockup-body">
-                            <div class="mockup-stat-cards">
-                                <div class="mockup-stat-card sc-green"><span>$12.4k</span><small>Stock Value</small></div>
-                                <div class="mockup-stat-card sc-amber"><span>4</span><small>Low Stock</small></div>
-                                <div class="mockup-stat-card sc-blue"><span>8</span><small>Open POs</small></div>
-                            </div>
-                            <div class="mockup-chart">
-                                <div class="mockup-bar" style="--h: 60%"></div>
-                                <div class="mockup-bar" style="--h: 80%"></div>
-                                <div class="mockup-bar" style="--h: 45%"></div>
-                                <div class="mockup-bar" style="--h: 90%"></div>
-                                <div class="mockup-bar" style="--h: 65%"></div>
-                                <div class="mockup-bar" style="--h: 75%"></div>
-                            </div>
-                            <div class="mockup-alert-strip">
-                                <i class="fas fa-triangle-exclamation"></i> Tomatoes: 2 kg, reorder now
-                            </div>
-                        </div>
+                        <img src="/images/products/RestroAI-Inventory1.png" alt="RestroAI inventory list showing stock levels, unit costs, CO2e, and Australian suppliers" class="mockup-screenshot" loading="lazy" width="1840" height="903">
                     </div>
                 </div>
             </div>
@@ -151,7 +100,7 @@ import Base from '../layouts/Base.astro';
             <div class="agent-head">
                 <p class="section-tag">How our AI works</p>
                 <h2 class="section-title">AI that answers to the record.</h2>
-                <p class="agent-lead">Most software bolts a chatbot on the side. Ours reads the live operational record, reasons over it, and shows its working. The same agent pattern runs across our products: no invented data, no guesses on a resident's safety or a night's food cost.</p>
+                <p class="agent-lead">Our AI is not a chatbot bolted on the side. It reads the live operational record, reasons over it, and shows its working, so the people making the call can check it. The same pattern runs across our products: answers grounded in your data, cited line by line, never invented.</p>
             </div>
 
             <div class="agent-cards">
@@ -194,6 +143,8 @@ import Base from '../layouts/Base.astro';
                 </div>
             </div>
 
+            <p class="agent-note">Illustrative examples. In the products, NutriAssist and RestroAI chat answer from each customer's own live data, and staff confirm any clinical or financial decision.</p>
+
             <ul class="agent-points">
                 <li><i class="fas fa-database"></i> <strong>Grounded.</strong> Every answer is retrieved from your own records in real time, scoped to your site.</li>
                 <li><i class="fas fa-list-check"></i> <strong>Verifiable.</strong> It cites the profile, the texture level, the invoice line. You can check the working.</li>
@@ -227,11 +178,23 @@ import Base from '../layouts/Base.astro';
         </div>
     </section>
 
+    <!-- ========== WHY WE EXIST ========== -->
+    <section class="thesis" id="thesis">
+        <div class="container">
+            <p class="section-tag">Why we exist</p>
+            <h2 class="thesis-title">Same regulation. Same operator pain.<br>A different cheque size.</h2>
+            <div class="thesis-body">
+                <p>Hospitality and aged care are demanding, tightly regulated, low-margin businesses. The people who run them deserve software built around how the work actually happens: the resident's dietary profile, the IDDSI texture level, the supplier invoice, the compliance record. Not generic tools they have to bend their operation around.</p>
+                <p>The regulation is the same whether you run one site or fifty. The operator pain is the same. The cheque is not. Day Zero builds software that fits the operator, the regulation, and the budget at the same time.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== COMPLIANCE BAND ========== -->
     <section class="compliance" id="compliance">
         <div class="container">
             <p class="section-tag">Built for Australian regulation</p>
-            <h2 class="section-title">The standards are in the product, not the brochure.</h2>
+            <h2 class="section-title">The standards operators answer to, built into the product.</h2>
             <div class="compliance-chips">
                 <span class="compliance-chip">IDDSI</span>
                 <span class="compliance-chip">Aged Care Quality Standards</span>
