@@ -1376,6 +1376,60 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     max-width: 540px;
 }
 
+/* ===== Screenshot gallery (main shot + thumbnail strip) ===== */
+.shot-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 540px;
+}
+/* Flatten the floating/tilted mockup inside a gallery for a stable, clean read */
+.shot-gallery .app-mockup.has-shot {
+    max-width: none;
+    width: 100%;
+    animation: none;
+    transform: none;
+}
+.shot-gallery .app-mockup.has-shot:hover { transform: none; box-shadow: var(--shadow-lg); }
+.shot-thumbs { display: flex; gap: 0.6rem; }
+.shot-thumb {
+    flex: 1;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    aspect-ratio: 16 / 10;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+.shot-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.shot-thumb:hover { transform: translateY(-2px); }
+.shot-thumb.is-active { border-color: var(--violet); }
+
+/* Fixed-frame, two-layer crossfade stage. Fixed aspect-ratio keeps the
+   frame stable across differently-shaped screenshots (no resize jank). */
+.shot-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    background: #0f1424;
+}
+.shot-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.shot-layer.is-active { opacity: 1; }
+
 /* Browser chrome */
 .mockup-chrome {
     background: #f0f0f0;
@@ -2734,6 +2788,7 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 .hub-desc { font-size: 1.02rem; line-height: 1.8; color: #475569; margin-bottom: 1.5rem; max-width: 60ch; }
 .hub-features { margin-bottom: 0; }
 .hub-features li { opacity: 1; transform: none; }
+.hub-gallery { margin: 1.75rem 0; max-width: 100%; }
 .hub-planned-label {
     font-size: 0.78rem;
     font-weight: 700;

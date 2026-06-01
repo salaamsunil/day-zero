@@ -19,6 +19,9 @@ Use these alternatives instead:
 - URLs use `.html` (e.g. `/privacy.html`) to match the pre-migration site; keep canonicals and the sitemap aligned to that form.
 - No new dependencies unless explicitly approved. The no-em-dash, brand-voice, and address-privacy rules apply to all `.astro` and `.mdx` content exactly as they did to the old HTML.
 
+## Parked Follow-ups
+- **/reunion link broken** since the Astro migration: the `reunion/` microsite lives at the repo root but Astro deploys only `dist/` (from `public/`), so it is no longer served. To restore, either (A) move `reunion/` into `public/reunion/` (commits ~134MB incl. a 54MB video into git/deploys), or (B) keep the page + images and host the 3 videos externally, then update the embeds in `reunion/index.html`. Do not commit the 134MB without an explicit decision. robots.txt keeps `/reunion/` unindexed either way.
+
 ## Products (accurate names)
 - **NutriCare** — dietary management for aged care (live)
 - **RestroAI** — AI-native restaurant operating system (live, formerly RestroStock)

@@ -161,6 +161,8 @@ function initHome() {
         });
     }
 
+    // Screenshot galleries are initialised by the shared scripts/gallery.js module.
+
     initChatbot();
 }
 

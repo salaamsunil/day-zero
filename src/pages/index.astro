@@ -52,12 +52,22 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
                 <div class="product-visual">
-                    <div class="app-mockup has-shot mockup-nutricare">
-                        <div class="mockup-chrome">
-                            <div class="mockup-dots"><span></span><span></span><span></span></div>
-                            <span class="mockup-url">nutri-care.app</span>
+                    <div class="shot-gallery" data-gallery>
+                        <div class="app-mockup has-shot mockup-nutricare">
+                            <div class="mockup-chrome">
+                                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                <span class="mockup-url">nutri-care.app</span>
+                            </div>
+                            <div class="shot-stage">
+                                <img class="shot-layer is-active" src="/images/products/Nutricare-dashboard1.png" alt="NutriCare dashboard showing the NutriAssist shift briefing alongside resident and meal-order stats" loading="lazy">
+                                <img class="shot-layer" alt="" aria-hidden="true" loading="lazy">
+                            </div>
                         </div>
-                        <img src="/images/products/Nutricare-dashboard1.png" alt="NutriCare dashboard showing the NutriAssist shift briefing alongside resident and meal-order stats" class="mockup-screenshot" loading="lazy" width="1913" height="916">
+                        <div class="shot-thumbs">
+                            <button type="button" class="shot-thumb is-active" data-src="/images/products/Nutricare-dashboard1.png" aria-label="View dashboard"><img src="/images/products/Nutricare-dashboard1.png" alt="" loading="lazy"></button>
+                            <button type="button" class="shot-thumb" data-src="/images/products/Nutricare-ResidentOverview1.png" aria-label="View resident profile"><img src="/images/products/Nutricare-ResidentOverview1.png" alt="" loading="lazy"></button>
+                            <button type="button" class="shot-thumb" data-src="/images/products/Nutricare-MenuPlanner1.png" aria-label="View menu planner"><img src="/images/products/Nutricare-MenuPlanner1.png" alt="" loading="lazy"></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,12 +92,22 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
                 <div class="product-visual">
-                    <div class="app-mockup has-shot mockup-restrostock">
-                        <div class="mockup-chrome">
-                            <div class="mockup-dots"><span></span><span></span><span></span></div>
-                            <span class="mockup-url">restroai.app</span>
+                    <div class="shot-gallery" data-gallery>
+                        <div class="app-mockup has-shot mockup-restrostock">
+                            <div class="mockup-chrome">
+                                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                <span class="mockup-url">restroai.app</span>
+                            </div>
+                            <div class="shot-stage">
+                                <img class="shot-layer is-active" src="/images/products/RestroAI-Dashboard1.png" alt="RestroAI dashboard with the intelligence feed flagging price rises, top-margin dishes, and waste" loading="lazy">
+                                <img class="shot-layer" alt="" aria-hidden="true" loading="lazy">
+                            </div>
                         </div>
-                        <img src="/images/products/RestroAI-Inventory1.png" alt="RestroAI inventory list showing stock levels, unit costs, CO2e, and Australian suppliers" class="mockup-screenshot" loading="lazy" width="1840" height="903">
+                        <div class="shot-thumbs">
+                            <button type="button" class="shot-thumb is-active" data-src="/images/products/RestroAI-Dashboard1.png" aria-label="View dashboard"><img src="/images/products/RestroAI-Dashboard1.png" alt="" loading="lazy"></button>
+                            <button type="button" class="shot-thumb" data-src="/images/products/RestroAI-InvoiceApproval.png" aria-label="View invoice approval and 3-way matching"><img src="/images/products/RestroAI-InvoiceApproval.png" alt="" loading="lazy"></button>
+                            <button type="button" class="shot-thumb" data-src="/images/products/RestroAI-Recipe1.png" aria-label="View recipe costing"><img src="/images/products/RestroAI-Recipe1.png" alt="" loading="lazy"></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -312,6 +332,7 @@ import Base from '../layouts/Base.astro';
     </section>
 
     <script>
+        import '../scripts/gallery.js';
         import '../scripts/home.js';
     </script>
 </Base>
