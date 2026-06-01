@@ -19,8 +19,9 @@ Use these alternatives instead:
 - URLs use `.html` (e.g. `/privacy.html`) to match the pre-migration site; keep canonicals and the sitemap aligned to that form.
 - No new dependencies unless explicitly approved. The no-em-dash, brand-voice, and address-privacy rules apply to all `.astro` and `.mdx` content exactly as they did to the old HTML.
 
-## Parked Follow-ups
-- **/reunion link broken** since the Astro migration: the `reunion/` microsite lives at the repo root but Astro deploys only `dist/` (from `public/`), so it is no longer served. To restore, either (A) move `reunion/` into `public/reunion/` (commits ~134MB incl. a 54MB video into git/deploys), or (B) keep the page + images and host the 3 videos externally, then update the embeds in `reunion/index.html`. Do not commit the 134MB without an explicit decision. robots.txt keeps `/reunion/` unindexed either way.
+## Reunion microsite (/reunion)
+- Deployed from `public/reunion/` (page code + `upi-qr.png` + `og-image.png`, ~324KB). All photos and videos stream from **Cloudinary** (`res.cloudinary.com/dfcvk0ynv/...`), referenced in `reunion/data.js`. robots.txt keeps `/reunion/` unindexed (accessible by direct link).
+- The original `reunion/` folder at the repo root still holds ~126MB of local video files and leftover JPEGs. These are **orphans**: no longer referenced (Cloudinary serves them) and not deployed. Safe to delete from the working tree to slim it; the deployed copy in `public/reunion/` is the source of truth. If you edit the reunion page, edit `public/reunion/` (or edit root and re-copy the 6 served files).
 
 ## Products (accurate names)
 - **NutriCare** — dietary management for aged care (live)

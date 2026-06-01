@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <title>25 Year Reunion - Dr G V Joshi Rotary EM School</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://day-zero.com.au/reunion/">
+    <meta property="og:title" content="25 Year Reunion - Class of 2001">
+    <meta property="og:description" content="Dr G V Joshi Rotary English Medium School, Hubballi. 18 &amp; 19 April 2026. 76 batchmates confirmed and counting!">
+    <meta property="og:image" content="https://day-zero.com.au/reunion/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+
+    <!-- Twitter / WhatsApp fallback -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="25 Year Reunion - Class of 2001">
+    <meta name="twitter:description" content="Dr G V Joshi Rotary EM School, Hubballi. 18 &amp; 19 April 2026.">
+    <meta name="twitter:image" content="https://day-zero.com.au/reunion/og-image.png">
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVLW70H83Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LVLW70H83Z');
+    </script>
+</head>
+<body>
+
+<!-- ========== LOCK SCREEN ========== -->
+<div id="lockScreen" class="lock-screen">
+    <div id="lockParticles" class="lock-particles"></div>
+    <div class="lock-content">
+        <div class="lock-emblem">
+            <div class="lock-ring">
+                <span class="lock-ring-number">25</span>
+            </div>
+        </div>
+        <h1 class="lock-school">Dr G V Joshi Rotary<br>English Medium School</h1>
+        <p class="lock-batch">Class of 2001 &middot; 25 Year Reunion</p>
+        <p class="lock-date-line">18 &amp; 19 April 2026 &middot; Hubballi</p>
+        <div class="lock-form">
+            <div class="lock-input-row" id="lockInputRow">
+                <input
+                    type="password"
+                    id="lockPassword"
+                    class="lock-input"
+                    placeholder="Enter secret code"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="none"
+                    spellcheck="false"
+                    inputmode="numeric"
+                    maxlength="30"
+                >
+                <button type="button" id="lockSubmit" class="lock-btn">
+                    <span>Unlock</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <p id="lockError" class="lock-error" aria-live="polite"></p>
+            <p class="lock-hint">Hint: think about the date of the event</p>
+        </div>
+    </div>
+</div>
+
+<!-- ========== MAIN CONTENT ========== -->
+<div id="mainContent" class="main-content hidden">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div id="heroParticles" class="hero-particles"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Class of 2001</span>
+                <i class="fas fa-star"></i>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-years">25 Years</span>
+                <span class="hero-school">Dr G V Joshi Rotary<br>English Medium School</span>
+            </h1>
+            <p class="hero-location">Hubballi, Karnataka</p>
+            <div class="hero-group-photo">
+                <div class="hero-photo-frame hero-photo-clickable" id="heroPhotoFrame"
+                     data-full="https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/v1776793302/2H5A7265_tovj3u.jpg"
+                     role="button" tabindex="0" aria-label="View full size group photo">
+                    <img src="https://res.cloudinary.com/dfcvk0ynv/image/upload/q_auto/f_auto/w_1200/v1776793302/2H5A7265_tovj3u.jpg"
+                         alt="Class of 2001 group photo at 25 Year Reunion"
+                         loading="eager">
+                    <div class="hero-photo-zoom"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+                <p class="hero-photo-caption">Rotary School Reunion, Batch of 2001</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <span class="stat-val stat-green" id="statConfirmed">0</span>
+                <span class="stat-lbl"><i class="fas fa-check-circle"></i> Confirmed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-val stat-violet" id="statTeachers">0</span>
+                <span class="stat-lbl"><i class="fas fa-chalkboard-user"></i> Teachers</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section-dark" id="gallery">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <span class="section-badge"><i class="fas fa-camera-retro"></i> Gallery</span>
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-sub">Photos, videos and messages from your batch</p>
+            </div>
+
+            <!-- Photo albums -->
+            <div class="gallery-albums">
+                <h3 class="gallery-albums-title">Reunion Photos and Videos</h3>
+                <p class="gallery-albums-sub">Browse all photos and videos shared by batchmates</p>
+                <div class="gallery-albums-grid">
+                    <a href="https://photos.app.goo.gl/7Up4YwuVBJPDJy3aA" target="_blank" rel="noopener" class="gallery-album-card">
+                        <div class="gallery-album-icon"><i class="fab fa-google"></i></div>
+                        <div class="gallery-album-body">
+                            <span class="gallery-album-name">Google Photos Album</span>
+                            <span class="gallery-album-desc">Shared album with all reunion photos</span>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square gallery-album-arrow"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1Bd-tRp21HUPxHWF6y1bt2Y6WOHNUR16w" target="_blank" rel="noopener" class="gallery-album-card">
+                        <div class="gallery-album-icon"><i class="fab fa-google-drive"></i></div>
+                        <div class="gallery-album-body">
+                            <span class="gallery-album-name">Google Drive (Album 1)</span>
+                            <span class="gallery-album-desc">High resolution photos and videos</span>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square gallery-album-arrow"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1bbwnrrhBFf91sUR1X6_X-Vs9FtFLPXTL" target="_blank" rel="noopener" class="gallery-album-card">
+                        <div class="gallery-album-icon"><i class="fab fa-google-drive"></i></div>
+                        <div class="gallery-album-body">
+                            <span class="gallery-album-name">Google Drive (Album 2)</span>
+                            <span class="gallery-album-desc">More photos shared by batchmates</span>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square gallery-album-arrow"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FROM YOUR BATCHMATES subsection -->
+            <div class="gallery-subsection">
+                <div class="gallery-sub-hd">
+                    <span class="section-badge"><i class="fas fa-video"></i> From Your Batchmates</span>
+                    <h3 class="gallery-sub-title">Hear It from Them</h3>
+                    <p class="gallery-sub-sub">Your classmates have a message for you</p>
+                </div>
+                <div class="bv-grid" id="batchmateVideoGrid"></div>
+            </div>
+
+            <!-- SPECIAL MESSAGES subsection (teacher videos) -->
+            <div class="gallery-subsection" id="teacherVideosSection" style="display:none">
+                <div class="gallery-sub-hd">
+                    <span class="section-badge"><i class="fas fa-circle-play"></i> Special Messages</span>
+                    <p class="gallery-sub-sub">Hear what they have to say about the reunion</p>
+                </div>
+                <div class="teacher-videos-grid" id="teacherVideosGrid"></div>
+            </div>
+
+            <!-- SPECIAL GUESTS subsection (teacher photos) -->
+            <div class="gallery-subsection" id="teachers">
+                <div class="gallery-sub-hd">
+                    <span class="section-badge">Special Guests</span>
+                    <h3 class="gallery-sub-title">Our Teachers Are Joining Us</h3>
+                    <p class="gallery-sub-sub">The people who shaped us, back for this milestone</p>
+                </div>
+                <div class="teachers-grid" id="teachersGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO'S COMING -->
+    <section class="section-light" id="attendees">
+        <div class="container">
+            <div class="section-hd">
+                <h2 class="section-title">Who Made It</h2>
+                <p class="section-sub">Your classmates who joined the reunion</p>
+            </div>
+            <div class="attendees-controls">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="ftab active" data-filter="confirmed">
+                        Attended <span class="ftab-count" id="tabConfirmed"></span>
+                    </button>
+                </div>
+                <div class="search-wrap">
+                    <i class="fas fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="attendeeSearch" class="search-input" placeholder="Search name...">
+                </div>
+            </div>
+            <div class="attendees-grid" id="attendeesGrid"></div>
+            <p class="attendees-note" id="noResults" style="display:none;">No results found.</p>
+        </div>
+    </section>
+
+    <!-- TRAVEL MAP -->
+    <section class="section-dark" id="travel">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <h2 class="section-title">Where We Travelled From</h2>
+                <p class="section-sub">Classmates who converged from across the world</p>
+            </div>
+            <div class="map-wrap" id="mapWrap">
+                <div id="reunionMap"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot legend-venue"></span>
+                        <span>Hubballi (Venue)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot legend-city"></span>
+                        <span>Origin city (size = number attending)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="section-dark" id="event">
+        <div class="container">
+            <div class="section-hd section-hd-light">
+                <h2 class="section-title">Event Details</h2>
+                <p class="section-sub">Everything you need to know</p>
+            </div>
+            <div class="event-grid">
+                <div class="event-map-col">
+                    <div class="venue-block">
+                        <div class="venue-day-badge">Day 1 Afternoon &middot; 18 Apr</div>
+                        <div class="venue-map-wrap">
+                            <iframe
+                                id="schoolMapFrame"
+                                class="venue-map"
+                                src="https://maps.google.com/maps?q=Dr+G+V+Joshi+Rotary+High+School+Adarsh+Nagar+Hubballi&output=embed"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="venue-label">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <strong>Dr G V Joshi Rotary High School</strong>
+                                <span>Adarsh Nagar, Hubballi, Karnataka</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="venue-block">
+                        <div class="venue-day-badge">Day 1 Evening &amp; Day 2 &middot; 18&ndash;19 Apr</div>
+                        <div class="venue-map-wrap">
+                            <iframe
+                                id="venueMapFrame"
+                                class="venue-map"
+                                src=""
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="venue-label">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <strong>Dennison Hotel</strong>
+                                <span>Hubballi, Karnataka</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-info-col" id="eventInfoCol">
+                    <!-- populated by app.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section class="section-light" id="announcements">
+        <div class="container">
+            <div class="section-hd">
+                <h2 class="section-title">Announcements</h2>
+                <p class="section-sub">Latest updates from the organising team</p>
+            </div>
+            <div class="announcements-list" id="announcementsList"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reunion-footer">
+        <div class="footer-inner">
+            <div class="footer-school">Dr G V Joshi Rotary English Medium School</div>
+            <div class="footer-meta">Class of 2001 &middot; 25 Year Reunion &middot; 18 &amp; 19 April 2026</div>
+            <div class="footer-love">Made with <span class="heart">&#9829;</span> for the Class of 2001</div>
+        </div>
+    </footer>
+
+</div><!-- /mainContent -->
+
+<!-- VIDEO LIGHTBOX -->
+<div id="videoLightbox" class="lightbox hidden">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <!-- Close button sits outside .lightbox-box so video elements can't obscure it -->
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <i class="fas fa-xmark"></i>
+    </button>
+    <div class="lightbox-box">
+        <button class="lightbox-close-bar" id="lightboxCloseBar" aria-label="Close">
+            <i class="fas fa-xmark"></i> Close
+        </button>
+        <div class="lightbox-video-wrap">
+            <iframe id="lightboxFrame" src="" allowfullscreen></iframe>
+            <video id="lightboxVideo" src="" controls playsinline style="display:none;width:100%;height:100%;background:#000;"></video>
+            <img id="lightboxImage" src="" alt="" style="display:none;max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;">
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
