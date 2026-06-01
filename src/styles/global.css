@@ -1705,6 +1705,24 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     transform: translateY(0);
 }
 
+/* Hero entrance: staggered fade-up on load (motion-safe only) */
+@keyframes heroIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .hero-content > * { opacity: 0; animation: heroIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+    .hero-content > .hero-tag { animation-delay: 0.05s; }
+    .hero-content > .hero-title { animation-delay: 0.15s; }
+    .hero-content > .hero-sub { animation-delay: 0.30s; }
+    .hero-content > .hero-actions { animation-delay: 0.45s; }
+}
+
+/* Respect reduced-motion: no reveal transforms, nothing stays hidden */
+@media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
 /* ===== RESPONSIVE ===== */
 
 /* Tablet */

@@ -38,7 +38,7 @@ function initHome() {
 
     // --- Scroll-reveal animations ---
     const fadeTargets = document.querySelectorAll(
-        '.product-card, .founder-note-body, .soon-card, .about-content, .contact-methods-row, .stat'
+        '.product-card, .agent-card, .emerging-card, .thesis-body, .compliance-chip, .contact-item'
     );
     fadeTargets.forEach((el) => el.classList.add('fade-up'));
     const revealObserver = new IntersectionObserver((entries) => {

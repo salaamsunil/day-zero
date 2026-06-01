@@ -21,6 +21,12 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# The standard actions/* below are already on their latest majors; they still
+# run Node 20 internally. Opt into Node 24 now (GitHub's recommended fix) to
+# clear the deprecation warning until those actions ship Node 24 versions.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
