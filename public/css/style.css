@@ -2377,3 +2377,14 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
         font-size: 0.75rem;
     }
 }
+
+/* ===== Mobile: make wide resource tables scroll instead of clipping ===== */
+@media (max-width: 768px) {
+    .resource-content table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .resource-content { overflow-x: hidden; }
+}

@@ -27,7 +27,14 @@ function initNav() {
             dropdownToggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    resourcesDropdown.classList.toggle('mob-open');
+                    const opened = resourcesDropdown.classList.toggle('mob-open');
+                    if (opened) {
+                        // Bring the expanded list into view so it never opens off-screen.
+                        setTimeout(() => {
+                            const menu = resourcesDropdown.querySelector('.nav-dropdown-menu');
+                            if (menu) menu.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 80);
+                    }
                 }
             });
         }

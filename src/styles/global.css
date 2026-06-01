@@ -1761,17 +1761,20 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
         position: fixed;
         top: 0;
         right: 0;
-        width: 280px;
-        height: 100%;
+        width: min(86vw, 320px);
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
         background: var(--white);
         flex-direction: column;
-        padding: 90px 2rem 2rem;
+        padding: 90px 1.5rem 2rem;
         gap: 0.25rem;
         box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
         transform: translateX(100%);
         transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         will-change: transform;
         overflow-y: auto;
+        overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
         z-index: 999;
     }
@@ -2851,4 +2854,14 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 @media (max-width: 860px) {
     .hub-product { grid-template-columns: 1fr; gap: 1.75rem; }
     .hub-facts { position: static; }
+}
+
+/* ===== Mobile: make wide tables scroll instead of clipping ===== */
+@media (max-width: 768px) {
+    .legal-content table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
