@@ -2865,3 +2865,24 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
         -webkit-overflow-scrolling: touch;
     }
 }
+
+/* ===== Mobile menu is always a white panel: force readable (dark) text
+   regardless of the hero/scroll state that colours the desktop nav ===== */
+@media (max-width: 768px) {
+    .nav-menu .nav-link:not(.cta-link),
+    .nav-menu .nav-dropdown-item,
+    .nav-menu .nav-has-dropdown,
+    .nav-menu .nav-chevron {
+        color: var(--dark) !important;
+    }
+    .nav-menu .nav-dropdown-group-label { color: var(--violet) !important; }
+    .nav-menu .nav-link:not(.cta-link):hover,
+    .nav-menu .nav-dropdown-item:hover {
+        color: var(--violet) !important;
+        background: rgba(124, 58, 237, 0.06);
+    }
+    .nav-menu .cta-link {
+        background: var(--violet) !important;
+        color: var(--white) !important;
+    }
+}
