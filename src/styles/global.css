@@ -2190,9 +2190,19 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 
 /* Mobile: show as regular links */
 @media (max-width: 768px) {
-    .nav-dropdown-menu {
+    /* Also target the :hover state: tapping triggers :hover on mobile, and the
+       desktop hover rule re-applies translateX(-50%), shifting the list off the
+       left edge of the panel. Neutralise all positioning here. */
+    .nav-dropdown-menu,
+    .nav-dropdown:hover .nav-dropdown-menu {
         position: static;
-        transform: none;
+        transform: none !important;
+        left: auto;
+        right: auto;
+        top: auto;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
         box-shadow: none;
         border: none;
         background: rgba(124, 58, 237, 0.04);
@@ -2200,9 +2210,8 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
         opacity: 1;
         pointer-events: auto;
         padding: 4px 4px 8px;
-        margin-top: 4px;
+        margin: 4px 0 0;
         display: none;
-        min-width: unset;
     }
     .nav-dropdown-menu::before { display: none; }
     .nav-dropdown.mob-open .nav-dropdown-menu { display: block; }
