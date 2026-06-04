@@ -2388,3 +2388,35 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     }
     .resource-content { overflow-x: hidden; }
 }
+
+/* ===== Mobile nav fixes (ported from the Astro global styles) =====
+   Resource pages share this stylesheet; keep their mobile nav in sync. */
+@media (max-width: 768px) {
+    .nav-menu {
+        width: min(86vw, 320px);
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
+        overscroll-behavior: contain;
+    }
+    /* Neutralise the desktop hover transform that shifts the dropdown
+       off the left edge when tapped on mobile. */
+    .nav-dropdown-menu,
+    .nav-dropdown:hover .nav-dropdown-menu {
+        position: static;
+        transform: none !important;
+        left: auto;
+        right: auto;
+        top: auto;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+    /* White panel: force readable dark text regardless of hero/scroll state. */
+    .nav-menu .nav-link:not(.cta-link),
+    .nav-menu .nav-dropdown-item,
+    .nav-menu .nav-has-dropdown,
+    .nav-menu .nav-chevron { color: var(--dark) !important; }
+    .nav-menu .nav-dropdown-group-label { color: var(--violet) !important; }
+    .nav-menu .cta-link { background: var(--violet) !important; color: var(--white) !important; }
+}
