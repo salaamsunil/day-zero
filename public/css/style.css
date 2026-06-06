@@ -2378,15 +2378,24 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     }
 }
 
-/* ===== Mobile: make wide resource tables scroll instead of clipping ===== */
+/* ===== Mobile: stop wide tables forcing the page wider than the viewport =====
+   The resource layout is a CSS grid; grid columns default to min-width:auto and
+   won't shrink below their widest child, so a wide table dragged the column (and
+   the whole page) off-screen. Let the columns shrink, and scroll the table. */
 @media (max-width: 768px) {
-    .resource-content table {
+    .resource-grid,
+    .resource-grid > *,
+    .resource-content,
+    .sidebar-sticky {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .resource-body table {
         display: block;
-        width: 100%;
+        max-width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
-    .resource-content { overflow-x: hidden; }
 }
 
 /* ===== Mobile nav fixes (ported from the Astro global styles) =====
