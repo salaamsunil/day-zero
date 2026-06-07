@@ -8,15 +8,16 @@ Use these alternatives instead:
 - Clause separation: use a comma, period, or semicolon
 - List item labels (e.g. "Step 1: BMI"): use a colon
 - Inline parenthetical: use parentheses or reword the sentence
-- Applies to: `index.html`, `privacy.html`, all `resources/*.html`, any new pages, and any inline content (disclaimers, banners, CTAs)
+- Applies to: all `.astro` pages/components, `.mdx` insights posts, the static `public/resources/*.html` pages, and any inline content (disclaimers, banners, CTAs)
 
 ## Tech Stack
 - **Astro** (static output, `build: { format: 'file' }`) with `@astrojs/mdx` and `@astrojs/sitemap`. Migrated from plain HTML on 2026-05-30 (studio-hub rebuild).
-- Pages live in `src/pages/*.astro`; shared shell in `src/layouts/Base.astro`; `src/components/Nav.astro` + `Footer.astro`; global styles in `src/styles/global.css`; client JS in `src/scripts/` (`nav.js` on every page, `home.js` only on the homepage).
-- Static passthrough assets (favicons, images, CNAME, robots, and the legacy resource lead-magnet pages) live in `public/`. The 6 `public/resources/*.html` pages are served verbatim for now; MDX conversion is a later phase.
+- Pages in `src/pages/` (`/` home, `/products` studio hub that links out to product sites, `/about` unlisted founder bio, `/privacy.html`, `/terms.html`, `/insights` blog); shared shell `src/layouts/Base.astro`; `src/components/Nav.astro` + `Footer.astro`; global styles `src/styles/global.css`; client JS in `src/scripts/`: `nav.js` (every page), `home.js` (homepage only: typewriter, reveals, forms, chatbot), `gallery.js` (home + /products: the crossfade screenshot slideshow).
+- Static passthrough assets (favicons, images, CNAME, robots, `reunion/`, and the legacy resource lead-magnet pages) live in `public/`. The 6 `public/resources/*.html` pages are standalone static HTML with their own `<style>` + `public/css/style.css` + `public/main.js` (NOT the Astro components); MDX conversion is a later phase, so fixes to nav/footer/CSS must be mirrored there.
+- **Insights blog:** MDX collection in `src/content/insights/` (schema in `src/content.config.ts`). Add a post = drop a `.mdx` file with frontmatter (title, description, pubDate, author, tags, draft). `/insights` lists non-draft posts; `/insights/[...slug]` renders them; RSS at `/rss.xml`. (As of Jun 2026 the engine is built but held unpushed pending the first post's review.)
 - Commands: `npm run dev`, `npm run build`, `npm run preview`.
-- Hosted on GitHub Pages at day-zero.com.au. Deploy via `.github/workflows/deploy.yml` (GitHub Actions) once Pages source is switched from legacy branch-serving to "GitHub Actions".
-- URLs use `.html` (e.g. `/privacy.html`) to match the pre-migration site; keep canonicals and the sitemap aligned to that form.
+- Hosted on GitHub Pages at day-zero.com.au, deployed by `.github/workflows/deploy.yml` (GitHub Actions; Pages source = "GitHub Actions"). Every push to `main` deploys. Pages-settings changes need repo admin (`salaamsunil`); the gh CLI account (`bonjoursunil`) cannot change them.
+- URLs use `.html` (e.g. `/privacy.html`) to match the pre-migration site; keep canonicals and the sitemap (`serialize` in `astro.config.mjs`) aligned to that form.
 - No new dependencies unless explicitly approved. The no-em-dash, brand-voice, and address-privacy rules apply to all `.astro` and `.mdx` content exactly as they did to the old HTML.
 
 ## Reunion microsite (/reunion)
@@ -37,6 +38,13 @@ Use these alternatives instead:
 - All colours via CSS variables in `:root` (see `src/styles/global.css`; the root `css/style.css` is the pre-migration source and the copy used by the legacy `public/resources/*.html` pages)
 - Pseudo-element audit: check `::before`/`::after` conflicts before adding new ones
 - No inline styles except for one-off layout overrides (e.g. `style="margin-left:0.5rem"`)
+
+## Mobile conventions (hard-won; do not regress)
+- **White-on-white nav:** the mobile nav is a white slide-in panel, but on the dark-hero homepage nav links inherit white. The mobile media query MUST force dark text on `.nav-menu` items. Keep the `.nav-menu .nav-link:not(.cta-link)` dark override.
+- **Dropdown clipping:** the Resources dropdown is `position:absolute` with `translateX(-50%)` on desktop; tapping on mobile fires `:hover`, so the mobile rule must neutralise `transform` on `.nav-dropdown:hover .nav-dropdown-menu` (else the list slides off the left edge, only the right half shows).
+- **Panel height:** use `100dvh` (not `100%`) so the panel is URL-bar safe and scrolls.
+- **Wide content overflow:** the resource pages use a CSS grid (`.resource-grid`); grid columns default to `min-width:auto` and refuse to shrink below their widest child, so a wide table dragged the whole page off-screen. Fix is `min-width:0` on `.resource-grid > *` plus scrollable tables.
+- These fixes live in BOTH `src/styles/global.css` (Astro pages) and `public/css/style.css` + `public/main.js` (resource pages). Change both.
 
 ## Brand Voice & Positioning
 
