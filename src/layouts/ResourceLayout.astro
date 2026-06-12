@@ -1,0 +1,99 @@
+---
+import Base from './Base.astro';
+
+const { data, canonical } = Astro.props;
+const cta = data.product === 'RestroAI' ? 'btn-mint' : 'btn-primary';
+const orgPlaceholder = data.product === 'RestroAI' ? 'Restaurant name' : 'Facility name';
+const tipClass = data.product === 'RestroAI' ? 'tip-box tip-box-mint' : 'tip-box';
+---
+<Base
+    title={data.title}
+    description={data.description}
+    canonical={canonical}
+    ogTitle={data.ogTitle ?? data.title}
+    ogDescription={data.ogDescription ?? data.description}
+    bodyClass="light-hero resource-page"
+>
+    <section class="resource-hero">
+        <div class="container">
+            <div>
+                <div class="resource-badge"><i class={`fas ${data.badgeIcon}`}></i> {data.badge}</div>
+                <h1 set:html={data.heroTitle}></h1>
+                <p>{data.heroSubtitle}</p>
+            </div>
+            <div class="hero-cta-box">
+                <h3>{data.lead.heading}</h3>
+                <p>{data.lead.sub}</p>
+                <form class="resource-form" data-resource-form data-subject={data.lead.subject} data-gtag={data.lead.gtagLabel}>
+                    <input type="text" name="name" placeholder="Your name" required />
+                    <input type="email" name="email" placeholder="Work email" required />
+                    <input type="text" name="facility" placeholder={orgPlaceholder} />
+                    <button type="submit" class={`btn ${cta}`}>Request a Demo</button>
+                    <p class="form-disclaimer">No spam. We'll only contact you about the product.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    {data.disclaimer && (
+        <div class="resource-disclaimer">
+            <div>
+                <i class="fas fa-circle-exclamation"></i>
+                <p set:html={data.disclaimer}></p>
+            </div>
+        </div>
+    )}
+
+    <div class="resource-body">
+        <div class="container">
+            <div class="resource-grid">
+                <div class="resource-content">
+                    <slot />
+                </div>
+                <aside class="sidebar-sticky">
+                    <div class="sidebar-cta">
+                        <h3>{data.sidebar.ctaTitle}</h3>
+                        <p>{data.sidebar.ctaText}</p>
+                        {data.sidebar.features.length > 0 && (
+                            <ul class="nutricare-feature-list">
+                                {data.sidebar.features.map((f) => (
+                                    <li><i class="fas fa-check"></i> {f}</li>
+                                ))}
+                            </ul>
+                        )}
+                        <a href={data.sidebar.demoHref} class={`btn ${cta}`}>{data.sidebar.demoLabel}</a>
+                        {data.sidebar.siteHref && (
+                            data.sidebar.siteExternal
+                                ? <a href={data.sidebar.siteHref} target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:0.5rem">{data.sidebar.siteLabel}</a>
+                                : <a href={data.sidebar.siteHref} class="btn btn-outline" style="margin-top:0.5rem">{data.sidebar.siteLabel}</a>
+                        )}
+                    </div>
+
+                    {data.sidebar.tip && (
+                        <div class={tipClass}><Fragment set:html={data.sidebar.tip} /></div>
+                    )}
+
+                    {data.sidebar.showPrint && (
+                        <div style="margin-top:1.5rem">
+                            <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> {data.sidebar.printLabel}</button>
+                        </div>
+                    )}
+
+                    {data.sidebar.related.map((box) => (
+                        <div class="sidebar-cta" style="margin-top:1.5rem">
+                            <h3>{box.title}</h3>
+                            {box.text && <p>{box.text}</p>}
+                            {box.links.map((l) => (
+                                <a href={l.href} class="btn btn-outline" style="margin-bottom:0.5rem">{l.label}</a>
+                            ))}
+                        </div>
+                    ))}
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        import '../scripts/resource-form.js';
+    </script>
+</Base>

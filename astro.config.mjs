@@ -21,17 +21,6 @@ export default defineConfig({
         if (item.url === 'https://day-zero.com.au/products') item.url = 'https://day-zero.com.au/products.html';
         return item;
       },
-      // Resource lead-magnet pages are served as static files from public/
-      // (not built from src/pages yet), so list them explicitly until the
-      // Phase 3 MDX migration brings them into the build.
-      customPages: [
-        'https://day-zero.com.au/resources/iddsi-checklist',
-        'https://day-zero.com.au/resources/must-screening-guide',
-        'https://day-zero.com.au/resources/aged-care-dietary-documentation-checklist',
-        'https://day-zero.com.au/resources/inventory-template',
-        'https://day-zero.com.au/resources/restaurant-food-cost-guide',
-        'https://day-zero.com.au/resources/restaurant-haccp-checklist',
-      ],
     }),
   ],
 });
