@@ -1,5 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
+import ShotGallery from '../components/ShotGallery.astro';
+import ncDashboard from '../assets/products/Nutricare-dashboard1.png';
+import ncResident from '../assets/products/Nutricare-ResidentOverview1.png';
+import ncMenu from '../assets/products/Nutricare-MenuPlanner1.png';
+import ncResidents from '../assets/products/Nutricare-Residents1.png';
+import raDashboard from '../assets/products/RestroAI-Dashboard1.png';
+import raInvoice from '../assets/products/RestroAI-InvoiceApproval.png';
+import raRecipe from '../assets/products/RestroAI-Recipe1.png';
+import raMenuEngg from '../assets/products/RestroAI-Report-MenuEngg.png';
 ---
 <Base
     title="Products - Day Zero Solutions"
@@ -25,24 +34,17 @@ import Base from '../layouts/Base.astro';
                     <h2 class="hub-name">NutriCare</h2>
                     <p class="hub-tagline">The dietary safety and care-intelligence platform for aged care facilities.</p>
                     <p class="hub-desc">NutriCare runs the full path from a resident's dietary profile to the meal on the tray and the evidence in the audit log. It enforces allergen and IDDSI texture safety at the point of order, screens for malnutrition risk, and produces the documentation the strengthened Aged Care Quality Standards now require as a daily obligation rather than an annual scramble.</p>
-                    <div class="shot-gallery hub-gallery" data-gallery>
-                        <div class="app-mockup has-shot">
-                            <div class="mockup-chrome">
-                                <div class="mockup-dots"><span></span><span></span><span></span></div>
-                                <span class="mockup-url">nutri-care.app</span>
-                            </div>
-                            <div class="shot-stage">
-                                <img class="shot-layer is-active" src="/images/products/Nutricare-dashboard1.png" alt="NutriCare dashboard with the NutriAssist shift briefing and meal-order stats" loading="lazy">
-                                <img class="shot-layer" alt="" aria-hidden="true" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="shot-thumbs">
-                            <button type="button" class="shot-thumb is-active" data-src="/images/products/Nutricare-dashboard1.png" aria-label="View dashboard"><img src="/images/products/Nutricare-dashboard1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/Nutricare-ResidentOverview1.png" aria-label="View resident profile"><img src="/images/products/Nutricare-ResidentOverview1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/Nutricare-MenuPlanner1.png" aria-label="View menu planner"><img src="/images/products/Nutricare-MenuPlanner1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/Nutricare-Residents1.png" aria-label="View residents list"><img src="/images/products/Nutricare-Residents1.png" alt="" loading="lazy"></button>
-                        </div>
-                    </div>
+                    <ShotGallery
+                        url="nutri-care.app"
+                        class="hub-gallery"
+                        eager={true}
+                        images={[
+                            { src: ncDashboard, alt: "NutriCare dashboard with the NutriAssist shift briefing and meal-order stats", label: "dashboard" },
+                            { src: ncResident, alt: "NutriCare resident profile overview", label: "resident profile" },
+                            { src: ncMenu, alt: "NutriCare menu planner", label: "menu planner" },
+                            { src: ncResidents, alt: "NutriCare residents list", label: "residents list" },
+                        ]}
+                    />
                     <ul class="product-features hub-features">
                         <li><i class="fas fa-check"></i> Allergen &amp; IDDSI texture conflict detection at the point of order</li>
                         <li><i class="fas fa-check"></i> Meal ordering, kitchen display, delivery tracking &amp; intake recording</li>
@@ -72,24 +74,16 @@ import Base from '../layouts/Base.astro';
                     <h2 class="hub-name">RestroAI</h2>
                     <p class="hub-tagline">The operating system for independent Australian restaurants and cafes.</p>
                     <p class="hub-desc">RestroAI puts the back office and the floor in one system, tuned to Australian suppliers, GST, and the food-cost maths that decides whether a venue makes money. Procurement, costing, ordering, and compliance stop living in spreadsheets and supplier WhatsApp threads.</p>
-                    <div class="shot-gallery hub-gallery" data-gallery>
-                        <div class="app-mockup has-shot">
-                            <div class="mockup-chrome">
-                                <div class="mockup-dots"><span></span><span></span><span></span></div>
-                                <span class="mockup-url">restroai.app</span>
-                            </div>
-                            <div class="shot-stage">
-                                <img class="shot-layer is-active" src="/images/products/RestroAI-Dashboard1.png" alt="RestroAI dashboard intelligence feed flagging price rises, top-margin dishes, and waste" loading="lazy">
-                                <img class="shot-layer" alt="" aria-hidden="true" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="shot-thumbs">
-                            <button type="button" class="shot-thumb is-active" data-src="/images/products/RestroAI-Dashboard1.png" aria-label="View dashboard"><img src="/images/products/RestroAI-Dashboard1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/RestroAI-InvoiceApproval.png" aria-label="View invoice approval and 3-way matching"><img src="/images/products/RestroAI-InvoiceApproval.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/RestroAI-Recipe1.png" aria-label="View recipe costing"><img src="/images/products/RestroAI-Recipe1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/RestroAI-Report-MenuEngg.png" aria-label="View menu engineering report"><img src="/images/products/RestroAI-Report-MenuEngg.png" alt="" loading="lazy"></button>
-                        </div>
-                    </div>
+                    <ShotGallery
+                        url="restroai.app"
+                        class="hub-gallery"
+                        images={[
+                            { src: raDashboard, alt: "RestroAI dashboard intelligence feed flagging price rises, top-margin dishes, and waste", label: "dashboard" },
+                            { src: raInvoice, alt: "RestroAI invoice approval and 3-way matching", label: "invoice approval and 3-way matching" },
+                            { src: raRecipe, alt: "RestroAI recipe costing", label: "recipe costing" },
+                            { src: raMenuEngg, alt: "RestroAI menu engineering report", label: "menu engineering report" },
+                        ]}
+                    />
                     <ul class="product-features hub-features">
                         <li><i class="fas fa-check"></i> Inventory, suppliers, purchase orders, goods receipts &amp; stock takes</li>
                         <li><i class="fas fa-check"></i> Invoice OCR &amp; automated 3-way matching (PO, GRN, invoice)</li>

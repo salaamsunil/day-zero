@@ -1,0 +1,63 @@
+---
+// Screenshot gallery (2-layer crossfade + thumbnails), driven by gallery.js.
+// Runs each source image through astro:assets to emit small WebP at two sizes:
+// a ~1000px display frame and a ~200px thumbnail. The first frame can be
+// rendered eager + high-priority for the LCP gallery on a page.
+import { getImage } from 'astro:assets';
+
+interface ShotImage {
+  src: ImageMetadata;
+  alt: string;
+  label: string;
+}
+
+const {
+  images,
+  url,
+  mockupClass = '',
+  eager = false,
+  class: extraClass = '',
+} = Astro.props as {
+  images: ShotImage[];
+  url: string;
+  mockupClass?: string;
+  eager?: boolean;
+  class?: string;
+};
+
+const shots = await Promise.all(
+  images.map(async (im) => ({
+    alt: im.alt,
+    label: im.label,
+    display: (await getImage({ src: im.src, width: 1000, format: 'webp', quality: 74 })).src,
+    thumb: (await getImage({ src: im.src, width: 200, format: 'webp', quality: 72 })).src,
+  })),
+);
+const first = shots[0];
+---
+<div class:list={['shot-gallery', extraClass]} data-gallery>
+    <div class:list={['app-mockup', 'has-shot', mockupClass]}>
+        <div class="mockup-chrome">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-url">{url}</span>
+        </div>
+        <div class="shot-stage">
+            <img
+                class="shot-layer is-active"
+                src={first.display}
+                alt={first.alt}
+                fetchpriority={eager ? 'high' : undefined}
+                loading={eager ? 'eager' : 'lazy'}
+                decoding="async"
+            />
+            <img class="shot-layer" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </div>
+    </div>
+    <div class="shot-thumbs">
+        {shots.map((s, i) => (
+            <button type="button" class:list={['shot-thumb', i === 0 && 'is-active']} data-src={s.display} aria-label={`View ${s.label}`}>
+                <img src={s.thumb} alt="" loading="lazy" decoding="async" />
+            </button>
+        ))}
+    </div>
+</div>

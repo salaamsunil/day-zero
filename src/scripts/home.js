@@ -163,7 +163,11 @@ function initHome() {
 
     // Screenshot galleries are initialised by the shared scripts/gallery.js module.
 
-    initChatbot();
+    // Build the chatbot widget off the critical render path. It is a sizeable
+    // DOM subtree and isn't needed for first paint, so deferring it to idle
+    // keeps the main thread free for the hero text paint (LCP).
+    const whenIdle = window.requestIdleCallback || ((cb) => setTimeout(cb, 200));
+    whenIdle(initChatbot);
 }
 
 // ===== CHATBOT =====

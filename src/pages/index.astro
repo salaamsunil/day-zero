@@ -1,5 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import ShotGallery from '../components/ShotGallery.astro';
+import ncDashboard from '../assets/products/Nutricare-dashboard1.png';
+import ncResident from '../assets/products/Nutricare-ResidentOverview1.png';
+import ncMenu from '../assets/products/Nutricare-MenuPlanner1.png';
+import raDashboard from '../assets/products/RestroAI-Dashboard1.png';
+import raInvoice from '../assets/products/RestroAI-InvoiceApproval.png';
+import raRecipe from '../assets/products/RestroAI-Recipe1.png';
 ---
 <Base
     title="Day Zero Solutions - Operations software for hospitality and aged care"
@@ -52,23 +59,16 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
                 <div class="product-visual">
-                    <div class="shot-gallery" data-gallery>
-                        <div class="app-mockup has-shot mockup-nutricare">
-                            <div class="mockup-chrome">
-                                <div class="mockup-dots"><span></span><span></span><span></span></div>
-                                <span class="mockup-url">nutri-care.app</span>
-                            </div>
-                            <div class="shot-stage">
-                                <img class="shot-layer is-active" src="/images/products/Nutricare-dashboard1.png" alt="NutriCare dashboard showing the NutriAssist shift briefing alongside resident and meal-order stats" loading="lazy">
-                                <img class="shot-layer" alt="" aria-hidden="true" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="shot-thumbs">
-                            <button type="button" class="shot-thumb is-active" data-src="/images/products/Nutricare-dashboard1.png" aria-label="View dashboard"><img src="/images/products/Nutricare-dashboard1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/Nutricare-ResidentOverview1.png" aria-label="View resident profile"><img src="/images/products/Nutricare-ResidentOverview1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/Nutricare-MenuPlanner1.png" aria-label="View menu planner"><img src="/images/products/Nutricare-MenuPlanner1.png" alt="" loading="lazy"></button>
-                        </div>
-                    </div>
+                    <ShotGallery
+                        url="nutri-care.app"
+                        mockupClass="mockup-nutricare"
+                        eager={true}
+                        images={[
+                            { src: ncDashboard, alt: "NutriCare dashboard showing the NutriAssist shift briefing alongside resident and meal-order stats", label: "dashboard" },
+                            { src: ncResident, alt: "NutriCare resident profile overview", label: "resident profile" },
+                            { src: ncMenu, alt: "NutriCare menu planner", label: "menu planner" },
+                        ]}
+                    />
                 </div>
             </div>
 
@@ -92,23 +92,15 @@ import Base from '../layouts/Base.astro';
                     </div>
                 </div>
                 <div class="product-visual">
-                    <div class="shot-gallery" data-gallery>
-                        <div class="app-mockup has-shot mockup-restrostock">
-                            <div class="mockup-chrome">
-                                <div class="mockup-dots"><span></span><span></span><span></span></div>
-                                <span class="mockup-url">restroai.app</span>
-                            </div>
-                            <div class="shot-stage">
-                                <img class="shot-layer is-active" src="/images/products/RestroAI-Dashboard1.png" alt="RestroAI dashboard with the intelligence feed flagging price rises, top-margin dishes, and waste" loading="lazy">
-                                <img class="shot-layer" alt="" aria-hidden="true" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="shot-thumbs">
-                            <button type="button" class="shot-thumb is-active" data-src="/images/products/RestroAI-Dashboard1.png" aria-label="View dashboard"><img src="/images/products/RestroAI-Dashboard1.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/RestroAI-InvoiceApproval.png" aria-label="View invoice approval and 3-way matching"><img src="/images/products/RestroAI-InvoiceApproval.png" alt="" loading="lazy"></button>
-                            <button type="button" class="shot-thumb" data-src="/images/products/RestroAI-Recipe1.png" aria-label="View recipe costing"><img src="/images/products/RestroAI-Recipe1.png" alt="" loading="lazy"></button>
-                        </div>
-                    </div>
+                    <ShotGallery
+                        url="restroai.app"
+                        mockupClass="mockup-restrostock"
+                        images={[
+                            { src: raDashboard, alt: "RestroAI dashboard with the intelligence feed flagging price rises, top-margin dishes, and waste", label: "dashboard" },
+                            { src: raInvoice, alt: "RestroAI invoice approval and 3-way matching", label: "invoice approval and 3-way matching" },
+                            { src: raRecipe, alt: "RestroAI recipe costing", label: "recipe costing" },
+                        ]}
+                    />
                 </div>
             </div>
         </div>
@@ -264,7 +256,7 @@ import Base from '../layouts/Base.astro';
                         <input type="email" name="email" placeholder="Email address" required>
                     </div>
                     <input type="text" name="organisation" placeholder="Facility / restaurant name">
-                    <select name="product" required>
+                    <select name="product" required aria-label="Which product?">
                         <option value="" disabled selected>Which product?</option>
                         <option value="nutricare">NutriCare (aged care dietary management)</option>
                         <option value="restroai">RestroAI (restaurant operations)</option>
@@ -272,7 +264,7 @@ import Base from '../layouts/Base.astro';
                         <option value="multiple">Multiple products</option>
                     </select>
                     <div class="demo-form-row">
-                        <select name="preferred_day">
+                        <select name="preferred_day" aria-label="Preferred day">
                             <option value="" disabled selected>Preferred day</option>
                             <option>Monday</option>
                             <option>Tuesday</option>
@@ -281,7 +273,7 @@ import Base from '../layouts/Base.astro';
                             <option>Friday</option>
                             <option>Any day</option>
                         </select>
-                        <select name="preferred_time">
+                        <select name="preferred_time" aria-label="Preferred time (AEST)">
                             <option value="" disabled selected>Preferred time (AEST)</option>
                             <option>Morning (9am to 12pm)</option>
                             <option>Lunchtime (12pm to 2pm)</option>
