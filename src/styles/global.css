@@ -3,6 +3,16 @@
    Palette: Electric Violet / Mint / Orange
    ============================================ */
 
+/* Self-hosted Inter (latin). Removes the render-blocking Google Fonts round-trip
+   and the late webfont swap that was delaying the hero H1 (LCP). The 400 + 900
+   weights are preloaded in Base.astro (body text + hero heading). */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/inter/inter-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/inter/inter-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/inter/inter-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/inter/inter-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('/fonts/inter/inter-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 900; font-display: swap; src: url('/fonts/inter/inter-latin-900-normal.woff2') format('woff2'); }
+
 /* ===== CSS Variables ===== */
 :root {
     --violet: #7C3AED;
@@ -1713,7 +1723,9 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 @media (prefers-reduced-motion: no-preference) {
     .hero-content > * { opacity: 0; animation: heroIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
     .hero-content > .hero-tag { animation-delay: 0.05s; }
-    .hero-content > .hero-title { animation-delay: 0.15s; }
+    /* The H1 is the LCP element: paint it immediately (animating opacity from 0
+       delays LCP). The surrounding elements still stagger in around it. */
+    .hero-content > .hero-title { opacity: 1; animation: none; }
     .hero-content > .hero-sub { animation-delay: 0.30s; }
     .hero-content > .hero-actions { animation-delay: 0.45s; }
 }

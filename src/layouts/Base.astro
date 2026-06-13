@@ -53,13 +53,16 @@ const resolvedOgDescription = ogDescription ?? description;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- Preconnect for external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <!-- Fonts + icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Self-hosted Inter: preload the two above-the-fold weights (body 400, hero 900).
+         @font-face declarations live in global.css. -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter/inter-latin-400-normal.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter/inter-latin-900-normal.woff2" crossorigin />
+
+    <!-- Font Awesome loaded non-render-blocking (icons aren't needed for first paint) -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
 
     {isHome && (
         <script type="application/ld+json" set:html={JSON.stringify({
