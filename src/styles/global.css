@@ -2998,6 +2998,24 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
    RESOURCE PAGES (lead magnets) — migrated to Astro MDX
    ============================================ */
 .resource-page { background: var(--light); }
+/* On light backgrounds the default --gray (#94A3B8) fails WCAG AA contrast.
+   Re-scope a darker secondary-text colour for the light body + white CTA box
+   only, so the gray-on-dark hero/footer text keeps its intended light tone. */
+.resource-body, .hero-cta-box { --gray: #556070; }
+/* Mint CTA: white-on-#10B981 is 2.5:1. Darken to clear AA on resource pages.
+   (Apply site-wide if the darker mint is accepted for the brand.) */
+.resource-page .btn-mint { background: #047857; }
+.resource-page .btn-mint:hover { background: #065f46; }
+/* Decorative mint/accent colours that fail AA as TEXT on light backgrounds.
+   Darkening --mint-dark fixes the active tab, benchmark/total headers, tip
+   labels, and inline mint text in one move; the rest are per-element. */
+.resource-page { --mint-dark: #047857; }
+.resource-page .download-btn { background: #047857; }
+.resource-page .download-btn:hover { background: #065f46; }
+.resource-page .sheet-table th { background: #2E7D32; }
+.resource-page .sheet-tab:not(.active) { color: #5f5f5f; }
+.resource-page .sheet-table .col-warn { color: #9a3412; }
+.resource-page .check-partial { color: #b45309; }
 
 .resource-hero { background: var(--dark); padding: 110px 2rem 60px; }
 .resource-hero .container { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }

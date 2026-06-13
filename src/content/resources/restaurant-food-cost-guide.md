@@ -26,7 +26,7 @@ sidebar:
   demoLabel: "Request a Free Demo"
   demoHref: "/#contact"
   siteHref: "/#products"
-  siteLabel: "Learn More"
+  siteLabel: "Learn more about RestroAI"
   siteExternal: false
   tip: "<strong>Benchmark rule of thumb:</strong> if your food cost % is consistently above your target, check suppliers first (price creep), then portions (drift), then menu pricing (stale prices). In that order."
   showPrint: false

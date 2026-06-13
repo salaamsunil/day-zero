@@ -26,7 +26,7 @@ sidebar:
   demoLabel: "Request a Free Demo"
   demoHref: "/#contact"
   siteHref: "/#products"
-  siteLabel: "Learn More"
+  siteLabel: "Learn more about RestroAI"
   siteExternal: false
   tip: "<strong>Most restaurants</strong> outgrow a spreadsheet between 8 and 15 staff or when managing 2 or more suppliers becomes painful. RestroAI is built for that moment."
   showPrint: false

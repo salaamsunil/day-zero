@@ -140,8 +140,8 @@ sidebar:
 
 <div class="checklist-section" style="background: var(--dark); color: var(--white)">
 <h2 style="color:var(--white)"><i class="fas fa-scale-balanced" style="color:var(--mint-light)"></i> Regulatory Context</h2>
-<p class="section-intro" style="color:var(--gray)">IDDSI compliance in Australian aged care is referenced under the following frameworks:</p>
-<ul class="checklist" style="color:var(--gray)">
+<p class="section-intro" style="color:#94A3B8">IDDSI compliance in Australian aged care is referenced under the following frameworks:</p>
+<ul class="checklist" style="color:#94A3B8">
 <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">Aged Care Quality Standard 3:</strong> Personal care and clinical care (nutrition and hydration)</li>
 <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">Aged Care Quality Standard 4:</strong> Services and supports for daily living (meals and dining)</li>
 <li><i class="fas fa-square-check" style="color:var(--mint)"></i><strong style="color:var(--white)">Safe Work Australia:</strong> Aspiration and choking risk management</li>

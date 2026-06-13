@@ -28,7 +28,7 @@ sidebar:
   demoLabel: "Request a Free Demo"
   demoHref: "/#contact"
   siteHref: "/#products"
-  siteLabel: "Learn More"
+  siteLabel: "Learn more about RestroAI"
   siteExternal: false
   tip: "<strong>Inspection ready:</strong> an environmental health officer can ask to see your records at any time during a routine inspection. Digital logs with automatic timestamps are the easiest to produce on short notice."
   showPrint: false
