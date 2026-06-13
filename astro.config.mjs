@@ -8,10 +8,7 @@ export default defineConfig({
   site: 'https://day-zero.com.au',
   // 'file' output keeps URLs matching the current live site:
   // /privacy.html, /terms.html, /resources/iddsi-checklist.html, etc.
-  // inlineStylesheets: 'always' folds the bundled CSS into the HTML so there's
-  // no render-blocking stylesheet request on the critical path (helps cold
-  // mobile FCP/LCP, which is what PageSpeed measures).
-  build: { format: 'file', inlineStylesheets: 'always' },
+  build: { format: 'file' },
   integrations: [
     mdx(),
     sitemap({
