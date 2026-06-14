@@ -73,6 +73,16 @@ Project Day Zero as a state-of-the-art product company in the league of Anthropi
 ### Honesty vs humility
 We do not invent customers, logos, or testimonials. That is non-negotiable. But the antidote to fake social proof is *not* apologising for the absence of it; the antidote is leading with mission, technical depth, and product specificity. Project confidence in the work, not defensiveness about the stage.
 
+### Never read as "AI slop"
+In a market flooded with thin AI wrappers, hype is a trust-killer for the skeptical operators we sell to. Day Zero must never come across as generic AI hype.
+- AI is never the headline or the pitch on its own. Lead with the operational outcome and the domain; AI is one capability that earns its place. (The homepage hero leads with "operations software" and "From Day Zero to Day One", not "AI".)
+- Banned framing: "AI-powered", "powered by AI", "revolutionary/cutting-edge/next-gen AI", "AI magic", "supercharge", AI as a badge or buzzword.
+- Always show the substance that makes it not slop: grounded in the customer's own live data, cites its sources line by line, shows its working, real-time, scoped to their site, regulation-aware (IDDSI, allergens, HACCP, food cost), human makes the final call.
+- Prefer naming the concrete job (catch the allergen/texture conflict at the point of order; flag supplier price drift on the invoice line) over the abstract word "AI". The reader should think "finally, software that does the verification I need", not "ugh, another AI thing". The "AI that answers to the record" homepage section is the reference standard.
+
+### Audience lens (who actually reads this)
+Write all content and copy from the chair of the people who run the operation: the aged-care DON/care manager, the provider CEO/ops exec, the floor RN (and the RestroAI analogue: owner-operator / GM / head chef). They reward domain authority shown in specifics, risk framed accurately in their terms, a do-it-this-week takeaway, peer-not-vendor language, and a light product tie; they bounce on fluff, blame, or one wrong regulatory detail. Studio-level copy (hero, taglines) stays industry-agnostic and scalable, more verticals are coming, while per-product copy goes vertical-deep.
+
 ## Commit Style
 - Descriptive single-line subject + bullet body
 - Co-author: `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`
