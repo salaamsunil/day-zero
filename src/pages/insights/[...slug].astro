@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('insights');
+    return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmtDate = (d) =>
+    d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base
+    title={`${post.data.title} - Day Zero Insights`}
+    description={post.data.description}
+    canonical={`https://day-zero.com.au/insights/${post.id}`}
+    ogTitle={post.data.title}
+    ogDescription={post.data.description}
+    bodyClass="light-hero"
+>
+    <article class="insight">
+        <div class="insight-inner">
+            <a class="insight-back" href="/insights"><i class="fas fa-arrow-left"></i> Insights</a>
+            <p class="insight-meta">{fmtDate(post.data.pubDate)} &middot; {post.data.author}</p>
+            <h1 class="insight-title">{post.data.title}</h1>
+            <div class="insight-prose">
+                <Content />
+            </div>
+            <div class="insight-foot">
+                <a href="/#book-demo" class="btn btn-primary">Book a demo</a>
+                <a href="/insights" class="btn btn-outline">More insights</a>
+            </div>
+        </div>
+    </article>
+</Base>

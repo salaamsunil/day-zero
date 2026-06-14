@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('insights'))
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmtDate = (d) =>
+    d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base
+    title="Insights - Day Zero Solutions"
+    description="Notes on building operations software for Australian hospitality and aged care: IDDSI, food cost, compliance, and the realities of the work."
+    canonical="https://day-zero.com.au/insights"
+    bodyClass="light-hero"
+>
+    <section class="insights-index">
+        <div class="container">
+            <p class="section-tag">Insights</p>
+            <h1 class="hub-title">Notes from building for Australian operators.</h1>
+            <p class="hub-sub">Practical writing on the work behind the products: dietary safety, food cost, compliance, and the operational detail that decides whether software actually helps.</p>
+
+            {posts.length === 0 ? (
+                <p class="insights-empty">First pieces are on the way.</p>
+            ) : (
+                <ul class="insight-list">
+                    {posts.map((p) => (
+                        <li class="insight-card">
+                            <a href={`/insights/${p.id}`}>
+                                <time class="insight-card-date">{fmtDate(p.data.pubDate)}</time>
+                                <h2 class="insight-card-title">{p.data.title}</h2>
+                                <p class="insight-card-desc">{p.data.description}</p>
+                                <span class="insight-readmore">Read <i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    </section>
+</Base>
