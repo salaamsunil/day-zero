@@ -75,7 +75,7 @@ We do not invent customers, logos, or testimonials. That is non-negotiable. But 
 
 ### Never read as "AI slop"
 In a market flooded with thin AI wrappers, hype is a trust-killer for the skeptical operators we sell to. Day Zero must never come across as generic AI hype.
-- AI is never the headline or the pitch on its own. Lead with the operational outcome and the domain; AI is one capability that earns its place. (The homepage hero leads with "operations software" and "From Day Zero to Day One", not "AI".)
+- AI is never the headline or the pitch on its own. Lead with the operational outcome and the domain; AI is one capability that earns its place. (The homepage hero leads with the products and the From-Day-Zero-to-Day-One line, not "AI".)
 - Banned framing: "AI-powered", "powered by AI", "revolutionary/cutting-edge/next-gen AI", "AI magic", "supercharge", AI as a badge or buzzword.
 - Always show the substance that makes it not slop: grounded in the customer's own live data, cites its sources line by line, shows its working, real-time, scoped to their site, regulation-aware (IDDSI, allergens, HACCP, food cost), human makes the final call.
 - Prefer naming the concrete job (catch the allergen/texture conflict at the point of order; flag supplier price drift on the invoice line) over the abstract word "AI". The reader should think "finally, software that does the verification I need", not "ugh, another AI thing". The "AI that answers to the record" homepage section is the reference standard.
