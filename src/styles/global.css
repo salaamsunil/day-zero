@@ -13,6 +13,11 @@
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('/fonts/inter/inter-latin-800-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 900; font-display: swap; src: url('/fonts/inter/inter-latin-900-normal.woff2') format('woff2'); }
 
+/* Space Grotesk: distinctive display face for headlines only (body stays Inter). */
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/space-grotesk/space-grotesk-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/space-grotesk/space-grotesk-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') format('woff2'); }
+
 /* ===== CSS Variables ===== */
 :root {
     --violet: #7C3AED;
@@ -28,8 +33,10 @@
     --dark-card: #1A1A2E;
     --dark-surface: #16162A;
     --gray: #94A3B8;
-    --light: #F8FAFC;
-    --white: #FFFFFF;
+    /* Warm-ground prototype: cream ground, near-white cards, was #F8FAFC / #FFFFFF */
+    --light: #F6F1E8;
+    --white: #FEFDFB;
+    --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
     --radius: 16px;
     --radius-sm: 10px;
     --shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
@@ -53,8 +60,21 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.7;
     color: var(--dark);
-    background: var(--white);
+    background: var(--light);
     overflow-x: hidden;
+}
+
+/* Prototype: display face on headlines (kept tight and confident).
+   Space Grotesk tops out at 700, so pin weight to 700 to avoid faux-bold. */
+.hero-title,
+.section-title,
+.product-name,
+.hub-title,
+.hub-name,
+.thesis-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .container {
@@ -842,6 +862,37 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 @media (max-width: 480px) {
     .order-mock { max-width: 300px; }
     .order-mock-number { font-size: 3rem; }
+}
+
+/* Trust rhythm-strip under the hero (prototype) */
+.rhythm-strip {
+    background: var(--white);
+    border-bottom: 1px solid rgba(15, 15, 26, 0.06);
+}
+.rhythm-strip .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem 1.4rem;
+    padding-top: 1.05rem;
+    padding-bottom: 1.05rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: #64748b;
+}
+.rhythm-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--violet);
+}
+.rhythm-dot-v { background: var(--violet); }
+.rhythm-dot-m { background: var(--mint); }
+.rhythm-dot-o { background: var(--orange); }
+@media (max-width: 640px) {
+    .rhythm-strip .container { font-size: 0.82rem; gap: 0.4rem 1rem; }
 }
 
 /* Section lead sub-line (used where a section leads with the sub, no H2) */
