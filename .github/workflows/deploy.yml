@@ -39,7 +39,13 @@ jobs:
           node-version: 22
           cache: npm
       - name: Install dependencies
-        run: npm ci
+        # Use `npm install`, not `npm ci`: sharp (via Astro image optimisation)
+        # pulls platform-specific optional deps, and a lockfile generated on
+        # Windows omits the Linux wasm @emnapi/* package entries, which makes the
+        # strict `npm ci` fail ("Missing @emnapi/runtime from lock file") on the
+        # Linux runner. `npm install` reconciles and installs the correct native
+        # sharp for the runner.
+        run: npm install --no-audit --no-fund
       - name: Build
         run: npm run build
       - name: Upload Pages artifact
