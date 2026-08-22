@@ -9,6 +9,10 @@ export default defineConfig({
   // 'file' output keeps URLs matching the current live site:
   // /privacy.html, /terms.html, /resources/iddsi-checklist.html, etc.
   build: { format: 'file' },
+  // Astro 7 changed the default to 'jsx', which strips whitespace between
+  // inline elements (e.g. "word <span>word</span>" collapses to "wordword").
+  // Our hero/nav/footer copy is span-heavy, so keep the v6 HTML-aware behaviour.
+  compressHTML: true,
   integrations: [
     mdx(),
     sitemap({
