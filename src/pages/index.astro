@@ -36,7 +36,7 @@ import raRecipe from '../assets/products/RestroAI-Recipe1.png';
     <section class="products" id="products">
         <div class="container">
             <p class="section-tag">Flagship products</p>
-            <h2 class="section-title">Two products, in production.</h2>
+            <h2 class="section-title">Three products, in production.</h2>
             <p class="section-sub">Each built end to end for a single industry, with public pricing and a free trial. No sales gate to take a look.</p>
 
             <!-- NutriCare -->
@@ -103,6 +103,32 @@ import raRecipe from '../assets/products/RestroAI-Recipe1.png';
                     />
                 </div>
             </div>
+
+            <!-- QueueZero -->
+            <div class="product-card product-queuezero">
+                <div class="product-info">
+                    <span class="product-kicker product-kicker-orange"><i class="fas fa-bolt"></i> Food trucks</span>
+                    <h3 class="product-name">QueueZero</h3>
+                    <p class="product-tagline">Order-ahead and queue-busting for food trucks and pop-ups.</p>
+                    <p class="product-desc">Your menu behind a QR code. Customers scan, see the live wait, and order ahead; you cook ahead and clear the crowd. No app to download, no hardware to buy, and no cut of your takings. A truck is live in about ten minutes.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Mobile ordering with live wait times, pay at the window or online</li>
+                        <li><i class="fas fa-check"></i> Kitchen display, pickup numbers &amp; a now-serving board</li>
+                        <li><i class="fas fa-check"></i> Menu built from a photo: prices and allergens drafted for you</li>
+                        <li><i class="fas fa-check"></i> Print-ready QR signage, GST tax invoices, prices in AUD</li>
+                    </ul>
+                    <p class="product-pricing"><i class="fas fa-tag"></i> <strong>A$49/month</strong> (or A$490/year, two months free), 30-day free trial. 0% commission, keep 100% of every order.</p>
+                    <div class="product-cta-row">
+                        <a href="https://queuezero.app" target="_blank" rel="noopener" class="btn btn-orange">Visit queuezero.app</a>
+                        <a href="https://queuezero.app/signup" target="_blank" rel="noopener" class="btn btn-outline">Start free</a>
+                    </div>
+                </div>
+                <div class="product-visual">
+                    <div class="product-icon-wrap icon-orange">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -162,31 +188,6 @@ import raRecipe from '../assets/products/RestroAI-Recipe1.png';
                 <li><i class="fas fa-list-check"></i> <strong>Verifiable.</strong> It cites the profile, the texture level, the invoice line. You can check the working.</li>
                 <li><i class="fas fa-scale-balanced"></i> <strong>Regulation-aware.</strong> It speaks IDDSI, allergens, HACCP, and food cost, not generic prompts.</li>
             </ul>
-        </div>
-    </section>
-
-    <!-- ========== QUEUEZERO (EMERGING) ========== -->
-    <section class="emerging" id="coming-soon">
-        <div class="container">
-            <div class="emerging-card">
-                <div class="emerging-info">
-                    <span class="product-kicker product-kicker-orange"><i class="fas fa-bolt"></i> In development</span>
-                    <h3 class="emerging-name">QueueZero</h3>
-                    <p class="emerging-desc">Mobile ordering and queue-busting for food trucks and pop-ups. Customers order ahead, you cook ahead. No app to download, no hardware to buy. In active development, with a foundation cohort forming now.</p>
-                    <form class="waitlist-form" id="waitlistForm">
-                        <div class="waitlist-input-group">
-                            <input type="email" name="email" placeholder="Enter your email" required>
-                            <button type="submit" class="btn btn-orange">Join the waitlist</button>
-                        </div>
-                        <p class="waitlist-hint">Foundation cohort gets locked-in launch pricing. No spam.</p>
-                    </form>
-                </div>
-                <div class="emerging-visual">
-                    <div class="product-icon-wrap icon-orange">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -260,7 +261,7 @@ import raRecipe from '../assets/products/RestroAI-Recipe1.png';
                         <option value="" disabled selected>Which product?</option>
                         <option value="nutricare">NutriCare (aged care dietary management)</option>
                         <option value="restroai">RestroAI (restaurant operations)</option>
-                        <option value="queuezero">QueueZero (mobile ordering, early access)</option>
+                        <option value="queuezero">QueueZero (mobile ordering for food trucks)</option>
                         <option value="multiple">Multiple products</option>
                     </select>
                     <div class="demo-form-row">
