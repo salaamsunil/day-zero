@@ -12,11 +12,12 @@
 |---------|---------|--------|------------|
 | NutriCare | v0.9.4 | Live | Next.js 16, React 19, PostgreSQL (Supabase), Prisma 7, Tailwind CSS 4 |
 | RestroAI | v1.2.0 | Live | React 18, Express, PostgreSQL, TypeScript |
-| QueueZero | — | In Development | TBD |
+| QueueZero | v1.0 | Live | Next.js 16, React 19, TypeScript, Neon (Postgres), Auth.js, Tailwind CSS 4 |
 
 **Production URLs:**
 - NutriCare: https://www.nutri-care.app
 - RestroAI: (private beta)
+- QueueZero: https://queuezero.app
 
 ---
 

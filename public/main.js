@@ -157,53 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserver.observe(el));
 
-    // --- QueueZero Waitlist Form (Formsubmit.co) ---
-    const waitlistForm = document.getElementById('waitlistForm');
-    if (waitlistForm) {
-        waitlistForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = waitlistForm.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            btn.textContent = 'Joining...';
-            btn.disabled = true;
-
-            const email = new FormData(waitlistForm).get('email');
-
-            try {
-                const res = await fetch('https://formsubmit.co/ajax/hello@day-zero.com.au', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        email: email,
-                        _subject: 'QueueZero Waitlist Signup',
-                        _template: 'table'
-                    })
-                });
-
-                if (res.ok) {
-                    btn.textContent = "You're on the list!";
-                    btn.style.background = '#10B981';
-                    waitlistForm.reset();
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.disabled = false;
-                        btn.style.background = '';
-                    }, 4000);
-                } else {
-                    throw new Error('Submission failed');
-                }
-            } catch {
-                btn.textContent = 'Something went wrong.';
-                btn.style.background = '#EF4444';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                }, 3000);
-            }
-        });
-    }
-
     // --- Demo Booking Form ---
     const demoForm = document.getElementById('demoBookingForm');
     if (demoForm) {
@@ -282,8 +235,8 @@ function initChatbot() {
             cta: { label: 'Explore RestroAI', action: 'contact' }
         },
         queuezero: {
-            text: 'QueueZero is our upcoming mobile ordering and queue management system built for food trucks and pop-ups. Customers order ahead, you cook ahead. Features will include mobile-first ordering, live queue visibility, and order-ahead scheduling. Currently in development.',
-            cta: { label: 'Join the Waitlist', action: 'contact' }
+            text: 'QueueZero is our mobile ordering and queue-busting system for food trucks and pop-ups, live at queuezero.app. Customers scan a QR code, see the live wait, and order ahead; you cook ahead and clear the crowd. No app to download, no hardware to buy, and 0% commission on orders. A truck is live in about ten minutes, with the menu drafted from a photo. From A$49/month with a 30-day free trial.',
+            cta: { label: 'Visit QueueZero', action: 'contact' }
         }
     };
 

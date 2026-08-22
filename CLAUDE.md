@@ -27,7 +27,7 @@ Use these alternatives instead:
 ## Products (accurate names)
 - **NutriCare** — dietary management for aged care (live)
 - **RestroAI** — AI-native restaurant operating system (live, formerly RestroStock)
-- **QueueZero** — mobile ordering for food trucks (in development)
+- **QueueZero** — order-ahead / queue-busting for food trucks (live, queuezero.app). Truck plan A$49/mo (or A$490/yr), 30-day free trial, 0% commission. No screenshots on the site yet: presented as a flagship card with an icon visual, not a gallery (add screenshots for full parity).
 
 ## Logo / Nav Rules
 - Nav logo: `images/dazero-icon.svg` + `.logo-wordmark` span (never use full SVG files in nav/footer)
