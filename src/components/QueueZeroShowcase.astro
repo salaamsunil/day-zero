@@ -1,18 +1,20 @@
 ---
 // QueueZero is a two-device product: customers order on a phone (dark UI),
-// vendors run the truck on a tablet (light UI). The operator screens go in a
-// normal ShotGallery (paginated crossfade + thumbnails, same as the other
-// products, mobile-safe); the customer phone sits beside it in a phone frame.
-import { getImage } from 'astro:assets';
+// vendors run the truck on a tablet (light UI). Both sides are paginated
+// ShotGalleries (thumbnails + crossfade, mobile-safe): a phone-framed gallery
+// for the customer views, a browser-framed gallery for the operator views.
 import ShotGallery from './ShotGallery.astro';
 import phoneOrder from '../assets/products/QueueZero/qz-phone-order.png';
+import geolocator from '../assets/products/QueueZero/qz-geolocator.png';
 import kds from '../assets/products/QueueZero/qz-kds.png';
 import board from '../assets/products/QueueZero/qz-board.png';
 import analytics from '../assets/products/QueueZero/qz-analytics.png';
 import qrSign from '../assets/products/QueueZero/qz-qr-sign.png';
 
-const phoneImg = (await getImage({ src: phoneOrder, width: 480, format: 'webp', quality: 80 })).src;
-
+const customerShots = [
+    { src: phoneOrder, alt: 'QueueZero customer ordering on a phone: live wait time, menu, and add to order', label: 'order ahead' },
+    { src: geolocator, alt: 'QueueZero customer map: food trucks open near you, with live wait times', label: 'trucks near you' },
+];
 const operatorShots = [
     { src: kds, alt: 'QueueZero kitchen display: live order tickets moving through cook and ready states', label: 'kitchen display' },
     { src: board, alt: 'QueueZero now-serving board: ready pickup numbers, big and bright', label: 'now-serving board' },
@@ -22,9 +24,7 @@ const operatorShots = [
 ---
 <div class="qz-showcase">
     <div class="qz-phone-col">
-        <div class="qz-phone">
-            <img src={phoneImg} alt="QueueZero customer ordering on a phone: live wait time, menu, and add to order" loading="lazy" decoding="async" />
-        </div>
+        <ShotGallery url="queuezero.app" variant="phone" ratio="2 / 3" images={customerShots} />
         <p class="qz-cap">What your customer sees</p>
     </div>
     <div class="qz-operator">
@@ -38,31 +38,20 @@ const operatorShots = [
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 1.75rem;
         margin: 1.75rem 0;
     }
-    /* Customer phone column (portrait, dark UI) */
-    .qz-phone-col { flex: 0 0 186px; max-width: 186px; }
-    .qz-phone {
-        border-radius: 26px;
-        overflow: hidden;
-        border: 6px solid #0F0F1A;
-        box-shadow: 0 20px 40px -16px rgba(15, 15, 26, 0.5);
-        background: #0F0F1A;
-    }
-    .qz-phone img { display: block; width: 100%; height: auto; border-radius: 20px; }
-    /* Operator gallery fills the rest */
-    .qz-operator { flex: 1 1 320px; min-width: 0; }
+    .qz-phone-col { flex: 0 0 210px; max-width: 210px; }
+    .qz-operator { flex: 1 1 340px; min-width: 0; }
     .qz-cap {
         color: var(--gray);
         font-size: 0.75rem;
         text-align: center;
-        margin-top: 0.6rem;
+        margin-top: 0.7rem;
     }
-
     @media (max-width: 700px) {
         .qz-showcase { flex-direction: column; align-items: center; }
-        .qz-phone-col { flex-basis: auto; max-width: 200px; order: 2; }
+        .qz-phone-col { flex-basis: auto; max-width: 240px; order: 2; }
         .qz-operator { width: 100%; order: 1; }
     }
 </style>

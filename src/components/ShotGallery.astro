@@ -18,6 +18,7 @@ const {
   eager = false,
   class: extraClass = '',
   ratio = '2 / 1',
+  variant = 'browser',
 } = Astro.props as {
   images: ShotImage[];
   url: string;
@@ -25,7 +26,9 @@ const {
   eager?: boolean;
   class?: string;
   ratio?: string; // aspect-ratio for the stage, e.g. '3 / 2' for squarer shots
+  variant?: 'browser' | 'phone'; // 'phone' = phone bezel, no browser chrome, contain
 };
+const isPhone = variant === 'phone';
 
 const shots = await Promise.all(
   images.map(async (im) => ({
@@ -37,12 +40,14 @@ const shots = await Promise.all(
 );
 const first = shots[0];
 ---
-<div class:list={['shot-gallery', extraClass]} data-gallery>
+<div class:list={['shot-gallery', isPhone && 'shot-gallery--phone', extraClass]} data-gallery>
     <div class:list={['app-mockup', 'has-shot', mockupClass]}>
-        <div class="mockup-chrome">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <span class="mockup-url">{url}</span>
-        </div>
+        {!isPhone && (
+            <div class="mockup-chrome">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <span class="mockup-url">{url}</span>
+            </div>
+        )}
         <div class="shot-stage" style={`aspect-ratio:${ratio}`}>
             <img
                 class="shot-layer is-active"

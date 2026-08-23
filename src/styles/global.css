@@ -1440,6 +1440,21 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 }
 .shot-layer.is-active { opacity: 1; }
 
+/* Phone variant: bezel + dark screen. Customer shots are dark-themed, so
+   object-fit:contain letterboxes invisibly against the dark screen. */
+.shot-gallery--phone { max-width: 300px; margin: 0 auto; }
+.shot-gallery--phone .app-mockup,
+.shot-gallery--phone .app-mockup.has-shot {
+    border: 7px solid #0F0F1A;
+    border-radius: 34px;
+    background: #0F0F1A;
+    box-shadow: 0 26px 50px -18px rgba(15, 15, 26, 0.5);
+    overflow: hidden;
+}
+.shot-gallery--phone .shot-stage { border-radius: 26px; background: #0F0F1A; }
+.shot-gallery--phone .shot-layer { object-fit: contain; }
+.shot-gallery--phone .shot-thumbs { justify-content: center; }
+
 /* Browser chrome */
 .mockup-chrome {
     background: #f0f0f0;
