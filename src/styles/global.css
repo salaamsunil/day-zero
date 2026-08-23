@@ -1452,7 +1452,9 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     overflow: hidden;
 }
 .shot-gallery--phone .shot-stage { border-radius: 26px; background: #0F0F1A; }
-.shot-gallery--phone .shot-layer { object-fit: contain; }
+/* cover from the top: fills the phone screen and keeps each shot's key top
+   area (header, order #, status) in view even for tall full-page captures */
+.shot-gallery--phone .shot-layer { object-fit: cover; object-position: top center; }
 .shot-gallery--phone .shot-thumbs { justify-content: center; }
 
 /* Browser chrome */

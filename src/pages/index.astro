@@ -7,8 +7,6 @@ import ncMenu from '../assets/products/Nutricare-MenuPlanner1.png';
 import raDashboard from '../assets/products/RestroAI-Dashboard1.png';
 import raInvoice from '../assets/products/RestroAI-InvoiceApproval.png';
 import raRecipe from '../assets/products/RestroAI-Recipe1.png';
-import qzPhoneOrder from '../assets/products/QueueZero/qz-phone-order.png';
-import qzGeolocator from '../assets/products/QueueZero/qz-geolocator.png';
 ---
 <Base
     title="Day Zero Solutions - Operations software for hospitality and aged care"
@@ -138,15 +136,27 @@ import qzGeolocator from '../assets/products/QueueZero/qz-geolocator.png';
                     </div>
                 </div>
                 <div class="product-visual">
-                    <ShotGallery
-                        url="queuezero.app"
-                        variant="phone"
-                        ratio="2 / 3"
-                        images={[
-                            { src: qzPhoneOrder, alt: "QueueZero customer ordering on a phone: live wait time, menu, and add to order", label: "order ahead" },
-                            { src: qzGeolocator, alt: "QueueZero customer map: food trucks open near you, with live wait times", label: "trucks near you" },
-                        ]}
-                    />
+                    <div class="order-mock" aria-hidden="true">
+                        <div class="order-mock-card">
+                            <div class="order-mock-head">
+                                <span class="order-mock-truck"><span class="order-mock-dot"></span> Rosa's Tacos</span>
+                                <span class="order-mock-wait"><i class="fas fa-clock"></i> 6 min wait</span>
+                            </div>
+                            <div class="order-mock-ticket">
+                                <p class="order-mock-label">Your order</p>
+                                <p class="order-mock-number">#42</p>
+                                <p class="order-mock-ready"><i class="fas fa-circle-check"></i> Ready for pickup</p>
+                            </div>
+                            <div class="order-mock-foot">
+                                <span>2&times; Carnitas, 1&times; Horchata</span>
+                                <span class="order-mock-total">$26.00</span>
+                            </div>
+                        </div>
+                        <div class="order-mock-board">
+                            <p class="order-mock-board-label">Now serving</p>
+                            <p class="order-mock-board-nums">41 &middot; 42 &middot; 43</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
