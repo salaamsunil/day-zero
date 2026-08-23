@@ -28,8 +28,11 @@
     --dark-card: #1A1A2E;
     --dark-surface: #16162A;
     --gray: #94A3B8;
-    --light: #F8FAFC;
-    --white: #FFFFFF;
+    /* Warm ground: refined warm paper (was cool #F8FAFC / #FFFFFF).
+       Kept close in value so alternating sections don't band white-vs-cream.
+       --light = warm paper (ground / alt sections), --white = warm off-white (cards, nav, surfaces). */
+    --light: #F4F1EA;
+    --white: #FCFAF6;
     --radius: 16px;
     --radius-sm: 10px;
     --shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
@@ -53,7 +56,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.7;
     color: var(--dark);
-    background: var(--white);
+    background: var(--light);
     overflow-x: hidden;
 }
 
@@ -104,7 +107,7 @@ a {
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 .header.scrolled::before {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(252, 250, 246, 0.85);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
 }
@@ -115,7 +118,7 @@ body.light-hero .header {
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 body.light-hero .header::before {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(252, 250, 246, 0.85);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
 }
@@ -842,6 +845,37 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 @media (max-width: 480px) {
     .order-mock { max-width: 300px; }
     .order-mock-number { font-size: 3rem; }
+}
+
+/* Trust rhythm-strip under the hero (prototype) */
+.rhythm-strip {
+    background: var(--white);
+    border-bottom: 1px solid rgba(15, 15, 26, 0.06);
+}
+.rhythm-strip .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem 1.4rem;
+    padding-top: 1.05rem;
+    padding-bottom: 1.05rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: #64748b;
+}
+.rhythm-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--violet);
+}
+.rhythm-dot-v { background: var(--violet); }
+.rhythm-dot-m { background: var(--mint); }
+.rhythm-dot-o { background: var(--orange); }
+@media (max-width: 640px) {
+    .rhythm-strip .container { font-size: 0.82rem; gap: 0.4rem 1rem; }
 }
 
 /* Section lead sub-line (used where a section leads with the sub, no H2) */

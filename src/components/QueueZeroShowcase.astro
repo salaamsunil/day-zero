@@ -1,0 +1,94 @@
+---
+// QueueZero is a two-device product: customers order on a phone (dark UI),
+// vendors run the truck on a tablet (light UI). A single 2:1 browser gallery
+// (like the other products) can't show that, so this is a bespoke device pair
+// (tablet + overlapping phone) plus a strip of the operator screens.
+import { getImage } from 'astro:assets';
+import phoneOrder from '../assets/products/QueueZero/qz-phone-order.png';
+import kds from '../assets/products/QueueZero/qz-kds.png';
+import board from '../assets/products/QueueZero/qz-board.png';
+import analytics from '../assets/products/QueueZero/qz-analytics.png';
+import qrSign from '../assets/products/QueueZero/qz-qr-sign.png';
+
+const opt = async (src: ImageMetadata, width: number) =>
+    (await getImage({ src, width, format: 'webp', quality: 78 })).src;
+
+const phoneImg = await opt(phoneOrder, 480);
+const kdsImg = await opt(kds, 900);
+const strip = [
+    { src: await opt(board, 560), alt: 'QueueZero now-serving board: ready pickup numbers, big and bright' },
+    { src: await opt(analytics, 560), alt: 'QueueZero vendor analytics: orders, revenue, and the busiest hour' },
+    { src: await opt(qrSign, 560), alt: 'QueueZero print-ready QR order sign for the truck and A-frame' },
+];
+---
+<div class="qz-showcase">
+    <div class="qz-devices">
+        <figure class="qz-tablet">
+            <img src={kdsImg} alt="QueueZero kitchen display on a tablet: live order tickets moving through cook and ready states" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="qz-phone">
+            <img src={phoneImg} alt="QueueZero customer ordering on a phone: live wait time, menu, and add to order" loading="lazy" decoding="async" />
+        </figure>
+    </div>
+    <div class="qz-strip">
+        {strip.map((s) => (
+            <figure class="qz-shot"><img src={s.src} alt={s.alt} loading="lazy" decoding="async" /></figure>
+        ))}
+    </div>
+</div>
+
+<style>
+    .qz-showcase { margin: 1.75rem 0; }
+    .qz-devices { position: relative; padding: 0 0 0.5rem; }
+
+    /* Tablet frame: the operator kitchen display (landscape, light UI) */
+    .qz-tablet {
+        width: 88%;
+        margin: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(15, 15, 26, 0.1);
+        box-shadow: 0 26px 52px -22px rgba(15, 15, 26, 0.3);
+        background: var(--white);
+    }
+    .qz-tablet img { display: block; width: 100%; height: auto; }
+
+    /* Phone frame: the customer ordering screen (portrait, dark UI), overlapping */
+    .qz-phone {
+        position: absolute;
+        right: -6px;
+        bottom: 0;
+        width: 31%;
+        max-width: 188px;
+        margin: 0;
+        border-radius: 28px;
+        overflow: hidden;
+        border: 6px solid #0F0F1A;
+        box-shadow: 0 22px 44px -14px rgba(15, 15, 26, 0.55);
+        background: #0F0F1A;
+    }
+    .qz-phone img { display: block; width: 100%; height: auto; border-radius: 22px; }
+
+    /* Strip: three operator screens */
+    .qz-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.9rem;
+        margin-top: 1.25rem;
+    }
+    .qz-shot {
+        margin: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(15, 15, 26, 0.08);
+        box-shadow: 0 8px 20px -12px rgba(15, 15, 26, 0.22);
+        background: var(--white);
+        aspect-ratio: 4 / 3;
+    }
+    .qz-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+    @media (max-width: 640px) {
+        .qz-phone { max-width: 124px; right: 0; }
+        .qz-strip { gap: 0.5rem; }
+    }
+</style>
