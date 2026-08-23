@@ -18,8 +18,9 @@
     --dark-card: #1A1A2E;
     --dark-surface: #16162A;
     --gray: #94A3B8;
-    --light: #F8FAFC;
-    --white: #FFFFFF;
+    /* Warm ground: cream ground + near-white cards (matches src/styles/global.css) */
+    --light: #F6F1E8;
+    --white: #FEFDFB;
     --radius: 16px;
     --radius-sm: 10px;
     --shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
