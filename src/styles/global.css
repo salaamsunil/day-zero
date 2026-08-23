@@ -13,11 +13,6 @@
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('/fonts/inter/inter-latin-800-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 900; font-display: swap; src: url('/fonts/inter/inter-latin-900-normal.woff2') format('woff2'); }
 
-/* Space Grotesk: distinctive display face for headlines only (body stays Inter). */
-@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/space-grotesk/space-grotesk-latin-500-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/space-grotesk/space-grotesk-latin-600-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2') format('woff2'); }
-
 /* ===== CSS Variables ===== */
 :root {
     --violet: #7C3AED;
@@ -33,10 +28,9 @@
     --dark-card: #1A1A2E;
     --dark-surface: #16162A;
     --gray: #94A3B8;
-    /* Warm-ground prototype: cream ground, near-white cards, was #F8FAFC / #FFFFFF */
+    /* Warm ground: cream ground + near-white cards (was #F8FAFC / #FFFFFF) */
     --light: #F6F1E8;
     --white: #FEFDFB;
-    --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
     --radius: 16px;
     --radius-sm: 10px;
     --shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
@@ -62,19 +56,6 @@ body {
     color: var(--dark);
     background: var(--light);
     overflow-x: hidden;
-}
-
-/* Prototype: display face on headlines (kept tight and confident).
-   Space Grotesk tops out at 700, so pin weight to 700 to avoid faux-bold. */
-.hero-title,
-.section-title,
-.product-name,
-.hub-title,
-.hub-name,
-.thesis-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.02em;
 }
 
 .container {
