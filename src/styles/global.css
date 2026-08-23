@@ -28,9 +28,11 @@
     --dark-card: #1A1A2E;
     --dark-surface: #16162A;
     --gray: #94A3B8;
-    /* Warm ground: cream ground + near-white cards (was #F8FAFC / #FFFFFF) */
-    --light: #F6F1E8;
-    --white: #FEFDFB;
+    /* Warm ground: everything reads warm (was cool #F8FAFC / #FFFFFF).
+       Kept close in value so alternating sections don't band white-vs-cream.
+       --light = deeper cream (ground / alt sections), --white = warm ivory (cards, nav, surfaces). */
+    --light: #F1EADC;
+    --white: #FBF6ED;
     --radius: 16px;
     --radius-sm: 10px;
     --shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
@@ -105,7 +107,7 @@ a {
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 .header.scrolled::before {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(251, 246, 237, 0.85);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
 }
@@ -116,7 +118,7 @@ body.light-hero .header {
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 body.light-hero .header::before {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(251, 246, 237, 0.85);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
 }
