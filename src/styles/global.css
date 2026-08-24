@@ -717,7 +717,9 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     background: var(--orange);
 }
 
-/* ===== QueueZero order-card mockup (stands in for a screenshot gallery) ===== */
+/* ===== QueueZero order-card mockup ===== */
+/* On /products it's a centred hero above the screenshot galleries. */
+.qz-hero { margin: 1.5rem 0 2.25rem; }
 .order-mock {
     position: relative;
     width: 100%;
