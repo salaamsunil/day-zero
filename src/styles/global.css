@@ -576,6 +576,14 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
     order: -1;
 }
 
+/* QueueZero homepage card: full-width single column so its dual-device
+   showcase (customer phone + operator screens) has room to breathe.
+   Extra specificity so the info leads and the showcase follows, beating the
+   nth-child(odd) visual-first rule above. */
+.product-card.product-queuezero { grid-template-columns: 1fr; gap: 2rem; }
+.product-card.product-queuezero .product-info { order: 0; }
+.product-card.product-queuezero .product-visual { order: 1; }
+
 .product-badge {
     display: inline-block;
     padding: 0.3rem 0.85rem;

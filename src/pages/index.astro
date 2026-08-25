@@ -7,8 +7,7 @@ import ncMenu from '../assets/products/Nutricare-MenuPlanner1.png';
 import raDashboard from '../assets/products/RestroAI-Dashboard1.png';
 import raInvoice from '../assets/products/RestroAI-InvoiceApproval.png';
 import raRecipe from '../assets/products/RestroAI-Recipe1.png';
-import qzPhoneOrder from '../assets/products/QueueZero/qz-phone-order.png';
-import qzGeolocator from '../assets/products/QueueZero/qz-geolocator.png';
+import QueueZeroShowcase from '../components/QueueZeroShowcase.astro';
 ---
 <Base
     title="Day Zero Solutions - Operations software for hospitality and aged care"
@@ -137,16 +136,8 @@ import qzGeolocator from '../assets/products/QueueZero/qz-geolocator.png';
                         <a href="https://queuezero.app/signup" target="_blank" rel="noopener" class="btn btn-outline">Start free</a>
                     </div>
                 </div>
-                <div class="product-visual">
-                    <ShotGallery
-                        url="queuezero.app"
-                        variant="phone"
-                        ratio="2 / 3"
-                        images={[
-                            { src: qzPhoneOrder, alt: "QueueZero customer ordering on a phone: live wait time, menu, and add to order", label: "order ahead" },
-                            { src: qzGeolocator, alt: "QueueZero customer map: food trucks open near you, with live wait times", label: "trucks near you" },
-                        ]}
-                    />
+                <div class="product-visual product-visual-wide">
+                    <QueueZeroShowcase />
                 </div>
             </div>
         </div>
@@ -217,8 +208,8 @@ import qzGeolocator from '../assets/products/QueueZero/qz-geolocator.png';
             <p class="section-tag">Why we exist</p>
             <h2 class="thesis-title">Same regulation. Same operator pain.<br>A different cheque size.</h2>
             <div class="thesis-body">
-                <p>Hospitality and aged care are demanding, tightly regulated, low-margin businesses. The people who run them deserve software built around how the work actually happens: the resident's dietary profile, the IDDSI texture level, the supplier invoice, the compliance record. Not generic tools they have to bend their operation around.</p>
-                <p>The regulation is the same whether you run one site or fifty. The operator pain is the same. The cheque is not. Day Zero builds software that fits the operator, the regulation, and the budget at the same time.</p>
+                <p>Healthcare and hospitality are demanding, tightly regulated, low-margin businesses, whether it is an aged-care kitchen, a hospital ward, a restaurant pass, or a food truck window. The people who run them deserve software built around how the work actually happens: the resident's dietary profile, the IDDSI texture level, the supplier invoice, the compliance record, the queue at the hatch. Not generic tools they have to bend their operation around.</p>
+                <p>The regulation is the same whether you run one site or fifty. The operator pain is the same. The cheque is not. Day Zero builds software that fits the operator, the regulation, and the budget at the same time, from a per-resident aged-care platform to a flat-rate plan for a single food truck.</p>
             </div>
         </div>
     </section>
