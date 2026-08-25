@@ -22,7 +22,7 @@ const resources = defineCollection({
     description: z.string(),
     ogTitle: z.string().optional(),
     ogDescription: z.string().optional(),
-    product: z.enum(['NutriCare', 'RestroAI']),
+    product: z.enum(['NutriCare', 'RestroAI', 'QueueZero']),
     badge: z.string().default('Free Resource'),
     badgeIcon: z.string().default('fa-file-lines'), // Font Awesome icon class
     heroTitle: z.string(), // may contain <br>

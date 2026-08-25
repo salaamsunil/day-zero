@@ -2,8 +2,10 @@
 import Base from './Base.astro';
 
 const { data, canonical } = Astro.props;
-const cta = data.product === 'RestroAI' ? 'btn-mint' : 'btn-primary';
-const orgPlaceholder = data.product === 'RestroAI' ? 'Restaurant name' : 'Facility name';
+const ctaByProduct = { RestroAI: 'btn-mint', QueueZero: 'btn-orange', NutriCare: 'btn-primary' };
+const orgByProduct = { RestroAI: 'Restaurant name', QueueZero: 'Business name', NutriCare: 'Facility name' };
+const cta = ctaByProduct[data.product] ?? 'btn-primary';
+const orgPlaceholder = orgByProduct[data.product] ?? 'Facility name';
 const tipClass = data.product === 'RestroAI' ? 'tip-box tip-box-mint' : 'tip-box';
 ---
 <Base
