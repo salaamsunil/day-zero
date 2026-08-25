@@ -19,6 +19,7 @@ const fmtDate = (d) =>
     canonical={`https://day-zero.com.au/insights/${post.id}`}
     ogTitle={post.data.title}
     ogDescription={post.data.description}
+    ogImage={post.data.ogImage ? `https://day-zero.com.au${post.data.ogImage}` : undefined}
     bodyClass="light-hero"
 >
     <article class="insight">

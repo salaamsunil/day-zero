@@ -11,6 +11,7 @@ const insights = defineCollection({
     author: z.string().default('Sunil Reddy'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    ogImage: z.string().optional(), // path under /public, e.g. /images/og/<slug>.png
   }),
 });
 
@@ -22,6 +23,7 @@ const resources = defineCollection({
     description: z.string(),
     ogTitle: z.string().optional(),
     ogDescription: z.string().optional(),
+    ogImage: z.string().optional(), // path under /public, e.g. /images/og/<slug>.png
     product: z.enum(['NutriCare', 'RestroAI', 'QueueZero']),
     badge: z.string().default('Free Resource'),
     badgeIcon: z.string().default('fa-file-lines'), // Font Awesome icon class

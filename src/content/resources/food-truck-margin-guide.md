@@ -3,6 +3,7 @@ title: "Food Truck Margin & Queue Economics Guide: Stop Losing Sales to the Line
 description: "A practical guide to food truck margins and queue economics for Australian operators: benchmarks, the real cost of walk-offs, commission maths, and how order-ahead lifts throughput. Free."
 ogTitle: "Food Truck Margin & Queue Economics Guide (Free)"
 ogDescription: "What actually eats a food truck's margin, why a walk-off costs more than a no-show, and how order-ahead lifts throughput. Benchmarks and steps for Australian operators."
+ogImage: "/images/og/food-truck-margin-guide.png"
 product: "QueueZero"
 badge: "Free Guide"
 badgeIcon: "fa-bolt"

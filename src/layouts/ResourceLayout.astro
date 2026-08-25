@@ -14,6 +14,7 @@ const tipClass = data.product === 'RestroAI' ? 'tip-box tip-box-mint' : 'tip-box
     canonical={canonical}
     ogTitle={data.ogTitle ?? data.title}
     ogDescription={data.ogDescription ?? data.description}
+    ogImage={data.ogImage ? `https://day-zero.com.au${data.ogImage}` : undefined}
     bodyClass="light-hero resource-page"
 >
     <section class="resource-hero">
