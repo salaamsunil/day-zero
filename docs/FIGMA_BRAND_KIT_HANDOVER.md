@@ -54,6 +54,19 @@ Free Figma caps a collection to **one mode**, so light/dark can't toggle as
 modes - the tokens all exist but there's no mode switch. True light/dark theming
 needs a paid seat. Same call to make on whether daily brand work justifies it.
 
+## In progress (2026-08, umbrella session) - PAUSED on Starter-plan MCP limit
+
+Started building **Social Card** collateral (suggested step 3). Completed and
+saved in the file: warm-paper tokens (`neutral/paper` #F4F1EA, `neutral/paper-surface`
+#FCFAF6, `bg/paper`, `bg/paper-surface`), a new **"Social Cards"** page, and the
+RestroAI card **shell** (1200x630, paper bg + mint glow + empty left/right columns,
+root node `16:44`). The next script (fill the left column) hit the **Figma Starter
+MCP call limit** and did not run (atomic - no partial state). Full resume ledger:
+**`docs/figma-brand-kit-state.json`** (node IDs, style IDs, exact next steps). To
+resume: reload figma-use + figma-generate-library, re-read that JSON, continue from
+`nextStep`. NOTE: the kit's ground is still cool `neutral/light #F8FAFC`; the live
+site moved to warm `#F4F1EA`/`#FCFAF6` - reconcile the kit's `bg/page` when convenient.
+
 ## Suggested next steps (not yet done)
 
 1. Add a Cover page (file thumbnail) + short usage/clear-space notes for the mark.

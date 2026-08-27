@@ -1,0 +1,16 @@
+{
+  "runId": "dz-social-cards-2026-08",
+  "fileKey": "eRxQcSxJ5TMQoE0RBKe5Lr",
+  "status": "PAUSED - hit Figma Starter-plan MCP call limit",
+  "collections": { "Primitives": "VariableCollectionId:1:2", "Color": "VariableCollectionId:2:3", "Radius": "VariableCollectionId:2:17" },
+  "variables_added": { "neutral/paper":"VariableID:14:44","neutral/paper-surface":"VariableID:14:45","bg/paper":"VariableID:14:46","bg/paper-surface":"VariableID:14:47" },
+  "variables_existing": { "mint/default":"1:6","mint/dark":"1:7","violet/default":"1:3","violet/dark":"1:4","orange/default":"1:9","orange/dark":"1:10","neutral/ink":"1:12","neutral/white":"1:18","neutral/gray":"1:15","text/primary":"2:8","text/secondary":"2:9","radius/md":"2:19" },
+  "textStyleIds": { "Display/Hero":"S:a7b494141bc33774784979992bc6b0d1697e238e,","Heading/H2":"S:21352841b4f2fe4547081e3028c08eca65e6c912,","Product Name":"S:a69a781f05874fd57a7d14d8629bedef61afc87e,","Subheading":"S:424be20491c9ebc6d3b8f90a81c95feeb655c8fb,","Body/Default":"S:233f16c254d1e249a6ec814f9d0cbbb53d36ff76,","Body/Strong":"S:95e713d67828631e92d1a81cbe4217e8e05e6dbd,","Label":"S:5fa0577d04285a87ac266a16d9d55f901a567fe4,","Eyebrow":"S:17483a740de0acef045a5fc24dca3063607346d1," },
+  "effectStyleIds": { "shadow/default":"S:4b08950ae2ceec22b2aead39f8a6a7e7b6deb6f8,","shadow/large":"S:4d9122f385f55a1d26cc7b4b44922940944b0ad3," },
+  "logoMarkComponentId": "4:2",
+  "socialCardsPageId": "15:44",
+  "cardShell_RestroAI": { "root":"16:44","glow":"16:45","content":"16:46","left":"16:47(empty)","right":"16:48(empty,placeholder=true)" },
+  "completedSteps": ["P0-discovery","P1-warm-tokens","P2-page","P4a-card-shell(RestroAI)"],
+  "nextStep": "P4b - fill left column (wordmark + eyebrow chip + headline + footer) into node 16:47; then P4c right-column invoice motif into 16:48 (clear placeholder); then clone for QueueZero(orange/order) + NutriCare(violet/allergen); combineAsVariants(Accent); demo board + usage notes",
+  "resumeNote": "The failed P4b script (left column) is ready to re-run verbatim; it needs Inter Regular/Medium/SemiBold/Bold/ExtraBold/Black loaded, binds mint/ink/gray, applies Eyebrow + Display/Hero styles."
+}
