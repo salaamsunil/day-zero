@@ -2,6 +2,14 @@
 
 **Owner:** Sunil (founder). **Strategist role:** Claude acts as the studio's CMO/CPO.
 **Status:** living document. Review monthly, update as products and results move.
+
+> ## WORKING METHOD (non-negotiable gate) - read first
+> **Craft over speed. Lock the foundation, then iterate, before anything goes to market.** Hard dependency order:
+> **(1) logos locked per product + umbrella -> (2) design system / brand type / imagery templates locked -> (3) market content.**
+> Nothing publishes until the foundation is locked AND the specific asset has been iterated and signed off. No batch-producing to
+> look busy; one deliverable at a time, self-critiqued and cross-checked before it's shown. Rushed, placeholder-branded output
+> reads as AI slop, the one thing Day Zero must never be. **All launch posts/cards produced so far are v0 drafts, NOT shippable,
+> until the foundation is locked.** Full rationale: memory `feedback-craft-over-speed`.
 **Companion docs (do not duplicate, cross-reference):**
 `gtm-authenticity-doctrine` (why authentic wins), `content-gtm-strategy` (the content engine + editorial queue),
 `feedback-sales-character` (Sunil = introvert, inbound/async), `feedback-no-ai-slop`, `aged-care-operator-lens`,
@@ -82,7 +90,10 @@ LinkedIn-only (its buyers are on IG/TikTok and at markets).
 - [~] Brand kit / logos in Figma - IN PROGRESS, paused on Figma free-tier limit (`docs/figma-brand-kit-state.json`).
 - [ ] **Lock logos per product** (finish Figma kit on reset/upgrade) - gate before heavy launch.
 
-**Phase 1 - Presence (NEXT). Owner: Sunil creates accounts; Claude specs + drafts.**
+**GATE: do not start Phase 1+ publishing until Phase 0 foundation is locked (logos + brand system + imagery templates,
+iterated and signed off). Account setup and drafting can proceed in parallel, but nothing market-facing goes live before the lock.**
+
+**Phase 1 - Presence (accounts can be set up now; publishing waits on the gate). Owner: Sunil creates accounts; Claude specs + drafts.**
 - [ ] Create the channel accounts above with consistent handles; Claude drafts every bio + link + first post.
 - [ ] Google Business Profile for Day Zero; start Capterra/G2 listings for NutriCare + RestroAI.
 - [ ] Surface the founder `/about` page (currently unlisted) - the single strongest anti-slop signal.
