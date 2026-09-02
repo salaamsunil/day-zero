@@ -11,6 +11,7 @@
 > reads as AI slop, the one thing Day Zero must never be. **All launch posts/cards produced so far are v0 drafts, NOT shippable,
 > until the foundation is locked.** Full rationale: memory `feedback-craft-over-speed`.
 **Companion docs (do not duplicate, cross-reference):**
+`MARKETING-ENGINEERING.md` (the systems/generators/AEO machine that executes this plan),
 `gtm-authenticity-doctrine` (why authentic wins), `content-gtm-strategy` (the content engine + editorial queue),
 `feedback-sales-character` (Sunil = introvert, inbound/async), `feedback-no-ai-slop`, `aged-care-operator-lens`,
 `nutricare-healthcare-hospitals`, `social-image-system`. Site facts live in `site-content-maintenance`.
