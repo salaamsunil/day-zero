@@ -1,0 +1,27 @@
+# Day Zero Solutions
+
+> Australian software studio building operations software for regulated, high-stakes industries: aged care and healthcare, restaurants, and food trucks. The through-line: from Day Zero to Day One. Software grounded in the customer's own live data, regulation-aware, that shows its working, with a human making the final call.
+
+Day Zero Solutions Pty Ltd (ACN 698 240 907, ABN 95 698 240 907) is a Brisbane, Australia software studio. It builds vertical operations software for operators who carry real accountability, aged-care directors of nursing and providers, restaurant owner-operators and head chefs, and food-truck operators. The products are grounded in each customer's live data and are regulation-aware (IDDSI, Aged Care Quality Standards, AN-ACC, HACCP), positioning AI as decision support that cites its sources, with the human making the final call, never as an unaccountable black box.
+
+## Products
+
+- [NutriCare](https://nutri-care.app): Dietary management and care intelligence for aged care and healthcare. IDDSI texture and allergen conflict detection at the point of order, clinical nutrition (MUST / GLIM / ESPEN 2022), SIRS incident logging, FHIR R4 export, family portal, and multi-site operator dashboards. Pricing from A$10 per resident per month.
+- [RestroAI](https://restroai.app): AI-native restaurant operating system. Inventory, procurement with purchase orders, goods receipt, 3-way matching and invoice OCR, recipe costing, menu engineering, online ordering, kitchen display, HACCP, and food-cost intelligence. Pricing from A$49 per month.
+- [QueueZero](https://queuezero.app): Order-ahead and queue-busting for food trucks and pop-ups. QR-code menus, live wait times, order-ahead, kitchen display and now-serving board, print-ready QR signage, with no app and no hardware, and 0% commission. A$49 per month or A$490 per year.
+
+## Studio
+
+- [Home](https://day-zero.com.au): The studio and its products.
+- [Products](https://day-zero.com.au/products): Overview of NutriCare, RestroAI, and QueueZero.
+- [Insights](https://day-zero.com.au/insights): Articles on operations, regulation, and the domains Day Zero builds for.
+
+## Legal
+
+- [Privacy Policy](https://day-zero.com.au/privacy.html)
+- [Terms](https://day-zero.com.au/terms.html)
+
+## Contact
+
+- Email: hello@day-zero.com.au
+- LinkedIn: https://www.linkedin.com/company/day-zero-solutions/

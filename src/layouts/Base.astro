@@ -47,7 +47,7 @@ const resolvedOgDescription = ogDescription ?? description;
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/images/dazero-icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/dazero-tile.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -67,19 +67,74 @@ const resolvedOgDescription = ogDescription ?? description;
     {isHome && (
         <script type="application/ld+json" set:html={JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'Day Zero Solutions Pty Ltd',
-            alternateName: 'Day Zero',
-            url: 'https://day-zero.com.au',
-            logo: 'https://day-zero.com.au/images/dazero-icon.svg',
-            description: 'Australian software studio building operations software for hospitality, aged care, and food businesses.',
-            address: { '@type': 'PostalAddress', addressCountry: 'AU', addressRegion: 'QLD', addressLocality: 'Brisbane' },
-            contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'hello@day-zero.com.au', areaServed: 'AU', availableLanguage: 'English' },
-            identifier: [
-                { '@type': 'PropertyValue', propertyID: 'ACN', value: '698240907' },
-                { '@type': 'PropertyValue', propertyID: 'ABN', value: '95698240907' }
-            ],
-            sameAs: []
+            '@graph': [
+                {
+                    '@type': 'Organization',
+                    '@id': 'https://day-zero.com.au/#organization',
+                    name: 'Day Zero Solutions Pty Ltd',
+                    alternateName: 'Day Zero',
+                    url: 'https://day-zero.com.au',
+                    logo: 'https://day-zero.com.au/images/apple-touch-icon.png',
+                    image: 'https://day-zero.com.au/images/apple-touch-icon.png',
+                    slogan: 'From Day Zero to Day One.',
+                    description: 'Australian software studio building operations software for regulated, high-stakes industries: aged care and healthcare, restaurants, and food trucks. Software grounded in the customer’s live data, regulation-aware, with a human making the final call.',
+                    address: { '@type': 'PostalAddress', addressCountry: 'AU', addressRegion: 'QLD', addressLocality: 'Brisbane' },
+                    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'hello@day-zero.com.au', areaServed: 'AU', availableLanguage: 'English' },
+                    identifier: [
+                        { '@type': 'PropertyValue', propertyID: 'ACN', value: '698240907' },
+                        { '@type': 'PropertyValue', propertyID: 'ABN', value: '95698240907' }
+                    ],
+                    knowsAbout: [
+                        'IDDSI', 'Aged Care Quality Standards', 'AN-ACC', 'dietary management',
+                        'clinical nutrition', 'HACCP', 'restaurant operations', 'food cost management',
+                        'procurement and 3-way matching', 'menu engineering', 'queue management'
+                    ],
+                    sameAs: [
+                        'https://www.linkedin.com/company/day-zero-solutions/',
+                        'https://nutri-care.app',
+                        'https://restroai.app',
+                        'https://queuezero.app'
+                    ]
+                },
+                {
+                    '@type': 'WebSite',
+                    '@id': 'https://day-zero.com.au/#website',
+                    url: 'https://day-zero.com.au',
+                    name: 'Day Zero',
+                    inLanguage: 'en-AU',
+                    publisher: { '@id': 'https://day-zero.com.au/#organization' }
+                },
+                {
+                    '@type': 'SoftwareApplication',
+                    name: 'NutriCare',
+                    url: 'https://nutri-care.app',
+                    applicationCategory: 'BusinessApplication',
+                    operatingSystem: 'Web',
+                    description: 'Dietary management and care intelligence for aged care and healthcare: IDDSI texture and allergen conflict detection at the point of order, clinical nutrition (MUST/GLIM/ESPEN), incident logging, FHIR R4 export, and multi-site operator dashboards.',
+                    publisher: { '@id': 'https://day-zero.com.au/#organization' },
+                    offers: { '@type': 'Offer', price: '10', priceCurrency: 'AUD', description: 'From A$10 per resident per month' }
+                },
+                {
+                    '@type': 'SoftwareApplication',
+                    name: 'RestroAI',
+                    url: 'https://restroai.app',
+                    applicationCategory: 'BusinessApplication',
+                    operatingSystem: 'Web',
+                    description: 'AI-native restaurant operating system: inventory, procurement with 3-way match and invoice OCR, recipe costing, menu engineering, and food-cost intelligence.',
+                    publisher: { '@id': 'https://day-zero.com.au/#organization' },
+                    offers: { '@type': 'Offer', price: '49', priceCurrency: 'AUD', description: 'From A$49 per month' }
+                },
+                {
+                    '@type': 'SoftwareApplication',
+                    name: 'QueueZero',
+                    url: 'https://queuezero.app',
+                    applicationCategory: 'BusinessApplication',
+                    operatingSystem: 'Web',
+                    description: 'Order-ahead and queue-busting for food trucks and pop-ups: QR menus, live wait times, order-ahead, and a kitchen display, with 0% commission.',
+                    publisher: { '@id': 'https://day-zero.com.au/#organization' },
+                    offers: { '@type': 'Offer', price: '49', priceCurrency: 'AUD', description: 'A$49 per month, or A$490 per year' }
+                }
+            ]
         })} />
     )}
 
