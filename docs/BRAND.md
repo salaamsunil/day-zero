@@ -56,7 +56,7 @@ Any solid fill survives that filter, so keep the mark a single solid colour.
   avatar, social. On dark, invert to a cream tile + ink mark.
 - **On dark:** white mark (via the CSS filter, or the tile).
 - **Colour "expressive" (hero / marketing ONLY):** the four petals carry the product
-  accents (violet NutriCare `#7C3AED`, mint RestroAI `#10B981`, orange QueueZero
+  accents (pine-teal NutriCare `#0F766E`, mint RestroAI `#10B981`, orange QueueZero
   `#F97316`); the fourth petal stays neutral = room for the next product; the central
   "1" stays ink. Use sparingly, for a "meet the studio" moment, never as the everyday
   mark. If used, make the neutral petal intentional (a warm neutral), not a dimmed grey.
@@ -81,7 +81,7 @@ parent colourful. Day Zero is the calm parent; the products are the colourful ch
 | Ink (mark, text) | `#17110b` |
 | Cream (light ground) | `#fbf7ef` |
 | Espresso (dark ground) | `#14100b` |
-| Product accents (expressive only) | NutriCare `#7C3AED` · RestroAI `#10B981` · QueueZero `#F97316` |
+| Product accents (expressive only) | NutriCare `#0F766E` · RestroAI `#10B981` · QueueZero `#F97316` |
 
 The umbrella is mono ink on warm neutrals. Product accents belong to the products;
 the parent borrows them only in the expressive variant, sparingly.
