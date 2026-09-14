@@ -26,9 +26,11 @@ const {
   eager?: boolean;
   class?: string;
   ratio?: string; // aspect-ratio for the stage, e.g. '3 / 2' for squarer shots
-  variant?: 'browser' | 'phone'; // 'phone' = phone bezel, no browser chrome, contain
+  variant?: 'browser' | 'phone' | 'plain'; // 'phone' = bezel; 'plain' = no chrome (image already framed)
 };
 const isPhone = variant === 'phone';
+const isPlain = variant === 'plain';
+const showChrome = variant === 'browser';
 
 const shots = await Promise.all(
   images.map(async (im) => ({
@@ -40,9 +42,9 @@ const shots = await Promise.all(
 );
 const first = shots[0];
 ---
-<div class:list={['shot-gallery', isPhone && 'shot-gallery--phone', extraClass]} data-gallery>
+<div class:list={['shot-gallery', isPhone && 'shot-gallery--phone', isPlain && 'shot-gallery--plain', extraClass]} data-gallery>
     <div class:list={['app-mockup', 'has-shot', mockupClass]}>
-        {!isPhone && (
+        {showChrome && (
             <div class="mockup-chrome">
                 <div class="mockup-dots"><span></span><span></span><span></span></div>
                 <span class="mockup-url">{url}</span>

@@ -771,6 +771,17 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 /* ===== QueueZero order-card mockup ===== */
 /* On /products it's a centred hero above the screenshot galleries. */
 .qz-hero { margin: 1.5rem 0 2.25rem; }
+/* QueueZero two-device hero: a pre-rendered mockup (frame + shadow + warm
+   ground baked in), shown full-width with a soft-clipped edge. */
+.qz-hero-img {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    margin: 1.5rem 0 2.25rem;
+}
 .order-mock {
     position: relative;
     width: 100%;
@@ -1509,6 +1520,21 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
    area (header, order #, status) in view even for tall full-page captures */
 .shot-gallery--phone .shot-layer { object-fit: cover; object-position: top center; }
 .shot-gallery--phone .shot-thumbs { justify-content: center; }
+
+/* Plain variant: the image is a pre-rendered device mockup (frame + soft
+   shadow + branded ground already baked in), so the container adds no chrome,
+   no bezel, no frame, just clips to a soft rounded rect over the ground tone. */
+.shot-gallery--plain .app-mockup,
+.shot-gallery--plain .app-mockup.has-shot {
+    border: none;
+    border-radius: 16px;
+    background: #f1ebe4;
+    box-shadow: none;
+    overflow: hidden;
+}
+.shot-gallery--plain .app-mockup.has-shot:hover { box-shadow: none; }
+.shot-gallery--plain .shot-stage { background: #f1ebe4; }
+.shot-gallery--plain .shot-layer { object-fit: cover; object-position: center; }
 
 /* Browser chrome */
 .mockup-chrome {

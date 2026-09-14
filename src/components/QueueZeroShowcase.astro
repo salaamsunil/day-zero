@@ -1,17 +1,18 @@
 ---
 // QueueZero is a two-device product: customers order on a phone (dark UI),
-// vendors run the truck on a tablet (light UI). Both sides are paginated
-// ShotGalleries (thumbnails + crossfade, mobile-safe): a phone-framed gallery
-// for the customer views, a browser-framed gallery for the operator views.
+// vendors run the truck on a browser (light UI). Both sides show as plain
+// galleries of pre-rendered device mockups (floating device + soft shadow on a
+// warm premium ground), crossfaded with thumbnails. The frame/shadow/ground is
+// baked into each mockup image, so the gallery adds no chrome (variant="plain").
 import ShotGallery from './ShotGallery.astro';
-import phoneOrder from '../assets/products/QueueZero/qz-phone-order.png';
-import geolocator from '../assets/products/QueueZero/qz-geolocator.png';
-import tracker from '../assets/products/QueueZero/qz-tracker.png';
-import eventPage from '../assets/products/QueueZero/qz-event.png';
-import kds from '../assets/products/QueueZero/qz-kds.png';
-import board from '../assets/products/QueueZero/qz-board.png';
-import analytics from '../assets/products/QueueZero/qz-analytics.png';
-import qrSign from '../assets/products/QueueZero/qz-qr-sign.png';
+import phoneOrder from '../assets/products/QueueZero/mockups/qz-phone-order.png';
+import geolocator from '../assets/products/QueueZero/mockups/qz-geolocator.png';
+import tracker from '../assets/products/QueueZero/mockups/qz-tracker.png';
+import eventPage from '../assets/products/QueueZero/mockups/qz-event.png';
+import kds from '../assets/products/QueueZero/mockups/qz-kds.png';
+import board from '../assets/products/QueueZero/mockups/qz-board.png';
+import analytics from '../assets/products/QueueZero/mockups/qz-analytics.png';
+import qrSign from '../assets/products/QueueZero/mockups/qz-qr-sign.png';
 
 const customerShots = [
     { src: phoneOrder, alt: 'QueueZero customer ordering on a phone: live wait time, menu, and add to order', label: 'order ahead' },
@@ -27,12 +28,12 @@ const operatorShots = [
 ];
 ---
 <div class="qz-showcase">
-    <div class="qz-phone-col">
-        <ShotGallery url="queuezero.app" variant="phone" ratio="2 / 3" images={customerShots} />
+    <div class="qz-col">
+        <ShotGallery url="queuezero.app" variant="plain" ratio="4 / 3" images={customerShots} />
         <p class="qz-cap">What your customer sees</p>
     </div>
-    <div class="qz-operator">
-        <ShotGallery url="queuezero.app" ratio="3 / 2" images={operatorShots} />
+    <div class="qz-col">
+        <ShotGallery url="queuezero.app" variant="plain" ratio="4 / 3" images={operatorShots} />
         <p class="qz-cap">What you run at the truck</p>
     </div>
 </div>
@@ -42,11 +43,11 @@ const operatorShots = [
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
-        gap: 1.75rem;
-        margin: 1.75rem 0;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
     }
-    .qz-phone-col { flex: 0 0 210px; max-width: 210px; }
-    .qz-operator { flex: 1 1 340px; min-width: 0; }
+    .qz-col { flex: 1 1 300px; min-width: 0; }
+    .qz-col :global(.shot-gallery) { max-width: none; }
     .qz-cap {
         color: var(--gray);
         font-size: 0.75rem;
@@ -54,8 +55,6 @@ const operatorShots = [
         margin-top: 0.7rem;
     }
     @media (max-width: 700px) {
-        .qz-showcase { flex-direction: column; align-items: center; }
-        .qz-phone-col { flex-basis: auto; max-width: 240px; order: 2; }
-        .qz-operator { width: 100%; order: 1; }
+        .qz-showcase { flex-direction: column; align-items: stretch; }
     }
 </style>
