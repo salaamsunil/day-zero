@@ -1536,6 +1536,46 @@ body.light-hero .header:not(.scrolled) .nav-chevron { color: var(--dark); opacit
 .shot-gallery--plain .shot-stage { background: #f1ebe4; }
 .shot-gallery--plain .shot-layer { object-fit: cover; object-position: center; }
 
+/* Tasteful interactivity: gentle cursor-tilt on the device (JS sets the
+   transform; this just eases it), and a zoom cursor + lightbox to inspect UI. */
+.shot-tiltable { transition: transform 0.2s ease-out; will-change: transform; }
+.shot-zoomable { cursor: zoom-in; }
+.shot-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 4vmin;
+    background: rgba(15, 12, 10, 0.82);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+.shot-lightbox.is-open { display: flex; }
+.shot-lightbox img {
+    max-width: 96vw;
+    max-height: 92vh;
+    border-radius: 14px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+}
+.shot-lightbox-close {
+    position: absolute;
+    top: 3vmin;
+    right: 3vmin;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.shot-lightbox-close:hover { background: rgba(255, 255, 255, 0.26); }
+
 /* Browser chrome */
 .mockup-chrome {
     background: #f0f0f0;
